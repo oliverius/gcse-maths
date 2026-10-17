@@ -1,4 +1,5 @@
 import { linearExpression } from './mathematics.js';
+import { validateNotation } from './notation.js';
 export const operations = new Set(['show', 'apply-left', 'apply-right', 'apply-both', 'cancel', 'simplify', 'highlight', 'replace', 'group', 'split', 'distribute', 'move', 'partition']);
 export const renderers = new Set(['balance', 'expression', 'number-line', 'fractions']);
 const fail = message => { throw new Error(message); };
@@ -16,6 +17,7 @@ export function validateManifest(manifest) {
 export function validateLesson(lesson, area) {
   if (!lesson || !text(lesson.id) || !text(lesson.title) || lesson.subjectArea !== area || lesson.tier !== 'Foundation' || typeof lesson.available !== 'boolean') fail('Invalid lesson metadata.');
   if (!lesson.available) return lesson;
+  validateNotation(lesson.notation);
   if (!text(lesson.objective) || !text(lesson.initialExpression) || !renderers.has(lesson.kind) || !Array.isArray(lesson.steps) || lesson.steps.length < 2) fail('Incomplete lesson.');
   if (!Array.isArray(lesson.curriculum) || !lesson.curriculum.length) fail('Missing curriculum reference.');
   for (const ref of lesson.curriculum) {
@@ -34,6 +36,16 @@ export function validateLesson(lesson, area) {
     if (!supported[lesson.kind].includes(state.operation.type) || !state.left.length) fail('This renderer does not support that operation.');
     if ('value' in state.operation && !finite(state.operation.value)) fail('Invalid operation value.');
     const terms = [...state.left, ...state.right];
+    terms.forEach(validateNotation);
+    for (const field of ['titleContent', 'explanationContent', 'detailContent']) {
+      if (state[field] !== undefined) {
+        if (!Array.isArray(state[field])) fail('Invalid text content.');
+        state[field].forEach(part => {
+          if (typeof part.text !== 'string') validateNotation(part);
+        });
+      }
+    }
+    if (state.working) validateNotation(state.workingNotation);
     const ids = terms.map(t => t.id);
     if (new Set(ids).size !== ids.length || !terms.every(t => text(t.id) && text(t.text) && ['original', 'negative', 'operation'].includes(t.tone))) fail('Invalid term identities.');
     if (state.highlight && (!Array.isArray(state.highlight) || !state.highlight.every(id => ids.includes(id)))) fail('Unknown highlighted term.');
@@ -56,6 +68,7 @@ export function validateLesson(lesson, area) {
     if (lesson.kind === 'fractions' && (!Array.isArray(state.bars) || !state.bars.every(b => text(b.id) && Number.isInteger(b.parts) && b.parts > 0 && b.parts <= 12 && Number.isInteger(b.shaded) && b.shaded >= 0 && b.shaded <= b.parts))) fail('Invalid fraction bars.');
     if (state.groups && (!Array.isArray(state.groups) || !state.groups.every(g => text(g.id) && text(g.label) && Array.isArray(g.items) && g.items.every(t => text(t.id) && text(t.text))))) fail('Invalid groups.');
     if (state.groups) {
+      state.groups.flatMap(g => g.items).forEach(validateNotation);
       const objectIds = [...ids, ...state.groups.flatMap(g => g.items.map(t => t.id))];
       if (new Set(objectIds).size !== objectIds.length || new Set(state.groups.map(g => g.id)).size !== state.groups.length) fail('Duplicate visual object IDs.');
     }

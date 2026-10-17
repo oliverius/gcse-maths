@@ -32,13 +32,28 @@ header { margin-bottom: 22px; }
 .workspace { background: #fff; border: 1px solid #dce3db; border-radius: 20px; padding: 22px 24px; }
 #lesson-title { font-size: 24px; margin: 0 0 12px; }
 .step-heading { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: #54685f; }
-h3 { font-size: 21px; margin: 16px 0 0; min-height: 32px; }
+h3 { font-size: 21px; margin: 16px 0 0; min-height: 44px; }
 #visual { height: 350px; display: flex; align-items: center; justify-content: center; }
-svg { width: 100%; height: 100%; overflow: visible; }
+#visual > svg { width: 100%; height: 100%; overflow: visible; }
 svg text { font-family: inherit; font-weight: 650; font-size: 31px; fill: #213b35; }
 .term.original { fill: var(--original); }
 .term.negative { fill: var(--negative); }
 .term.operation { fill: var(--operation); }
+.math-object { overflow: visible; }
+.math-content { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; white-space: nowrap; line-height: 1; color: #213b35; }
+.math-content .katex { font-size: 1em; }
+.inline-math { display: inline-block; vertical-align: middle; margin: 0 .08em; }
+.inline-math .katex { font-size: 1.1em; }
+.math-object.original .math-content { color: var(--original); }
+.math-object.negative .math-content { color: var(--negative); }
+.math-object.operation .math-content { color: var(--operation); }
+.math-object.highlight .katex, .math-object.cancel .katex { background: #f4d789; box-shadow: 0 0 0 5px #f4d789; border-radius: 3px; }
+.math-measure { position: fixed; left: -10000px; top: 0; visibility: hidden; white-space: nowrap; width: max-content; line-height: 1; }
+.math-measure .katex { font-size: 1em; }
+#lesson-title .katex { font-size: 1.15em; }
+#lessons button .katex { font-size: 1.15em; }
+#lesson-title { min-height: 65px; display: flex; align-items: center; }
+#lessons button { min-height: 76px; }
 .term.highlight, .term.cancel { paint-order: stroke; stroke: #f4d789; stroke-width: 12px; stroke-linejoin: round; }
 svg .group-label { font-size: 19px; fill: #54685f; }
 svg .tile-text { font-size: 20px; }

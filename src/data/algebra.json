@@ -35,19 +35,25 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "original-three",
               "text": "− 3",
-              "tone": "negative"
+              "tone": "negative",
+              "latex": "- 3",
+              "spoken": "minus 3"
             }
           ],
           "right": [
             {
               "id": "two",
               "text": "2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2",
+              "spoken": "2"
             }
           ],
           "balance": 0,
@@ -74,24 +80,32 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "original-three",
               "text": "− 3",
-              "tone": "negative"
+              "tone": "negative",
+              "latex": "- 3",
+              "spoken": "minus 3"
             },
             {
               "id": "added-left",
               "text": "+ 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             }
           ],
           "right": [
             {
               "id": "two",
               "text": "2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2",
+              "spoken": "2"
             }
           ],
           "balance": -1,
@@ -121,29 +135,39 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "original-three",
               "text": "− 3",
-              "tone": "negative"
+              "tone": "negative",
+              "latex": "- 3",
+              "spoken": "minus 3"
             },
             {
               "id": "added-left",
               "text": "+ 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             }
           ],
           "right": [
             {
               "id": "two",
               "text": "2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2",
+              "spoken": "2"
             },
             {
               "id": "added-right",
               "text": "+ 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             }
           ],
           "balance": 0,
@@ -173,19 +197,25 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "zero",
               "text": "+ 0",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 0",
+              "spoken": "plus 0"
             }
           ],
           "right": [
             {
               "id": "answer",
               "text": "5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "5",
+              "spoken": "5"
             }
           ],
           "balance": 0,
@@ -208,7 +238,19 @@
               "constant": 5
             }
           },
-          "unbalanced": false
+          "unbalanced": false,
+          "detailContent": [
+            {
+              "text": "On the right, "
+            },
+            {
+              "latex": "2 + 3",
+              "spoken": "2 plus 3"
+            },
+            {
+              "text": " makes 5."
+            }
+          ]
         },
         {
           "title": "The answer is x = 5",
@@ -216,14 +258,18 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             }
           ],
           "right": [
             {
               "id": "answer",
               "text": "5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "5",
+              "spoken": "5"
             }
           ],
           "balance": 0,
@@ -242,10 +288,47 @@
               "constant": 5
             }
           },
-          "unbalanced": false
+          "unbalanced": false,
+          "titleContent": [
+            {
+              "text": "The answer is "
+            },
+            {
+              "latex": "x = 5",
+              "spoken": "x equals 5"
+            }
+          ],
+          "explanationContent": [
+            {
+              "text": "Adding zero changes nothing. So "
+            },
+            {
+              "latex": "x = 5",
+              "spoken": "x equals 5"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "detailContent": [
+            {
+              "text": "Check: "
+            },
+            {
+              "latex": "5 - 3 = 2",
+              "spoken": "5 minus 3 equals 2"
+            },
+            {
+              "text": ". Both sides are equal."
+            }
+          ]
         }
       ],
-      "solution": 5
+      "solution": 5,
+      "notation": {
+        "latex": "x - 3 = 2",
+        "spoken": "x minus 3 equals 2"
+      }
     },
     {
       "id": "subtract-both",
@@ -280,19 +363,25 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "original-three",
               "text": "+ 3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             }
           ],
           "right": [
             {
               "id": "two",
               "text": "2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2",
+              "spoken": "2"
             }
           ],
           "balance": 0,
@@ -319,24 +408,32 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "original-three",
               "text": "+ 3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             },
             {
               "id": "added-left",
               "text": "− 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "- 3",
+              "spoken": "minus 3"
             }
           ],
           "right": [
             {
               "id": "two",
               "text": "2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2",
+              "spoken": "2"
             }
           ],
           "balance": 1,
@@ -366,29 +463,39 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "original-three",
               "text": "+ 3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             },
             {
               "id": "added-left",
               "text": "− 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "- 3",
+              "spoken": "minus 3"
             }
           ],
           "right": [
             {
               "id": "two",
               "text": "2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2",
+              "spoken": "2"
             },
             {
               "id": "added-right",
               "text": "− 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "- 3",
+              "spoken": "minus 3"
             }
           ],
           "balance": 0,
@@ -418,19 +525,25 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             },
             {
               "id": "zero",
               "text": "+ 0",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 0",
+              "spoken": "plus 0"
             }
           ],
           "right": [
             {
               "id": "answer",
               "text": "−1",
-              "tone": "negative"
+              "tone": "negative",
+              "latex": "-1",
+              "spoken": "minus 1"
             }
           ],
           "balance": 0,
@@ -453,7 +566,19 @@
               "constant": -1
             }
           },
-          "unbalanced": false
+          "unbalanced": false,
+          "detailContent": [
+            {
+              "text": "On the right, "
+            },
+            {
+              "latex": "2 - 3 = -1",
+              "spoken": "2 minus 3 equals minus 1"
+            },
+            {
+              "text": ": start at 2, count back 3, and go one below zero."
+            }
+          ]
         },
         {
           "title": "The answer is x = −1",
@@ -461,14 +586,18 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             }
           ],
           "right": [
             {
               "id": "answer",
               "text": "−1",
-              "tone": "negative"
+              "tone": "negative",
+              "latex": "-1",
+              "spoken": "minus 1"
             }
           ],
           "balance": 0,
@@ -487,10 +616,47 @@
               "constant": -1
             }
           },
-          "unbalanced": false
+          "unbalanced": false,
+          "titleContent": [
+            {
+              "text": "The answer is "
+            },
+            {
+              "latex": "x = -1",
+              "spoken": "x equals minus 1"
+            }
+          ],
+          "explanationContent": [
+            {
+              "text": "Adding zero changes nothing. So "
+            },
+            {
+              "latex": "x = -1",
+              "spoken": "x equals minus 1"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "detailContent": [
+            {
+              "text": "A negative answer is allowed. Check: "
+            },
+            {
+              "latex": "-1 + 3 = 2",
+              "spoken": "minus 1 plus 3 equals 2"
+            },
+            {
+              "text": ". Both sides are equal."
+            }
+          ]
         }
       ],
-      "solution": -1
+      "solution": -1,
+      "notation": {
+        "latex": "x + 3 = 2",
+        "spoken": "x plus 3 equals 2"
+      }
     },
     {
       "id": "divide-three",
@@ -525,14 +691,18 @@
             {
               "id": "three-x",
               "text": "3x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3x",
+              "spoken": "3 x"
             }
           ],
           "right": [
             {
               "id": "twelve",
               "text": "12",
-              "tone": "original"
+              "tone": "original",
+              "latex": "12",
+              "spoken": "12"
             }
           ],
           "balance": 0,
@@ -560,17 +730,23 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 }
               ]
             },
@@ -581,62 +757,86 @@
                 {
                   "id": "unit-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-3",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-4",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-5",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-6",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-7",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-8",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-9",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-10",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-11",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -648,14 +848,18 @@
             {
               "id": "division-left",
               "text": "3x ÷ 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\frac{3x}{3}",
+              "spoken": "3 x divided by 3"
             }
           ],
           "right": [
             {
               "id": "division-right",
               "text": "12 ÷ 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\frac{12}{3}",
+              "spoken": "12 divided by 3"
             }
           ],
           "balance": 0,
@@ -684,27 +888,37 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-3",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -715,27 +929,37 @@
                 {
                   "id": "tile-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-4",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-5",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-6",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-7",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -746,27 +970,37 @@
                 {
                   "id": "tile-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-8",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-9",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-10",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-11",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -782,14 +1016,18 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             }
           ],
           "right": [
             {
               "id": "four",
               "text": "4",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "4",
+              "spoken": "4"
             }
           ],
           "balance": 0,
@@ -817,34 +1055,60 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-3",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
+            }
+          ],
+          "explanationContent": [
+            {
+              "text": "Each group has one x and four units. So "
+            },
+            {
+              "latex": "x = 4",
+              "spoken": "x equals 4"
+            },
+            {
+              "text": "."
             }
           ]
         }
       ],
-      "solution": 4
+      "solution": 4,
+      "notation": {
+        "latex": "3x = 12",
+        "spoken": "3 x equals 12"
+      }
     },
     {
       "id": "multiply-four",
@@ -879,14 +1143,18 @@
             {
               "id": "quarter",
               "text": "x / 4",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\frac{x}{4}",
+              "spoken": "x divided by 4"
             }
           ],
           "right": [
             {
               "id": "three",
               "text": "3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3",
+              "spoken": "3"
             }
           ],
           "balance": 0,
@@ -914,22 +1182,30 @@
                 {
                   "id": "quarter-x-0",
                   "text": "x/4",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "\\frac{x}{4}",
+                  "spoken": "x divided by 4"
                 },
                 {
                   "id": "q-unit-0-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-0-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-0-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -941,14 +1217,18 @@
             {
               "id": "multiply-left",
               "text": "(x / 4) × 4",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\left(\\frac{x}{4}\\right) \\times  4",
+              "spoken": "open bracket x divided by 4 close bracket times 4"
             }
           ],
           "right": [
             {
               "id": "multiply-right",
               "text": "3 × 4",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "3 \\times  4",
+              "spoken": "3 times 4"
             }
           ],
           "balance": 0,
@@ -981,22 +1261,30 @@
                 {
                   "id": "quarter-x-0",
                   "text": "x/4",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "\\frac{x}{4}",
+                  "spoken": "x divided by 4"
                 },
                 {
                   "id": "q-unit-0-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-0-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-0-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -1007,22 +1295,30 @@
                 {
                   "id": "quarter-x-1",
                   "text": "x/4",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "\\frac{x}{4}",
+                  "spoken": "x divided by 4"
                 },
                 {
                   "id": "q-unit-1-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-1-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-1-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -1033,22 +1329,30 @@
                 {
                   "id": "quarter-x-2",
                   "text": "x/4",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "\\frac{x}{4}",
+                  "spoken": "x divided by 4"
                 },
                 {
                   "id": "q-unit-2-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-2-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-2-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -1059,22 +1363,30 @@
                 {
                   "id": "quarter-x-3",
                   "text": "x/4",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "\\frac{x}{4}",
+                  "spoken": "x divided by 4"
                 },
                 {
                   "id": "q-unit-3-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-3-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "q-unit-3-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -1086,14 +1398,18 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             }
           ],
           "right": [
             {
               "id": "twelve",
               "text": "12",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "12",
+              "spoken": "12"
             }
           ],
           "balance": 0,
@@ -1121,69 +1437,109 @@
                 {
                   "id": "unit-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-3",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-4",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-5",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-6",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-7",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-8",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-9",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-10",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-11",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
+            }
+          ],
+          "explanationContent": [
+            {
+              "text": "Four groups of three make twelve. So "
+            },
+            {
+              "latex": "x = 12",
+              "spoken": "x equals 12"
+            },
+            {
+              "text": "."
             }
           ]
         }
       ],
-      "solution": 12
+      "solution": 12,
+      "notation": {
+        "latex": "\\frac{x}{4} = 3",
+        "spoken": "x divided by 4 equals 3"
+      }
     },
     {
       "id": "two-step",
@@ -1218,19 +1574,25 @@
             {
               "id": "two-x",
               "text": "2x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2x",
+              "spoken": "2 x"
             },
             {
               "id": "plus-three",
               "text": "+ 3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             }
           ],
           "right": [
             {
               "id": "eleven",
               "text": "11",
-              "tone": "original"
+              "tone": "original",
+              "latex": "11",
+              "spoken": "11"
             }
           ],
           "balance": 0,
@@ -1257,29 +1619,39 @@
             {
               "id": "two-x",
               "text": "2x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2x",
+              "spoken": "2 x"
             },
             {
               "id": "plus-three",
               "text": "+ 3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 3",
+              "spoken": "plus 3"
             },
             {
               "id": "minus-left",
               "text": "− 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "- 3",
+              "spoken": "minus 3"
             }
           ],
           "right": [
             {
               "id": "eleven",
               "text": "11",
-              "tone": "original"
+              "tone": "original",
+              "latex": "11",
+              "spoken": "11"
             },
             {
               "id": "minus-right",
               "text": "− 3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "- 3",
+              "spoken": "minus 3"
             }
           ],
           "balance": 0,
@@ -1311,14 +1683,18 @@
             {
               "id": "two-x",
               "text": "2x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2x",
+              "spoken": "2 x"
             }
           ],
           "right": [
             {
               "id": "eight",
               "text": "8",
-              "tone": "original"
+              "tone": "original",
+              "latex": "8",
+              "spoken": "8"
             }
           ],
           "balance": 0,
@@ -1341,6 +1717,18 @@
           "cancel": [
             "plus-three",
             "minus-left"
+          ],
+          "explanationContent": [
+            {
+              "text": "+3 and −3 make zero. On the right, "
+            },
+            {
+              "latex": "11 - 3 = 8",
+              "spoken": "11 minus 3 equals 8"
+            },
+            {
+              "text": "."
+            }
           ]
         },
         {
@@ -1349,14 +1737,18 @@
             {
               "id": "divide-left",
               "text": "2x ÷ 2",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\frac{2x}{2}",
+              "spoken": "2 x divided by 2"
             }
           ],
           "right": [
             {
               "id": "divide-right",
               "text": "8 ÷ 2",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\frac{8}{2}",
+              "spoken": "8 divided by 2"
             }
           ],
           "balance": 0,
@@ -1389,27 +1781,37 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-3",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -1420,27 +1822,37 @@
                 {
                   "id": "tile-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-4",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-5",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-6",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-7",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -1452,14 +1864,18 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             }
           ],
           "right": [
             {
               "id": "four",
               "text": "4",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "4",
+              "spoken": "4"
             }
           ],
           "balance": 0,
@@ -1487,34 +1903,64 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "unit-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-2",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "unit-3",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
+            }
+          ],
+          "explanationContent": [
+            {
+              "latex": "x = 4",
+              "spoken": "x equals 4"
+            },
+            {
+              "text": ". Check: "
+            },
+            {
+              "latex": "2 \\times  4 + 3 = 11",
+              "spoken": "2 times 4 plus 3 equals 11"
+            },
+            {
+              "text": "."
             }
           ]
         }
       ],
-      "solution": 4
+      "solution": 4,
+      "notation": {
+        "latex": "2x + 3 = 11",
+        "spoken": "2 x plus 3 equals 11"
+      }
     },
     {
       "id": "like-terms",
@@ -1549,19 +1995,25 @@
             {
               "id": "three-x",
               "text": "3x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3x",
+              "spoken": "3 x"
             },
             {
               "id": "plus-two-x",
               "text": "+ 2x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 2x",
+              "spoken": "plus 2 x"
             }
           ],
           "right": [
             {
               "id": "fifteen",
               "text": "15",
-              "tone": "original"
+              "tone": "original",
+              "latex": "15",
+              "spoken": "15"
             }
           ],
           "balance": 0,
@@ -1589,17 +2041,23 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 }
               ]
             },
@@ -1610,12 +2068,16 @@
                 {
                   "id": "tile-x-3",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-4",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 }
               ]
             }
@@ -1627,14 +2089,18 @@
             {
               "id": "five-x",
               "text": "5x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "5x",
+              "spoken": "5 x"
             }
           ],
           "right": [
             {
               "id": "fifteen",
               "text": "15",
-              "tone": "original"
+              "tone": "original",
+              "latex": "15",
+              "spoken": "15"
             }
           ],
           "balance": 0,
@@ -1662,29 +2128,48 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-3",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "tile-x-4",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 }
               ]
+            }
+          ],
+          "explanationContent": [
+            {
+              "latex": "3x + 2x",
+              "spoken": "3 x plus 2 x"
+            },
+            {
+              "text": " makes 5x. We count five copies of the same unknown."
             }
           ]
         },
@@ -1694,14 +2179,18 @@
             {
               "id": "divide-left",
               "text": "5x ÷ 5",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\frac{5x}{5}",
+              "spoken": "5 x divided by 5"
             }
           ],
           "right": [
             {
               "id": "divide-right",
               "text": "15 ÷ 5",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "\\frac{15}{5}",
+              "spoken": "15 divided by 5"
             }
           ],
           "balance": 0,
@@ -1734,12 +2223,16 @@
                 {
                   "id": "tile-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "three-0",
                   "text": "3",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "3",
+                  "spoken": "3"
                 }
               ]
             },
@@ -1750,12 +2243,16 @@
                 {
                   "id": "tile-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "three-1",
                   "text": "3",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "3",
+                  "spoken": "3"
                 }
               ]
             },
@@ -1766,12 +2263,16 @@
                 {
                   "id": "tile-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "three-2",
                   "text": "3",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "3",
+                  "spoken": "3"
                 }
               ]
             },
@@ -1782,12 +2283,16 @@
                 {
                   "id": "tile-x-3",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "three-3",
                   "text": "3",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "3",
+                  "spoken": "3"
                 }
               ]
             },
@@ -1798,12 +2303,16 @@
                 {
                   "id": "tile-x-4",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "three-4",
                   "text": "3",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "3",
+                  "spoken": "3"
                 }
               ]
             }
@@ -1815,14 +2324,18 @@
             {
               "id": "x",
               "text": "x",
-              "tone": "original"
+              "tone": "original",
+              "latex": "x",
+              "spoken": "x"
             }
           ],
           "right": [
             {
               "id": "three",
               "text": "3",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "3",
+              "spoken": "3"
             }
           ],
           "balance": 0,
@@ -1841,10 +2354,30 @@
               "coefficient": 0,
               "constant": 3
             }
-          }
+          },
+          "explanationContent": [
+            {
+              "latex": "x = 3",
+              "spoken": "x equals 3"
+            },
+            {
+              "text": ". Check: "
+            },
+            {
+              "latex": "3 \\times  3 + 2 \\times  3 = 15",
+              "spoken": "3 times 3 plus 2 times 3 equals 15"
+            },
+            {
+              "text": "."
+            }
+          ]
         }
       ],
-      "solution": 3
+      "solution": 3,
+      "notation": {
+        "latex": "3x + 2x = 15",
+        "spoken": "3 x plus 2 x equals 15"
+      }
     },
     {
       "id": "distribute-three",
@@ -1879,12 +2412,16 @@
             {
               "id": "factor",
               "text": "3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3",
+              "spoken": "3"
             },
             {
               "id": "bracket",
               "text": "(x + 2)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\left(x + 2\\right)",
+              "spoken": "open bracket x plus 2 close bracket"
             }
           ],
           "right": [],
@@ -1902,17 +2439,23 @@
                 {
                   "id": "expand-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-unit-0-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-0-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -1924,12 +2467,16 @@
             {
               "id": "factor",
               "text": "3",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3",
+              "spoken": "3"
             },
             {
               "id": "bracket",
               "text": "(x + 2)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\left(x + 2\\right)",
+              "spoken": "open bracket x plus 2 close bracket"
             }
           ],
           "right": [],
@@ -1951,17 +2498,23 @@
                 {
                   "id": "expand-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-unit-0-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-0-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -1972,17 +2525,23 @@
                 {
                   "id": "expand-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-unit-1-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-1-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             },
@@ -1993,17 +2552,23 @@
                 {
                   "id": "expand-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-unit-2-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-2-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -2015,12 +2580,16 @@
             {
               "id": "expanded-x",
               "text": "3x",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "3x",
+              "spoken": "3 x"
             },
             {
               "id": "remaining",
               "text": "+ 3 × 2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "+ 3 \\times  2",
+              "spoken": "plus 3 times 2"
             }
           ],
           "right": [],
@@ -2041,17 +2610,23 @@
                 {
                   "id": "expand-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 }
               ]
             },
@@ -2062,32 +2637,44 @@
                 {
                   "id": "expand-unit-0-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-0-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-1-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-1-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-2-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-2-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
@@ -2099,12 +2686,16 @@
             {
               "id": "expanded-x",
               "text": "3x",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "3x",
+              "spoken": "3 x"
             },
             {
               "id": "expanded-six",
               "text": "+ 6",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "+ 6",
+              "spoken": "plus 6"
             }
           ],
           "right": [],
@@ -2125,17 +2716,23 @@
                 {
                   "id": "expand-x-0",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-x-1",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 },
                 {
                   "id": "expand-x-2",
                   "text": "x",
-                  "tone": "original"
+                  "tone": "original",
+                  "latex": "x",
+                  "spoken": "x"
                 }
               ]
             },
@@ -2146,38 +2743,73 @@
                 {
                   "id": "expand-unit-0-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-0-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-1-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-1-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-2-0",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 },
                 {
                   "id": "expand-unit-2-1",
                   "text": "1",
-                  "tone": "operation"
+                  "tone": "operation",
+                  "latex": "1",
+                  "spoken": "1"
                 }
               ]
             }
+          ],
+          "explanationContent": [
+            {
+              "text": "3("
+            },
+            {
+              "latex": "x + 2",
+              "spoken": "x plus 2"
+            },
+            {
+              "text": ") = "
+            },
+            {
+              "latex": "3x + 6",
+              "spoken": "3 x plus 6"
+            },
+            {
+              "text": ". We cannot find a number for x from this expression alone."
+            }
           ]
         }
-      ]
+      ],
+      "notation": {
+        "latex": "3\\left(x + 2\\right)",
+        "spoken": "3 open bracket x plus 2 close bracket"
+      }
     }
   ]
 }

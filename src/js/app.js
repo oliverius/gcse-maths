@@ -3,6 +3,7 @@ import { createLessonEngine } from './lesson-engine.js';
 import { draw, describe } from './renderers.js';
 import { cancelTerms, transition } from './animations.js';
 import { createPresentation } from './presentation.js';
+import { renderMath, renderContent, prepareNotation } from './notation.js';
 const byId = id => document.getElementById(id);
 const visual = byId('visual');
 let current;
@@ -38,11 +39,11 @@ function controls() {
 function render() {
   const state = engine.state;
   byId('topic').textContent = `${current.subjectArea === 'algebra' ? 'Algebra' : 'Number'} · Foundation`;
-  byId('lesson-title').textContent = current.title;
+  renderMath(byId('lesson-title'), current.notation);
   byId('counter').textContent = `Step ${engine.index + 1} of ${current.steps.length}`;
-  byId('step-title').textContent = state.title;
-  byId('explanation').textContent = state.explanation;
-  byId('detail').textContent = state.detail || '';
+  renderContent(byId('step-title'), state.titleContent, state.title);
+  renderContent(byId('explanation'), state.explanationContent, state.explanation);
+  renderContent(byId('detail'), state.detailContent, state.detail || '');
   visual.setAttribute('aria-label', describe(current, state));
   visual.classList.toggle('has-groups', Boolean(state.groups));
   const svg = draw(current, state);
@@ -104,13 +105,15 @@ byId('next').addEventListener('click', () => navigate(engine.index + 1));
 export const ready = (async () => {
   controls(); sidebar(sidebarOpen);
   try {
+    await prepareNotation();
     const areas = await createLoader().load();
     for (const area of areas) {
       const details = document.createElement('details');
       const summary = document.createElement('summary'); summary.textContent = area.title; details.append(summary);
       for (const lesson of area.lessons) {
         if (lesson.available) {
-          const button = document.createElement('button'); button.textContent = lesson.title;
+          const button = document.createElement('button'); renderMath(button, lesson.notation);
+          button.setAttribute('data-lesson', lesson.id);
           button.addEventListener('click', () => choose(lesson));
           details.append(button); lessonButtons.push({ button, lesson });
         } else {

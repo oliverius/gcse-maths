@@ -35,17 +35,23 @@
             {
               "id": "six",
               "text": "6",
-              "tone": "original"
+              "tone": "original",
+              "latex": "6",
+              "spoken": "6"
             },
             {
               "id": "times",
               "text": "×",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\times ",
+              "spoken": "times"
             },
             {
               "id": "brackets",
               "text": "(2 + 3)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\left(2 + 3\\right)",
+              "spoken": "open bracket 2 plus 3 close bracket"
             }
           ],
           "right": [],
@@ -54,7 +60,19 @@
           "detail": "Work out this group before multiplying.",
           "operation": {
             "type": "show"
-          }
+          },
+          "explanationContent": [
+            {
+              "text": "The brackets group "
+            },
+            {
+              "latex": "2 + 3",
+              "spoken": "2 plus 3"
+            },
+            {
+              "text": " together."
+            }
+          ]
         },
         {
           "title": "Brackets come first",
@@ -62,17 +80,23 @@
             {
               "id": "six",
               "text": "6",
-              "tone": "original"
+              "tone": "original",
+              "latex": "6",
+              "spoken": "6"
             },
             {
               "id": "times",
               "text": "×",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\times ",
+              "spoken": "times"
             },
             {
               "id": "brackets",
               "text": "(2 + 3)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\left(2 + 3\\right)",
+              "spoken": "open bracket 2 plus 3 close bracket"
             }
           ],
           "right": [],
@@ -84,7 +108,19 @@
           ],
           "operation": {
             "type": "highlight"
-          }
+          },
+          "explanationContent": [
+            {
+              "text": "First, focus on "
+            },
+            {
+              "latex": "2 + 3",
+              "spoken": "2 plus 3"
+            },
+            {
+              "text": "."
+            }
+          ]
         },
         {
           "title": "Work out the group",
@@ -92,17 +128,23 @@
             {
               "id": "six",
               "text": "6",
-              "tone": "original"
+              "tone": "original",
+              "latex": "6",
+              "spoken": "6"
             },
             {
               "id": "times",
               "text": "×",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\times ",
+              "spoken": "times"
             },
             {
               "id": "five",
               "text": "5",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "5",
+              "spoken": "5"
             }
           ],
           "right": [],
@@ -115,7 +157,20 @@
           ],
           "operation": {
             "type": "replace"
-          }
+          },
+          "workingNotation": {
+            "latex": "2 + 3 = 5",
+            "spoken": "2 plus 3 equals 5"
+          },
+          "explanationContent": [
+            {
+              "latex": "2 + 3 = 5",
+              "spoken": "2 plus 3 equals 5"
+            },
+            {
+              "text": ". Replace the bracketed group with 5."
+            }
+          ]
         },
         {
           "title": "Now multiply",
@@ -123,17 +178,23 @@
             {
               "id": "six",
               "text": "6",
-              "tone": "original"
+              "tone": "original",
+              "latex": "6",
+              "spoken": "6"
             },
             {
               "id": "times",
               "text": "×",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\times ",
+              "spoken": "times"
             },
             {
               "id": "five",
               "text": "5",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "5",
+              "spoken": "5"
             }
           ],
           "right": [],
@@ -142,7 +203,19 @@
           "detail": "That means six groups of five.",
           "operation": {
             "type": "show"
-          }
+          },
+          "explanationContent": [
+            {
+              "text": "We now have "
+            },
+            {
+              "latex": "6 \\times  5",
+              "spoken": "6 times 5"
+            },
+            {
+              "text": "."
+            }
+          ]
         },
         {
           "title": "The answer is 30",
@@ -150,7 +223,9 @@
             {
               "id": "result",
               "text": "30",
-              "tone": "original"
+              "tone": "original",
+              "latex": "30",
+              "spoken": "30"
             }
           ],
           "right": [],
@@ -159,9 +234,22 @@
           "detail": "Brackets first, then multiplication.",
           "operation": {
             "type": "simplify"
-          }
+          },
+          "explanationContent": [
+            {
+              "latex": "6 \\times  5 = 30",
+              "spoken": "6 times 5 equals 30"
+            },
+            {
+              "text": "."
+            }
+          ]
         }
-      ]
+      ],
+      "notation": {
+        "latex": "6 \\times  \\left(2 + 3\\right)",
+        "spoken": "6 times open bracket 2 plus 3 close bracket"
+      }
     },
     {
       "id": "subtract-five",
@@ -196,7 +284,9 @@
             {
               "id": "expression",
               "text": "2 − 5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2 - 5",
+              "spoken": "2 minus 5"
             }
           ],
           "right": [],
@@ -214,7 +304,9 @@
             {
               "id": "expression",
               "text": "2 − 5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2 - 5",
+              "spoken": "2 minus 5"
             }
           ],
           "right": [],
@@ -233,7 +325,9 @@
             {
               "id": "expression",
               "text": "2 − 5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2 - 5",
+              "spoken": "2 minus 5"
             }
           ],
           "right": [],
@@ -252,7 +346,9 @@
             {
               "id": "expression",
               "text": "2 − 5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2 - 5",
+              "spoken": "2 minus 5"
             }
           ],
           "right": [],
@@ -271,7 +367,9 @@
             {
               "id": "expression",
               "text": "2 − 5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2 - 5",
+              "spoken": "2 minus 5"
             }
           ],
           "right": [],
@@ -290,7 +388,9 @@
             {
               "id": "expression",
               "text": "2 − 5",
-              "tone": "original"
+              "tone": "original",
+              "latex": "2 - 5",
+              "spoken": "2 minus 5"
             }
           ],
           "right": [],
@@ -309,7 +409,9 @@
             {
               "id": "expression",
               "text": "2 − 5 = -3",
-              "tone": "negative"
+              "tone": "negative",
+              "latex": "2 - 5 = -3",
+              "spoken": "2 minus 5 equals -3"
             }
           ],
           "right": [],
@@ -321,7 +423,11 @@
           },
           "position": -3
         }
-      ]
+      ],
+      "notation": {
+        "latex": "2 - 5",
+        "spoken": "2 minus 5"
+      }
     },
     {
       "id": "add-negative",
@@ -356,7 +462,9 @@
             {
               "id": "expression",
               "text": "4 + (−3)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 + \\left(-3\\right)",
+              "spoken": "4 plus open bracket minus 3 close bracket"
             }
           ],
           "right": [],
@@ -374,7 +482,9 @@
             {
               "id": "expression",
               "text": "4 + (−3)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 + \\left(-3\\right)",
+              "spoken": "4 plus open bracket minus 3 close bracket"
             }
           ],
           "right": [],
@@ -393,7 +503,9 @@
             {
               "id": "expression",
               "text": "4 + (−3)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 + \\left(-3\\right)",
+              "spoken": "4 plus open bracket minus 3 close bracket"
             }
           ],
           "right": [],
@@ -412,7 +524,9 @@
             {
               "id": "expression",
               "text": "4 + (−3)",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 + \\left(-3\\right)",
+              "spoken": "4 plus open bracket minus 3 close bracket"
             }
           ],
           "right": [],
@@ -431,7 +545,9 @@
             {
               "id": "expression",
               "text": "4 + (−3) = 1",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 + \\left(-3\\right) = 1",
+              "spoken": "4 plus open bracket minus 3 close bracket equals 1"
             }
           ],
           "right": [],
@@ -443,7 +559,11 @@
           },
           "position": 1
         }
-      ]
+      ],
+      "notation": {
+        "latex": "4 + \\left(-3\\right)",
+        "spoken": "4 plus open bracket minus 3 close bracket"
+      }
     },
     {
       "id": "multiply-before-add",
@@ -478,12 +598,16 @@
             {
               "id": "four",
               "text": "4 +",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 +",
+              "spoken": "4 plus"
             },
             {
               "id": "product",
               "text": "3 × 2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3 \\times  2",
+              "spoken": "3 times 2"
             }
           ],
           "right": [],
@@ -500,12 +624,16 @@
             {
               "id": "four",
               "text": "4 +",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 +",
+              "spoken": "4 plus"
             },
             {
               "id": "product",
               "text": "3 × 2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "3 \\times  2",
+              "spoken": "3 times 2"
             }
           ],
           "right": [],
@@ -517,6 +645,18 @@
           },
           "highlight": [
             "product"
+          ],
+          "explanationContent": [
+            {
+              "text": "Work out "
+            },
+            {
+              "latex": "3 \\times  2",
+              "spoken": "3 times 2"
+            },
+            {
+              "text": " before adding 4."
+            }
           ]
         },
         {
@@ -525,12 +665,16 @@
             {
               "id": "four",
               "text": "4 +",
-              "tone": "original"
+              "tone": "original",
+              "latex": "4 +",
+              "spoken": "4 plus"
             },
             {
               "id": "six",
               "text": "6",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "6",
+              "spoken": "6"
             }
           ],
           "right": [],
@@ -542,6 +686,22 @@
           },
           "highlight": [
             "six"
+          ],
+          "explanationContent": [
+            {
+              "latex": "3 \\times  2",
+              "spoken": "3 times 2"
+            },
+            {
+              "text": " is 6. Now we have "
+            },
+            {
+              "latex": "4 + 6",
+              "spoken": "4 plus 6"
+            },
+            {
+              "text": "."
+            }
           ]
         },
         {
@@ -550,7 +710,9 @@
             {
               "id": "answer",
               "text": "10",
-              "tone": "operation"
+              "tone": "operation",
+              "latex": "10",
+              "spoken": "10"
             }
           ],
           "right": [],
@@ -559,9 +721,22 @@
           "detail": "",
           "operation": {
             "type": "simplify"
-          }
+          },
+          "explanationContent": [
+            {
+              "latex": "4 + 6 = 10",
+              "spoken": "4 plus 6 equals 10"
+            },
+            {
+              "text": "."
+            }
+          ]
         }
-      ]
+      ],
+      "notation": {
+        "latex": "4 + 3 \\times  2",
+        "spoken": "4 plus 3 times 2"
+      }
     },
     {
       "id": "equivalent-halves",
@@ -596,7 +771,9 @@
             {
               "id": "fraction",
               "text": "1/2",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\frac{1}{2}",
+              "spoken": "1 divided by 2"
             }
           ],
           "right": [],
@@ -620,7 +797,9 @@
             {
               "id": "fraction",
               "text": "1/2 = 2/4",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\frac{1}{2} = \\frac{2}{4}",
+              "spoken": "1 divided by 2 equals 2 divided by 4"
             }
           ],
           "right": [],
@@ -644,7 +823,9 @@
             {
               "id": "fraction",
               "text": "1/2 = 2/4",
-              "tone": "original"
+              "tone": "original",
+              "latex": "\\frac{1}{2} = \\frac{2}{4}",
+              "spoken": "1 divided by 2 equals 2 divided by 4"
             }
           ],
           "right": [],
@@ -667,7 +848,11 @@
             }
           ]
         }
-      ]
+      ],
+      "notation": {
+        "latex": "\\frac{1}{2} = \\frac{2}{4}",
+        "spoken": "1 divided by 2 equals 2 divided by 4"
+      }
     },
     {
       "id": "fraction-amount",

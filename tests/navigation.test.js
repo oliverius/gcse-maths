@@ -30,6 +30,7 @@ globalThis.document = {
   addEventListener: () => {},
   getElementById: id => { if (!nodes.has(id)) nodes.set(id, new Node()); return nodes.get(id); },
   createElement: name => new Node(name),
+  createTextNode: value => { const node=new Node('#text');node.textContent=value;return node; },
   createElementNS: (_, name) => new Node(name)
 };
 let portrait = true;
@@ -59,7 +60,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
       get('next').click(); // A rapid second click is ignored while busy.
       await settle();
       assert.equal(get('counter').textContent, `Step ${step} of ${length}`);
-      if (available[lesson].kind === 'balance') assert.equal(get('visual').getAttribute('aria-label').includes('≠'), available[lesson].steps[step-1].unbalanced);
+      if (available[lesson].kind === 'balance') assert.equal(get('visual').getAttribute('aria-label').includes('not equal to'), available[lesson].steps[step-1].unbalanced);
     }
     assert.equal(get('next').disabled, true);
     get('back').click();

@@ -1,6 +1,6 @@
 # Maths Lab — Foundation GCSE
 
-A static visual maths tutor for a student who needs a calm pace, large controls and explicit mathematical reasoning. Each Next tap performs one step, then stops. The original balance lessons and highlighted new terms are preserved. There are no accounts, external runtime dependencies or build steps.
+A static visual maths tutor for a student who needs a calm pace, large controls and explicit mathematical reasoning. Each Next tap performs one step, then stops. The original balance lessons and highlighted new terms are preserved. KaTeX and its fonts are bundled locally; there are no accounts, CDN dependencies or build steps.
 
 ## Run locally
 
@@ -47,6 +47,8 @@ src/
   js/renderers.js           renderer dispatch, number lines and fraction bars
   js/animations.js          term identity transitions, cancellation, beam movement
   js/presentation.js        native fullscreen and in-page fallback
+  js/notation.js            shared KaTeX renderer, spoken labels and term sizing
+  vendor/katex/             pinned KaTeX 0.16.22, CSS, fonts and MIT license
 tests/                     dependency-free Node tests
 server.js                  local development tooling
 scripts/browser-check.mjs   optional dependency-free browser checks via DevTools
@@ -64,7 +66,31 @@ Each subject contains `id`, `title`, and `lessons`. Available lessons contain:
 - `tutorNotes`: `observe`, `misconception`, `checkQuestion`.
 - `steps`: complete deterministic states, not executable transformations.
 
-Every step has `title`, `explanation`, optional `detail`, `operation: {type, value?}`, `left` and `right` term arrays, and `balance`. Terms have stable `id`, `text`, and `tone` (`original`, `negative`, `operation`). `highlight` contains term IDs; `cancel` identifies opposite terms in the preceding frame. Reuse IDs for the same objects so they move smoothly.
+Every step has `title`, `explanation`, optional `detail`, `operation: {type, value?}`, `left` and `right` term arrays, and `balance`. Terms have stable `id`, `text`, `latex`, `spoken`, and `tone` (`original`, `negative`, `operation`). `highlight` contains term IDs; `cancel` identifies opposite terms in the preceding frame. Reuse IDs for the same objects so they move smoothly.
+
+### Mathematical notation
+
+KaTeX renders every mathematical display, including lesson headings/buttons, individual balance terms, equation signs, worked expressions, group tiles, and number-line labels. Each term remains a separate SVG `foreignObject` carrying its original `data-term` identity. Existing animations move and fade those containers; the entire equation is never flattened. New terms retain their purple colour and cancellation pairs retain their shared highlight.
+
+Notation is authored explicitly rather than converted from arbitrary input at runtime:
+
+```json
+{
+  "id": "quarter",
+  "text": "x / 4",
+  "latex": "\\frac{x}{4}",
+  "spoken": "x divided by four",
+  "tone": "original"
+}
+```
+
+`text` remains the independent arithmetic-validation representation. `latex` is conventional textbook notation; use `\frac{3x}{3}` for division, `\times` for explicit multiplication, `3x` for implicit multiplication, `x^2` for powers, and `\sqrt{x}` for roots. In JSON each literal backslash is escaped as `\\`. Powers and roots are supported in presentation; this refactor does not extend the existing linear-equation engine or add lessons.
+
+Each available lesson supplies `notation: {latex, spoken}` for its title. A step's `working` display has a matching `workingNotation`. Optional `titleContent`, `explanationContent`, and `detailContent` arrays combine `{text: "plain prose"}` and `{latex, spoken}` segments, keeping maths in explanations consistent without interpreting prose as executable markup. Keep the original plain text fields for fallback and editing.
+
+The validator checks LaTeX and requires spoken equivalents before a lesson becomes available. KaTeX uses `trust: false`, fresh macros and bounded expansion. Only KaTeX-generated markup is inserted; no author HTML is accepted. The visual canvas retains its single spoken description for screen readers so nested MathML is not announced repeatedly; mathematical headings and inline explanations include KaTeX MathML and meaningful labels.
+
+Math fonts load before measuring term widths. Rows reserve vertical space for stacked fractions and scale only when needed to fit a plate. Fraction bars and denominators stay above the plate, even during tilt. The bundled renderer, stylesheet and font files work under GitHub Pages project paths with no runtime network request to a third party. Retain `src/vendor/katex/LICENSE` when distributing the site.
 
 Balance steps declare `balance: -1 | 0 | 1`, explicit `unbalanced`, and `math: {left: {coefficient, constant}, right: {coefficient, constant}}`. Each balance lesson also declares `solution`. The engine parses visible expressions and compares them with the declared linear states, then checks equivalence against that solution. A deliberately unequal step must use a nonzero tilt and `unbalanced: true`; the renderer displays **≠**, never a false equality. Tilt is a conceptual direction, not a weight calculation that assumes x in advance.
 
@@ -82,7 +108,7 @@ Supported operation types describe intent; each includes a complete destination 
 | `move` | Move the number-line marker to its next declared position |
 | `partition` | Fade in new fraction dividing lines while preserving shaded area |
 
-The engine controls the index and locks transitions. The renderer reads the state; the animation layer decides how terms appear and move. Back restores the previous state immediately; Replay restores the initial state. Neither auto-plays the lesson. Adjust durations in `js/animations.js`.
+The engine controls the index and locks transitions. The renderer reads the state; the animation layer decides how terms appear and move. Back restores the previous state immediately; Restart restores the initial state. Neither auto-plays the lesson. Adjust durations in `js/animations.js`.
 
 ### Add a lesson
 
@@ -113,17 +139,19 @@ Verify any new topic mapping before adding a granular code. If only a high-level
 npm test
 ```
 
-Tests cover the original three lesson regressions; all available lesson navigation; reduced motion and enabled term animations; manifest/subject loading and caching; repository subpaths; unique IDs; invalid-file/lesson isolation; schema and operation validation; visible equation consistency and balanced equivalence; signed arithmetic/fraction states; rapid clicks; Back/Replay; rollback; supported, unsupported and rejected fullscreen APIs.
+Tests cover the original three lesson regressions; all available lesson navigation; reduced motion and enabled term animations; manifest/subject loading and caching; repository subpaths; unique IDs; invalid-file/lesson isolation; schema and operation validation; visible equation consistency and balanced equivalence; signed arithmetic/fraction states; rapid clicks; Back/Restart; rollback; supported, unsupported and rejected fullscreen APIs.
 
-Headless Edge checks were also run at 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow, controls at least 56px, all 12 lesson sequences, Back/Replay, rapid taps, fixed control positions within each lesson, fallback fullscreen and absence of runtime errors. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
+Notation tests also cover KaTeX fraction/power/root output, MathML, valid notation and spoken labels for all lesson terms, malformed LaTeX, stable cancellation IDs, and agreement between the new LaTeX and every existing balance state's numerical model.
 
-To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed.
+Headless Edge checks were also run at 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow, controls at least 56px, all 12 lesson sequences, Back/Restart, rapid taps, fixed control positions within each lesson, fallback fullscreen and absence of runtime errors. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
+
+To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed. Set `MATHS_TEST_URL` if your server uses another port. The checks also measure KaTeX bounds and plate clearance at iPad sizes. Native OS fullscreen can stall in headless Windows, so supported-API behaviour is unit tested and native browser entry/exit remains a physical-device check; the browser suite checks both fallback paths.
 
 On an iPad:
 
 1. In portrait, open the menu, expand each area and select a lesson. Check the drawer closes and equations are legible. Rotate to landscape and check the sidebar and navigation controls.
 2. Run both original equations through all five steps. Check ≠ and tilt only during one-sided operations, matched purple terms, cancellation and the explanation of −1.
-3. Try the group/tile, bracket, number-line and fraction lessons. Tap Next rapidly, then Back and Replay. Confirm each completed transformation pauses.
+3. Try the group/tile, bracket, number-line and fraction lessons. Tap Next rapidly, then Back and Restart. Confirm each completed transformation pauses.
 4. Enter and exit full screen; try the in-page fallback if native full screen is unavailable. The exit button must stay obvious.
 5. Enable Reduce Motion; check instant state changes. Use a keyboard and VoiceOver to check focus and announcements. Open tutor notes and the official reference.
 
