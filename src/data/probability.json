@@ -1,0 +1,13 @@
+{
+  "id": "probability",
+  "title": "Probability",
+  "lessons": [
+    {
+      "id": "equally-likely",
+      "title": "Equally likely outcomes",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": false
+    }
+  ]
+}

@@ -1,0 +1,2183 @@
+{
+  "id": "algebra",
+  "title": "Algebra",
+  "lessons": [
+    {
+      "id": "add-both",
+      "title": "x − 3 = 2",
+      "label": "x − 3 = 2",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "balance",
+      "initialExpression": "x − 3 = 2",
+      "objective": "Use the same inverse operation on both sides to isolate x.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A17",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Changing one side alone preserves equality.",
+        "checkQuestion": "Why must we do the same operation on both sides?"
+      },
+      "steps": [
+        {
+          "title": "Find the value of x",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "original-three",
+              "text": "− 3",
+              "tone": "negative"
+            }
+          ],
+          "right": [
+            {
+              "id": "two",
+              "text": "2",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Our goal is to leave x on its own.",
+          "detail": "The two sides are equal. Add 3 on both sides to undo subtracting 3.",
+          "operation": {
+            "type": "show"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": -3
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 2
+            }
+          },
+          "unbalanced": false
+        },
+        {
+          "title": "Add 3 on the left",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "original-three",
+              "text": "− 3",
+              "tone": "negative"
+            },
+            {
+              "id": "added-left",
+              "text": "+ 3",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "two",
+              "text": "2",
+              "tone": "original"
+            }
+          ],
+          "balance": -1,
+          "explanation": "Add 3 on the left only. The sides are now unequal.",
+          "detail": "This is an intentionally unequal demonstration, not a valid equation. We must do the same to the right.",
+          "highlight": [
+            "added-left"
+          ],
+          "operation": {
+            "type": "apply-left"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 2
+            }
+          },
+          "unbalanced": true
+        },
+        {
+          "title": "Add 3 on the right too",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "original-three",
+              "text": "− 3",
+              "tone": "negative"
+            },
+            {
+              "id": "added-left",
+              "text": "+ 3",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "two",
+              "text": "2",
+              "tone": "original"
+            },
+            {
+              "id": "added-right",
+              "text": "+ 3",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "The same operation on both sides restores equality.",
+          "detail": "The beam is level again. Both new terms have the same purple colour.",
+          "highlight": [
+            "added-right"
+          ],
+          "operation": {
+            "type": "apply-right"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 5
+            }
+          },
+          "unbalanced": false
+        },
+        {
+          "title": "Opposites make zero",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "zero",
+              "text": "+ 0",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "answer",
+              "text": "5",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "−3 and +3 cancel: together they make zero.",
+          "detail": "On the right, 2 + 3 makes 5.",
+          "cancel": [
+            "original-three",
+            "added-left"
+          ],
+          "operation": {
+            "type": "cancel"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 5
+            }
+          },
+          "unbalanced": false
+        },
+        {
+          "title": "The answer is x = 5",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "answer",
+              "text": "5",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Adding zero changes nothing. So x = 5.",
+          "detail": "Check: 5 − 3 = 2. Both sides are equal.",
+          "operation": {
+            "type": "simplify"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 5
+            }
+          },
+          "unbalanced": false
+        }
+      ],
+      "solution": 5
+    },
+    {
+      "id": "subtract-both",
+      "title": "x + 3 = 2",
+      "label": "x + 3 = 2",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "balance",
+      "initialExpression": "x + 3 = 2",
+      "objective": "Use the same inverse operation on both sides to isolate x.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A17",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Changing one side alone preserves equality.",
+        "checkQuestion": "Why must we do the same operation on both sides?"
+      },
+      "steps": [
+        {
+          "title": "Find the value of x",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "original-three",
+              "text": "+ 3",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "two",
+              "text": "2",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Our goal is to leave x on its own.",
+          "detail": "The two sides are equal. Subtract 3 on both sides to undo adding 3.",
+          "operation": {
+            "type": "show"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 3
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 2
+            }
+          },
+          "unbalanced": false
+        },
+        {
+          "title": "Subtract 3 on the left",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "original-three",
+              "text": "+ 3",
+              "tone": "original"
+            },
+            {
+              "id": "added-left",
+              "text": "− 3",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "two",
+              "text": "2",
+              "tone": "original"
+            }
+          ],
+          "balance": 1,
+          "explanation": "Subtract 3 on the left only. The sides are now unequal.",
+          "detail": "This is an intentionally unequal demonstration, not a valid equation. We must do the same to the right.",
+          "highlight": [
+            "added-left"
+          ],
+          "operation": {
+            "type": "apply-left"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 2
+            }
+          },
+          "unbalanced": true
+        },
+        {
+          "title": "Subtract 3 on the right too",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "original-three",
+              "text": "+ 3",
+              "tone": "original"
+            },
+            {
+              "id": "added-left",
+              "text": "− 3",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "two",
+              "text": "2",
+              "tone": "original"
+            },
+            {
+              "id": "added-right",
+              "text": "− 3",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "The same operation on both sides restores equality.",
+          "detail": "The beam is level again. Both new terms have the same purple colour.",
+          "highlight": [
+            "added-right"
+          ],
+          "operation": {
+            "type": "apply-right"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": -1
+            }
+          },
+          "unbalanced": false
+        },
+        {
+          "title": "Opposites make zero",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            },
+            {
+              "id": "zero",
+              "text": "+ 0",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "answer",
+              "text": "−1",
+              "tone": "negative"
+            }
+          ],
+          "balance": 0,
+          "explanation": "+3 and −3 cancel: together they make zero.",
+          "detail": "On the right, 2 − 3 = −1: start at 2, count back 3, and go one below zero.",
+          "cancel": [
+            "original-three",
+            "added-left"
+          ],
+          "operation": {
+            "type": "cancel"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": -1
+            }
+          },
+          "unbalanced": false
+        },
+        {
+          "title": "The answer is x = −1",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "answer",
+              "text": "−1",
+              "tone": "negative"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Adding zero changes nothing. So x = −1.",
+          "detail": "A negative answer is allowed. Check: −1 + 3 = 2. Both sides are equal.",
+          "operation": {
+            "type": "simplify"
+          },
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": -1
+            }
+          },
+          "unbalanced": false
+        }
+      ],
+      "solution": -1
+    },
+    {
+      "id": "divide-three",
+      "title": "3x = 12",
+      "label": "3x = 12",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "balance",
+      "initialExpression": "3x = 12",
+      "objective": "Divide both sides into three equal groups.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A17",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Dividing only one side, or taking away 3 instead of dividing.",
+        "checkQuestion": "What happens to each of the twelve units when we divide by three?"
+      },
+      "steps": [
+        {
+          "title": "Three equal x-groups",
+          "left": [
+            {
+              "id": "three-x",
+              "text": "3x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "twelve",
+              "text": "12",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "3x means three equal groups of x. Together they equal 12.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 3,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 12
+            }
+          },
+          "groups": [
+            {
+              "id": "unknown",
+              "label": "Three x-groups",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-2",
+                  "text": "x",
+                  "tone": "original"
+                }
+              ]
+            },
+            {
+              "id": "known",
+              "label": "Twelve units",
+              "items": [
+                {
+                  "id": "unit-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-2",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-3",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-4",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-5",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-6",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-7",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-8",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-9",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-10",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-11",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Split both sides into three groups",
+          "left": [
+            {
+              "id": "division-left",
+              "text": "3x ÷ 3",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "division-right",
+              "text": "12 ÷ 3",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Divide both sides by 3. Share the twelve units equally among the three x-groups.",
+          "detail": "",
+          "operation": {
+            "type": "split",
+            "value": 3
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 4
+            }
+          },
+          "groups": [
+            {
+              "id": "pair-0",
+              "label": "Group 1",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-2",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-3",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "pair-1",
+              "label": "Group 2",
+              "items": [
+                {
+                  "id": "tile-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-4",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-5",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-6",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-7",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "pair-2",
+              "label": "Group 3",
+              "items": [
+                {
+                  "id": "tile-x-2",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-8",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-9",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-10",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-11",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ],
+          "highlight": [
+            "division-left",
+            "division-right"
+          ]
+        },
+        {
+          "title": "Each x-group contains four",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "four",
+              "text": "4",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Each group has one x and four units. So x = 4.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 4
+            }
+          },
+          "groups": [
+            {
+              "id": "pair-0",
+              "label": "Group 1",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-2",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-3",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "solution": 4
+    },
+    {
+      "id": "multiply-four",
+      "title": "x / 4 = 3",
+      "label": "x / 4 = 3",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "balance",
+      "initialExpression": "x / 4 = 3",
+      "objective": "Rebuild a whole from four equal quarters.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A17",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Subtracting four instead of making four equal copies.",
+        "checkQuestion": "Why do four quarters make x?"
+      },
+      "steps": [
+        {
+          "title": "One quarter of x is three",
+          "left": [
+            {
+              "id": "quarter",
+              "text": "x / 4",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "three",
+              "text": "3",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "A quarter of x is 3. We need four equal quarters to make the whole.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 0.25,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 3
+            }
+          },
+          "groups": [
+            {
+              "id": "quarter-0",
+              "label": "Quarter 1",
+              "items": [
+                {
+                  "id": "quarter-x-0",
+                  "text": "x/4",
+                  "tone": "original"
+                },
+                {
+                  "id": "q-unit-0-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-0-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-0-2",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Multiply both sides by four",
+          "left": [
+            {
+              "id": "multiply-left",
+              "text": "(x / 4) × 4",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "multiply-right",
+              "text": "3 × 4",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Make four copies on both sides. Four quarters make one whole x.",
+          "detail": "",
+          "operation": {
+            "type": "apply-both",
+            "value": 4
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 12
+            }
+          },
+          "highlight": [
+            "multiply-left",
+            "multiply-right"
+          ],
+          "groups": [
+            {
+              "id": "quarter-0",
+              "label": "Quarter 1",
+              "items": [
+                {
+                  "id": "quarter-x-0",
+                  "text": "x/4",
+                  "tone": "original"
+                },
+                {
+                  "id": "q-unit-0-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-0-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-0-2",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "quarter-1",
+              "label": "Quarter 2",
+              "items": [
+                {
+                  "id": "quarter-x-1",
+                  "text": "x/4",
+                  "tone": "original"
+                },
+                {
+                  "id": "q-unit-1-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-1-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-1-2",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "quarter-2",
+              "label": "Quarter 3",
+              "items": [
+                {
+                  "id": "quarter-x-2",
+                  "text": "x/4",
+                  "tone": "original"
+                },
+                {
+                  "id": "q-unit-2-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-2-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-2-2",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "quarter-3",
+              "label": "Quarter 4",
+              "items": [
+                {
+                  "id": "quarter-x-3",
+                  "text": "x/4",
+                  "tone": "original"
+                },
+                {
+                  "id": "q-unit-3-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-3-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "q-unit-3-2",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "The whole is twelve",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "twelve",
+              "text": "12",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Four groups of three make twelve. So x = 12.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 12
+            }
+          },
+          "groups": [
+            {
+              "id": "whole",
+              "label": "One whole x",
+              "items": [
+                {
+                  "id": "unit-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-2",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-3",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-4",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-5",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-6",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-7",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-8",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-9",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-10",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-11",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "solution": 12
+    },
+    {
+      "id": "two-step",
+      "title": "2x + 3 = 11",
+      "label": "2x + 3 = 11",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "balance",
+      "initialExpression": "2x + 3 = 11",
+      "objective": "Undo addition, then divide both sides equally.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A17",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Dividing only the x term while ignoring the added 3.",
+        "checkQuestion": "Why did we subtract 3 before dividing by 2?"
+      },
+      "steps": [
+        {
+          "title": "Undo one operation at a time",
+          "left": [
+            {
+              "id": "two-x",
+              "text": "2x",
+              "tone": "original"
+            },
+            {
+              "id": "plus-three",
+              "text": "+ 3",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "eleven",
+              "text": "11",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "First undo adding 3. Then undo multiplying x by 2.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 2,
+              "constant": 3
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 11
+            }
+          }
+        },
+        {
+          "title": "Subtract three on both sides",
+          "left": [
+            {
+              "id": "two-x",
+              "text": "2x",
+              "tone": "original"
+            },
+            {
+              "id": "plus-three",
+              "text": "+ 3",
+              "tone": "original"
+            },
+            {
+              "id": "minus-left",
+              "text": "− 3",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "eleven",
+              "text": "11",
+              "tone": "original"
+            },
+            {
+              "id": "minus-right",
+              "text": "− 3",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Subtract 3 from both sides to keep equality.",
+          "detail": "",
+          "operation": {
+            "type": "apply-both",
+            "value": -3
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 2,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 8
+            }
+          },
+          "highlight": [
+            "minus-left",
+            "minus-right"
+          ]
+        },
+        {
+          "title": "Cancel opposites",
+          "left": [
+            {
+              "id": "two-x",
+              "text": "2x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "eight",
+              "text": "8",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "+3 and −3 make zero. On the right, 11 − 3 = 8.",
+          "detail": "",
+          "operation": {
+            "type": "cancel"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 2,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 8
+            }
+          },
+          "cancel": [
+            "plus-three",
+            "minus-left"
+          ]
+        },
+        {
+          "title": "Divide both sides by two",
+          "left": [
+            {
+              "id": "divide-left",
+              "text": "2x ÷ 2",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "divide-right",
+              "text": "8 ÷ 2",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Share eight units equally between two x-groups.",
+          "detail": "",
+          "operation": {
+            "type": "split",
+            "value": 2
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 4
+            }
+          },
+          "highlight": [
+            "divide-left",
+            "divide-right"
+          ],
+          "groups": [
+            {
+              "id": "half-0",
+              "label": "Group 1",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-2",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-3",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "half-1",
+              "label": "Group 2",
+              "items": [
+                {
+                  "id": "tile-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-4",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-5",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-6",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-7",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Each x is four",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "four",
+              "text": "4",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "x = 4. Check: 2 × 4 + 3 = 11.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 4
+            }
+          },
+          "groups": [
+            {
+              "id": "answer",
+              "label": "One x-group",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "unit-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-2",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "unit-3",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "solution": 4
+    },
+    {
+      "id": "like-terms",
+      "title": "3x + 2x = 15",
+      "label": "3x + 2x = 15",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "balance",
+      "initialExpression": "3x + 2x = 15",
+      "objective": "Collect equal x-tiles, then solve by equal grouping.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A4, A17",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Thinking 3x + 2x is 5x².",
+        "checkQuestion": "Why can we collect these tiles together?"
+      },
+      "steps": [
+        {
+          "title": "All the tiles represent the same x",
+          "left": [
+            {
+              "id": "three-x",
+              "text": "3x",
+              "tone": "original"
+            },
+            {
+              "id": "plus-two-x",
+              "text": "+ 2x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "fifteen",
+              "text": "15",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "There are three x-tiles and two more x-tiles.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 5,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 15
+            }
+          },
+          "groups": [
+            {
+              "id": "first",
+              "label": "Three x-tiles",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-2",
+                  "text": "x",
+                  "tone": "original"
+                }
+              ]
+            },
+            {
+              "id": "second",
+              "label": "Two x-tiles",
+              "items": [
+                {
+                  "id": "tile-x-3",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-4",
+                  "text": "x",
+                  "tone": "original"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Collect the five x-tiles",
+          "left": [
+            {
+              "id": "five-x",
+              "text": "5x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "fifteen",
+              "text": "15",
+              "tone": "original"
+            }
+          ],
+          "balance": 0,
+          "explanation": "3x + 2x makes 5x. We count five copies of the same unknown.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 5,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 15
+            }
+          },
+          "groups": [
+            {
+              "id": "all",
+              "label": "Five x-tiles",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-2",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-3",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "tile-x-4",
+                  "text": "x",
+                  "tone": "original"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Divide both sides by five",
+          "left": [
+            {
+              "id": "divide-left",
+              "text": "5x ÷ 5",
+              "tone": "operation"
+            }
+          ],
+          "right": [
+            {
+              "id": "divide-right",
+              "text": "15 ÷ 5",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "Split fifteen into five equal groups. Each x-group gets three.",
+          "detail": "",
+          "operation": {
+            "type": "split",
+            "value": 5
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 3
+            }
+          },
+          "highlight": [
+            "divide-left",
+            "divide-right"
+          ],
+          "groups": [
+            {
+              "id": "group-0",
+              "label": "Group 1",
+              "items": [
+                {
+                  "id": "tile-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "three-0",
+                  "text": "3",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "group-1",
+              "label": "Group 2",
+              "items": [
+                {
+                  "id": "tile-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "three-1",
+                  "text": "3",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "group-2",
+              "label": "Group 3",
+              "items": [
+                {
+                  "id": "tile-x-2",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "three-2",
+                  "text": "3",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "group-3",
+              "label": "Group 4",
+              "items": [
+                {
+                  "id": "tile-x-3",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "three-3",
+                  "text": "3",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "group-4",
+              "label": "Group 5",
+              "items": [
+                {
+                  "id": "tile-x-4",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "three-4",
+                  "text": "3",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "One x is three",
+          "left": [
+            {
+              "id": "x",
+              "text": "x",
+              "tone": "original"
+            }
+          ],
+          "right": [
+            {
+              "id": "three",
+              "text": "3",
+              "tone": "operation"
+            }
+          ],
+          "balance": 0,
+          "explanation": "x = 3. Check: 3 × 3 + 2 × 3 = 15.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "unbalanced": false,
+          "math": {
+            "left": {
+              "coefficient": 1,
+              "constant": 0
+            },
+            "right": {
+              "coefficient": 0,
+              "constant": 3
+            }
+          }
+        }
+      ],
+      "solution": 3
+    },
+    {
+      "id": "distribute-three",
+      "title": "3(x + 2)",
+      "label": "3(x + 2)",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "expression",
+      "initialExpression": "3(x + 2)",
+      "objective": "Expand three copies of a group by distributing to every term.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A4",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Multiplying only x and forgetting to multiply the 2.",
+        "checkQuestion": "How many units are in three copies of x + 2?"
+      },
+      "steps": [
+        {
+          "title": "Three copies of the bracket",
+          "left": [
+            {
+              "id": "factor",
+              "text": "3",
+              "tone": "original"
+            },
+            {
+              "id": "bracket",
+              "text": "(x + 2)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The 3 multiplies the whole group: x and 2.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "groups": [
+            {
+              "id": "copy-0",
+              "label": "Copy 1",
+              "items": [
+                {
+                  "id": "expand-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-unit-0-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-0-1",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Make all three copies",
+          "left": [
+            {
+              "id": "factor",
+              "text": "3",
+              "tone": "original"
+            },
+            {
+              "id": "bracket",
+              "text": "(x + 2)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each copy contains one x and two units.",
+          "detail": "",
+          "operation": {
+            "type": "distribute",
+            "value": 3
+          },
+          "highlight": [
+            "bracket"
+          ],
+          "groups": [
+            {
+              "id": "copy-0",
+              "label": "Copy 1",
+              "items": [
+                {
+                  "id": "expand-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-unit-0-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-0-1",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "copy-1",
+              "label": "Copy 2",
+              "items": [
+                {
+                  "id": "expand-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-unit-1-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-1-1",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            },
+            {
+              "id": "copy-2",
+              "label": "Copy 3",
+              "items": [
+                {
+                  "id": "expand-x-2",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-unit-2-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-2-1",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Collect the x-tiles",
+          "left": [
+            {
+              "id": "expanded-x",
+              "text": "3x",
+              "tone": "operation"
+            },
+            {
+              "id": "remaining",
+              "text": "+ 3 × 2",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are three x-tiles. Keep all six unit tiles.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "highlight": [
+            "expanded-x"
+          ],
+          "groups": [
+            {
+              "id": "all-x",
+              "label": "Three x-tiles",
+              "items": [
+                {
+                  "id": "expand-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-x-2",
+                  "text": "x",
+                  "tone": "original"
+                }
+              ]
+            },
+            {
+              "id": "all-units",
+              "label": "Six units",
+              "items": [
+                {
+                  "id": "expand-unit-0-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-0-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-1-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-1-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-2-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-2-1",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Three lots of two make six",
+          "left": [
+            {
+              "id": "expanded-x",
+              "text": "3x",
+              "tone": "operation"
+            },
+            {
+              "id": "expanded-six",
+              "text": "+ 6",
+              "tone": "operation"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "3(x + 2) = 3x + 6. We cannot find a number for x from this expression alone.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "highlight": [
+            "expanded-six"
+          ],
+          "groups": [
+            {
+              "id": "all-x",
+              "label": "Three x-tiles",
+              "items": [
+                {
+                  "id": "expand-x-0",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-x-1",
+                  "text": "x",
+                  "tone": "original"
+                },
+                {
+                  "id": "expand-x-2",
+                  "text": "x",
+                  "tone": "original"
+                }
+              ]
+            },
+            {
+              "id": "all-units",
+              "label": "Six units",
+              "items": [
+                {
+                  "id": "expand-unit-0-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-0-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-1-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-1-1",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-2-0",
+                  "text": "1",
+                  "tone": "operation"
+                },
+                {
+                  "id": "expand-unit-2-1",
+                  "text": "1",
+                  "tone": "operation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-{"name":"visual-maths-tutor","private":true,"type":"module","scripts":{"test":"node --test --test-isolation=none"}}
+{"name":"visual-maths-tutor","private":true,"type":"module","scripts":{"start":"node server.js","test":"node --test --test-isolation=none"}}

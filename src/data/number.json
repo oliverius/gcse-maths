@@ -1,0 +1,687 @@
+{
+  "id": "number",
+  "title": "Number",
+  "lessons": [
+    {
+      "id": "brackets",
+      "title": "6 × (2 + 3)",
+      "label": "6 × (2 + 3)",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "expression",
+      "initialExpression": "6 × (2 + 3)",
+      "objective": "Evaluate numeric brackets before multiplication.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N3",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Multiplying before evaluating brackets.",
+        "checkQuestion": "Why do we work out 2 + 3 first?"
+      },
+      "steps": [
+        {
+          "title": "Look inside the brackets",
+          "left": [
+            {
+              "id": "six",
+              "text": "6",
+              "tone": "original"
+            },
+            {
+              "id": "times",
+              "text": "×",
+              "tone": "original"
+            },
+            {
+              "id": "brackets",
+              "text": "(2 + 3)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The brackets group 2 + 3 together.",
+          "detail": "Work out this group before multiplying.",
+          "operation": {
+            "type": "show"
+          }
+        },
+        {
+          "title": "Brackets come first",
+          "left": [
+            {
+              "id": "six",
+              "text": "6",
+              "tone": "original"
+            },
+            {
+              "id": "times",
+              "text": "×",
+              "tone": "original"
+            },
+            {
+              "id": "brackets",
+              "text": "(2 + 3)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "First, focus on 2 + 3.",
+          "detail": "Keep the 6 and the multiplication sign where they are.",
+          "highlight": [
+            "brackets"
+          ],
+          "operation": {
+            "type": "highlight"
+          }
+        },
+        {
+          "title": "Work out the group",
+          "left": [
+            {
+              "id": "six",
+              "text": "6",
+              "tone": "original"
+            },
+            {
+              "id": "times",
+              "text": "×",
+              "tone": "original"
+            },
+            {
+              "id": "five",
+              "text": "5",
+              "tone": "operation"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "2 + 3 = 5. Replace the bracketed group with 5.",
+          "detail": "The value of the group stays the same.",
+          "working": "2 + 3 = 5",
+          "highlight": [
+            "five"
+          ],
+          "operation": {
+            "type": "replace"
+          }
+        },
+        {
+          "title": "Now multiply",
+          "left": [
+            {
+              "id": "six",
+              "text": "6",
+              "tone": "original"
+            },
+            {
+              "id": "times",
+              "text": "×",
+              "tone": "original"
+            },
+            {
+              "id": "five",
+              "text": "5",
+              "tone": "operation"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "We now have 6 × 5.",
+          "detail": "That means six groups of five.",
+          "operation": {
+            "type": "show"
+          }
+        },
+        {
+          "title": "The answer is 30",
+          "left": [
+            {
+              "id": "result",
+              "text": "30",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "6 × 5 = 30.",
+          "detail": "Brackets first, then multiplication.",
+          "operation": {
+            "type": "simplify"
+          }
+        }
+      ]
+    },
+    {
+      "id": "subtract-five",
+      "title": "2 − 5",
+      "label": "2 − 5",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "number-line",
+      "initialExpression": "2 − 5",
+      "objective": "Interpret signed arithmetic as controlled movement on a number line.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N1, N2",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Confusing the operation sign with the sign of the number.",
+        "checkQuestion": "Which direction did we move, and why?"
+      },
+      "steps": [
+        {
+          "title": "Start at the first number",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Start at 2 on the number line.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "position": 2
+        },
+        {
+          "title": "Move left: 1 of 5",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtracting moves left. One step takes us to 1.",
+          "detail": "",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": 1
+        },
+        {
+          "title": "Move left: 2 of 5",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtracting moves left. One step takes us to 0.",
+          "detail": "",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": 0
+        },
+        {
+          "title": "Move left: 3 of 5",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtracting moves left. One step takes us to -1.",
+          "detail": "We have passed zero. Negative numbers are below zero.",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": -1
+        },
+        {
+          "title": "Move left: 4 of 5",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtracting moves left. One step takes us to -2.",
+          "detail": "We have passed zero. Negative numbers are below zero.",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": -2
+        },
+        {
+          "title": "Move left: 5 of 5",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtracting moves left. One step takes us to -3.",
+          "detail": "We have passed zero. Negative numbers are below zero.",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": -3
+        },
+        {
+          "title": "The answer is -3",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 − 5 = -3",
+              "tone": "negative"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Five steps left from 2 reach −3.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "position": -3
+        }
+      ]
+    },
+    {
+      "id": "add-negative",
+      "title": "4 + (−3)",
+      "label": "4 + (−3)",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "number-line",
+      "initialExpression": "4 + (−3)",
+      "objective": "Interpret signed arithmetic as controlled movement on a number line.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N1, N2",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Confusing the operation sign with the sign of the number.",
+        "checkQuestion": "Which direction did we move, and why?"
+      },
+      "steps": [
+        {
+          "title": "Start at the first number",
+          "left": [
+            {
+              "id": "expression",
+              "text": "4 + (−3)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Start at 4 on the number line.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "position": 4
+        },
+        {
+          "title": "Move left: 1 of 3",
+          "left": [
+            {
+              "id": "expression",
+              "text": "4 + (−3)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Adding a negative moves left. One step takes us to 3.",
+          "detail": "",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": 3
+        },
+        {
+          "title": "Move left: 2 of 3",
+          "left": [
+            {
+              "id": "expression",
+              "text": "4 + (−3)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Adding a negative moves left. One step takes us to 2.",
+          "detail": "",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": 2
+        },
+        {
+          "title": "Move left: 3 of 3",
+          "left": [
+            {
+              "id": "expression",
+              "text": "4 + (−3)",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Adding a negative moves left. One step takes us to 1.",
+          "detail": "",
+          "operation": {
+            "type": "move",
+            "value": -1
+          },
+          "position": 1
+        },
+        {
+          "title": "The answer is 1",
+          "left": [
+            {
+              "id": "expression",
+              "text": "4 + (−3) = 1",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The + tells us to add; −3 is the number being added. Three steps left from 4 reach 1.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "position": 1
+        }
+      ]
+    },
+    {
+      "id": "multiply-before-add",
+      "title": "4 + 3 × 2",
+      "label": "4 + 3 × 2",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "expression",
+      "initialExpression": "4 + 3 × 2",
+      "objective": "Multiply before adding when there are no brackets.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N3",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Adding four and three first.",
+        "checkQuestion": "Which operation must we do before adding?"
+      },
+      "steps": [
+        {
+          "title": "Look at the two operations",
+          "left": [
+            {
+              "id": "four",
+              "text": "4 +",
+              "tone": "original"
+            },
+            {
+              "id": "product",
+              "text": "3 × 2",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There is addition and multiplication. Multiplication comes first.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          }
+        },
+        {
+          "title": "Focus on multiplication",
+          "left": [
+            {
+              "id": "four",
+              "text": "4 +",
+              "tone": "original"
+            },
+            {
+              "id": "product",
+              "text": "3 × 2",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Work out 3 × 2 before adding 4.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "highlight": [
+            "product"
+          ]
+        },
+        {
+          "title": "Replace the product with six",
+          "left": [
+            {
+              "id": "four",
+              "text": "4 +",
+              "tone": "original"
+            },
+            {
+              "id": "six",
+              "text": "6",
+              "tone": "operation"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "3 × 2 is 6. Now we have 4 + 6.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "highlight": [
+            "six"
+          ]
+        },
+        {
+          "title": "Now add",
+          "left": [
+            {
+              "id": "answer",
+              "text": "10",
+              "tone": "operation"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "4 + 6 = 10.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          }
+        }
+      ]
+    },
+    {
+      "id": "equivalent-halves",
+      "title": "1/2 = 2/4",
+      "label": "1/2 = 2/4",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "fractions",
+      "initialExpression": "1/2 = 2/4",
+      "objective": "See that equal fractions shade the same amount of the same whole.",
+      "prerequisites": [
+        "Read the symbols in this example"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N2",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Ask the student to describe what changed before selecting Next.",
+        "misconception": "Thinking a larger denominator means a larger shaded amount.",
+        "checkQuestion": "Did the shaded amount change when we added the dividing lines?"
+      },
+      "steps": [
+        {
+          "title": "Shade half of one whole",
+          "left": [
+            {
+              "id": "fraction",
+              "text": "1/2",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The whole is split into two equal parts. One part is shaded.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "bars": [
+            {
+              "id": "whole",
+              "parts": 2,
+              "shaded": 1
+            }
+          ]
+        },
+        {
+          "title": "Split each half in two",
+          "left": [
+            {
+              "id": "fraction",
+              "text": "1/2 = 2/4",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Divide each half into two equal parts. The shaded area stays the same.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "whole",
+              "parts": 4,
+              "shaded": 2
+            }
+          ]
+        },
+        {
+          "title": "Compare the same sized wholes",
+          "left": [
+            {
+              "id": "fraction",
+              "text": "1/2 = 2/4",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One of two parts is the same amount as two of four parts.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "bars": [
+            {
+              "id": "half",
+              "parts": 2,
+              "shaded": 1
+            },
+            {
+              "id": "whole",
+              "parts": 4,
+              "shaded": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fraction-amount",
+      "title": "3/4 of 20",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": false
+    },
+    {
+      "id": "percentage-amount",
+      "title": "25% of 80",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": false
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { lessons } from '../src/js/lessons.js';
+import { readFileSync } from 'node:fs';
+const algebra = JSON.parse(readFileSync(new URL('../src/data/algebra.json', import.meta.url)));
+const number = JSON.parse(readFileSync(new URL('../src/data/number.json', import.meta.url)));
+// Preserve the original three lessons' regression checks after the JSON migration.
+const lessons = [algebra.lessons[0], algebra.lessons[1], number.lessons[0]];
 test('all lessons have five deliberate steps with unique term identities', () => {
   assert.equal(lessons.length, 3);
   for (const lesson of lessons) {

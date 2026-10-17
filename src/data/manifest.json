@@ -1,0 +1,34 @@
+{
+  "areas": [
+    {
+      "id": "number",
+      "title": "Number",
+      "file": "./number.json"
+    },
+    {
+      "id": "algebra",
+      "title": "Algebra",
+      "file": "./algebra.json"
+    },
+    {
+      "id": "ratio",
+      "title": "Ratio, Proportion and Rates of Change",
+      "file": "./ratio.json"
+    },
+    {
+      "id": "geometry",
+      "title": "Geometry and Measures",
+      "file": "./geometry.json"
+    },
+    {
+      "id": "probability",
+      "title": "Probability",
+      "file": "./probability.json"
+    },
+    {
+      "id": "statistics",
+      "title": "Statistics",
+      "file": "./statistics.json"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ export async function transition(previous, current) {
   // Morph numeric SVG geometry so plates and text stay horizontal throughout.
   const oldShapes = previous.querySelectorAll('line, rect');
   const newShapes = current.querySelectorAll('line, rect');
-  if (!reducedMotion() && oldShapes.length === newShapes.length && oldShapes.length) {
+  if (!reducedMotion() && previous.querySelectorAll('[data-beam]').length && current.querySelectorAll('[data-beam]').length && oldShapes.length === newShapes.length && oldShapes.length) {
     const changes = [...newShapes].flatMap((node, i) => ['y', 'y1', 'y2'].filter(key => node.hasAttribute(key)).map(key => ({ node, key, from: Number(oldShapes[i].getAttribute(key)), to: Number(node.getAttribute(key)) })));
     tasks.push(new Promise(resolve => {
       const start = performance.now();
@@ -35,5 +35,9 @@ export async function transition(previous, current) {
       requestAnimationFrame(frame);
     }));
   }
+  const oldObjects = new Set([...previous.querySelectorAll('[data-object]')].map(node => node.getAttribute('data-object')));
+  current.querySelectorAll('[data-object]').forEach(node => {
+    if (!oldObjects.has(node.getAttribute('data-object'))) tasks.push(animate(node, [{ opacity: 0 }, { opacity: 1 }], timing.duration));
+  });
   await Promise.all(tasks);
 }

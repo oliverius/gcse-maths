@@ -1,0 +1,13 @@
+{
+  "id": "statistics",
+  "title": "Statistics",
+  "lessons": [
+    {
+      "id": "mean",
+      "title": "Mean as equal sharing",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": false
+    }
+  ]
+}

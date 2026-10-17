@@ -1,0 +1,20 @@
+{
+  "id": "geometry",
+  "title": "Geometry and Measures",
+  "lessons": [
+    {
+      "id": "straight-line",
+      "title": "Angles on a straight line",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": false
+    },
+    {
+      "id": "rectangle-area",
+      "title": "Area of a 5 × 3 rectangle",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": false
+    }
+  ]
+}
