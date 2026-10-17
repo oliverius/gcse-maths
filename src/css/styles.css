@@ -83,17 +83,21 @@ a:focus-visible,
   position: sticky;
   top: 0;
   z-index: 5;
-  min-height: 88px;
-  padding: 12px 24px;
+  min-height: 84px;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   border-bottom: 1px solid var(--border);
-  background: var(--page);
+  background: var(--surface);
 }
 .toolbar-actions {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   gap: 12px;
   margin-left: auto;
@@ -123,22 +127,10 @@ a:focus-visible,
   width: 25px;
   height: 25px;
 }
-.toolbar-name {
-  font-size: 22px;
-  font-weight: 750;
-
-  span {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-top: 3px;
-  }
-}
 #sidebar {
   width: 290px;
   position: fixed;
-  top: 88px;
+  top: 0;
   bottom: 0;
   left: 0;
   padding: 22px 16px 40px;
@@ -148,14 +140,8 @@ a:focus-visible,
   z-index: 4;
 
   h2 {
-    margin: 0 8px;
+    margin: 0 8px 24px;
     font-size: 23px;
-  }
-
-  > p {
-    font-size: 14px;
-    margin: 10px 8px 24px;
-    color: var(--muted);
   }
 }
 #lessons {
@@ -213,8 +199,10 @@ body:has(#sidebar:not([hidden])) main {
 }
 #lesson-title {
   font-size: 24px;
-  margin: 0 0 12px;
-  min-height: 65px;
+  flex: 1 1 160px;
+  min-width: 0;
+  margin: 0;
+  min-height: 60px;
   display: flex;
   align-items: center;
 
@@ -428,17 +416,10 @@ a {
   line-height: 1.5;
 }
 .presentation main {
-  margin: auto !important;
+  margin-top: 0;
+  margin-bottom: 0;
   max-width: 1300px;
   padding-top: 16px;
-}
-.presentation #sidebar,
-.presentation #menu,
-.presentation .toolbar-name {
-  display: none !important;
-}
-.presentation .toolbar {
-  justify-content: flex-end;
 }
 .presentation #visual {
   height: clamp(300px, 42vh, 510px);
@@ -448,8 +429,12 @@ a {
     margin-left: auto;
   }
   #sidebar {
-    width: min(360px, 100%);
-    box-shadow: 16px 0 32px #302f2b26;
+    position: static;
+    width: 100%;
+    max-height: 60vh;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
   }
   main {
     padding: 22px 20px;
@@ -468,16 +453,36 @@ a {
   }
 }
 @media (max-width: 600px) {
+  #lesson-title {
+    flex-basis: 100%;
+    justify-content: center;
+    min-height: 32px;
+    font-size: 18px;
+  }
   .toolbar {
-    padding: 10px 12px;
+    padding: 0 0 12px;
     gap: 8px;
-    min-height: 84px;
+    min-height: 0;
+    margin-bottom: 16px;
   }
-  .toolbar-name {
-    display: none;
+  .toolbar-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+    width: 100%;
+    margin-left: 0;
+    gap: 8px;
+
+    button {
+      min-width: 0;
+      min-height: 44px;
+      padding: 6px;
+      font-size: 13px;
+      line-height: 1.2;
+    }
   }
-  #sidebar {
-    top: 84px;
+  .github-link svg {
+    width: 22px;
+    height: 22px;
   }
   main {
     padding: 18px 12px;

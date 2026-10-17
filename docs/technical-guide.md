@@ -241,9 +241,9 @@ The engine controls the index and locks transitions. The renderer reads the stat
 ## Accessibility and presentation
 
 - Six subject headings expand/collapse with native keyboard-operable disclosure controls. The active subject is underlined and the active lesson has a border/inset marker plus `aria-pressed`.
-- Sidebar stays available in landscape widths of at least 1000px. Narrower screens use a non-modal drawer with an always-visible toggle. Choosing a lesson closes it and focuses the lesson title; Escape closes it and returns focus to the toggle. The drawer is intentionally non-modal and does not trap keyboard users.
-- Buttons have at least 60px height and generous gaps. Controls occupy a consistent row; that row remains accessible while scrolling. Layouts have no required dragging or precise gestures.
-- Full screen requests the native API; unsupported/rejected requests enter an in-page mode that hides navigation. **Exit full screen** stays visible; Escape also exits fallback mode. Native browser exit events update the button.
+- The lesson panel is headed **Foundation GCSE**. It stays in a fixed sidebar at widths of at least 1000px. Narrower screens open a scrollable panel below the workspace toolbar. Choosing a lesson closes the narrow panel and focuses the lesson title; Escape closes it and returns focus to the toggle. The panel is non-modal and does not trap keyboard users.
+- Lesson-step buttons have at least 60px height and generous gaps. On phones, workspace-header controls use smaller text and touch targets of at least 44px. Controls occupy a consistent row; that row remains accessible while scrolling. Layouts have no required dragging or precise gestures.
+- The lesson title shares a sticky workspace header with the lesson toggle, GitHub link and fullscreen button on its right. On phones, the smaller lesson title is centered above one evenly distributed row of lesson, GitHub and fullscreen controls. Full screen requests the native API; unsupported/rejected requests enter an in-page mode. Entering fullscreen initially closes the lesson panel, which can be reopened to change lessons without leaving fullscreen. **Exit full screen** stays visible; Escape also exits fallback mode. Native browser exit events update the button.
 - Plates sit above the beam. Expressions remain horizontal. Signs and text accompany colour; new matching operation terms share purple. Screen-reader descriptions include equations, groups and marker positions. Step explanations use a polite live region.
 - Reduced motion skips animated movement and fading but preserves final highlighting and explanations. No automatic advancement or time limit.
 
@@ -265,10 +265,10 @@ To repeat browser checks, start `npm start`, then launch a separate headless Edg
 
 On an iPad:
 
-1. In portrait, open the menu, expand each area and select a lesson. Check the drawer closes and equations are legible. Rotate to landscape and check the sidebar and navigation controls.
+1. In portrait, open the menu, expand each area and select a lesson. Check the panel closes and equations are legible. Rotate to landscape and check the sidebar and navigation controls.
 2. Run both original equations through all five steps. Check ≠ and tilt only during one-sided operations, matched purple terms, cancellation and the explanation of −1.
 3. Try square/cube arrays, square roots, the zero-power pattern, all three Pythagoras lessons, decimal place value and the sample-space grid. Check that the 25 area tiles settle into the correct square, the decimal point stays fixed, and each step pauses. Tap Next rapidly, then Back and Restart. Recheck a ratio and a statistics lesson too.
-4. Enter and exit full screen; try the in-page fallback if native full screen is unavailable. The exit button must stay obvious.
+4. Enter and exit full screen; try the in-page fallback if native full screen is unavailable. The exit button must stay obvious. Open the lesson panel and choose another lesson while remaining in fullscreen.
 5. Enable Reduce Motion; check instant state changes. Use a keyboard and VoiceOver to check focus and announcements. Open tutor notes and the official reference.
 
 Known limits: this is a focused 44-lesson selection, not complete GCSE coverage; see the audit for the remaining gaps. Pythagoras calculations currently use integer-root examples; the theorem is not restricted to integer lengths. The 3–4–5 picture is an illustration, not a general proof. The triangle-area example uses a right triangle; it does not establish all triangle formulas visually. Median uses an odd-sized data set; mode has a single unambiguous answer. Charts/grids are bounded to small worked examples. New renderer types require code. Phone layouts are less spacious than the primary iPad target. Native fullscreen, touch behaviour and VoiceOver still need physical iPad verification. The local server binds to loopback.

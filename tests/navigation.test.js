@@ -117,7 +117,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
     assert.equal(
       get('sidebar').hidden,
       true,
-      'portrait selection closes drawer',
+      'portrait selection closes lesson panel',
     );
     assert.equal(document.activeElement, get('lesson-title'));
     assert.ok(
@@ -159,4 +159,17 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
   assert.ok(animations > 0);
   assert.equal(get('counter').textContent, 'Step 2 of 5');
   assert.equal(get('next').disabled, false);
+  get('fullscreen').click();
+  await settle();
+  assert.equal(get('fullscreen').getAttribute('aria-pressed'), 'true');
+  get('menu').click();
+  assert.equal(get('sidebar').hidden, false);
+  buttons[0].click();
+  await settle();
+  assert.equal(get('sidebar').hidden, true);
+  assert.equal(get('fullscreen').getAttribute('aria-pressed'), 'true');
+  assert.equal(get('counter').textContent, 'Step 1 of 5');
+  get('fullscreen').click();
+  await settle();
+  assert.equal(get('fullscreen').getAttribute('aria-pressed'), 'false');
 });

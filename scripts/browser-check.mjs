@@ -361,8 +361,19 @@ for (const id of [
     Buffer.from(shot.data, 'base64'),
   );
 }
-// Force unsupported/rejected API paths; the browser must retain a visible exit button.
-for (const mode of ['unsupported', 'rejected']) {
+// Fullscreen must retain usable workspace controls and lesson selection at
+// narrow and wide widths, including unsupported/rejected native API paths.
+for (const [width, mode] of [
+  [768, 'unsupported'],
+  [1024, 'rejected'],
+  [390, 'unsupported'],
+]) {
+  await cdp('Emulation.setDeviceMetricsOverride', {
+    width,
+    height: 1024,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
   await evaluate(
     `Object.defineProperty(document.documentElement,'requestFullscreen',{configurable:true,value:${mode === 'unsupported' ? 'undefined' : "()=>Promise.reject(new Error('Rejected test'))"}});document.querySelector('#fullscreen').click()`,
   );
@@ -380,6 +391,27 @@ for (const mode of ['unsupported', 'rejected']) {
       "getComputedStyle(document.querySelector('#sidebar')).display",
     ),
     'none',
+  );
+  assert.equal(
+    await evaluate(`(() => {
+    const menu = document.querySelector('#menu');
+    if (!menu.closest('.workspace') || !document.querySelector('#fullscreen').closest('.workspace') || !document.querySelector('.github-link').closest('.workspace')) return false;
+    menu.scrollIntoView({block:'center'});
+    const box = menu.getBoundingClientRect();
+    if (!menu.contains(document.elementFromPoint(box.x + box.width/2, box.y + box.height/2))) return false;
+    menu.click();
+    const sidebar = document.querySelector('#sidebar');
+    if (sidebar.hidden || getComputedStyle(sidebar).display === 'none') return false;
+    const lesson = document.querySelector('[data-lesson="add-both"]');
+    lesson.closest('details').open = true;
+    lesson.scrollIntoView({block:'center'});
+    const bounds = lesson.getBoundingClientRect();
+    if (!lesson.contains(document.elementFromPoint(bounds.x + bounds.width/2, bounds.y + bounds.height/2))) return false;
+    lesson.click();
+    return document.body.classList.contains('presentation') && document.querySelector('#counter').textContent === 'Step 1 of 5';
+  })()`),
+    true,
+    `Lesson selection unavailable in fullscreen at ${width}px`,
   );
   await evaluate("document.querySelector('#fullscreen').click()");
   await evaluate('new Promise(r=>setTimeout(r,10))');
