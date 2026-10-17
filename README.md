@@ -14,16 +14,24 @@ Open **http://localhost:5500/**. The existing VS Code **Start local server** tas
 
 Use HTTP rather than `file://`: the app fetches JSON and imports ES modules. Once served locally, core functionality needs no internet connection; the curriculum reference links need internet access. There is no service worker or offline installation feature.
 
+## Development checks
+
+Install development tools with `npm ci`, then run `npm run check` for ESLint, formatting checks and all tests. Use `npm run format` to apply formatting. ESLint checks our JavaScript, including tests and scripts; intentionally unused callback parameters start with `_`.
+
+Prettier formats source, tests, configuration and documentation. Bundled vendor files, lesson datasets and generated files are excluded. EditorConfig defines UTF-8, two-space indentation and LF line endings. These tools are development dependencies; serving the site still requires no build or installation.
+
+SVG helpers live in `src/js/svg.js`. Diagram surfaces and neutral strokes use the CSS theme variables in `styles.css`; mathematical colour meanings remain consistent. Recoverable load/navigation/fullscreen failures keep their friendly UI behaviour and log the underlying error to the developer console.
+
 ## Implemented and planned lessons
 
-| Subject | Fully implemented |
-| --- | --- |
-| Algebra | `x − 3 = 2`; `x + 3 = 2`; `3x = 12`; `x / 4 = 3`; `2x + 3 = 11`; `3x + 2x = 15`; `3(x + 2)`; substitution into `3x + 2` |
-| Number | `6 × (2 + 3)`; `2 − 5`; `4 + (−3)`; `4 + 3 × 2`; `1/2 = 2/4`; three quarters of 20; 25% of 80; adding sixths; `3²`; `2³`; `√25`; `5⁰`; same-base power multiplication; prime factorisation of 18; `3.4 × 10` |
-| Ratio, Proportion and Rates of Change | Equivalent ratios `2:3 = 4:6`; simplifying `6:9`; sharing 20 in `2:3`; unitary cost (3 items cost £12, find 1 then 5) |
-| Geometry and Measures | Adjacent angles on a straight line; angles around a point; rectangle perimeter; rectangle area; right-triangle area by completing a rectangle; Pythagorean square areas; finding a hypotenuse; finding a shorter side |
-| Probability | Equally likely outcomes; complementary events; the probability scale; coin-and-spinner sample space |
-| Statistics | Mean by redistribution; odd-sized median; mode; range; reading a bar chart |
+| Subject                               | Fully implemented                                                                                                                                                                                                     |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Algebra                               | `x − 3 = 2`; `x + 3 = 2`; `3x = 12`; `x / 4 = 3`; `2x + 3 = 11`; `3x + 2x = 15`; `3(x + 2)`; substitution into `3x + 2`                                                                                               |
+| Number                                | `6 × (2 + 3)`; `2 − 5`; `4 + (−3)`; `4 + 3 × 2`; `1/2 = 2/4`; three quarters of 20; 25% of 80; adding sixths; `3²`; `2³`; `√25`; `5⁰`; same-base power multiplication; prime factorisation of 18; `3.4 × 10`          |
+| Ratio, Proportion and Rates of Change | Equivalent ratios `2:3 = 4:6`; simplifying `6:9`; sharing 20 in `2:3`; unitary cost (3 items cost £12, find 1 then 5)                                                                                                 |
+| Geometry and Measures                 | Adjacent angles on a straight line; angles around a point; rectangle perimeter; rectangle area; right-triangle area by completing a rectangle; Pythagorean square areas; finding a hypotenuse; finding a shorter side |
+| Probability                           | Equally likely outcomes; complementary events; the probability scale; coin-and-spinner sample space                                                                                                                   |
+| Statistics                            | Mean by redistribution; odd-sized median; mode; range; reading a bar chart                                                                                                                                            |
 
 The algebra lessons use balances, equal groups and moving x/unit tiles. Distribution is an expression lesson with no balance; it is deliberately distinct from evaluating numeric brackets. Number-line lessons move one unit per tap. Fraction bars introduce partitions without changing the shaded area.
 
@@ -50,7 +58,9 @@ src/
   data/{number,algebra,ratio,geometry,probability,statistics}.json
   js/app.js                 UI, accessible status, sidebar and navigation
   js/lesson-loader.js       relative fetches, cache, isolated file/lesson errors
-  js/lesson-engine.js       validation and guarded deterministic transitions
+  js/lesson-engine.js       guarded deterministic navigation and rollback
+  js/lesson-validation.js   manifest/lesson schema and mathematical invariants
+  js/svg.js                 shared SVG elements, labels, maths and entity wrappers
   js/mathematics.js         non-executable linear-expression parser
   js/balance.js             original SVG balance/expression rendering, group tiles
   js/renderers.js           renderer dispatch, number lines and fraction bars
@@ -116,20 +126,20 @@ Other renderers use `balance: null`. Number-line steps declare `position` from �
 
 The existing manifest still registers exactly six subject files. New lessons reuse the same step engine, operation types, KaTeX terms and controls. They add `scene`, always with a meaningful `description` for the canvas's spoken equivalent and an optional `caption`.
 
-| Kind | Scene fields and visual behaviour |
-| --- | --- |
-| `counter-groups` | `groups: [{id, label, items, category?, summary?}]`. Items contain stable `id`, positive numeric `value`, `latex`, `spoken`, optional `tone`, `highlight`, `shape`, `category`. Counters move between groups, new copies fade in and selected quantities change fill/outline calmly. Maximum five groups; validation checks readable capacity. Blue/gold probability outcomes also carry B/G labels. |
-| `angle-diagram` | `total: 180 or 360`, `sectors: [{id, start, end, known, tone?}]`. Endpoints are angles in degrees; sectors must be contiguous and non-overlapping. SVG arcs use the actual angle, not an illustrative approximation. Final angles must fill the declared turn. |
-| `shape-grid` | `shape: "rectangle" or "triangle"`, integer `width`, `height`, optional `grid`, `rows`, `sides`, `copy`. Rectangle cells are equal squares; complete rows shade in sequence. Perimeter highlights actual boundary edges. A congruent right triangle fills the other half of a rectangle without distortion. |
-| `data-cards` | `items: [{id, value}]`, `selected` and `muted` ID arrays. Sorting moves original cards without changing their values. Paired-off median cards are crossed out as well as dimmed. Selected values get a contrasting border and background. |
-| `bar-chart` | Three `categories: [{id, label, value}]`, `active` (null or a category ID), and boolean `guide`. Equally spaced, labelled axis ticks run from zero to six. A dashed guide connects the selected bar's height to its frequency. |
-| `probability-scale` | `probability` between zero and one. A stable marker moves along a proportionally spaced scale with impossible/likely/certain labels and stacked quarter/half fractions. |
-| `tile-array` | Integer `rows`, `columns`, `layers`, `visibleRows`, `visibleLayers`, boolean `edges`, nullable `highlightRow`. Equal tiles build rows/layers; the `model` checks the array matches `base`, `exponent`, `result`. The cube lesson shows two separated 2D layers of unit cubes. |
-| `power-pattern` | Nonzero positive `base`, ordered `exponents`, `visible`. Reveal one more quotient at a time in the decreasing-exponent pattern; the final exponent is zero. |
-| `pythagoras` | Exact integer `a`, `b`, `c`; `squares`, `knownSides`, `knownAreas` ID lists; boolean `unitTiles`, `transfer`. Outward square polygons are computed from the actual side vectors. Unit tiles retain IDs and move/rotate rigidly; unknown numeric labels remain hidden until calculated. |
-| `factor-tree` | Factor `nodes: [{id, value, children}]`, `visible`, `selected`. Each split must multiply back to its parent; cycles, shared children and premature reveals are rejected. Final leaves must be prime. |
-| `place-value` | `digits: [{id, digit, place}]`, `shift` zero or one. Digits move columns, while the decimal boundary remains fixed. Validation checks digit identities and the resulting numeric value. |
-| `outcome-grid` | Two `rows`, three `columns`, `rowNames`/`columnNames` for spoken labels, integer `revealed`, `selected` pair IDs. Each reveal adds one distinct combined outcome. The fair, independent coin/spinner assumptions are stated. |
+| Kind                | Scene fields and visual behaviour                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `counter-groups`    | `groups: [{id, label, items, category?, summary?}]`. Items contain stable `id`, positive numeric `value`, `latex`, `spoken`, optional `tone`, `highlight`, `shape`, `category`. Counters move between groups, new copies fade in and selected quantities change fill/outline calmly. Maximum five groups; validation checks readable capacity. Blue/gold probability outcomes also carry B/G labels. |
+| `angle-diagram`     | `total: 180 or 360`, `sectors: [{id, start, end, known, tone?}]`. Endpoints are angles in degrees; sectors must be contiguous and non-overlapping. SVG arcs use the actual angle, not an illustrative approximation. Final angles must fill the declared turn.                                                                                                                                       |
+| `shape-grid`        | `shape: "rectangle" or "triangle"`, integer `width`, `height`, optional `grid`, `rows`, `sides`, `copy`. Rectangle cells are equal squares; complete rows shade in sequence. Perimeter highlights actual boundary edges. A congruent right triangle fills the other half of a rectangle without distortion.                                                                                          |
+| `data-cards`        | `items: [{id, value}]`, `selected` and `muted` ID arrays. Sorting moves original cards without changing their values. Paired-off median cards are crossed out as well as dimmed. Selected values get a contrasting border and background.                                                                                                                                                            |
+| `bar-chart`         | Three `categories: [{id, label, value}]`, `active` (null or a category ID), and boolean `guide`. Equally spaced, labelled axis ticks run from zero to six. A dashed guide connects the selected bar's height to its frequency.                                                                                                                                                                       |
+| `probability-scale` | `probability` between zero and one. A stable marker moves along a proportionally spaced scale with impossible/likely/certain labels and stacked quarter/half fractions.                                                                                                                                                                                                                              |
+| `tile-array`        | Integer `rows`, `columns`, `layers`, `visibleRows`, `visibleLayers`, boolean `edges`, nullable `highlightRow`. Equal tiles build rows/layers; the `model` checks the array matches `base`, `exponent`, `result`. The cube lesson shows two separated 2D layers of unit cubes.                                                                                                                        |
+| `power-pattern`     | Nonzero positive `base`, ordered `exponents`, `visible`. Reveal one more quotient at a time in the decreasing-exponent pattern; the final exponent is zero.                                                                                                                                                                                                                                          |
+| `pythagoras`        | Exact integer `a`, `b`, `c`; `squares`, `knownSides`, `knownAreas` ID lists; boolean `unitTiles`, `transfer`. Outward square polygons are computed from the actual side vectors. Unit tiles retain IDs and move/rotate rigidly; unknown numeric labels remain hidden until calculated.                                                                                                               |
+| `factor-tree`       | Factor `nodes: [{id, value, children}]`, `visible`, `selected`. Each split must multiply back to its parent; cycles, shared children and premature reveals are rejected. Final leaves must be prime.                                                                                                                                                                                                 |
+| `place-value`       | `digits: [{id, digit, place}]`, `shift` zero or one. Digits move columns, while the decimal boundary remains fixed. Validation checks digit identities and the resulting numeric value.                                                                                                                                                                                                              |
+| `outcome-grid`      | Two `rows`, three `columns`, `rowNames`/`columnNames` for spoken labels, integer `revealed`, `selected` pair IDs. Each reveal adds one distinct combined outcome. The fair, independent coin/spinner assumptions are stated.                                                                                                                                                                         |
 
 New lessons may declare a `model` used for invariants and tests: `total` preserves counter value, `ratio` verifies the A/B relationship, and `values` preserves the data-card multiset. Additional numeric dimensions/results document worked examples and are checked in the tests. A counter card may represent one unit, one pound, or a labelled group of twenty: explanations and captions explicitly state its meaning. IDs describe mathematical objects, not their screen positions.
 
@@ -137,15 +147,15 @@ The animation layer extends its existing term transitions with `data-entity` wra
 
 Supported operation types describe intent; each includes a complete destination state:
 
-| Types | Presentation |
-| --- | --- |
-| `show`, `highlight` | Show a state or emphasize existing terms |
+| Types                                     | Presentation                                                            |
+| ----------------------------------------- | ----------------------------------------------------------------------- |
+| `show`, `highlight`                       | Show a state or emphasize existing terms                                |
 | `apply-left`, `apply-right`, `apply-both` | Introduce matching inverse-operation terms; tilt or restore the balance |
-| `cancel` | Highlight the declared pair together, then fade it away |
-| `simplify`, `replace` | Replace terms with their equivalent simplified form |
-| `group`, `split`, `distribute` | Reorganize stable tile identities or introduce equal copies |
-| `move` | Move the number-line marker to its next declared position |
-| `partition` | Fade in new fraction dividing lines while preserving shaded area |
+| `cancel`                                  | Highlight the declared pair together, then fade it away                 |
+| `simplify`, `replace`                     | Replace terms with their equivalent simplified form                     |
+| `group`, `split`, `distribute`            | Reorganize stable tile identities or introduce equal copies             |
+| `move`                                    | Move the number-line marker to its next declared position               |
+| `partition`                               | Fade in new fraction dividing lines while preserving shaded area        |
 
 The engine controls the index and locks transitions. The renderer reads the state; the animation layer decides how terms appear and move. Back restores the previous state immediately; Restart restores the initial state. Neither auto-plays the lesson. Adjust durations in `js/animations.js`.
 

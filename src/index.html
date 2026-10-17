@@ -1,30 +1,53 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7f2">
-  <title>Maths, one step at a time</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="vendor/katex/katex.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <script type="module" src="js/app.js"></script>
-</head>
-<body>
-  <div class="toolbar"><button id="menu" aria-controls="sidebar" aria-expanded="true">Choose a lesson</button><span class="toolbar-name">Maths Lab <span>Foundation GCSE</span></span><button id="fullscreen" aria-pressed="false">Full screen</button></div>
-  <aside id="sidebar" aria-label="Lesson library"><h2>Your lessons</h2><p>Choose a topic. Go at your pace.</p><nav id="lessons" aria-label="Choose a lesson"></nav></aside>
-  <main id="main">
-    <section class="workspace" aria-label="Current lesson">
-      <h2 id="lesson-title" tabindex="-1">Loading lessons…</h2>
-      <div class="step-heading"><span id="topic"></span><span id="counter"></span></div>
-      <h3 id="step-title"></h3>
-      <p id="error" role="alert" hidden></p>
-      <div id="visual" role="img"></div>
-      <div class="explanation" aria-live="polite" aria-atomic="true"><p id="explanation"></p><p id="detail"></p></div>
-      <nav class="controls" aria-label="Lesson steps"><button id="back">← Back</button><button id="replay">↺ Restart</button><button id="next">Next →</button></nav>
-      <div class="curriculum"><span>Curriculum reference</span><div id="references"></div></div>
-      <details id="tutor-notes"><summary>Tutor notes</summary><div id="tutor-content"></div></details>
-    </section>
-  </main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f2" />
+    <title>Maths, one step at a time</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="vendor/katex/katex.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button id="menu" aria-controls="sidebar" aria-expanded="true">
+        Choose a lesson</button
+      ><span class="toolbar-name">Maths Lab <span>Foundation GCSE</span></span
+      ><button id="fullscreen" aria-pressed="false">Full screen</button>
+    </div>
+    <aside id="sidebar" aria-label="Lesson library">
+      <h2>Your lessons</h2>
+      <p>Choose a topic. Go at your pace.</p>
+      <nav id="lessons" aria-label="Choose a lesson"></nav>
+    </aside>
+    <main id="main">
+      <section class="workspace" aria-label="Current lesson">
+        <h2 id="lesson-title" tabindex="-1">Loading lessons…</h2>
+        <div class="step-heading">
+          <span id="topic"></span><span id="counter"></span>
+        </div>
+        <h3 id="step-title"></h3>
+        <p id="error" role="alert" hidden></p>
+        <div id="visual" role="img"></div>
+        <div class="explanation" aria-live="polite" aria-atomic="true">
+          <p id="explanation"></p>
+          <p id="detail"></p>
+        </div>
+        <nav class="controls" aria-label="Lesson steps">
+          <button id="back">← Back</button><button id="replay">↺ Restart</button
+          ><button id="next">Next →</button>
+        </nav>
+        <div class="curriculum">
+          <span>Curriculum reference</span>
+          <div id="references"></div>
+        </div>
+        <details id="tutor-notes">
+          <summary>Tutor notes</summary>
+          <div id="tutor-content"></div>
+        </details>
+      </section>
+    </main>
+  </body>
 </html>

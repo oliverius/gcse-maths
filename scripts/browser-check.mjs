@@ -2,36 +2,114 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const targets = await (await fetch('http://127.0.0.1:9223/json/list')).json();
 await mkdir(new URL('../temp/', import.meta.url), { recursive: true });
-const target = targets.find(t=>t.type==='page');
-const ws=new WebSocket(target.webSocketDebuggerUrl);
-await new Promise(resolve=>ws.addEventListener('open',resolve,{once:true}));
-let seq=0;const waiting=new Map();const errors=[];
-ws.addEventListener('message',event=>{const data=JSON.parse(event.data);if(data.method==='Runtime.exceptionThrown')errors.push(data.params.exceptionDetails.text);if(data.id){const pending=waiting.get(data.id);waiting.delete(data.id);data.error?pending.reject(data.error):pending.resolve(data.result);}});
-function cdp(method,params={}){return new Promise((resolve,reject)=>{const id=++seq;waiting.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});}
-async function evaluate(expression){const r=await cdp('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
-await cdp('Runtime.enable');await cdp('Page.enable');
-await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
-await cdp('Emulation.setDeviceMetricsOverride',{width:768,height:1024,deviceScaleFactor:1,mobile:false});
-await cdp('Page.navigate',{url:process.env.MATHS_TEST_URL || 'http://127.0.0.1:5500/'});
-// Wait for the app module and its JSON fetches, without assuming network timing.
-for(let i=0;i<100;i++){if(await evaluate("document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 44"))break;await new Promise(r=>setTimeout(r,50));}
-await evaluate("import('./js/app.js').then(m=>m.ready)");
-assert.equal(await evaluate("document.querySelectorAll('#lessons button').length"),44);
-for(const [width,height,label] of [[768,1024,'portrait'],[1024,768,'landscape'],[1180,820,'wide-landscape'],[390,844,'phone']]){
- await cdp('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
- await evaluate("new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
- const geometry=await evaluate(`(()=>{const box=document.querySelector('.controls').getBoundingClientRect();return {width:innerWidth,scroll:document.documentElement.scrollWidth,controls:{left:box.left,right:box.right},sidebar:!document.querySelector('#sidebar').hidden,targets:[...document.querySelectorAll('.controls button')].map(b=>({w:b.getBoundingClientRect().width,h:b.getBoundingClientRect().height}))}})()`);
- assert.ok(geometry.scroll<=width,`${label}: horizontal overflow`);
- assert.ok(geometry.controls.left>=0&&geometry.controls.right<=width);
- assert.ok(geometry.targets.every(b=>b.w>=56&&b.h>=56));
- console.log(label,geometry);
- const shot=await cdp('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
- await writeFile(new URL(`../temp/v2-${label}.png`,import.meta.url),Buffer.from(shot.data,'base64'));
+const target = targets.find((t) => t.type === 'page');
+const ws = new WebSocket(target.webSocketDebuggerUrl);
+await new Promise((resolve) =>
+  ws.addEventListener('open', resolve, { once: true }),
+);
+let seq = 0;
+const waiting = new Map();
+const errors = [];
+ws.addEventListener('message', (event) => {
+  const data = JSON.parse(event.data);
+  if (data.method === 'Runtime.exceptionThrown')
+    errors.push(data.params.exceptionDetails.text);
+  if (data.id) {
+    const pending = waiting.get(data.id);
+    waiting.delete(data.id);
+    data.error ? pending.reject(data.error) : pending.resolve(data.result);
+  }
+});
+function cdp(method, params = {}) {
+  return new Promise((resolve, reject) => {
+    const id = ++seq;
+    waiting.set(id, { resolve, reject });
+    ws.send(JSON.stringify({ id, method, params }));
+  });
 }
-for(const [width,height] of [[768,1024],[1024,768]]) {
-await cdp('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
-await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
-const result=await evaluate(`(async()=>{
+async function evaluate(expression) {
+  const r = await cdp('Runtime.evaluate', {
+    expression,
+    awaitPromise: true,
+    returnByValue: true,
+  });
+  if (r.exceptionDetails) throw new Error(JSON.stringify(r.exceptionDetails));
+  return r.result.value;
+}
+await cdp('Runtime.enable');
+await cdp('Page.enable');
+await cdp('Emulation.setEmulatedMedia', {
+  features: [{ name: 'prefers-reduced-motion', value: 'reduce' }],
+});
+await cdp('Emulation.setDeviceMetricsOverride', {
+  width: 768,
+  height: 1024,
+  deviceScaleFactor: 1,
+  mobile: false,
+});
+await cdp('Page.navigate', {
+  url: process.env.MATHS_TEST_URL || 'http://127.0.0.1:5500/',
+});
+// Wait for the app module and its JSON fetches, without assuming network timing.
+for (let i = 0; i < 100; i++) {
+  if (
+    await evaluate(
+      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 44",
+    )
+  )
+    break;
+  await new Promise((r) => setTimeout(r, 50));
+}
+await evaluate("import('./js/app.js').then(m=>m.ready)");
+assert.equal(
+  await evaluate("document.querySelectorAll('#lessons button').length"),
+  44,
+);
+for (const [width, height, label] of [
+  [768, 1024, 'portrait'],
+  [1024, 768, 'landscape'],
+  [1180, 820, 'wide-landscape'],
+  [390, 844, 'phone'],
+]) {
+  await cdp('Emulation.setDeviceMetricsOverride', {
+    width,
+    height,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  await evaluate(
+    'new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))',
+  );
+  const geometry = await evaluate(
+    `(()=>{const box=document.querySelector('.controls').getBoundingClientRect();return {width:innerWidth,scroll:document.documentElement.scrollWidth,controls:{left:box.left,right:box.right},sidebar:!document.querySelector('#sidebar').hidden,targets:[...document.querySelectorAll('.controls button')].map(b=>({w:b.getBoundingClientRect().width,h:b.getBoundingClientRect().height}))}})()`,
+  );
+  assert.ok(geometry.scroll <= width, `${label}: horizontal overflow`);
+  assert.ok(geometry.controls.left >= 0 && geometry.controls.right <= width);
+  assert.ok(geometry.targets.every((b) => b.w >= 56 && b.h >= 56));
+  console.log(label, geometry);
+  const shot = await cdp('Page.captureScreenshot', {
+    format: 'png',
+    captureBeyondViewport: false,
+  });
+  await writeFile(
+    new URL(`../temp/v2-${label}.png`, import.meta.url),
+    Buffer.from(shot.data, 'base64'),
+  );
+}
+for (const [width, height] of [
+  [768, 1024],
+  [1024, 768],
+]) {
+  await cdp('Emulation.setDeviceMetricsOverride', {
+    width,
+    height,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  await evaluate(
+    'new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))',
+  );
+  const result = await evaluate(`(async()=>{
  const pause=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  const buttons=[...document.querySelectorAll('#lessons button')];let states=0;
  for(const button of buttons){
@@ -67,88 +145,248 @@ const result=await evaluate(`(async()=>{
  }
  return {lessons:buttons.length,transitions:states};
 })()`);
-console.log(`Browser progression ${width}×${height}`,result);
+  console.log(`Browser progression ${width}×${height}`, result);
 }
 // Keep a visual record of the fraction lesson at iPad sizes.
-for(const [width,height,label] of [[768,1024,'fraction-portrait'],[1024,768,'fraction-landscape']]){
- await cdp('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
- await evaluate("document.querySelector('[data-lesson=multiply-four]').click()");
- await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
- assert.ok(await evaluate("document.querySelectorAll('#visual .mfrac').length>0"));
- assert.ok(await evaluate("document.querySelector('#visual').getAttribute('aria-label').includes('divided by')"));
- const shot=await cdp('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
- await writeFile(new URL(`../temp/v2-${label}.png`,import.meta.url),Buffer.from(shot.data,'base64'));
+for (const [width, height, label] of [
+  [768, 1024, 'fraction-portrait'],
+  [1024, 768, 'fraction-landscape'],
+]) {
+  await cdp('Emulation.setDeviceMetricsOverride', {
+    width,
+    height,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  await evaluate(
+    "document.querySelector('[data-lesson=multiply-four]').click()",
+  );
+  await evaluate(
+    'new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))',
+  );
+  assert.ok(
+    await evaluate("document.querySelectorAll('#visual .mfrac').length>0"),
+  );
+  assert.ok(
+    await evaluate(
+      "document.querySelector('#visual').getAttribute('aria-label').includes('divided by')",
+    ),
+  );
+  const shot = await cdp('Page.captureScreenshot', {
+    format: 'png',
+    captureBeyondViewport: false,
+  });
+  await writeFile(
+    new URL(`../temp/v2-${label}.png`, import.meta.url),
+    Buffer.from(shot.data, 'base64'),
+  );
 }
 // Exercise actual Web Animations and beam interpolation, not just reduced motion.
-await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
+await cdp('Emulation.setEmulatedMedia', {
+  features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }],
+});
 await evaluate("document.querySelector('[data-lesson=add-both]').click()");
-for(let step=2;step<=5;step++) {
- await evaluate("document.querySelector('#next').click();document.querySelector('#next').click()");
- assert.equal(await evaluate("document.querySelector('#next').disabled"),true);
- for(let attempt=0;attempt<100;attempt++){
-  if(await evaluate("document.querySelector('#visual').getAttribute('aria-busy')==='false'"))break;
-  await new Promise(resolve=>setTimeout(resolve,25));
- }
- assert.equal(await evaluate("document.querySelector('#counter').textContent"),`Step ${step} of 5`);
- const beam=await evaluate("(()=>{const b=document.querySelector('[data-beam]');return [Number(b.getAttribute('y1')),Number(b.getAttribute('y2'))]})()");
- assert.equal(beam[0]===beam[1],step!==2);
+for (let step = 2; step <= 5; step++) {
+  await evaluate(
+    "document.querySelector('#next').click();document.querySelector('#next').click()",
+  );
+  assert.equal(
+    await evaluate("document.querySelector('#next').disabled"),
+    true,
+  );
+  for (let attempt = 0; attempt < 100; attempt++) {
+    if (
+      await evaluate(
+        "document.querySelector('#visual').getAttribute('aria-busy')==='false'",
+      )
+    )
+      break;
+    await new Promise((resolve) => setTimeout(resolve, 25));
+  }
+  assert.equal(
+    await evaluate("document.querySelector('#counter').textContent"),
+    `Step ${step} of 5`,
+  );
+  const beam = await evaluate(
+    "(()=>{const b=document.querySelector('[data-beam]');return [Number(b.getAttribute('y1')),Number(b.getAttribute('y2'))]})()",
+  );
+  assert.equal(beam[0] === beam[1], step !== 2);
 }
-console.log('Normal-motion cancellation, beam interpolation and rapid-click checks passed');
+console.log(
+  'Normal-motion cancellation, beam interpolation and rapid-click checks passed',
+);
 // Each new primitive must also animate safely with normal motion enabled.
-for(const id of ['share-ratio','straight-line','rectangle-area','probability-scale','mean','median','read-bar-chart','square-three','cube-two','square-root-25','zero-power','multiply-powers','prime-factors','place-value-ten','substitution','coin-spinner-space','pythagoras-areas','pythagoras-hypotenuse','pythagoras-shorter']){
- await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
- await evaluate("document.querySelector('#next').click();document.querySelector('#next').click()");
- for(let attempt=0;attempt<100;attempt++){
-  if(await evaluate("document.querySelector('#visual').getAttribute('aria-busy')==='false'"))break;
-  await new Promise(resolve=>setTimeout(resolve,25));
- }
- assert.ok(await evaluate("document.querySelector('#counter').textContent.startsWith('Step 2 ')"),id);
- assert.equal(await evaluate("document.querySelector('#error').hidden"),true);
+for (const id of [
+  'share-ratio',
+  'straight-line',
+  'rectangle-area',
+  'probability-scale',
+  'mean',
+  'median',
+  'read-bar-chart',
+  'square-three',
+  'cube-two',
+  'square-root-25',
+  'zero-power',
+  'multiply-powers',
+  'prime-factors',
+  'place-value-ten',
+  'substitution',
+  'coin-spinner-space',
+  'pythagoras-areas',
+  'pythagoras-hypotenuse',
+  'pythagoras-shorter',
+]) {
+  await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
+  await evaluate(
+    "document.querySelector('#next').click();document.querySelector('#next').click()",
+  );
+  for (let attempt = 0; attempt < 100; attempt++) {
+    if (
+      await evaluate(
+        "document.querySelector('#visual').getAttribute('aria-busy')==='false'",
+      )
+    )
+      break;
+    await new Promise((resolve) => setTimeout(resolve, 25));
+  }
+  assert.ok(
+    await evaluate(
+      "document.querySelector('#counter').textContent.startsWith('Step 2 ')",
+    ),
+    id,
+  );
+  assert.equal(await evaluate("document.querySelector('#error').hidden"), true);
 }
 console.log('New diagram primitives: normal-motion transitions passed');
-const idle=async()=>{
- for(let attempt=0;attempt<120;attempt++){
-  if(await evaluate("document.querySelector('#visual').getAttribute('aria-busy')==='false'"))return;
-  await new Promise(resolve=>setTimeout(resolve,25));
- }
- throw new Error('Animation did not finish');
+const idle = async () => {
+  for (let attempt = 0; attempt < 120; attempt++) {
+    if (
+      await evaluate(
+        "document.querySelector('#visual').getAttribute('aria-busy')==='false'",
+      )
+    )
+      return;
+    await new Promise((resolve) => setTimeout(resolve, 25));
+  }
+  throw new Error('Animation did not finish');
 };
-await evaluate("document.querySelector('[data-lesson=pythagoras-areas]').click()");
-for(let i=0;i<3;i++){await evaluate("document.querySelector('#next').click()");await idle();}
-const areaIds=await evaluate("[...document.querySelectorAll('[data-angle]')].map(n=>n.getAttribute('data-entity')).sort()");
-assert.equal(areaIds.length,25);
-await evaluate("document.querySelector('#next').click();document.querySelector('#next').click()");
+await evaluate(
+  "document.querySelector('[data-lesson=pythagoras-areas]').click()",
+);
+for (let i = 0; i < 3; i++) {
+  await evaluate("document.querySelector('#next').click()");
+  await idle();
+}
+const areaIds = await evaluate(
+  "[...document.querySelectorAll('[data-angle]')].map(n=>n.getAttribute('data-entity')).sort()",
+);
+assert.equal(areaIds.length, 25);
+await evaluate(
+  "document.querySelector('#next').click();document.querySelector('#next').click()",
+);
 assert.ok(await evaluate('document.getAnimations().length>=25'));
 await idle();
-assert.deepEqual(await evaluate("[...document.querySelectorAll('[data-angle]')].map(n=>n.getAttribute('data-entity')).sort()"),areaIds);
-assert.equal(await evaluate(`(()=>{const svg=document.querySelector('#visual>svg');return [...svg.querySelectorAll('[data-angle]')].every(n=>{const point=new DOMPoint(Number(n.getAttribute('x')),Number(n.getAttribute('y')));const expected=point.matrixTransform(svg.getCTM()),actual=point.matrixTransform(n.getCTM());return Math.hypot(actual.x-expected.x,actual.y-expected.y)<1;});})()`),true);
-assert.ok(await evaluate("document.querySelector('#counter').textContent.startsWith('Step 5 ')"));
-console.log('Pythagoras area transfer: 25 stable rigid tiles and correct final transforms');
-await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
-await cdp('Emulation.setDeviceMetricsOverride',{width:768,height:1024,deviceScaleFactor:1,mobile:false});
-await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
-for(const id of ['share-ratio','angles-point','triangle-area','equally-likely','mean','median','read-bar-chart','square-three','cube-two','square-root-25','zero-power','multiply-powers','prime-factors','place-value-ten','substitution','coin-spinner-space','pythagoras-areas','pythagoras-hypotenuse','pythagoras-shorter']){
- await evaluate(`(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`);
- const bounds=await evaluate(`(()=>{const svg=document.querySelector('#visual>svg'),box=svg.getBoundingClientRect();return [...svg.querySelectorAll('text,.katex-html')].every(n=>{const r=n.getBoundingClientRect();return r.left>=box.left-2&&r.right<=box.right+2&&r.top>=box.top-2&&r.bottom<=box.bottom+2;});})()`);
- assert.equal(bounds,true,`Diagram labels outside canvas: ${id}`);
- const shot=await cdp('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
- await writeFile(new URL(`../temp/sections-${id}.png`,import.meta.url),Buffer.from(shot.data,'base64'));
+assert.deepEqual(
+  await evaluate(
+    "[...document.querySelectorAll('[data-angle]')].map(n=>n.getAttribute('data-entity')).sort()",
+  ),
+  areaIds,
+);
+assert.equal(
+  await evaluate(
+    `(()=>{const svg=document.querySelector('#visual>svg');return [...svg.querySelectorAll('[data-angle]')].every(n=>{const point=new DOMPoint(Number(n.getAttribute('x')),Number(n.getAttribute('y')));const expected=point.matrixTransform(svg.getCTM()),actual=point.matrixTransform(n.getCTM());return Math.hypot(actual.x-expected.x,actual.y-expected.y)<1;});})()`,
+  ),
+  true,
+);
+assert.ok(
+  await evaluate(
+    "document.querySelector('#counter').textContent.startsWith('Step 5 ')",
+  ),
+);
+console.log(
+  'Pythagoras area transfer: 25 stable rigid tiles and correct final transforms',
+);
+await cdp('Emulation.setEmulatedMedia', {
+  features: [{ name: 'prefers-reduced-motion', value: 'reduce' }],
+});
+await cdp('Emulation.setDeviceMetricsOverride', {
+  width: 768,
+  height: 1024,
+  deviceScaleFactor: 1,
+  mobile: false,
+});
+await evaluate(
+  'new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))',
+);
+for (const id of [
+  'share-ratio',
+  'angles-point',
+  'triangle-area',
+  'equally-likely',
+  'mean',
+  'median',
+  'read-bar-chart',
+  'square-three',
+  'cube-two',
+  'square-root-25',
+  'zero-power',
+  'multiply-powers',
+  'prime-factors',
+  'place-value-ten',
+  'substitution',
+  'coin-spinner-space',
+  'pythagoras-areas',
+  'pythagoras-hypotenuse',
+  'pythagoras-shorter',
+]) {
+  await evaluate(
+    `(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`,
+  );
+  const bounds = await evaluate(
+    `(()=>{const svg=document.querySelector('#visual>svg'),box=svg.getBoundingClientRect();return [...svg.querySelectorAll('text,.katex-html')].every(n=>{const r=n.getBoundingClientRect();return r.left>=box.left-2&&r.right<=box.right+2&&r.top>=box.top-2&&r.bottom<=box.bottom+2;});})()`,
+  );
+  assert.equal(bounds, true, `Diagram labels outside canvas: ${id}`);
+  const shot = await cdp('Page.captureScreenshot', {
+    format: 'png',
+    captureBeyondViewport: false,
+  });
+  await writeFile(
+    new URL(`../temp/sections-${id}.png`, import.meta.url),
+    Buffer.from(shot.data, 'base64'),
+  );
 }
 // Force unsupported/rejected API paths; the browser must retain a visible exit button.
-for(const mode of ['unsupported','rejected']){
- await evaluate(`Object.defineProperty(document.documentElement,'requestFullscreen',{configurable:true,value:${mode==='unsupported'?'undefined':"()=>Promise.reject(new Error('Rejected test'))"}});document.querySelector('#fullscreen').click()`);
- await evaluate('new Promise(r=>setTimeout(r,10))');
- assert.equal(await evaluate("document.body.classList.contains('presentation')"),true);
- assert.equal(await evaluate("document.querySelector('#fullscreen').textContent"),'Exit full screen');
- assert.equal(await evaluate("getComputedStyle(document.querySelector('#sidebar')).display"),'none');
- await evaluate("document.querySelector('#fullscreen').click()");
- await evaluate('new Promise(r=>setTimeout(r,10))');
- assert.equal(await evaluate("document.body.classList.contains('presentation')"),false);
+for (const mode of ['unsupported', 'rejected']) {
+  await evaluate(
+    `Object.defineProperty(document.documentElement,'requestFullscreen',{configurable:true,value:${mode === 'unsupported' ? 'undefined' : "()=>Promise.reject(new Error('Rejected test'))"}});document.querySelector('#fullscreen').click()`,
+  );
+  await evaluate('new Promise(r=>setTimeout(r,10))');
+  assert.equal(
+    await evaluate("document.body.classList.contains('presentation')"),
+    true,
+  );
+  assert.equal(
+    await evaluate("document.querySelector('#fullscreen').textContent"),
+    'Exit full screen',
+  );
+  assert.equal(
+    await evaluate(
+      "getComputedStyle(document.querySelector('#sidebar')).display",
+    ),
+    'none',
+  );
+  await evaluate("document.querySelector('#fullscreen').click()");
+  await evaluate('new Promise(r=>setTimeout(r,10))');
+  assert.equal(
+    await evaluate("document.body.classList.contains('presentation')"),
+    false,
+  );
 }
-await evaluate("delete document.documentElement.requestFullscreen");
+await evaluate('delete document.documentElement.requestFullscreen');
 // Native OS fullscreen can stall in headless Windows. Its API success/exit
 // contract is covered by the Node tests; verify native interaction on an iPad.
-assert.deepEqual(errors,[]);
+assert.deepEqual(errors, []);
 console.log('Fallback fullscreen and runtime error checks passed');
 await cdp('Browser.close');
 ws.close();
