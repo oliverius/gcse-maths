@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const targets = await (await fetch('http://127.0.0.1:9223/json/list')).json();
 await mkdir(new URL('../temp/', import.meta.url), { recursive: true });
@@ -388,5 +388,58 @@ await evaluate('delete document.documentElement.requestFullscreen');
 // contract is covered by the Node tests; verify native interaction on an iPad.
 assert.deepEqual(errors, []);
 console.log('Fallback fullscreen and runtime error checks passed');
+// Curated alternatives are test fixtures only; production still has one example.
+const templateCases = JSON.parse(
+  await readFile(
+    new URL('../tests/fixtures/template-cases.json', import.meta.url),
+    'utf8',
+  ),
+);
+for (const [width, height] of [
+  [768, 1024],
+  [1024, 768],
+]) {
+  await cdp('Emulation.setDeviceMetricsOverride', {
+    width,
+    height,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  const result = await evaluate(`(async () => {
+    const cases = ${JSON.stringify(templateCases)};
+    const { instantiateLesson } = await import('./js/lesson-templates.js');
+    const { draw } = await import('./js/renderers.js');
+    const { renderContent } = await import('./js/notation.js');
+    const pause = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    let lessons = 0, states = 0;
+    for (const [subject, examples] of Object.entries(cases)) {
+      const templates = (await (await fetch('./data/' + subject + '.json')).json()).lessons;
+      for (const [id, values] of Object.entries(examples)) {
+        const lesson = instantiateLesson(templates.find(template => template.id === id), { id: id + '-2', values });
+        for (const state of lesson.steps) {
+          const visual = document.querySelector('#visual');
+          visual.classList.toggle('has-groups', Boolean(state.groups));
+          visual.replaceChildren(draw(lesson, state));
+          renderContent(document.querySelector('#step-title'), state.titleContent, state.title);
+          renderContent(document.querySelector('#explanation'), state.explanationContent, state.explanation);
+          renderContent(document.querySelector('#detail'), state.detailContent, state.detail || '');
+          await pause();
+          const box = visual.querySelector('svg').getBoundingClientRect();
+          for (const node of visual.querySelectorAll('text, .katex-html')) {
+            const r = node.getBoundingClientRect();
+            if (r.left < box.left - 2 || r.right > box.right + 2 || r.top < box.top - 2 || r.bottom > box.bottom + 2) throw new Error('Alternative labels outside canvas: ' + id + ', ' + state.title);
+          }
+          if (document.documentElement.scrollWidth > innerWidth) throw new Error('Alternative overflow: ' + id);
+          states++;
+        }
+        lessons++;
+      }
+    }
+    return { lessons, states };
+  })()`);
+  assert.equal(result.lessons, 19);
+  console.log(`Alternative Number/Ratio templates ${width}×${height}`, result);
+}
+assert.deepEqual(errors, []);
 await cdp('Browser.close');
 ws.close();

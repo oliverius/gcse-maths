@@ -1,0 +1,180 @@
+{
+  "id": "number",
+  "lessons": [
+    {
+      "template": "brackets",
+      "examples": [
+        {
+          "id": "brackets-1",
+          "values": {
+            "a": 6,
+            "b": 2,
+            "c": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "subtract-five",
+      "examples": [
+        {
+          "id": "subtract-five-1",
+          "values": {
+            "a": 2,
+            "b": 5
+          }
+        }
+      ]
+    },
+    {
+      "template": "add-negative",
+      "examples": [
+        {
+          "id": "add-negative-1",
+          "values": {
+            "a": 4,
+            "b": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "multiply-before-add",
+      "examples": [
+        {
+          "id": "multiply-before-add-1",
+          "values": {
+            "a": 4,
+            "b": 3,
+            "c": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "equivalent-halves",
+      "examples": [
+        {
+          "id": "equivalent-halves-1",
+          "values": {
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "fraction-amount",
+      "examples": [
+        {
+          "id": "fraction-amount-1",
+          "values": {
+            "numerator": 3,
+            "denominator": 4,
+            "total": 20
+          }
+        }
+      ]
+    },
+    {
+      "template": "percentage-amount",
+      "examples": [
+        {
+          "id": "percentage-amount-1",
+          "values": {
+            "total": 80
+          }
+        }
+      ]
+    },
+    {
+      "template": "add-sixths",
+      "examples": [
+        {
+          "id": "add-sixths-1",
+          "values": {
+            "b": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "square-three",
+      "examples": [
+        {
+          "id": "square-three-1",
+          "values": {
+            "base": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "cube-two",
+      "examples": [
+        {
+          "id": "cube-two-1",
+          "values": {
+            "base": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "square-root-25",
+      "examples": [
+        {
+          "id": "square-root-25-1",
+          "values": {
+            "base": 5
+          }
+        }
+      ]
+    },
+    {
+      "template": "zero-power",
+      "examples": [
+        {
+          "id": "zero-power-1",
+          "values": {
+            "base": 5
+          }
+        }
+      ]
+    },
+    {
+      "template": "multiply-powers",
+      "examples": [
+        {
+          "id": "multiply-powers-1",
+          "values": {
+            "base": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "prime-factors",
+      "examples": [
+        {
+          "id": "prime-factors-1",
+          "values": {
+            "p": 2,
+            "q": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "place-value-ten",
+      "examples": [
+        {
+          "id": "place-value-ten-1",
+          "values": {
+            "a": 3,
+            "b": 4
+          }
+        }
+      ]
+    }
+  ]
+}

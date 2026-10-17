@@ -1,0 +1,104 @@
+{
+  "id": "algebra",
+  "lessons": [
+    {
+      "template": "add-both",
+      "examples": [
+        {
+          "id": "add-both-1",
+          "values": {
+            "a": 3,
+            "b": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "subtract-both",
+      "examples": [
+        {
+          "id": "subtract-both-1",
+          "values": {
+            "a": 3,
+            "b": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "divide-three",
+      "examples": [
+        {
+          "id": "divide-three-1",
+          "values": {
+            "a": 3,
+            "b": 12
+          }
+        }
+      ]
+    },
+    {
+      "template": "multiply-four",
+      "examples": [
+        {
+          "id": "multiply-four-1",
+          "values": {
+            "a": 4,
+            "b": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "two-step",
+      "examples": [
+        {
+          "id": "two-step-1",
+          "values": {
+            "a": 2,
+            "b": 3,
+            "c": 11
+          }
+        }
+      ]
+    },
+    {
+      "template": "like-terms",
+      "examples": [
+        {
+          "id": "like-terms-1",
+          "values": {
+            "a": 3,
+            "b": 2,
+            "c": 15
+          }
+        }
+      ]
+    },
+    {
+      "template": "distribute-three",
+      "examples": [
+        {
+          "id": "distribute-three-1",
+          "values": {
+            "a": 3,
+            "b": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "substitution",
+      "examples": [
+        {
+          "id": "substitution-1",
+          "values": {
+            "a": 3,
+            "b": 2,
+            "x": 4
+          }
+        }
+      ]
+    }
+  ]
+}

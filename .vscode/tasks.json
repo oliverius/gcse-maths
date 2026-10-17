@@ -10,6 +10,35 @@
       "isBackground": true,
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Check everything",
+      "detail": "Run linting, formatting checks and all tests without changing files.",
+      "type": "npm",
+      "script": "check",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Lint JavaScript",
+      "detail": "Find JavaScript errors and unused variables or parameters.",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Run tests",
+      "type": "npm",
+      "script": "test",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Format files",
+      "detail": "Apply Prettier formatting to project files; this changes files.",
+      "type": "npm",
+      "script": "format",
+      "problemMatcher": []
     }
   ]
 }

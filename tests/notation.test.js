@@ -4,18 +4,15 @@ import { readFile } from 'node:fs/promises';
 import { mathHTML, validateNotation } from '../src/js/notation.js';
 import { validateLesson } from '../src/js/lesson-validation.js';
 import { linearExpression } from '../src/js/mathematics.js';
-const subjects = await Promise.all(
-  ['algebra', 'number', 'ratio', 'geometry', 'probability', 'statistics'].map(
-    async (area) =>
-      JSON.parse(
-        await readFile(
-          new URL(`../src/data/${area}.json`, import.meta.url),
-          'utf8',
-        ),
-      ),
-  ),
+import { createLoader } from '../src/js/lesson-loader.js';
+const subjects = await createLoader(async (url) => ({
+  ok: true,
+  json: async () => JSON.parse(await readFile(url, 'utf8')),
+})).load();
+const lessons = subjects.flatMap((subject) =>
+  subject.lessons.filter((lesson) => lesson.available),
 );
-const lessons = subjects.flatMap((s) => s.lessons.filter((l) => l.available));
+
 test('KaTeX renders stacked fractions, implicit products, powers, roots and negatives with MathML', () => {
   for (const [latex, markup] of [
     ['\\frac{x}{4}', '<mfrac>'],
@@ -52,7 +49,9 @@ test('all implemented mathematical terms and lesson titles have valid notation a
   }
 });
 test('schema rejects malformed or missing notation without changing animation IDs', () => {
-  const lesson = structuredClone(lessons[0]);
+  const lesson = structuredClone(
+    lessons.find((lesson) => lesson.id === 'add-both'),
+  );
   assert.deepEqual(lesson.steps[3].cancel, ['original-three', 'added-left']);
   lesson.steps[0].left[0].latex = '\\frac{x';
   assert.throws(() => validateLesson(lesson, 'algebra'));

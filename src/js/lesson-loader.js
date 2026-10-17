@@ -1,4 +1,5 @@
 import { validateLesson, validateManifest } from './lesson-validation.js';
+import { instantiateLesson, validateExamples } from './lesson-templates.js';
 export function createLoader(
   fetcher = fetch,
   base = new URL('../data/manifest.json', import.meta.url),
@@ -26,7 +27,16 @@ export function createLoader(
       const seen = new Set();
       // Resolve in manifest order so duplicate handling is deterministic.
       const files = await Promise.allSettled(
-        manifest.areas.map((area) => json(new URL(area.file, base))),
+        manifest.areas.map(async (area) => {
+          const subject = await json(new URL(area.file, base));
+          if (!['algebra', 'number', 'ratio'].includes(area.id)) return subject;
+          const examples = validateExamples(
+            await json(new URL(`./${area.id}-examples.json`, base)),
+            subject.lessons,
+            area.id,
+          );
+          return { ...subject, examples };
+        }),
       );
       return manifest.areas.map((area, i) => {
         const result = files[i];
@@ -51,7 +61,18 @@ export function createLoader(
           };
         for (const candidate of result.value.lessons) {
           try {
-            const lesson = validateLesson(candidate, area.id);
+            let lesson;
+            if (result.value.examples && candidate.available) {
+              const examples = result.value.examples.get(candidate.id);
+              if (!examples?.length)
+                throw new Error('Missing curated lesson examples.');
+              // Validate the whole curated set; the existing lesson shows the first.
+              lesson = examples.map((example) =>
+                instantiateLesson(candidate, example),
+              )[0];
+            } else {
+              lesson = validateLesson(candidate, area.id);
+            }
             if (seen.has(lesson.id)) throw new Error('Duplicate lesson ID.');
             seen.add(lesson.id);
             lessons.push(lesson);

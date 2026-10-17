@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "add-both",
-      "title": "x − 3 = 2",
-      "label": "x − 3 = 2",
+      "title": "x − {{a}} = {{b}}",
+      "label": "x − {{a}} = {{b}}",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "balance",
-      "initialExpression": "x − 3 = 2",
+      "initialExpression": "x − {{a}} = {{b}}",
       "objective": "Use the same inverse operation on both sides to isolate x.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -41,41 +41,50 @@
             },
             {
               "id": "original-three",
-              "text": "− 3",
+              "text": "− {{a}}",
               "tone": "negative",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{a}}",
+              "spoken": "minus {{a}}"
             }
           ],
           "right": [
             {
               "id": "two",
-              "text": "2",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "2",
-              "spoken": "2"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             }
           ],
           "balance": 0,
           "explanation": "Our goal is to leave x on its own.",
-          "detail": "The two sides are equal. Add 3 on both sides to undo subtracting 3.",
+          "detail": "The {{b|words}} sides are equal. Add {{a}} on both sides to undo subtracting {{a}}.",
           "operation": {
             "type": "show"
           },
           "math": {
             "left": {
               "coefficient": 1,
-              "constant": -3
+              "constant": {
+                "$value": {
+                  "subtract": [
+                    0,
+                    "a"
+                  ]
+                }
+              }
             },
             "right": {
               "coefficient": 0,
-              "constant": 2
+              "constant": {
+                "$value": "b"
+              }
             }
           },
           "unbalanced": false
         },
         {
-          "title": "Add 3 on the left",
+          "title": "Add {{a}} on the left",
           "left": [
             {
               "id": "x",
@@ -86,30 +95,30 @@
             },
             {
               "id": "original-three",
-              "text": "− 3",
+              "text": "− {{a}}",
               "tone": "negative",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{a}}",
+              "spoken": "minus {{a}}"
             },
             {
               "id": "added-left",
-              "text": "+ 3",
+              "text": "+ {{a}}",
               "tone": "operation",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{a}}",
+              "spoken": "plus {{a}}"
             }
           ],
           "right": [
             {
               "id": "two",
-              "text": "2",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "2",
-              "spoken": "2"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             }
           ],
           "balance": -1,
-          "explanation": "Add 3 on the left only. The sides are now unequal.",
+          "explanation": "Add {{a}} on the left only. The sides are now unequal.",
           "detail": "This is an intentionally unequal demonstration, not a valid equation. We must do the same to the right.",
           "highlight": [
             "added-left"
@@ -124,13 +133,15 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 2
+              "constant": {
+                "$value": "b"
+              }
             }
           },
           "unbalanced": true
         },
         {
-          "title": "Add 3 on the right too",
+          "title": "Add {{a}} on the right too",
           "left": [
             {
               "id": "x",
@@ -141,33 +152,33 @@
             },
             {
               "id": "original-three",
-              "text": "− 3",
+              "text": "− {{a}}",
               "tone": "negative",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{a}}",
+              "spoken": "minus {{a}}"
             },
             {
               "id": "added-left",
-              "text": "+ 3",
+              "text": "+ {{a}}",
               "tone": "operation",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{a}}",
+              "spoken": "plus {{a}}"
             }
           ],
           "right": [
             {
               "id": "two",
-              "text": "2",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "2",
-              "spoken": "2"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             },
             {
               "id": "added-right",
-              "text": "+ 3",
+              "text": "+ {{a}}",
               "tone": "operation",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{a}}",
+              "spoken": "plus {{a}}"
             }
           ],
           "balance": 0,
@@ -186,7 +197,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 5
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "unbalanced": false
@@ -212,15 +225,15 @@
           "right": [
             {
               "id": "answer",
-              "text": "5",
+              "text": "{{answer}}",
               "tone": "original",
-              "latex": "5",
-              "spoken": "5"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "balance": 0,
-          "explanation": "−3 and +3 cancel: together they make zero.",
-          "detail": "On the right, 2 + 3 makes 5.",
+          "explanation": "−{{a}} and +{{a}} cancel: together they make zero.",
+          "detail": "On the right, {{b}} + {{a}} makes {{answer}}.",
           "cancel": [
             "original-three",
             "added-left"
@@ -235,7 +248,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 5
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "unbalanced": false,
@@ -244,16 +259,16 @@
               "text": "On the right, "
             },
             {
-              "latex": "2 + 3",
-              "spoken": "2 plus 3"
+              "latex": "{{b}} + {{a}}",
+              "spoken": "{{b}} plus {{a}}"
             },
             {
-              "text": " makes 5."
+              "text": " makes {{answer}}."
             }
           ]
         },
         {
-          "title": "The answer is x = 5",
+          "title": "The answer is x = {{answer}}",
           "left": [
             {
               "id": "x",
@@ -266,15 +281,15 @@
           "right": [
             {
               "id": "answer",
-              "text": "5",
+              "text": "{{answer}}",
               "tone": "original",
-              "latex": "5",
-              "spoken": "5"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "balance": 0,
-          "explanation": "Adding zero changes nothing. So x = 5.",
-          "detail": "Check: 5 − 3 = 2. Both sides are equal.",
+          "explanation": "Adding zero changes nothing. So x = {{answer}}.",
+          "detail": "Check: {{answer}} − {{a}} = {{b}}. Both sides are equal.",
           "operation": {
             "type": "simplify"
           },
@@ -285,7 +300,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 5
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "unbalanced": false,
@@ -294,8 +311,8 @@
               "text": "The answer is "
             },
             {
-              "latex": "x = 5",
-              "spoken": "x equals 5"
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer}}"
             }
           ],
           "explanationContent": [
@@ -303,8 +320,8 @@
               "text": "Adding zero changes nothing. So "
             },
             {
-              "latex": "x = 5",
-              "spoken": "x equals 5"
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer}}"
             },
             {
               "text": "."
@@ -315,8 +332,8 @@
               "text": "Check: "
             },
             {
-              "latex": "5 - 3 = 2",
-              "spoken": "5 minus 3 equals 2"
+              "latex": "{{answer}} - {{a}} = {{b}}",
+              "spoken": "{{answer}} minus {{a}} equals {{b}}"
             },
             {
               "text": ". Both sides are equal."
@@ -324,21 +341,41 @@
           ]
         }
       ],
-      "solution": 5,
+      "solution": {
+        "$value": "answer"
+      },
       "notation": {
-        "latex": "x - 3 = 2",
-        "spoken": "x minus 3 equals 2"
+        "latex": "x - {{a}} = {{b}}",
+        "spoken": "x minus {{a}} equals {{b}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 12
+        }
+      },
+      "derived": {
+        "answer": {
+          "add": [
+            "a",
+            "b"
+          ]
+        }
       }
     },
     {
       "id": "subtract-both",
-      "title": "x + 3 = 2",
-      "label": "x + 3 = 2",
+      "title": "x + {{a}} = {{b}}",
+      "label": "x + {{a}} = {{b}}",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "balance",
-      "initialExpression": "x + 3 = 2",
+      "initialExpression": "x + {{a}} = {{b}}",
       "objective": "Use the same inverse operation on both sides to isolate x.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -369,41 +406,45 @@
             },
             {
               "id": "original-three",
-              "text": "+ 3",
+              "text": "+ {{a}}",
               "tone": "original",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{a}}",
+              "spoken": "plus {{a}}"
             }
           ],
           "right": [
             {
               "id": "two",
-              "text": "2",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "2",
-              "spoken": "2"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             }
           ],
           "balance": 0,
           "explanation": "Our goal is to leave x on its own.",
-          "detail": "The two sides are equal. Subtract 3 on both sides to undo adding 3.",
+          "detail": "The {{b|words}} sides are equal. Subtract {{a}} on both sides to undo adding {{a}}.",
           "operation": {
             "type": "show"
           },
           "math": {
             "left": {
               "coefficient": 1,
-              "constant": 3
+              "constant": {
+                "$value": "a"
+              }
             },
             "right": {
               "coefficient": 0,
-              "constant": 2
+              "constant": {
+                "$value": "b"
+              }
             }
           },
           "unbalanced": false
         },
         {
-          "title": "Subtract 3 on the left",
+          "title": "Subtract {{a}} on the left",
           "left": [
             {
               "id": "x",
@@ -414,30 +455,30 @@
             },
             {
               "id": "original-three",
-              "text": "+ 3",
+              "text": "+ {{a}}",
               "tone": "original",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{a}}",
+              "spoken": "plus {{a}}"
             },
             {
               "id": "added-left",
-              "text": "− 3",
+              "text": "− {{a}}",
               "tone": "operation",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{a}}",
+              "spoken": "minus {{a}}"
             }
           ],
           "right": [
             {
               "id": "two",
-              "text": "2",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "2",
-              "spoken": "2"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             }
           ],
           "balance": 1,
-          "explanation": "Subtract 3 on the left only. The sides are now unequal.",
+          "explanation": "Subtract {{a}} on the left only. The sides are now unequal.",
           "detail": "This is an intentionally unequal demonstration, not a valid equation. We must do the same to the right.",
           "highlight": [
             "added-left"
@@ -452,13 +493,15 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 2
+              "constant": {
+                "$value": "b"
+              }
             }
           },
           "unbalanced": true
         },
         {
-          "title": "Subtract 3 on the right too",
+          "title": "Subtract {{a}} on the right too",
           "left": [
             {
               "id": "x",
@@ -469,33 +512,33 @@
             },
             {
               "id": "original-three",
-              "text": "+ 3",
+              "text": "+ {{a}}",
               "tone": "original",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{a}}",
+              "spoken": "plus {{a}}"
             },
             {
               "id": "added-left",
-              "text": "− 3",
+              "text": "− {{a}}",
               "tone": "operation",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{a}}",
+              "spoken": "minus {{a}}"
             }
           ],
           "right": [
             {
               "id": "two",
-              "text": "2",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "2",
-              "spoken": "2"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             },
             {
               "id": "added-right",
-              "text": "− 3",
+              "text": "− {{a}}",
               "tone": "operation",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{a}}",
+              "spoken": "minus {{a}}"
             }
           ],
           "balance": 0,
@@ -514,7 +557,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": -1
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "unbalanced": false
@@ -540,15 +585,15 @@
           "right": [
             {
               "id": "answer",
-              "text": "−1",
-              "tone": "negative",
-              "latex": "-1",
-              "spoken": "minus 1"
+              "text": "{{answer|display}}",
+              "tone": "{{answer|tone}}",
+              "latex": "{{answer}}",
+              "spoken": "{{answer|spoken}}"
             }
           ],
           "balance": 0,
-          "explanation": "+3 and −3 cancel: together they make zero.",
-          "detail": "On the right, 2 − 3 = −1: start at 2, count back 3, and go one below zero.",
+          "explanation": "+{{a}} and −{{a}} cancel: together they make zero.",
+          "detail": "On the right, {{b}} − {{a}} = {{answer|display}}: start at {{b}}, count back {{a}}, and go {{answer|position}}.",
           "cancel": [
             "original-three",
             "added-left"
@@ -563,7 +608,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": -1
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "unbalanced": false,
@@ -572,16 +619,16 @@
               "text": "On the right, "
             },
             {
-              "latex": "2 - 3 = -1",
-              "spoken": "2 minus 3 equals minus 1"
+              "latex": "{{b}} - {{a}} = {{answer}}",
+              "spoken": "{{b}} minus {{a}} equals {{answer|spoken}}"
             },
             {
-              "text": ": start at 2, count back 3, and go one below zero."
+              "text": ": start at {{b}}, count back {{a}}, and go {{answer|position}}."
             }
           ]
         },
         {
-          "title": "The answer is x = −1",
+          "title": "The answer is x = {{answer|display}}",
           "left": [
             {
               "id": "x",
@@ -594,15 +641,15 @@
           "right": [
             {
               "id": "answer",
-              "text": "−1",
-              "tone": "negative",
-              "latex": "-1",
-              "spoken": "minus 1"
+              "text": "{{answer|display}}",
+              "tone": "{{answer|tone}}",
+              "latex": "{{answer}}",
+              "spoken": "{{answer|spoken}}"
             }
           ],
           "balance": 0,
-          "explanation": "Adding zero changes nothing. So x = −1.",
-          "detail": "A negative answer is allowed. Check: −1 + 3 = 2. Both sides are equal.",
+          "explanation": "Adding zero changes nothing. So x = {{answer|display}}.",
+          "detail": "{{answer|negativeNote}}Check: {{answer|display}} + {{a}} = {{b}}. Both sides are equal.",
           "operation": {
             "type": "simplify"
           },
@@ -613,7 +660,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": -1
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "unbalanced": false,
@@ -622,8 +671,8 @@
               "text": "The answer is "
             },
             {
-              "latex": "x = -1",
-              "spoken": "x equals minus 1"
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer|spoken}}"
             }
           ],
           "explanationContent": [
@@ -631,8 +680,8 @@
               "text": "Adding zero changes nothing. So "
             },
             {
-              "latex": "x = -1",
-              "spoken": "x equals minus 1"
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer|spoken}}"
             },
             {
               "text": "."
@@ -640,11 +689,11 @@
           ],
           "detailContent": [
             {
-              "text": "A negative answer is allowed. Check: "
+              "text": "{{answer|negativeNote}}Check: "
             },
             {
-              "latex": "-1 + 3 = 2",
-              "spoken": "minus 1 plus 3 equals 2"
+              "latex": "{{answer}} + {{a}} = {{b}}",
+              "spoken": "{{answer|spoken}} plus {{a}} equals {{b}}"
             },
             {
               "text": ". Both sides are equal."
@@ -652,22 +701,42 @@
           ]
         }
       ],
-      "solution": -1,
+      "solution": {
+        "$value": "answer"
+      },
       "notation": {
-        "latex": "x + 3 = 2",
-        "spoken": "x plus 3 equals 2"
+        "latex": "x + {{a}} = {{b}}",
+        "spoken": "x plus {{a}} equals {{b}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 12
+        }
+      },
+      "derived": {
+        "answer": {
+          "subtract": [
+            "b",
+            "a"
+          ]
+        }
       }
     },
     {
       "id": "divide-three",
-      "title": "3x = 12",
-      "label": "3x = 12",
+      "title": "{{a}}x = {{b}}",
+      "label": "{{a}}x = {{b}}",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "balance",
-      "initialExpression": "3x = 12",
-      "objective": "Divide both sides into three equal groups.",
+      "initialExpression": "{{a}}x = {{b}}",
+      "objective": "Divide both sides into {{a|words}} equal groups.",
       "prerequisites": [
         "Read the symbols in this example"
       ],
@@ -681,32 +750,32 @@
       ],
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
-        "misconception": "Dividing only one side, or taking away 3 instead of dividing.",
-        "checkQuestion": "What happens to each of the twelve units when we divide by three?"
+        "misconception": "Dividing only one side, or taking away {{a}} instead of dividing.",
+        "checkQuestion": "What happens to each of the {{b|words}} units when we divide by {{a|words}}?"
       },
       "steps": [
         {
-          "title": "Three equal x-groups",
+          "title": "{{a|Words}} equal x-groups",
           "left": [
             {
               "id": "three-x",
-              "text": "3x",
+              "text": "{{a}}x",
               "tone": "original",
-              "latex": "3x",
-              "spoken": "3 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             }
           ],
           "right": [
             {
               "id": "twelve",
-              "text": "12",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "12",
-              "spoken": "12"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             }
           ],
           "balance": 0,
-          "explanation": "3x means three equal groups of x. Together they equal 12.",
+          "explanation": "{{a}}x means {{a|words}} equal groups of x. Together they equal {{b}}.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -714,160 +783,91 @@
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 3,
+              "coefficient": {
+                "$value": "a"
+              },
               "constant": 0
             },
             "right": {
               "coefficient": 0,
-              "constant": 12
+              "constant": {
+                "$value": "b"
+              }
             }
           },
           "groups": [
             {
               "id": "unknown",
-              "label": "Three x-groups",
+              "label": "{{a|Words}} x-groups",
               "items": [
                 {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+                  "$repeat": {
+                    "count": "a",
+                    "as": "t",
+                    "item": {
+                      "id": "tile-x-{{t}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
             },
             {
               "id": "known",
-              "label": "Twelve units",
+              "label": "{{b|Words}} units",
               "items": [
                 {
-                  "id": "unit-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-3",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-4",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-5",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-6",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-7",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-8",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-9",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-10",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-11",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                  "$repeat": {
+                    "count": "b",
+                    "as": "u",
+                    "item": {
+                      "id": "unit-{{u}}",
+                      "text": "1",
+                      "tone": "operation",
+                      "latex": "1",
+                      "spoken": "1"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
             }
           ]
         },
         {
-          "title": "Split both sides into three groups",
+          "title": "Split both sides into {{a|words}} groups",
           "left": [
             {
               "id": "division-left",
-              "text": "3x ÷ 3",
+              "text": "{{a}}x ÷ {{a}}",
               "tone": "operation",
-              "latex": "\\frac{3x}{3}",
-              "spoken": "3 x divided by 3"
+              "latex": "\\frac{{{a}}x}{{{a}}}",
+              "spoken": "{{a}} x divided by {{a}}"
             }
           ],
           "right": [
             {
               "id": "division-right",
-              "text": "12 ÷ 3",
+              "text": "{{b}} ÷ {{a}}",
               "tone": "operation",
-              "latex": "\\frac{12}{3}",
-              "spoken": "12 divided by 3"
+              "latex": "\\frac{{{b}}}{{{a}}}",
+              "spoken": "{{b}} divided by {{a}}"
             }
           ],
           "balance": 0,
-          "explanation": "Divide both sides by 3. Share the twelve units equally among the three x-groups.",
+          "explanation": "Divide both sides by {{a}}. Share the {{b|words}} units equally among the {{a|words}} x-groups.",
           "detail": "",
           "operation": {
             "type": "split",
-            "value": 3
+            "value": {
+              "$value": "a"
+            }
           },
           "unbalanced": false,
           "math": {
@@ -877,141 +877,69 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 4
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
-          "groups": [
-            {
-              "id": "pair-0",
-              "label": "Group 1",
-              "items": [
-                {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "unit-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-3",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "pair-1",
-              "label": "Group 2",
-              "items": [
-                {
-                  "id": "tile-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "unit-4",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-5",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-6",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-7",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "pair-2",
-              "label": "Group 3",
-              "items": [
-                {
-                  "id": "tile-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "unit-8",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-9",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-10",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-11",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            }
-          ],
           "highlight": [
             "division-left",
             "division-right"
+          ],
+          "groups": [
+            {
+              "$repeat": {
+                "count": "a",
+                "as": "g",
+                "item": {
+                  "id": "pair-{{g}}",
+                  "label": "Group {{n}}",
+                  "items": [
+                    {
+                      "id": "tile-x-{{g}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "answer",
+                        "as": "u",
+                        "item": {
+                          "id": "unit-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": "offset"
+                      }
+                    }
+                  ]
+                },
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  },
+                  "offset": {
+                    "multiply": [
+                      "g",
+                      "answer"
+                    ]
+                  }
+                },
+                "start": 0
+              }
+            }
           ]
         },
         {
-          "title": "Each x-group contains four",
+          "title": "Each x-group contains {{answer|words}}",
           "left": [
             {
               "id": "x",
@@ -1024,14 +952,14 @@
           "right": [
             {
               "id": "four",
-              "text": "4",
+              "text": "{{answer}}",
               "tone": "operation",
-              "latex": "4",
-              "spoken": "4"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "balance": 0,
-          "explanation": "Each group has one x and four units. So x = 4.",
+          "explanation": "Each group has one x and {{answer|words}} units. So x = {{answer}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -1044,82 +972,115 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 4
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
-          "groups": [
-            {
-              "id": "pair-0",
-              "label": "Group 1",
-              "items": [
-                {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "unit-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-3",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            }
-          ],
           "explanationContent": [
             {
-              "text": "Each group has one x and four units. So "
+              "text": "Each group has one x and {{answer|words}} units. So "
             },
             {
-              "latex": "x = 4",
-              "spoken": "x equals 4"
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer}}"
             },
             {
               "text": "."
             }
+          ],
+          "groups": [
+            {
+              "$repeat": {
+                "count": 1,
+                "as": "g",
+                "item": {
+                  "id": "pair-{{g}}",
+                  "label": "Group {{n}}",
+                  "items": [
+                    {
+                      "id": "tile-x-{{g}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "answer",
+                        "as": "u",
+                        "item": {
+                          "id": "unit-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": "offset"
+                      }
+                    }
+                  ]
+                },
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  },
+                  "offset": {
+                    "multiply": [
+                      "g",
+                      "answer"
+                    ]
+                  }
+                },
+                "start": 0
+              }
+            }
           ]
         }
       ],
-      "solution": 4,
+      "solution": {
+        "$value": "answer"
+      },
       "notation": {
-        "latex": "3x = 12",
-        "spoken": "3 x equals 12"
-      }
+        "latex": "{{a}}x = {{b}}",
+        "spoken": "{{a}} x equals {{b}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 12
+        }
+      },
+      "derived": {
+        "answer": {
+          "divide": [
+            "b",
+            "a"
+          ]
+        }
+      },
+      "integers": [
+        "answer"
+      ]
     },
     {
       "id": "multiply-four",
-      "title": "x / 4 = 3",
-      "label": "x / 4 = 3",
+      "title": "x / {{a}} = {{b}}",
+      "label": "x / {{a}} = {{b}}",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "balance",
-      "initialExpression": "x / 4 = 3",
-      "objective": "Rebuild a whole from four equal quarters.",
+      "initialExpression": "x / {{a}} = {{b}}",
+      "objective": "Rebuild a whole from {{a|words}} equal {{a|parts}}.",
       "prerequisites": [
         "Read the symbols in this example"
       ],
@@ -1133,32 +1094,32 @@
       ],
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
-        "misconception": "Subtracting four instead of making four equal copies.",
-        "checkQuestion": "Why do four quarters make x?"
+        "misconception": "Subtracting {{a|words}} instead of making {{a|words}} equal copies.",
+        "checkQuestion": "Why do {{a|words}} {{a|parts}} make x?"
       },
       "steps": [
         {
-          "title": "One quarter of x is three",
+          "title": "One {{a|part}} of x is {{b|words}}",
           "left": [
             {
               "id": "quarter",
-              "text": "x / 4",
+              "text": "x / {{a}}",
               "tone": "original",
-              "latex": "\\frac{x}{4}",
-              "spoken": "x divided by 4"
+              "latex": "\\frac{x}{{{a}}}",
+              "spoken": "x divided by {{a}}"
             }
           ],
           "right": [
             {
               "id": "three",
-              "text": "3",
+              "text": "{{b}}",
               "tone": "original",
-              "latex": "3",
-              "spoken": "3"
+              "latex": "{{b}}",
+              "spoken": "{{b}}"
             }
           ],
           "balance": 0,
-          "explanation": "A quarter of x is 3. We need four equal quarters to make the whole.",
+          "explanation": "A {{a|part}} of x is {{b}}. We need {{a|words}} equal {{a|parts}} to make the whole.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -1166,77 +1127,92 @@
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 0.25,
+              "coefficient": {
+                "$value": "coefficient"
+              },
               "constant": 0
             },
             "right": {
               "coefficient": 0,
-              "constant": 3
+              "constant": {
+                "$value": "b"
+              }
             }
           },
           "groups": [
             {
-              "id": "quarter-0",
-              "label": "Quarter 1",
-              "items": [
-                {
-                  "id": "quarter-x-0",
-                  "text": "x/4",
-                  "tone": "original",
-                  "latex": "\\frac{x}{4}",
-                  "spoken": "x divided by 4"
+              "$repeat": {
+                "count": 1,
+                "as": "g",
+                "item": {
+                  "id": "quarter-{{g}}",
+                  "label": "{{a|Part}} {{n}}",
+                  "items": [
+                    {
+                      "id": "quarter-x-{{g}}",
+                      "text": "x/{{a}}",
+                      "tone": "original",
+                      "latex": "\\frac{x}{{{a}}}",
+                      "spoken": "x divided by {{a}}"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "u",
+                        "item": {
+                          "id": "q-unit-{{g}}-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": 0
+                      }
+                    }
+                  ]
                 },
-                {
-                  "id": "q-unit-0-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
                 },
-                {
-                  "id": "q-unit-0-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-0-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
+                "start": 0
+              }
             }
           ]
         },
         {
-          "title": "Multiply both sides by four",
+          "title": "Multiply both sides by {{a|words}}",
           "left": [
             {
               "id": "multiply-left",
-              "text": "(x / 4) × 4",
+              "text": "(x / {{a}}) × {{a}}",
               "tone": "operation",
-              "latex": "\\left(\\frac{x}{4}\\right) \\times  4",
-              "spoken": "open bracket x divided by 4 close bracket times 4"
+              "latex": "\\left(\\frac{x}{{{a}}}\\right) \\times  {{a}}",
+              "spoken": "open bracket x divided by {{a}} close bracket times {{a}}"
             }
           ],
           "right": [
             {
               "id": "multiply-right",
-              "text": "3 × 4",
+              "text": "{{b}} × {{a}}",
               "tone": "operation",
-              "latex": "3 \\times  4",
-              "spoken": "3 times 4"
+              "latex": "{{b}} \\times  {{a}}",
+              "spoken": "{{b}} times {{a}}"
             }
           ],
           "balance": 0,
-          "explanation": "Make four copies on both sides. Four quarters make one whole x.",
+          "explanation": "Make {{a|words}} copies on both sides. {{a|Words}} {{a|parts}} make one whole x.",
           "detail": "",
           "operation": {
             "type": "apply-both",
-            "value": 4
+            "value": {
+              "$value": "a"
+            }
           },
           "unbalanced": false,
           "math": {
@@ -1246,7 +1222,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 12
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "highlight": [
@@ -1255,145 +1233,52 @@
           ],
           "groups": [
             {
-              "id": "quarter-0",
-              "label": "Quarter 1",
-              "items": [
-                {
-                  "id": "quarter-x-0",
-                  "text": "x/4",
-                  "tone": "original",
-                  "latex": "\\frac{x}{4}",
-                  "spoken": "x divided by 4"
+              "$repeat": {
+                "count": "a",
+                "as": "g",
+                "item": {
+                  "id": "quarter-{{g}}",
+                  "label": "{{a|Part}} {{n}}",
+                  "items": [
+                    {
+                      "id": "quarter-x-{{g}}",
+                      "text": "x/{{a}}",
+                      "tone": "original",
+                      "latex": "\\frac{x}{{{a}}}",
+                      "spoken": "x divided by {{a}}"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "u",
+                        "item": {
+                          "id": "q-unit-{{g}}-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": 0
+                      }
+                    }
+                  ]
                 },
-                {
-                  "id": "q-unit-0-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
                 },
-                {
-                  "id": "q-unit-0-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-0-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "quarter-1",
-              "label": "Quarter 2",
-              "items": [
-                {
-                  "id": "quarter-x-1",
-                  "text": "x/4",
-                  "tone": "original",
-                  "latex": "\\frac{x}{4}",
-                  "spoken": "x divided by 4"
-                },
-                {
-                  "id": "q-unit-1-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-1-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-1-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "quarter-2",
-              "label": "Quarter 3",
-              "items": [
-                {
-                  "id": "quarter-x-2",
-                  "text": "x/4",
-                  "tone": "original",
-                  "latex": "\\frac{x}{4}",
-                  "spoken": "x divided by 4"
-                },
-                {
-                  "id": "q-unit-2-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-2-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-2-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "quarter-3",
-              "label": "Quarter 4",
-              "items": [
-                {
-                  "id": "quarter-x-3",
-                  "text": "x/4",
-                  "tone": "original",
-                  "latex": "\\frac{x}{4}",
-                  "spoken": "x divided by 4"
-                },
-                {
-                  "id": "q-unit-3-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-3-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "q-unit-3-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
+                "start": 0
+              }
             }
           ]
         },
         {
-          "title": "The whole is twelve",
+          "title": "The whole is {{answer|words}}",
           "left": [
             {
               "id": "x",
@@ -1406,14 +1291,14 @@
           "right": [
             {
               "id": "twelve",
-              "text": "12",
+              "text": "{{answer}}",
               "tone": "operation",
-              "latex": "12",
-              "spoken": "12"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "balance": 0,
-          "explanation": "Four groups of three make twelve. So x = 12.",
+          "explanation": "{{a|Words}} groups of {{b|words}} make {{answer|words}}. So x = {{answer}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -1426,130 +1311,89 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 12
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
+          "explanationContent": [
+            {
+              "text": "{{a|Words}} groups of {{b|words}} make {{answer|words}}. So "
+            },
+            {
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer}}"
+            },
+            {
+              "text": "."
+            }
+          ],
           "groups": [
             {
               "id": "whole",
               "label": "One whole x",
               "items": [
                 {
-                  "id": "unit-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-3",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-4",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-5",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-6",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-7",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-8",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-9",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-10",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-11",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                  "$repeat": {
+                    "count": "answer",
+                    "as": "u",
+                    "item": {
+                      "id": "unit-{{u}}",
+                      "text": "1",
+                      "tone": "operation",
+                      "latex": "1",
+                      "spoken": "1"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
-            }
-          ],
-          "explanationContent": [
-            {
-              "text": "Four groups of three make twelve. So "
-            },
-            {
-              "latex": "x = 12",
-              "spoken": "x equals 12"
-            },
-            {
-              "text": "."
             }
           ]
         }
       ],
-      "solution": 12,
+      "solution": {
+        "$value": "answer"
+      },
       "notation": {
-        "latex": "\\frac{x}{4} = 3",
-        "spoken": "x divided by 4 equals 3"
+        "latex": "\\frac{x}{{{a}}} = {{b}}",
+        "spoken": "x divided by {{a}} equals {{b}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 4
+        },
+        "b": {
+          "min": 1,
+          "max": 12
+        }
+      },
+      "derived": {
+        "coefficient": {
+          "divide": [
+            1,
+            "a"
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "a",
+            "b"
+          ]
+        }
       }
     },
     {
       "id": "two-step",
-      "title": "2x + 3 = 11",
-      "label": "2x + 3 = 11",
+      "title": "{{a}}x + {{b}} = {{c}}",
+      "label": "{{a}}x + {{b}} = {{c}}",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "balance",
-      "initialExpression": "2x + 3 = 11",
+      "initialExpression": "{{a}}x + {{b}} = {{c}}",
       "objective": "Undo addition, then divide both sides equally.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -1564,8 +1408,8 @@
       ],
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
-        "misconception": "Dividing only the x term while ignoring the added 3.",
-        "checkQuestion": "Why did we subtract 3 before dividing by 2?"
+        "misconception": "Dividing only the x term while ignoring the added {{b}}.",
+        "checkQuestion": "Why did we subtract {{b}} before dividing by {{a}}?"
       },
       "steps": [
         {
@@ -1573,30 +1417,30 @@
           "left": [
             {
               "id": "two-x",
-              "text": "2x",
+              "text": "{{a}}x",
               "tone": "original",
-              "latex": "2x",
-              "spoken": "2 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             },
             {
               "id": "plus-three",
-              "text": "+ 3",
+              "text": "+ {{b}}",
               "tone": "original",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{b}}",
+              "spoken": "plus {{b}}"
             }
           ],
           "right": [
             {
               "id": "eleven",
-              "text": "11",
+              "text": "{{c}}",
               "tone": "original",
-              "latex": "11",
-              "spoken": "11"
+              "latex": "{{c}}",
+              "spoken": "{{c}}"
             }
           ],
           "balance": 0,
-          "explanation": "First undo adding 3. Then undo multiplying x by 2.",
+          "explanation": "First undo adding {{b}}. Then undo multiplying x by {{a}}.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -1604,72 +1448,89 @@
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 2,
-              "constant": 3
+              "coefficient": {
+                "$value": "a"
+              },
+              "constant": {
+                "$value": "b"
+              }
             },
             "right": {
               "coefficient": 0,
-              "constant": 11
+              "constant": {
+                "$value": "c"
+              }
             }
           }
         },
         {
-          "title": "Subtract three on both sides",
+          "title": "Subtract {{b|words}} on both sides",
           "left": [
             {
               "id": "two-x",
-              "text": "2x",
+              "text": "{{a}}x",
               "tone": "original",
-              "latex": "2x",
-              "spoken": "2 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             },
             {
               "id": "plus-three",
-              "text": "+ 3",
+              "text": "+ {{b}}",
               "tone": "original",
-              "latex": "+ 3",
-              "spoken": "plus 3"
+              "latex": "+ {{b}}",
+              "spoken": "plus {{b}}"
             },
             {
               "id": "minus-left",
-              "text": "− 3",
+              "text": "− {{b}}",
               "tone": "operation",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{b}}",
+              "spoken": "minus {{b}}"
             }
           ],
           "right": [
             {
               "id": "eleven",
-              "text": "11",
+              "text": "{{c}}",
               "tone": "original",
-              "latex": "11",
-              "spoken": "11"
+              "latex": "{{c}}",
+              "spoken": "{{c}}"
             },
             {
               "id": "minus-right",
-              "text": "− 3",
+              "text": "− {{b}}",
               "tone": "operation",
-              "latex": "- 3",
-              "spoken": "minus 3"
+              "latex": "- {{b}}",
+              "spoken": "minus {{b}}"
             }
           ],
           "balance": 0,
-          "explanation": "Subtract 3 from both sides to keep equality.",
+          "explanation": "Subtract {{b}} from both sides to keep equality.",
           "detail": "",
           "operation": {
             "type": "apply-both",
-            "value": -3
+            "value": {
+              "$value": {
+                "subtract": [
+                  0,
+                  "b"
+                ]
+              }
+            }
           },
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 2,
+              "coefficient": {
+                "$value": "a"
+              },
               "constant": 0
             },
             "right": {
               "coefficient": 0,
-              "constant": 8
+              "constant": {
+                "$value": "remainder"
+              }
             }
           },
           "highlight": [
@@ -1682,23 +1543,23 @@
           "left": [
             {
               "id": "two-x",
-              "text": "2x",
+              "text": "{{a}}x",
               "tone": "original",
-              "latex": "2x",
-              "spoken": "2 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             }
           ],
           "right": [
             {
               "id": "eight",
-              "text": "8",
+              "text": "{{remainder}}",
               "tone": "original",
-              "latex": "8",
-              "spoken": "8"
+              "latex": "{{remainder}}",
+              "spoken": "{{remainder}}"
             }
           ],
           "balance": 0,
-          "explanation": "+3 and −3 make zero. On the right, 11 − 3 = 8.",
+          "explanation": "+{{b}} and −{{b}} make zero. On the right, {{c}} − {{b}} = {{remainder}}.",
           "detail": "",
           "operation": {
             "type": "cancel"
@@ -1706,12 +1567,16 @@
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 2,
+              "coefficient": {
+                "$value": "a"
+              },
               "constant": 0
             },
             "right": {
               "coefficient": 0,
-              "constant": 8
+              "constant": {
+                "$value": "remainder"
+              }
             }
           },
           "cancel": [
@@ -1720,11 +1585,11 @@
           ],
           "explanationContent": [
             {
-              "text": "+3 and −3 make zero. On the right, "
+              "text": "+{{b}} and −{{b}} make zero. On the right, "
             },
             {
-              "latex": "11 - 3 = 8",
-              "spoken": "11 minus 3 equals 8"
+              "latex": "{{c}} - {{b}} = {{remainder}}",
+              "spoken": "{{c}} minus {{b}} equals {{remainder}}"
             },
             {
               "text": "."
@@ -1732,31 +1597,33 @@
           ]
         },
         {
-          "title": "Divide both sides by two",
+          "title": "Divide both sides by {{a|words}}",
           "left": [
             {
               "id": "divide-left",
-              "text": "2x ÷ 2",
+              "text": "{{a}}x ÷ {{a}}",
               "tone": "operation",
-              "latex": "\\frac{2x}{2}",
-              "spoken": "2 x divided by 2"
+              "latex": "\\frac{{{a}}x}{{{a}}}",
+              "spoken": "{{a}} x divided by {{a}}"
             }
           ],
           "right": [
             {
               "id": "divide-right",
-              "text": "8 ÷ 2",
+              "text": "{{remainder}} ÷ {{a}}",
               "tone": "operation",
-              "latex": "\\frac{8}{2}",
-              "spoken": "8 divided by 2"
+              "latex": "\\frac{{{remainder}}}{{{a}}}",
+              "spoken": "{{remainder}} divided by {{a}}"
             }
           ],
           "balance": 0,
-          "explanation": "Share eight units equally between two x-groups.",
+          "explanation": "Share {{remainder|words}} units equally between {{a|words}} x-groups.",
           "detail": "",
           "operation": {
             "type": "split",
-            "value": 2
+            "value": {
+              "$value": "a"
+            }
           },
           "unbalanced": false,
           "math": {
@@ -1766,7 +1633,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 4
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "highlight": [
@@ -1775,91 +1644,58 @@
           ],
           "groups": [
             {
-              "id": "half-0",
-              "label": "Group 1",
-              "items": [
-                {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+              "$repeat": {
+                "count": "a",
+                "as": "g",
+                "item": {
+                  "id": "half-{{g}}",
+                  "label": "Group {{n}}",
+                  "items": [
+                    {
+                      "id": "tile-x-{{g}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "answer",
+                        "as": "u",
+                        "item": {
+                          "id": "unit-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": "offset"
+                      }
+                    }
+                  ]
                 },
-                {
-                  "id": "unit-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  },
+                  "offset": {
+                    "multiply": [
+                      "g",
+                      "answer"
+                    ]
+                  }
                 },
-                {
-                  "id": "unit-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-3",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "half-1",
-              "label": "Group 2",
-              "items": [
-                {
-                  "id": "tile-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "unit-4",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-5",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-6",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-7",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
+                "start": 0
+              }
             }
           ]
         },
         {
-          "title": "Each x is four",
+          "title": "Each x is {{answer|words}}",
           "left": [
             {
               "id": "x",
@@ -1872,14 +1708,14 @@
           "right": [
             {
               "id": "four",
-              "text": "4",
+              "text": "{{answer}}",
               "tone": "operation",
-              "latex": "4",
-              "spoken": "4"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "balance": 0,
-          "explanation": "x = 4. Check: 2 × 4 + 3 = 11.",
+          "explanation": "x = {{answer}}. Check: {{a}} × {{answer}} + {{b}} = {{c}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -1892,9 +1728,27 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 4
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
+          "explanationContent": [
+            {
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer}}"
+            },
+            {
+              "text": ". Check: "
+            },
+            {
+              "latex": "{{a}} \\times  {{answer}} + {{b}} = {{c}}",
+              "spoken": "{{a}} times {{answer}} plus {{b}} equals {{c}}"
+            },
+            {
+              "text": "."
+            }
+          ],
           "groups": [
             {
               "id": "answer",
@@ -1908,69 +1762,73 @@
                   "spoken": "x"
                 },
                 {
-                  "id": "unit-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-2",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "unit-3",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                  "$repeat": {
+                    "count": "answer",
+                    "as": "u",
+                    "item": {
+                      "id": "unit-{{u}}",
+                      "text": "1",
+                      "tone": "operation",
+                      "latex": "1",
+                      "spoken": "1"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
-            }
-          ],
-          "explanationContent": [
-            {
-              "latex": "x = 4",
-              "spoken": "x equals 4"
-            },
-            {
-              "text": ". Check: "
-            },
-            {
-              "latex": "2 \\times  4 + 3 = 11",
-              "spoken": "2 times 4 plus 3 equals 11"
-            },
-            {
-              "text": "."
             }
           ]
         }
       ],
-      "solution": 4,
+      "solution": {
+        "$value": "answer"
+      },
       "notation": {
-        "latex": "2x + 3 = 11",
-        "spoken": "2 x plus 3 equals 11"
-      }
+        "latex": "{{a}}x + {{b}} = {{c}}",
+        "spoken": "{{a}} x plus {{b}} equals {{c}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 12
+        },
+        "c": {
+          "min": 1,
+          "max": 24
+        }
+      },
+      "derived": {
+        "remainder": {
+          "subtract": [
+            "c",
+            "b"
+          ]
+        },
+        "answer": {
+          "divide": [
+            "remainder",
+            "a"
+          ]
+        }
+      },
+      "integers": [
+        "answer"
+      ]
     },
     {
       "id": "like-terms",
-      "title": "3x + 2x = 15",
-      "label": "3x + 2x = 15",
+      "title": "{{a}}x + {{b}}x = {{c}}",
+      "label": "{{a}}x + {{b}}x = {{c}}",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "balance",
-      "initialExpression": "3x + 2x = 15",
+      "initialExpression": "{{a}}x + {{b}}x = {{c}}",
       "objective": "Collect equal x-tiles, then solve by equal grouping.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -1985,7 +1843,7 @@
       ],
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
-        "misconception": "Thinking 3x + 2x is 5x².",
+        "misconception": "Thinking {{a}}x + {{b}}x is {{combined}}x².",
         "checkQuestion": "Why can we collect these tiles together?"
       },
       "steps": [
@@ -1994,30 +1852,30 @@
           "left": [
             {
               "id": "three-x",
-              "text": "3x",
+              "text": "{{a}}x",
               "tone": "original",
-              "latex": "3x",
-              "spoken": "3 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             },
             {
               "id": "plus-two-x",
-              "text": "+ 2x",
+              "text": "+ {{b}}x",
               "tone": "original",
-              "latex": "+ 2x",
-              "spoken": "plus 2 x"
+              "latex": "+ {{b}}x",
+              "spoken": "plus {{b}} x"
             }
           ],
           "right": [
             {
               "id": "fifteen",
-              "text": "15",
+              "text": "{{c}}",
               "tone": "original",
-              "latex": "15",
-              "spoken": "15"
+              "latex": "{{c}}",
+              "spoken": "{{c}}"
             }
           ],
           "balance": 0,
-          "explanation": "There are three x-tiles and two more x-tiles.",
+          "explanation": "There are {{a|words}} x-tiles and {{b|words}} more x-tiles.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -2025,86 +1883,85 @@
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 5,
+              "coefficient": {
+                "$value": "combined"
+              },
               "constant": 0
             },
             "right": {
               "coefficient": 0,
-              "constant": 15
+              "constant": {
+                "$value": "c"
+              }
             }
           },
           "groups": [
             {
               "id": "first",
-              "label": "Three x-tiles",
+              "label": "{{a|Words}} x-tiles",
               "items": [
                 {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+                  "$repeat": {
+                    "count": "a",
+                    "as": "t",
+                    "item": {
+                      "id": "tile-x-{{t}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
             },
             {
               "id": "second",
-              "label": "Two x-tiles",
+              "label": "{{b|Words}} x-tiles",
               "items": [
                 {
-                  "id": "tile-x-3",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-4",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+                  "$repeat": {
+                    "count": "b",
+                    "as": "t",
+                    "item": {
+                      "id": "tile-x-{{t}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    "derived": {},
+                    "start": "a"
+                  }
                 }
               ]
             }
           ]
         },
         {
-          "title": "Collect the five x-tiles",
+          "title": "Collect the {{combined|words}} x-tiles",
           "left": [
             {
               "id": "five-x",
-              "text": "5x",
+              "text": "{{combined}}x",
               "tone": "original",
-              "latex": "5x",
-              "spoken": "5 x"
+              "latex": "{{combined}}x",
+              "spoken": "{{combined}} x"
             }
           ],
           "right": [
             {
               "id": "fifteen",
-              "text": "15",
+              "text": "{{c}}",
               "tone": "original",
-              "latex": "15",
-              "spoken": "15"
+              "latex": "{{c}}",
+              "spoken": "{{c}}"
             }
           ],
           "balance": 0,
-          "explanation": "3x + 2x makes 5x. We count five copies of the same unknown.",
+          "explanation": "{{a}}x + {{b}}x makes {{combined}}x. We count {{combined|words}} copies of the same unknown.",
           "detail": "",
           "operation": {
             "type": "group"
@@ -2112,93 +1969,79 @@
           "unbalanced": false,
           "math": {
             "left": {
-              "coefficient": 5,
+              "coefficient": {
+                "$value": "combined"
+              },
               "constant": 0
             },
             "right": {
               "coefficient": 0,
-              "constant": 15
+              "constant": {
+                "$value": "c"
+              }
             }
           },
+          "explanationContent": [
+            {
+              "latex": "{{a}}x + {{b}}x",
+              "spoken": "{{a}} x plus {{b}} x"
+            },
+            {
+              "text": " makes {{combined}}x. We count {{combined|words}} copies of the same unknown."
+            }
+          ],
           "groups": [
             {
               "id": "all",
-              "label": "Five x-tiles",
+              "label": "{{combined|Words}} x-tiles",
               "items": [
                 {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-3",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "tile-x-4",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+                  "$repeat": {
+                    "count": "combined",
+                    "as": "t",
+                    "item": {
+                      "id": "tile-x-{{t}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
-            }
-          ],
-          "explanationContent": [
-            {
-              "latex": "3x + 2x",
-              "spoken": "3 x plus 2 x"
-            },
-            {
-              "text": " makes 5x. We count five copies of the same unknown."
             }
           ]
         },
         {
-          "title": "Divide both sides by five",
+          "title": "Divide both sides by {{combined|words}}",
           "left": [
             {
               "id": "divide-left",
-              "text": "5x ÷ 5",
+              "text": "{{combined}}x ÷ {{combined}}",
               "tone": "operation",
-              "latex": "\\frac{5x}{5}",
-              "spoken": "5 x divided by 5"
+              "latex": "\\frac{{{combined}}x}{{{combined}}}",
+              "spoken": "{{combined}} x divided by {{combined}}"
             }
           ],
           "right": [
             {
               "id": "divide-right",
-              "text": "15 ÷ 5",
+              "text": "{{c}} ÷ {{combined}}",
               "tone": "operation",
-              "latex": "\\frac{15}{5}",
-              "spoken": "15 divided by 5"
+              "latex": "\\frac{{{c}}}{{{combined}}}",
+              "spoken": "{{c}} divided by {{combined}}"
             }
           ],
           "balance": 0,
-          "explanation": "Split fifteen into five equal groups. Each x-group gets three.",
+          "explanation": "Split {{c|words}} into {{combined|words}} equal groups. Each x-group gets {{answer|words}}.",
           "detail": "",
           "operation": {
             "type": "split",
-            "value": 5
+            "value": {
+              "$value": "combined"
+            }
           },
           "unbalanced": false,
           "math": {
@@ -2208,7 +2051,9 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 3
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "highlight": [
@@ -2217,109 +2062,44 @@
           ],
           "groups": [
             {
-              "id": "group-0",
-              "label": "Group 1",
-              "items": [
-                {
-                  "id": "tile-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+              "$repeat": {
+                "count": "combined",
+                "as": "g",
+                "item": {
+                  "id": "group-{{g}}",
+                  "label": "Group {{n}}",
+                  "items": [
+                    {
+                      "id": "tile-x-{{g}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    {
+                      "id": "three-{{g}}",
+                      "text": "{{answer}}",
+                      "tone": "operation",
+                      "latex": "{{answer}}",
+                      "spoken": "{{answer}}"
+                    }
+                  ]
                 },
-                {
-                  "id": "three-0",
-                  "text": "3",
-                  "tone": "operation",
-                  "latex": "3",
-                  "spoken": "3"
-                }
-              ]
-            },
-            {
-              "id": "group-1",
-              "label": "Group 2",
-              "items": [
-                {
-                  "id": "tile-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
                 },
-                {
-                  "id": "three-1",
-                  "text": "3",
-                  "tone": "operation",
-                  "latex": "3",
-                  "spoken": "3"
-                }
-              ]
-            },
-            {
-              "id": "group-2",
-              "label": "Group 3",
-              "items": [
-                {
-                  "id": "tile-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "three-2",
-                  "text": "3",
-                  "tone": "operation",
-                  "latex": "3",
-                  "spoken": "3"
-                }
-              ]
-            },
-            {
-              "id": "group-3",
-              "label": "Group 4",
-              "items": [
-                {
-                  "id": "tile-x-3",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "three-3",
-                  "text": "3",
-                  "tone": "operation",
-                  "latex": "3",
-                  "spoken": "3"
-                }
-              ]
-            },
-            {
-              "id": "group-4",
-              "label": "Group 5",
-              "items": [
-                {
-                  "id": "tile-x-4",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "three-4",
-                  "text": "3",
-                  "tone": "operation",
-                  "latex": "3",
-                  "spoken": "3"
-                }
-              ]
+                "start": 0
+              }
             }
           ]
         },
         {
-          "title": "One x is three",
+          "title": "One x is {{answer|words}}",
           "left": [
             {
               "id": "x",
@@ -2332,14 +2112,14 @@
           "right": [
             {
               "id": "three",
-              "text": "3",
+              "text": "{{answer}}",
               "tone": "operation",
-              "latex": "3",
-              "spoken": "3"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "balance": 0,
-          "explanation": "x = 3. Check: 3 × 3 + 2 × 3 = 15.",
+          "explanation": "x = {{answer}}. Check: {{a}} × {{answer}} + {{b}} × {{answer}} = {{c}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -2352,20 +2132,22 @@
             },
             "right": {
               "coefficient": 0,
-              "constant": 3
+              "constant": {
+                "$value": "answer"
+              }
             }
           },
           "explanationContent": [
             {
-              "latex": "x = 3",
-              "spoken": "x equals 3"
+              "latex": "x = {{answer}}",
+              "spoken": "x equals {{answer}}"
             },
             {
               "text": ". Check: "
             },
             {
-              "latex": "3 \\times  3 + 2 \\times  3 = 15",
-              "spoken": "3 times 3 plus 2 times 3 equals 15"
+              "latex": "{{a}} \\times  {{answer}} + {{b}} \\times  {{answer}} = {{c}}",
+              "spoken": "{{a}} times {{answer}} plus {{b}} times {{answer}} equals {{c}}"
             },
             {
               "text": "."
@@ -2373,22 +2155,55 @@
           ]
         }
       ],
-      "solution": 3,
+      "solution": {
+        "$value": "answer"
+      },
       "notation": {
-        "latex": "3x + 2x = 15",
-        "spoken": "3 x plus 2 x equals 15"
-      }
+        "latex": "{{a}}x + {{b}}x = {{c}}",
+        "spoken": "{{a}} x plus {{b}} x equals {{c}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 3
+        },
+        "c": {
+          "min": 1,
+          "max": 24
+        }
+      },
+      "derived": {
+        "combined": {
+          "add": [
+            "a",
+            "b"
+          ]
+        },
+        "answer": {
+          "divide": [
+            "c",
+            "combined"
+          ]
+        }
+      },
+      "integers": [
+        "answer"
+      ]
     },
     {
       "id": "distribute-three",
-      "title": "3(x + 2)",
-      "label": "3(x + 2)",
+      "title": "{{a}}(x + {{b}})",
+      "label": "{{a}}(x + {{b}})",
       "tier": "Foundation",
       "subjectArea": "algebra",
       "available": true,
       "kind": "expression",
-      "initialExpression": "3(x + 2)",
-      "objective": "Expand three copies of a group by distributing to every term.",
+      "initialExpression": "{{a}}(x + {{b}})",
+      "objective": "Expand {{a|words}} copies of a group by distributing to every term.",
       "prerequisites": [
         "Read the symbols in this example"
       ],
@@ -2402,175 +2217,155 @@
       ],
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
-        "misconception": "Multiplying only x and forgetting to multiply the 2.",
-        "checkQuestion": "How many units are in three copies of x + 2?"
+        "misconception": "Multiplying only x and forgetting to multiply the {{b}}.",
+        "checkQuestion": "How many units are in {{a|words}} copies of x + {{b}}?"
       },
       "steps": [
         {
-          "title": "Three copies of the bracket",
+          "title": "{{a|Words}} copies of the bracket",
           "left": [
             {
               "id": "factor",
-              "text": "3",
+              "text": "{{a}}",
               "tone": "original",
-              "latex": "3",
-              "spoken": "3"
+              "latex": "{{a}}",
+              "spoken": "{{a}}"
             },
             {
               "id": "bracket",
-              "text": "(x + 2)",
+              "text": "(x + {{b}})",
               "tone": "original",
-              "latex": "\\left(x + 2\\right)",
-              "spoken": "open bracket x plus 2 close bracket"
+              "latex": "\\left(x + {{b}}\\right)",
+              "spoken": "open bracket x plus {{b}} close bracket"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The 3 multiplies the whole group: x and 2.",
+          "explanation": "The {{a}} multiplies the whole group: x and {{b}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "groups": [
             {
-              "id": "copy-0",
-              "label": "Copy 1",
-              "items": [
-                {
-                  "id": "expand-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+              "$repeat": {
+                "count": 1,
+                "as": "g",
+                "item": {
+                  "id": "copy-{{g}}",
+                  "label": "Copy {{n}}",
+                  "items": [
+                    {
+                      "id": "expand-x-{{g}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "u",
+                        "item": {
+                          "id": "expand-unit-{{g}}-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": 0
+                      }
+                    }
+                  ]
                 },
-                {
-                  "id": "expand-unit-0-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
                 },
-                {
-                  "id": "expand-unit-0-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
+                "start": 0
+              }
             }
           ]
         },
         {
-          "title": "Make all three copies",
+          "title": "Make all {{a|words}} copies",
           "left": [
             {
               "id": "factor",
-              "text": "3",
+              "text": "{{a}}",
               "tone": "original",
-              "latex": "3",
-              "spoken": "3"
+              "latex": "{{a}}",
+              "spoken": "{{a}}"
             },
             {
               "id": "bracket",
-              "text": "(x + 2)",
+              "text": "(x + {{b}})",
               "tone": "original",
-              "latex": "\\left(x + 2\\right)",
-              "spoken": "open bracket x plus 2 close bracket"
+              "latex": "\\left(x + {{b}}\\right)",
+              "spoken": "open bracket x plus {{b}} close bracket"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Each copy contains one x and two units.",
+          "explanation": "Each copy contains one x and {{b|words}} units.",
           "detail": "",
           "operation": {
             "type": "distribute",
-            "value": 3
+            "value": {
+              "$value": "a"
+            }
           },
           "highlight": [
             "bracket"
           ],
           "groups": [
             {
-              "id": "copy-0",
-              "label": "Copy 1",
-              "items": [
-                {
-                  "id": "expand-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+              "$repeat": {
+                "count": "a",
+                "as": "g",
+                "item": {
+                  "id": "copy-{{g}}",
+                  "label": "Copy {{n}}",
+                  "items": [
+                    {
+                      "id": "expand-x-{{g}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "u",
+                        "item": {
+                          "id": "expand-unit-{{g}}-{{u}}",
+                          "text": "1",
+                          "tone": "operation",
+                          "latex": "1",
+                          "spoken": "1"
+                        },
+                        "derived": {},
+                        "start": 0
+                      }
+                    }
+                  ]
                 },
-                {
-                  "id": "expand-unit-0-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                "derived": {
+                  "n": {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
                 },
-                {
-                  "id": "expand-unit-0-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "copy-1",
-              "label": "Copy 2",
-              "items": [
-                {
-                  "id": "expand-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "expand-unit-1-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-1-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            },
-            {
-              "id": "copy-2",
-              "label": "Copy 3",
-              "items": [
-                {
-                  "id": "expand-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "expand-unit-2-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-2-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
+                "start": 0
+              }
             }
           ]
         },
@@ -2579,22 +2374,22 @@
           "left": [
             {
               "id": "expanded-x",
-              "text": "3x",
+              "text": "{{a}}x",
               "tone": "operation",
-              "latex": "3x",
-              "spoken": "3 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             },
             {
               "id": "remaining",
-              "text": "+ 3 × 2",
+              "text": "+ {{a}} × {{b}}",
               "tone": "original",
-              "latex": "+ 3 \\times  2",
-              "spoken": "plus 3 times 2"
+              "latex": "+ {{a}} \\times  {{b}}",
+              "spoken": "plus {{a}} times {{b}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "There are three x-tiles. Keep all six unit tiles.",
+          "explanation": "There are {{a|words}} x-tiles. Keep all {{product|words}} unit tiles.",
           "detail": "",
           "operation": {
             "type": "group"
@@ -2605,102 +2400,79 @@
           "groups": [
             {
               "id": "all-x",
-              "label": "Three x-tiles",
+              "label": "{{a|Words}} x-tiles",
               "items": [
                 {
-                  "id": "expand-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "expand-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "expand-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
+                  "$repeat": {
+                    "count": "a",
+                    "as": "t",
+                    "item": {
+                      "id": "expand-x-{{t}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
             },
             {
               "id": "all-units",
-              "label": "Six units",
+              "label": "{{product|Words}} units",
               "items": [
                 {
-                  "id": "expand-unit-0-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-0-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-1-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-1-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-2-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-2-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
+                  "$repeat": {
+                    "count": "a",
+                    "as": "g",
+                    "item": [
+                      {
+                        "$repeat": {
+                          "count": "b",
+                          "as": "u",
+                          "item": {
+                            "id": "expand-unit-{{g}}-{{u}}",
+                            "text": "1",
+                            "tone": "operation",
+                            "latex": "1",
+                            "spoken": "1"
+                          },
+                          "derived": {},
+                          "start": 0
+                        }
+                      }
+                    ],
+                    "derived": {},
+                    "start": 0
+                  }
                 }
               ]
             }
           ]
         },
         {
-          "title": "Three lots of two make six",
+          "title": "{{a|Words}} lots of {{b|words}} make {{product|words}}",
           "left": [
             {
               "id": "expanded-x",
-              "text": "3x",
+              "text": "{{a}}x",
               "tone": "operation",
-              "latex": "3x",
-              "spoken": "3 x"
+              "latex": "{{a}}x",
+              "spoken": "{{a}} x"
             },
             {
               "id": "expanded-six",
-              "text": "+ 6",
+              "text": "+ {{product}}",
               "tone": "operation",
-              "latex": "+ 6",
-              "spoken": "plus 6"
+              "latex": "+ {{product}}",
+              "spoken": "plus {{product}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "3(x + 2) = 3x + 6. We cannot find a number for x from this expression alone.",
+          "explanation": "{{a}}(x + {{b}}) = {{a}}x + {{product}}. We cannot find a number for x from this expression alone.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -2708,107 +2480,102 @@
           "highlight": [
             "expanded-six"
           ],
-          "groups": [
-            {
-              "id": "all-x",
-              "label": "Three x-tiles",
-              "items": [
-                {
-                  "id": "expand-x-0",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "expand-x-1",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                },
-                {
-                  "id": "expand-x-2",
-                  "text": "x",
-                  "tone": "original",
-                  "latex": "x",
-                  "spoken": "x"
-                }
-              ]
-            },
-            {
-              "id": "all-units",
-              "label": "Six units",
-              "items": [
-                {
-                  "id": "expand-unit-0-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-0-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-1-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-1-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-2-0",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                },
-                {
-                  "id": "expand-unit-2-1",
-                  "text": "1",
-                  "tone": "operation",
-                  "latex": "1",
-                  "spoken": "1"
-                }
-              ]
-            }
-          ],
           "explanationContent": [
             {
-              "text": "3("
+              "text": "{{a}}("
             },
             {
-              "latex": "x + 2",
-              "spoken": "x plus 2"
+              "latex": "x + {{b}}",
+              "spoken": "x plus {{b}}"
             },
             {
               "text": ") = "
             },
             {
-              "latex": "3x + 6",
-              "spoken": "3 x plus 6"
+              "latex": "{{a}}x + {{product}}",
+              "spoken": "{{a}} x plus {{product}}"
             },
             {
               "text": ". We cannot find a number for x from this expression alone."
+            }
+          ],
+          "groups": [
+            {
+              "id": "all-x",
+              "label": "{{a|Words}} x-tiles",
+              "items": [
+                {
+                  "$repeat": {
+                    "count": "a",
+                    "as": "t",
+                    "item": {
+                      "id": "expand-x-{{t}}",
+                      "text": "x",
+                      "tone": "original",
+                      "latex": "x",
+                      "spoken": "x"
+                    },
+                    "derived": {},
+                    "start": 0
+                  }
+                }
+              ]
+            },
+            {
+              "id": "all-units",
+              "label": "{{product|Words}} units",
+              "items": [
+                {
+                  "$repeat": {
+                    "count": "a",
+                    "as": "g",
+                    "item": [
+                      {
+                        "$repeat": {
+                          "count": "b",
+                          "as": "u",
+                          "item": {
+                            "id": "expand-unit-{{g}}-{{u}}",
+                            "text": "1",
+                            "tone": "operation",
+                            "latex": "1",
+                            "spoken": "1"
+                          },
+                          "derived": {},
+                          "start": 0
+                        }
+                      }
+                    ],
+                    "derived": {},
+                    "start": 0
+                  }
+                }
+              ]
             }
           ]
         }
       ],
       "notation": {
-        "latex": "3\\left(x + 2\\right)",
-        "spoken": "3 open bracket x plus 2 close bracket"
+        "latex": "{{a}}\\left(x + {{b}}\\right)",
+        "spoken": "{{a}} open bracket x plus {{b}} close bracket"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 12
+        }
+      },
+      "derived": {
+        "product": {
+          "multiply": [
+            "a",
+            "b"
+          ]
+        }
       }
     },
     {
@@ -2821,7 +2588,7 @@
       "kind": "counter-groups",
       "initialExpression": "Substitute a value",
       "notation": {
-        "latex": "3x+2,\\ x=4",
+        "latex": "{{a}}x+{{b}},\\ x={{x}}",
         "spoken": "Substitute a value"
       },
       "objective": "Replace each x with its given value, then follow operation order.",
@@ -2841,13 +2608,19 @@
       ],
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
-        "misconception": "Joining the digits three and four instead of multiplying.",
-        "checkQuestion": "Why does replacing x with four give three times four, not thirty-four?"
+        "misconception": "Joining the digits {{a|words}} and {{x|words}} instead of multiplying.",
+        "checkQuestion": "Why does replacing x with {{x|words}} give {{a|words}} times {{x|words}}, not {{joined|words}}?"
       },
       "model": {
-        "total": 14,
-        "x": 4,
-        "result": 14
+        "total": {
+          "$value": "answer"
+        },
+        "x": {
+          "$value": "x"
+        },
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
@@ -2855,239 +2628,161 @@
           "left": [
             {
               "id": "expression",
-              "text": "three x plus two, with x equal to four",
-              "latex": "3x+2,\\quad x=4",
-              "spoken": "three x plus two, with x equal to four",
+              "text": "{{a|words}} x plus {{b|words}}, with x equal to {{x|words}}",
+              "latex": "{{a}}x+{{b}},\\quad x={{x}}",
+              "spoken": "{{a|words}} x plus {{b|words}}, with x equal to {{x|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Three x means three copies of x. We are given that each x is four.",
+          "explanation": "{{a|Words}} x means {{a|words}} copies of x. We are given that each x is {{x|words}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "caption": "Given x = {{x}}. Each unit card represents one.",
             "groups": [
               {
-                "id": "x-0",
-                "label": "Copy 1",
-                "items": [
-                  {
-                    "id": "x-card-0",
-                    "value": 4,
-                    "latex": "x",
-                    "spoken": "x equals four"
-                  }
-                ]
-              },
-              {
-                "id": "x-1",
-                "label": "Copy 2",
-                "items": [
-                  {
-                    "id": "x-card-1",
-                    "value": 4,
-                    "latex": "x",
-                    "spoken": "x equals four"
-                  }
-                ]
-              },
-              {
-                "id": "x-2",
-                "label": "Copy 3",
-                "items": [
-                  {
-                    "id": "x-card-2",
-                    "value": 4,
-                    "latex": "x",
-                    "spoken": "x equals four"
-                  }
-                ]
+                "$repeat": {
+                  "count": "a",
+                  "as": "g",
+                  "item": {
+                    "id": "x-{{g}}",
+                    "label": "Copy {{n}}",
+                    "items": [
+                      {
+                        "id": "x-card-{{g}}",
+                        "value": {
+                          "$value": "x"
+                        },
+                        "latex": "x",
+                        "spoken": "x equals {{x|words}}"
+                      }
+                    ]
+                  },
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    }
+                  },
+                  "start": 0
+                }
               },
               {
                 "id": "constant",
-                "label": "Plus two",
+                "label": "Plus {{b|words}}",
                 "items": [
                   {
-                    "id": "constant-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "constant-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": "b",
+                      "as": "u",
+                      "item": {
+                        "id": "constant-{{u}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "one unit",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Copy 1: 1 cards. Copy 2: 1 cards. Copy 3: 1 cards. Plus two: 2 cards",
-            "caption": "Given x = 4. Each unit card represents one."
+            ]
           }
         },
         {
-          "title": "Replace each x with four",
+          "title": "Replace each x with {{x|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "three times four plus two",
-              "latex": "3\\times4+2",
-              "spoken": "three times four plus two",
+              "text": "{{a|words}} times {{x|words}} plus {{b|words}}",
+              "latex": "{{a}}\\times{{x}}+{{b}}",
+              "spoken": "{{a|words}} times {{x|words}} plus {{b|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Replace every x by four. Three copies of four are not the number thirty-four.",
+          "explanation": "Replace every x by {{x|words}}. {{a|Words}} copies of {{x|words}} are not the number {{joined|words}}.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
+            "caption": "Given x = {{x}}. Each unit card represents one.",
             "groups": [
               {
-                "id": "x-0",
-                "label": "Copy 1",
-                "items": [
-                  {
-                    "id": "sub-unit-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
+                "$repeat": {
+                  "count": "a",
+                  "as": "g",
+                  "item": {
+                    "id": "x-{{g}}",
+                    "label": "Copy {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "x",
+                          "as": "u",
+                          "item": {
+                            "id": "sub-unit-{{u}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "one unit",
+                            "tone": "original",
+                            "highlight": true
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "sub-unit-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "x"
+                      ]
+                    }
                   },
-                  {
-                    "id": "sub-unit-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "x-1",
-                "label": "Copy 2",
-                "items": [
-                  {
-                    "id": "sub-unit-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "x-2",
-                "label": "Copy 3",
-                "items": [
-                  {
-                    "id": "sub-unit-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sub-unit-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
+                  "start": 0
+                }
               },
               {
                 "id": "constant",
-                "label": "Plus two",
+                "label": "Plus {{b|words}}",
                 "items": [
                   {
-                    "id": "constant-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "constant-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": "b",
+                      "as": "u",
+                      "item": {
+                        "id": "constant-{{u}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "one unit",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Copy 1: 4 cards. Copy 2: 4 cards. Copy 3: 4 cards. Plus two: 2 cards",
-            "caption": "Given x = 4. Each unit card represents one."
+            ]
           },
           "highlight": [
             "expression"
@@ -3098,272 +2793,178 @@
           "left": [
             {
               "id": "expression",
-              "text": "twelve plus two",
-              "latex": "12+2",
-              "spoken": "twelve plus two",
+              "text": "{{product|words}} plus {{b|words}}",
+              "latex": "{{product}}+{{b}}",
+              "spoken": "{{product|words}} plus {{b|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Three groups of four give twelve. Keep the added two separate.",
+          "explanation": "{{a|Words}} groups of {{x|words}} give {{product|words}}. Keep the added {{b|words}} separate.",
           "detail": "",
           "operation": {
             "type": "group"
           },
           "scene": {
+            "caption": "Given x = {{x}}. Each unit card represents one.",
             "groups": [
               {
                 "id": "product",
-                "label": "Three fours make 12",
+                "label": "{{a|Words}} {{x|words}}s make {{product}}",
                 "items": [
                   {
-                    "id": "sub-unit-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": "product",
+                      "as": "u",
+                      "item": {
+                        "id": "sub-unit-{{u}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "one unit",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               },
               {
                 "id": "constant",
-                "label": "Plus two",
+                "label": "Plus {{b|words}}",
                 "items": [
                   {
-                    "id": "constant-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "constant-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": "b",
+                      "as": "u",
+                      "item": {
+                        "id": "constant-{{u}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "one unit",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Three fours make 12: 12 cards. Plus two: 2 cards",
-            "caption": "Given x = 4. Each unit card represents one."
+            ]
           },
           "highlight": [
             "expression"
           ]
         },
         {
-          "title": "Now add the two",
+          "title": "Now add the {{b|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "fourteen",
-              "latex": "14",
-              "spoken": "fourteen",
+              "text": "{{answer|words}}",
+              "latex": "{{answer}}",
+              "spoken": "{{answer|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Twelve plus two is fourteen. That is the value of the expression when x is four.",
+          "explanation": "{{product|Words}} plus {{b|words}} is {{answer|words}}. That is the value of the expression when x is {{x|words}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
+            "caption": "Given x = {{x}}. Each unit card represents one.",
             "groups": [
               {
                 "id": "result",
-                "label": "Fourteen units",
+                "label": "{{answer|Words}} units",
                 "items": [
                   {
-                    "id": "sub-unit-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": "product",
+                      "as": "u",
+                      "item": {
+                        "id": "sub-unit-{{u}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "one unit",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   },
                   {
-                    "id": "sub-unit-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "sub-unit-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "constant-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "constant-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "one unit",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": "b",
+                      "as": "u",
+                      "item": {
+                        "id": "constant-{{u}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "one unit",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Fourteen units: 14 cards",
-            "caption": "Given x = 4. Each unit card represents one."
+            ]
           },
           "highlight": [
             "expression"
           ]
         }
-      ]
+      ],
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 3
+        },
+        "b": {
+          "min": 1,
+          "max": 4
+        },
+        "x": {
+          "min": 1,
+          "max": 6
+        }
+      },
+      "derived": {
+        "product": {
+          "multiply": [
+            "a",
+            "x"
+          ]
+        },
+        "answer": {
+          "add": [
+            {
+              "multiply": [
+                "a",
+                "x"
+              ]
+            },
+            "b"
+          ]
+        },
+        "joined": {
+          "add": [
+            {
+              "multiply": [
+                "a",
+                10
+              ]
+            },
+            "x"
+          ]
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,55 @@
+{
+  "id": "ratio",
+  "lessons": [
+    {
+      "template": "share-ratio",
+      "examples": [
+        {
+          "id": "share-ratio-1",
+          "values": {
+            "a": 2,
+            "b": 3,
+            "total": 20
+          }
+        }
+      ]
+    },
+    {
+      "template": "equivalent-ratio",
+      "examples": [
+        {
+          "id": "equivalent-ratio-1",
+          "values": {
+            "a": 2,
+            "b": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "simplify-ratio",
+      "examples": [
+        {
+          "id": "simplify-ratio-1",
+          "values": {
+            "a": 6,
+            "b": 9
+          }
+        }
+      ]
+    },
+    {
+      "template": "unitary-cost",
+      "examples": [
+        {
+          "id": "unitary-cost-1",
+          "values": {
+            "items": 3,
+            "cost": 12,
+            "wanted": 5
+          }
+        }
+      ]
+    }
+  ]
+}

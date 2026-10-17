@@ -28,7 +28,7 @@ export function validateLearningScene(lesson, state) {
     ensure(
       integer(s.rows, 1, 5) &&
         integer(s.columns, 1, 5) &&
-        integer(s.layers, 1, 2),
+        integer(s.layers, 1, 3),
       'Invalid tile array.',
     );
     ensure(

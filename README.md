@@ -56,6 +56,9 @@ src/
   css/styles.css
   data/manifest.json
   data/{number,algebra,ratio,geometry,probability,statistics}.json
+  data/{algebra,number,ratio}-examples.json curated values, one original example each
+  js/lesson-templates.js    shared data-only template expansion and validation
+  js/algebra-templates.js   compatibility API for selecting an algebra example
   js/app.js                 UI, accessible status, sidebar and navigation
   js/lesson-loader.js       relative fetches, cache, isolated file/lesson errors
   js/lesson-engine.js       guarded deterministic navigation and rollback
@@ -82,6 +85,8 @@ The six-area manifest defines order, titles and JSON paths. Subject files load i
 
 ### Lesson data
 
+Algebra, Number and Ratio use templates plus curated examples. Geometry, Probability and Statistics continue to contain complete lesson states. The generated lessons all have the same runtime format described below.
+
 Each subject contains `id`, `title`, and `lessons`. Available lessons contain:
 
 - `id` (globally unique), `title`, `label`, `tier: "Foundation"`, `subjectArea`, `available: true`.
@@ -93,6 +98,61 @@ Each subject contains `id`, `title`, and `lessons`. Available lessons contain:
 New lessons also include optional `prerequisiteLessonIds`: stable available lesson IDs, checked for valid references and cycles by tests. Friendly `prerequisites` text remains in the collapsed tutor notes, alongside a **Can you explain why?** question. Dependencies guide the tutor; they do not lock lessons or track progress.
 
 Every step has `title`, `explanation`, optional `detail`, `operation: {type, value?}`, `left` and `right` term arrays, and `balance`. Terms have stable `id`, `text`, `latex`, `spoken`, and `tone` (`original`, `negative`, `operation`). `highlight` contains term IDs; `cancel` identifies opposite terms in the preceding frame. Reuse IDs for the same objects so they move smoothly.
+
+### Algebra templates and curated examples
+
+`data/algebra.json` contains the eight algebra templates, retaining the existing lesson IDs and fixed teaching sequences. `data/algebra-examples.json` contains exactly one current example per template, named `<lesson-id>-1`. Lesson IDs still identify navigation and prerequisites; `exampleId` identifies the chosen set of numbers.
+
+| Template ID        | Fixed form          | Current values   |
+| ------------------ | ------------------- | ---------------- |
+| `add-both`         | `x − a = b`         | `a=3, b=2`       |
+| `subtract-both`    | `x + a = b`         | `a=3, b=2`       |
+| `divide-three`     | `ax = b`            | `a=3, b=12`      |
+| `multiply-four`    | `x / a = b`         | `a=4, b=3`       |
+| `two-step`         | `ax + b = c`        | `a=2, b=3, c=11` |
+| `like-terms`       | `ax + bx = c`       | `a=3, b=2, c=15` |
+| `distribute-three` | `a(x + b)`          | `a=3, b=2`       |
+| `substitution`     | `ax + b`, given `x` | `a=3, b=2, x=4`  |
+
+To add a future curated example, append an entry to the matching template's `examples` array. For example, this would be `add-both-2`:
+
+```json
+{ "id": "add-both-2", "values": { "a": 5, "b": 7 } }
+```
+
+All parameters are bounded positive integers. Grouping examples must divide exactly and fit the visual space; invalid examples are rejected rather than rendered with misleading tiles. The first example remains the default. There is no random selection or example picker yet. A future “Try yourself” area can choose a curated example and call `instantiateAlgebraLesson(template, example)` to get the same ordinary lesson structure used by the existing engine.
+
+Templates use `{{a}}` for numeric text, `{{a|words}}` / `{{a|Words}}` for number words, and explicit formats for signed answers and spoken equivalents. Numeric fields use `{ "$value": "answer" }`. Ordered `derived` values use only `add`, `subtract`, `multiply`, `divide`, `power`, and `gcd` with two operands; no JavaScript or arbitrary expression strings are evaluated. `$repeat` recipes generate groups, tiles and repeated teaching steps with stable IDs, including counts, offsets and scoped indices. `$if` selects wording and `$test` produces highlights using only `less`, `equal`, or `atMost` comparisons. Parameter limits, optional allowed choices, required whole-number results and mathematical constraints are declared in each template.
+
+The shared generator creates fresh states, notation, explanations and spoken descriptions, then runs the existing lesson validator. The loader caches each template/example file pair and validates every curated example, while keeping one navigation entry per lesson. Regression tests compare all 27 current generated lessons across Algebra, Number and Ratio against fingerprints of the complete original lesson states; further tests exercise alternative values and invalid data. Geometry, Probability and Statistics retain their existing format.
+
+### Number and Ratio templates
+
+`number.json` and `ratio.json` retain their existing lesson IDs. `number-examples.json` contains the 15 original Number examples, and `ratio-examples.json` contains the four original Ratio examples. Each uses `<lesson-id>-1`, just like Algebra. Add future curated values to the matching `examples` array and call `instantiateLesson(template, example)` when selecting one. The first curated example is still the default; no example picker or randomisation is enabled.
+
+| Number template                              | Parameters and fixed teaching structure                                                                   |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `brackets`                                   | `a × (b + c)`; addition inside brackets before multiplication                                             |
+| `subtract-five`, `add-negative`              | `a − b` and `a + (−b)`; one leftward move per unit of `b`                                                 |
+| `multiply-before-add`                        | `a + b × c`; multiplication before addition                                                               |
+| `equivalent-halves`                          | `scale`; split each half equally, keeping the shaded amount at one half                                   |
+| `fraction-amount`                            | `numerator`, `denominator`, `total`; proper fractions and whole-number equal groups                       |
+| `percentage-amount`                          | `total`; 25% always means one quarter, with weighted cards representing each quarter                      |
+| `add-sixths`                                 | `b`; add one fractional unit to `b` more, with a common denominator of `2 × (1 + b)`, then recognise half |
+| `square-three`, `cube-two`, `square-root-25` | `base`; square/cube arrays and reversing a square array; squares/roots support 2–5, cubes 2–3             |
+| `zero-power`                                 | `base`; divide down through powers 3, 2, 1, 0                                                             |
+| `multiply-powers`                            | `base`; join three factors and two factors of the same base                                               |
+| `prime-factors`                              | prime choices `p`, `q`; the fixed factor-tree structure is `p × q²`                                       |
+| `place-value-ten`                            | positive digits `a`, `b` in ones and tenths; multiply by ten while the decimal point stays fixed          |
+
+| Ratio template     | Parameters and fixed teaching structure                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------- |
+| `share-ratio`      | `a`, `b`, `total`; simplest `a:b`, at most five equal parts and whole-number shares            |
+| `equivalent-ratio` | `a`, `b`; double both groups together                                                          |
+| `simplify-ratio`   | `a`, `b`; use their greatest common divisor to make equal bundles and reach the simplest ratio |
+| `unitary-cost`     | `items`, `cost`, `wanted`; divide to a whole-pound unit cost, then make equal copies           |
+
+The permitted ranges in the JSON are deliberately small enough for readable diagrams. Number-line answers must stay between −5 and 5; fractional shares, excessive counters and invalid factor choices are rejected. Repetition generates the required move, row or layer count instead of reusing a sequence with the wrong number of steps. The default two-layer cube is unchanged, and the renderer/validator also support a curated three-layer cube.
 
 ### Mathematical notation
 
@@ -134,7 +194,7 @@ The existing manifest still registers exactly six subject files. New lessons reu
 | `data-cards`        | `items: [{id, value}]`, `selected` and `muted` ID arrays. Sorting moves original cards without changing their values. Paired-off median cards are crossed out as well as dimmed. Selected values get a contrasting border and background.                                                                                                                                                            |
 | `bar-chart`         | Three `categories: [{id, label, value}]`, `active` (null or a category ID), and boolean `guide`. Equally spaced, labelled axis ticks run from zero to six. A dashed guide connects the selected bar's height to its frequency.                                                                                                                                                                       |
 | `probability-scale` | `probability` between zero and one. A stable marker moves along a proportionally spaced scale with impossible/likely/certain labels and stacked quarter/half fractions.                                                                                                                                                                                                                              |
-| `tile-array`        | Integer `rows`, `columns`, `layers`, `visibleRows`, `visibleLayers`, boolean `edges`, nullable `highlightRow`. Equal tiles build rows/layers; the `model` checks the array matches `base`, `exponent`, `result`. The cube lesson shows two separated 2D layers of unit cubes.                                                                                                                        |
+| `tile-array`        | Integer `rows`, `columns`, `layers`, `visibleRows`, `visibleLayers`, boolean `edges`, nullable `highlightRow`. Equal tiles build rows/layers; the `model` checks the array matches `base`, `exponent`, `result`. The default cube example shows two separated 2D layers of unit cubes; the template also supports three layers.                                                                      |
 | `power-pattern`     | Nonzero positive `base`, ordered `exponents`, `visible`. Reveal one more quotient at a time in the decreasing-exponent pattern; the final exponent is zero.                                                                                                                                                                                                                                          |
 | `pythagoras`        | Exact integer `a`, `b`, `c`; `squares`, `knownSides`, `knownAreas` ID lists; boolean `unitTiles`, `transfer`. Outward square polygons are computed from the actual side vectors. Unit tiles retain IDs and move/rotate rigidly; unknown numeric labels remain hidden until calculated.                                                                                                               |
 | `factor-tree`       | Factor `nodes: [{id, value, children}]`, `visible`, `selected`. Each split must multiply back to its parent; cycles, shared children and premature reveals are rejected. Final leaves must be prime.                                                                                                                                                                                                 |
@@ -162,6 +222,7 @@ The engine controls the index and locks transitions. The renderer reads the stat
 ### Add a lesson
 
 1. Copy a similar available entry into its subject JSON; choose a globally unique ID.
+   For Algebra, Number or Ratio, copy a template and add its curated values to the matching `*-examples.json` instead of hard-coding a second complete lesson.
 2. Fill in metadata, a verified curriculum reference, and one short tutor question.
 3. Define a complete initial state and one conceptual operation per subsequent step. Reuse stable term/object IDs. For equations, supply matching affine state and a solution.
 4. Run `npm test`, then step through the example in the browser with normal and reduced motion.
@@ -196,9 +257,9 @@ Tests cover the original three lesson regressions; all available lesson navigati
 
 Notation tests also cover KaTeX fraction/power/root output, MathML, valid notation and spoken labels for all lesson terms, malformed LaTeX, stable cancellation IDs, and agreement between the new LaTeX and every existing balance state's numerical model.
 
-Baseline for the gap-analysis batch: **25 tests passed**. Current suite: **34 tests passed**, adding array/exponent arithmetic, prerequisites, exact attached-square geometry, unit-tile conservation, unrevealed unknowns, prime leaves, digit identities and combined-outcome enumeration. The earlier ratio, angle, area, probability, statistics, notation and balance checks remain. The UI navigation test visits all 44 available lessons, including Back/Restart, step bounds and rapid taps.
+Baseline for the gap-analysis batch: **25 tests passed**. Current suite: **50 tests passed**, adding array/exponent arithmetic, prerequisites, exact attached-square geometry, unit-tile conservation, unrevealed unknowns, prime leaves, digit identities and combined-outcome enumeration. Template tests additionally preserve all original Algebra/Number/Ratio example states and cover alternative values, grouping, invalid parameters, example identities, file caching and loading isolation. The earlier ratio, angle, area, probability, statistics, notation and balance checks remain. The UI navigation test visits all 44 available lessons, including Back/Restart, step bounds and rapid taps.
 
-Headless Edge checks use 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow and controls at least 56px. All **44 lesson sequences (145 forward transitions)** run at each main iPad orientation, including Back/Restart, rapid taps, fixed control positions within each lesson, notation bounds and plate clearance. Normal-motion tests exercise the original balance/cancellation and new diagram primitives; reduced-motion tests keep state changes instant. The Pythagoras transfer additionally checks 25 stable IDs and final rotation anchors. Fallback fullscreen and runtime-error checks are included. Representative diagrams have screenshots under ignored `temp`. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
+Headless Edge checks use 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow and controls at least 56px. All **44 lesson sequences (145 forward transitions)** run at each main iPad orientation, including Back/Restart, rapid taps, fixed control positions within each lesson, notation bounds and plate clearance. Normal-motion tests exercise the original balance/cancellation and new diagram primitives; reduced-motion tests keep state changes instant. The Pythagoras transfer additionally checks 25 stable IDs and final rotation anchors. Fallback fullscreen and runtime-error checks are included. All 19 alternate Number/Ratio templates are additionally rendered at both iPad orientations and checked for diagram-label bounds and page overflow. Representative diagrams have screenshots under ignored `temp`. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
 
 To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed. Set `MATHS_TEST_URL` if your server uses another port. The checks also measure KaTeX bounds and plate clearance at iPad sizes. Native OS fullscreen can stall in headless Windows, so supported-API behaviour is unit tested and native browser entry/exit remains a physical-device check; the browser suite checks both fallback paths.
 

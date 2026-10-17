@@ -49,6 +49,28 @@ button {
   padding: 14px 20px;
   cursor: pointer;
   touch-action: manipulation;
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  &[aria-pressed='true'] {
+    background: var(--selected);
+    border-color: var(--accent);
+    box-shadow: inset 0 -3px var(--accent);
+  }
+
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      background: var(--sidebar);
+      border-color: #b5afa3;
+    }
+    &[aria-pressed='true']:not(:disabled):hover {
+      background: #ecd9cd;
+      border-color: var(--accent);
+    }
+  }
 }
 button:focus-visible,
 summary:focus-visible,
@@ -56,24 +78,6 @@ a:focus-visible,
 [tabindex]:focus-visible {
   outline: 4px solid var(--accent);
   outline-offset: 3px;
-}
-@media (hover: hover) {
-  button:not(:disabled):hover {
-    background: var(--sidebar);
-    border-color: #b5afa3;
-  }
-  button[aria-pressed='true']:not(:disabled):hover {
-    background: #ecd9cd;
-    border-color: var(--accent);
-  }
-  #next:not(:disabled):hover {
-    background: var(--accent-hover);
-    border-color: var(--accent-hover);
-  }
-}
-button:disabled {
-  opacity: 0.45;
-  cursor: default;
 }
 .toolbar {
   position: sticky;
@@ -91,13 +95,14 @@ button:disabled {
 .toolbar-name {
   font-size: 22px;
   font-weight: 750;
-}
-.toolbar-name span {
-  display: block;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin-top: 3px;
+
+  span {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 3px;
+  }
 }
 #sidebar {
   width: 290px;
@@ -110,19 +115,39 @@ button:disabled {
   background: var(--sidebar);
   border-right: 1px solid var(--border);
   z-index: 4;
-}
-#sidebar h2 {
-  margin: 0 8px;
-  font-size: 23px;
-}
-#sidebar > p {
-  font-size: 14px;
-  margin: 10px 8px 24px;
-  color: var(--muted);
+
+  h2 {
+    margin: 0 8px;
+    font-size: 23px;
+  }
+
+  > p {
+    font-size: 14px;
+    margin: 10px 8px 24px;
+    color: var(--muted);
+  }
 }
 #lessons {
   display: grid;
   gap: 12px;
+
+  details[data-active] > summary {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 0 0 12px;
+    font-size: 19px;
+    min-height: 76px;
+  }
+
+  button .katex {
+    font-size: 1.15em;
+  }
 }
 details {
   border-top: 1px solid var(--border);
@@ -133,23 +158,6 @@ summary {
   font-weight: 700;
   cursor: pointer;
   line-height: 1.5;
-}
-#lessons details[data-active] > summary {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-#lessons button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin: 0 0 12px;
-  font-size: 19px;
-  min-height: 76px;
-}
-button[aria-pressed='true'] {
-  background: var(--selected);
-  border-color: var(--accent);
-  box-shadow: inset 0 -3px var(--accent);
 }
 .planned,
 .load-error {
@@ -178,6 +186,10 @@ body:has(#sidebar:not([hidden])) main {
   min-height: 65px;
   display: flex;
   align-items: center;
+
+  .katex {
+    font-size: 1.15em;
+  }
 }
 .step-heading {
   display: flex;
@@ -196,29 +208,74 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
 }
-#visual > svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
+svg {
+  text {
+    font-family: inherit;
+    font-weight: 650;
+    font-size: 31px;
+    fill: var(--text);
+  }
+
+  .group-label {
+    font-size: 19px;
+    fill: var(--muted);
+  }
+
+  .diagram-label {
+    font-size: 23px;
+    font-weight: 550;
+    fill: var(--text);
+  }
 }
-svg text {
-  font-family: inherit;
-  font-weight: 650;
-  font-size: 31px;
-  fill: var(--text);
-}
-.term.original {
-  fill: var(--original);
-}
-.term.negative {
-  fill: var(--negative);
-}
-.term.operation {
-  fill: var(--operation);
+.term {
+  &.original {
+    fill: var(--original);
+  }
+
+  &.negative {
+    fill: var(--negative);
+  }
+
+  &.operation {
+    fill: var(--operation);
+  }
+
+  &.highlight,
+  &.cancel {
+    paint-order: stroke;
+    stroke: var(--highlight);
+    stroke-width: 12px;
+    stroke-linejoin: round;
+  }
 }
 .math-object {
   overflow: visible;
+
+  &.original .math-content {
+    color: var(--original);
+  }
+
+  &.negative .math-content {
+    color: var(--negative);
+  }
+
+  &.operation .math-content {
+    color: var(--operation);
+  }
+
+  &.highlight .katex,
+  &.cancel .katex {
+    background: var(--highlight);
+    box-shadow: 0 0 0 5px var(--highlight);
+    border-radius: 3px;
+  }
 }
 .math-content {
   display: flex;
@@ -229,32 +286,19 @@ svg text {
   white-space: nowrap;
   line-height: 1;
   color: var(--text);
-}
-.math-content .katex {
-  font-size: 1em;
+
+  .katex {
+    font-size: 1em;
+  }
 }
 .inline-math {
   display: inline-block;
   vertical-align: middle;
   margin: 0 0.08em;
-}
-.inline-math .katex {
-  font-size: 1.1em;
-}
-.math-object.original .math-content {
-  color: var(--original);
-}
-.math-object.negative .math-content {
-  color: var(--negative);
-}
-.math-object.operation .math-content {
-  color: var(--operation);
-}
-.math-object.highlight .katex,
-.math-object.cancel .katex {
-  background: var(--highlight);
-  box-shadow: 0 0 0 5px var(--highlight);
-  border-radius: 3px;
+
+  .katex {
+    font-size: 1.1em;
+  }
 }
 .math-measure {
   position: fixed;
@@ -264,31 +308,10 @@ svg text {
   white-space: nowrap;
   width: max-content;
   line-height: 1;
-}
-.math-measure .katex {
-  font-size: 1em;
-}
-#lesson-title .katex {
-  font-size: 1.15em;
-}
-#lessons button .katex {
-  font-size: 1.15em;
-}
-.term.highlight,
-.term.cancel {
-  paint-order: stroke;
-  stroke: var(--highlight);
-  stroke-width: 12px;
-  stroke-linejoin: round;
-}
-svg .group-label {
-  font-size: 19px;
-  fill: var(--muted);
-}
-svg .diagram-label {
-  font-size: 23px;
-  font-weight: 550;
-  fill: var(--text);
+
+  .katex {
+    font-size: 1em;
+  }
 }
 .explanation {
   min-height: 145px;
@@ -322,14 +345,22 @@ svg .diagram-label {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+  }
 }
 .curriculum {
   margin: 22px 0 10px;
   font-size: 13px;
   color: var(--muted);
-}
-.curriculum > span {
-  font-weight: 650;
+
+  > span {
+    font-weight: 650;
+  }
 }
 a {
   color: #174f7a;
@@ -413,15 +444,17 @@ a {
   }
   .controls {
     gap: 8px;
-  }
-  .controls button {
-    padding: 12px 6px;
+
+    button {
+      padding: 12px 6px;
+    }
   }
   #visual {
     height: 250px;
-  }
-  #visual.has-groups {
-    height: 320px;
+
+    &.has-groups {
+      height: 320px;
+    }
   }
   .explanation {
     min-height: 210px;

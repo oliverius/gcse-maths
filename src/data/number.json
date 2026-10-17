@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "brackets",
-      "title": "6 × (2 + 3)",
-      "label": "6 × (2 + 3)",
+      "title": "{{a}} × ({{b}} + {{c}})",
+      "label": "{{a}} × ({{b}} + {{c}})",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "expression",
-      "initialExpression": "6 × (2 + 3)",
+      "initialExpression": "{{a}} × ({{b}} + {{c}})",
       "objective": "Evaluate numeric brackets before multiplication.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -26,7 +26,7 @@
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
         "misconception": "Multiplying before evaluating brackets.",
-        "checkQuestion": "Why do we work out 2 + 3 first?"
+        "checkQuestion": "Why do we work out {{b}} + {{c}} first?"
       },
       "steps": [
         {
@@ -34,10 +34,10 @@
           "left": [
             {
               "id": "six",
-              "text": "6",
+              "text": "{{a}}",
               "tone": "original",
-              "latex": "6",
-              "spoken": "6"
+              "latex": "{{a}}",
+              "spoken": "{{a}}"
             },
             {
               "id": "times",
@@ -48,15 +48,15 @@
             },
             {
               "id": "brackets",
-              "text": "(2 + 3)",
+              "text": "({{b}} + {{c}})",
               "tone": "original",
-              "latex": "\\left(2 + 3\\right)",
-              "spoken": "open bracket 2 plus 3 close bracket"
+              "latex": "\\left({{b}} + {{c}}\\right)",
+              "spoken": "open bracket {{b}} plus {{c}} close bracket"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The brackets group 2 + 3 together.",
+          "explanation": "The brackets group {{b}} + {{c}} together.",
           "detail": "Work out this group before multiplying.",
           "operation": {
             "type": "show"
@@ -66,8 +66,8 @@
               "text": "The brackets group "
             },
             {
-              "latex": "2 + 3",
-              "spoken": "2 plus 3"
+              "latex": "{{b}} + {{c}}",
+              "spoken": "{{b}} plus {{c}}"
             },
             {
               "text": " together."
@@ -79,10 +79,10 @@
           "left": [
             {
               "id": "six",
-              "text": "6",
+              "text": "{{a}}",
               "tone": "original",
-              "latex": "6",
-              "spoken": "6"
+              "latex": "{{a}}",
+              "spoken": "{{a}}"
             },
             {
               "id": "times",
@@ -93,16 +93,16 @@
             },
             {
               "id": "brackets",
-              "text": "(2 + 3)",
+              "text": "({{b}} + {{c}})",
               "tone": "original",
-              "latex": "\\left(2 + 3\\right)",
-              "spoken": "open bracket 2 plus 3 close bracket"
+              "latex": "\\left({{b}} + {{c}}\\right)",
+              "spoken": "open bracket {{b}} plus {{c}} close bracket"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "First, focus on 2 + 3.",
-          "detail": "Keep the 6 and the multiplication sign where they are.",
+          "explanation": "First, focus on {{b}} + {{c}}.",
+          "detail": "Keep the {{a}} and the multiplication sign where they are.",
           "highlight": [
             "brackets"
           ],
@@ -114,8 +114,8 @@
               "text": "First, focus on "
             },
             {
-              "latex": "2 + 3",
-              "spoken": "2 plus 3"
+              "latex": "{{b}} + {{c}}",
+              "spoken": "{{b}} plus {{c}}"
             },
             {
               "text": "."
@@ -127,10 +127,10 @@
           "left": [
             {
               "id": "six",
-              "text": "6",
+              "text": "{{a}}",
               "tone": "original",
-              "latex": "6",
-              "spoken": "6"
+              "latex": "{{a}}",
+              "spoken": "{{a}}"
             },
             {
               "id": "times",
@@ -141,17 +141,17 @@
             },
             {
               "id": "five",
-              "text": "5",
+              "text": "{{sum}}",
               "tone": "operation",
-              "latex": "5",
-              "spoken": "5"
+              "latex": "{{sum}}",
+              "spoken": "{{sum}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "2 + 3 = 5. Replace the bracketed group with 5.",
+          "explanation": "{{b}} + {{c}} = {{sum}}. Replace the bracketed group with {{sum}}.",
           "detail": "The value of the group stays the same.",
-          "working": "2 + 3 = 5",
+          "working": "{{b}} + {{c}} = {{sum}}",
           "highlight": [
             "five"
           ],
@@ -159,16 +159,16 @@
             "type": "replace"
           },
           "workingNotation": {
-            "latex": "2 + 3 = 5",
-            "spoken": "2 plus 3 equals 5"
+            "latex": "{{b}} + {{c}} = {{sum}}",
+            "spoken": "{{b}} plus {{c}} equals {{sum}}"
           },
           "explanationContent": [
             {
-              "latex": "2 + 3 = 5",
-              "spoken": "2 plus 3 equals 5"
+              "latex": "{{b}} + {{c}} = {{sum}}",
+              "spoken": "{{b}} plus {{c}} equals {{sum}}"
             },
             {
-              "text": ". Replace the bracketed group with 5."
+              "text": ". Replace the bracketed group with {{sum}}."
             }
           ]
         },
@@ -177,10 +177,10 @@
           "left": [
             {
               "id": "six",
-              "text": "6",
+              "text": "{{a}}",
               "tone": "original",
-              "latex": "6",
-              "spoken": "6"
+              "latex": "{{a}}",
+              "spoken": "{{a}}"
             },
             {
               "id": "times",
@@ -191,16 +191,16 @@
             },
             {
               "id": "five",
-              "text": "5",
+              "text": "{{sum}}",
               "tone": "operation",
-              "latex": "5",
-              "spoken": "5"
+              "latex": "{{sum}}",
+              "spoken": "{{sum}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "We now have 6 × 5.",
-          "detail": "That means six groups of five.",
+          "explanation": "We now have {{a}} × {{sum}}.",
+          "detail": "That means {{a|words}} group{{a|s}} of {{sum|words}}.",
           "operation": {
             "type": "show"
           },
@@ -209,8 +209,8 @@
               "text": "We now have "
             },
             {
-              "latex": "6 \\times  5",
-              "spoken": "6 times 5"
+              "latex": "{{a}} \\times  {{sum}}",
+              "spoken": "{{a}} times {{sum}}"
             },
             {
               "text": "."
@@ -218,27 +218,27 @@
           ]
         },
         {
-          "title": "The answer is 30",
+          "title": "The answer is {{answer}}",
           "left": [
             {
               "id": "result",
-              "text": "30",
+              "text": "{{answer}}",
               "tone": "original",
-              "latex": "30",
-              "spoken": "30"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "6 × 5 = 30.",
+          "explanation": "{{a}} × {{sum}} = {{answer}}.",
           "detail": "Brackets first, then multiplication.",
           "operation": {
             "type": "simplify"
           },
           "explanationContent": [
             {
-              "latex": "6 \\times  5 = 30",
-              "spoken": "6 times 5 equals 30"
+              "latex": "{{a}} \\times  {{sum}} = {{answer}}",
+              "spoken": "{{a}} times {{sum}} equals {{answer}}"
             },
             {
               "text": "."
@@ -247,19 +247,47 @@
         }
       ],
       "notation": {
-        "latex": "6 \\times  \\left(2 + 3\\right)",
-        "spoken": "6 times open bracket 2 plus 3 close bracket"
+        "latex": "{{a}} \\times  \\left({{b}} + {{c}}\\right)",
+        "spoken": "{{a}} times open bracket {{b}} plus {{c}} close bracket"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 9
+        },
+        "b": {
+          "min": 1,
+          "max": 9
+        },
+        "c": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "derived": {
+        "sum": {
+          "add": [
+            "b",
+            "c"
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "a",
+            "sum"
+          ]
+        }
       }
     },
     {
       "id": "subtract-five",
-      "title": "2 − 5",
-      "label": "2 − 5",
+      "title": "{{a}} − {{b}}",
+      "label": "{{a}} − {{b}}",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "number-line",
-      "initialExpression": "2 − 5",
+      "initialExpression": "{{a}} − {{b}}",
       "objective": "Interpret signed arithmetic as controlled movement on a number line.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -283,161 +311,149 @@
           "left": [
             {
               "id": "expression",
-              "text": "2 − 5",
+              "text": "{{a}} − {{b}}",
               "tone": "original",
-              "latex": "2 - 5",
-              "spoken": "2 minus 5"
+              "latex": "{{a}} - {{b}}",
+              "spoken": "{{a}} minus {{b}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Start at 2 on the number line.",
+          "explanation": "Start at {{a}} on the number line.",
           "detail": "",
           "operation": {
             "type": "show"
           },
-          "position": 2
+          "position": {
+            "$value": "a"
+          }
         },
         {
-          "title": "Move left: 1 of 5",
+          "$repeat": {
+            "count": "b",
+            "as": "index",
+            "item": {
+              "title": "Move left: {{step}} of {{b}}",
+              "left": [
+                {
+                  "id": "expression",
+                  "text": "{{a}} − {{b}}",
+                  "tone": "original",
+                  "latex": "{{a}} - {{b}}",
+                  "spoken": "{{a}} minus {{b}}"
+                }
+              ],
+              "right": [],
+              "balance": null,
+              "explanation": "Subtracting moves left. One step takes us to {{position}}.",
+              "detail": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "position",
+                      0
+                    ]
+                  },
+                  "then": "We have passed zero. Negative numbers are below zero.",
+                  "else": ""
+                }
+              },
+              "operation": {
+                "type": "move",
+                "value": -1
+              },
+              "position": {
+                "$value": "position"
+              }
+            },
+            "derived": {
+              "step": {
+                "add": [
+                  "index",
+                  1
+                ]
+              },
+              "position": {
+                "subtract": [
+                  "a",
+                  {
+                    "add": [
+                      "index",
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            "start": 0
+          }
+        },
+        {
+          "title": "The answer is {{answer}}",
           "left": [
             {
               "id": "expression",
-              "text": "2 − 5",
-              "tone": "original",
-              "latex": "2 - 5",
-              "spoken": "2 minus 5"
+              "text": "{{a}} − {{b}} = {{answer}}",
+              "tone": "{{answer|tone}}",
+              "latex": "{{a}} - {{b}} = {{answer}}",
+              "spoken": "{{a}} minus {{b}} equals {{answer}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Subtracting moves left. One step takes us to 1.",
-          "detail": "",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": 1
-        },
-        {
-          "title": "Move left: 2 of 5",
-          "left": [
-            {
-              "id": "expression",
-              "text": "2 − 5",
-              "tone": "original",
-              "latex": "2 - 5",
-              "spoken": "2 minus 5"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Subtracting moves left. One step takes us to 0.",
-          "detail": "",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": 0
-        },
-        {
-          "title": "Move left: 3 of 5",
-          "left": [
-            {
-              "id": "expression",
-              "text": "2 − 5",
-              "tone": "original",
-              "latex": "2 - 5",
-              "spoken": "2 minus 5"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Subtracting moves left. One step takes us to -1.",
-          "detail": "We have passed zero. Negative numbers are below zero.",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": -1
-        },
-        {
-          "title": "Move left: 4 of 5",
-          "left": [
-            {
-              "id": "expression",
-              "text": "2 − 5",
-              "tone": "original",
-              "latex": "2 - 5",
-              "spoken": "2 minus 5"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Subtracting moves left. One step takes us to -2.",
-          "detail": "We have passed zero. Negative numbers are below zero.",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": -2
-        },
-        {
-          "title": "Move left: 5 of 5",
-          "left": [
-            {
-              "id": "expression",
-              "text": "2 − 5",
-              "tone": "original",
-              "latex": "2 - 5",
-              "spoken": "2 minus 5"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Subtracting moves left. One step takes us to -3.",
-          "detail": "We have passed zero. Negative numbers are below zero.",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": -3
-        },
-        {
-          "title": "The answer is -3",
-          "left": [
-            {
-              "id": "expression",
-              "text": "2 − 5 = -3",
-              "tone": "negative",
-              "latex": "2 - 5 = -3",
-              "spoken": "2 minus 5 equals -3"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Five steps left from 2 reach −3.",
+          "explanation": "{{b|Words}} steps left from {{a}} reach {{answer|display}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
-          "position": -3
+          "position": {
+            "$value": "answer"
+          }
         }
       ],
       "notation": {
-        "latex": "2 - 5",
-        "spoken": "2 minus 5"
-      }
+        "latex": "{{a}} - {{b}}",
+        "spoken": "{{a}} minus {{b}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 8
+        }
+      },
+      "derived": {
+        "answer": {
+          "subtract": [
+            "a",
+            "b"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              -5,
+              "answer"
+            ]
+          },
+          "message": "The answer must remain on the number line."
+        }
+      ]
     },
     {
       "id": "add-negative",
-      "title": "4 + (−3)",
-      "label": "4 + (−3)",
+      "title": "{{a}} + (−{{b}})",
+      "label": "{{a}} + (−{{b}})",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "number-line",
-      "initialExpression": "4 + (−3)",
+      "initialExpression": "{{a}} + (−{{b}})",
       "objective": "Interpret signed arithmetic as controlled movement on a number line.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -461,119 +477,149 @@
           "left": [
             {
               "id": "expression",
-              "text": "4 + (−3)",
+              "text": "{{a}} + (−{{b}})",
               "tone": "original",
-              "latex": "4 + \\left(-3\\right)",
-              "spoken": "4 plus open bracket minus 3 close bracket"
+              "latex": "{{a}} + \\left(-{{b}}\\right)",
+              "spoken": "{{a}} plus open bracket minus {{b}} close bracket"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Start at 4 on the number line.",
+          "explanation": "Start at {{a}} on the number line.",
           "detail": "",
           "operation": {
             "type": "show"
           },
-          "position": 4
+          "position": {
+            "$value": "a"
+          }
         },
         {
-          "title": "Move left: 1 of 3",
+          "$repeat": {
+            "count": "b",
+            "as": "index",
+            "item": {
+              "title": "Move left: {{step}} of {{b}}",
+              "left": [
+                {
+                  "id": "expression",
+                  "text": "{{a}} + (−{{b}})",
+                  "tone": "original",
+                  "latex": "{{a}} + \\left(-{{b}}\\right)",
+                  "spoken": "{{a}} plus open bracket minus {{b}} close bracket"
+                }
+              ],
+              "right": [],
+              "balance": null,
+              "explanation": "Adding a negative moves left. One step takes us to {{position}}.",
+              "detail": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "position",
+                      0
+                    ]
+                  },
+                  "then": "We have passed zero. Negative numbers are below zero.",
+                  "else": ""
+                }
+              },
+              "operation": {
+                "type": "move",
+                "value": -1
+              },
+              "position": {
+                "$value": "position"
+              }
+            },
+            "derived": {
+              "step": {
+                "add": [
+                  "index",
+                  1
+                ]
+              },
+              "position": {
+                "subtract": [
+                  "a",
+                  {
+                    "add": [
+                      "index",
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            "start": 0
+          }
+        },
+        {
+          "title": "The answer is {{answer}}",
           "left": [
             {
               "id": "expression",
-              "text": "4 + (−3)",
-              "tone": "original",
-              "latex": "4 + \\left(-3\\right)",
-              "spoken": "4 plus open bracket minus 3 close bracket"
+              "text": "{{a}} + (−{{b}}) = {{answer}}",
+              "tone": "{{answer|tone}}",
+              "latex": "{{a}} + \\left(-{{b}}\\right) = {{answer}}",
+              "spoken": "{{a}} plus open bracket minus {{b}} close bracket equals {{answer}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Adding a negative moves left. One step takes us to 3.",
-          "detail": "",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": 3
-        },
-        {
-          "title": "Move left: 2 of 3",
-          "left": [
-            {
-              "id": "expression",
-              "text": "4 + (−3)",
-              "tone": "original",
-              "latex": "4 + \\left(-3\\right)",
-              "spoken": "4 plus open bracket minus 3 close bracket"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Adding a negative moves left. One step takes us to 2.",
-          "detail": "",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": 2
-        },
-        {
-          "title": "Move left: 3 of 3",
-          "left": [
-            {
-              "id": "expression",
-              "text": "4 + (−3)",
-              "tone": "original",
-              "latex": "4 + \\left(-3\\right)",
-              "spoken": "4 plus open bracket minus 3 close bracket"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Adding a negative moves left. One step takes us to 1.",
-          "detail": "",
-          "operation": {
-            "type": "move",
-            "value": -1
-          },
-          "position": 1
-        },
-        {
-          "title": "The answer is 1",
-          "left": [
-            {
-              "id": "expression",
-              "text": "4 + (−3) = 1",
-              "tone": "original",
-              "latex": "4 + \\left(-3\\right) = 1",
-              "spoken": "4 plus open bracket minus 3 close bracket equals 1"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "The + tells us to add; −3 is the number being added. Three steps left from 4 reach 1.",
+          "explanation": "The + tells us to add; −{{b}} is the number being added. {{b|Words}} steps left from {{a}} reach {{answer}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
-          "position": 1
+          "position": {
+            "$value": "answer"
+          }
         }
       ],
       "notation": {
-        "latex": "4 + \\left(-3\\right)",
-        "spoken": "4 plus open bracket minus 3 close bracket"
-      }
+        "latex": "{{a}} + \\left(-{{b}}\\right)",
+        "spoken": "{{a}} plus open bracket minus {{b}} close bracket"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 5
+        },
+        "b": {
+          "min": 1,
+          "max": 8
+        }
+      },
+      "derived": {
+        "answer": {
+          "subtract": [
+            "a",
+            "b"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              -5,
+              "answer"
+            ]
+          },
+          "message": "The answer must remain on the number line."
+        }
+      ]
     },
     {
       "id": "multiply-before-add",
-      "title": "4 + 3 × 2",
-      "label": "4 + 3 × 2",
+      "title": "{{a}} + {{b}} × {{c}}",
+      "label": "{{a}} + {{b}} × {{c}}",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "expression",
-      "initialExpression": "4 + 3 × 2",
+      "initialExpression": "{{a}} + {{b}} × {{c}}",
       "objective": "Multiply before adding when there are no brackets.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -588,7 +634,7 @@
       ],
       "tutorNotes": {
         "observe": "Ask the student to describe what changed before selecting Next.",
-        "misconception": "Adding four and three first.",
+        "misconception": "Adding {{a|words}} and {{b|words}} first.",
         "checkQuestion": "Which operation must we do before adding?"
       },
       "steps": [
@@ -597,17 +643,17 @@
           "left": [
             {
               "id": "four",
-              "text": "4 +",
+              "text": "{{a}} +",
               "tone": "original",
-              "latex": "4 +",
-              "spoken": "4 plus"
+              "latex": "{{a}} +",
+              "spoken": "{{a}} plus"
             },
             {
               "id": "product",
-              "text": "3 × 2",
+              "text": "{{b}} × {{c}}",
               "tone": "original",
-              "latex": "3 \\times  2",
-              "spoken": "3 times 2"
+              "latex": "{{b}} \\times  {{c}}",
+              "spoken": "{{b}} times {{c}}"
             }
           ],
           "right": [],
@@ -623,22 +669,22 @@
           "left": [
             {
               "id": "four",
-              "text": "4 +",
+              "text": "{{a}} +",
               "tone": "original",
-              "latex": "4 +",
-              "spoken": "4 plus"
+              "latex": "{{a}} +",
+              "spoken": "{{a}} plus"
             },
             {
               "id": "product",
-              "text": "3 × 2",
+              "text": "{{b}} × {{c}}",
               "tone": "original",
-              "latex": "3 \\times  2",
-              "spoken": "3 times 2"
+              "latex": "{{b}} \\times  {{c}}",
+              "spoken": "{{b}} times {{c}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Work out 3 × 2 before adding 4.",
+          "explanation": "Work out {{b}} × {{c}} before adding {{a}}.",
           "detail": "",
           "operation": {
             "type": "highlight"
@@ -651,35 +697,35 @@
               "text": "Work out "
             },
             {
-              "latex": "3 \\times  2",
-              "spoken": "3 times 2"
+              "latex": "{{b}} \\times  {{c}}",
+              "spoken": "{{b}} times {{c}}"
             },
             {
-              "text": " before adding 4."
+              "text": " before adding {{a}}."
             }
           ]
         },
         {
-          "title": "Replace the product with six",
+          "title": "Replace the product with {{product|words}}",
           "left": [
             {
               "id": "four",
-              "text": "4 +",
+              "text": "{{a}} +",
               "tone": "original",
-              "latex": "4 +",
-              "spoken": "4 plus"
+              "latex": "{{a}} +",
+              "spoken": "{{a}} plus"
             },
             {
               "id": "six",
-              "text": "6",
+              "text": "{{product}}",
               "tone": "operation",
-              "latex": "6",
-              "spoken": "6"
+              "latex": "{{product}}",
+              "spoken": "{{product}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "3 × 2 is 6. Now we have 4 + 6.",
+          "explanation": "{{b}} × {{c}} is {{product}}. Now we have {{a}} + {{product}}.",
           "detail": "",
           "operation": {
             "type": "replace"
@@ -689,15 +735,15 @@
           ],
           "explanationContent": [
             {
-              "latex": "3 \\times  2",
-              "spoken": "3 times 2"
+              "latex": "{{b}} \\times  {{c}}",
+              "spoken": "{{b}} times {{c}}"
             },
             {
-              "text": " is 6. Now we have "
+              "text": " is {{product}}. Now we have "
             },
             {
-              "latex": "4 + 6",
-              "spoken": "4 plus 6"
+              "latex": "{{a}} + {{product}}",
+              "spoken": "{{a}} plus {{product}}"
             },
             {
               "text": "."
@@ -709,23 +755,23 @@
           "left": [
             {
               "id": "answer",
-              "text": "10",
+              "text": "{{answer}}",
               "tone": "operation",
-              "latex": "10",
-              "spoken": "10"
+              "latex": "{{answer}}",
+              "spoken": "{{answer}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "4 + 6 = 10.",
+          "explanation": "{{a}} + {{product}} = {{answer}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "explanationContent": [
             {
-              "latex": "4 + 6 = 10",
-              "spoken": "4 plus 6 equals 10"
+              "latex": "{{a}} + {{product}} = {{answer}}",
+              "spoken": "{{a}} plus {{product}} equals {{answer}}"
             },
             {
               "text": "."
@@ -734,19 +780,47 @@
         }
       ],
       "notation": {
-        "latex": "4 + 3 \\times  2",
-        "spoken": "4 plus 3 times 2"
+        "latex": "{{a}} + {{b}} \\times  {{c}}",
+        "spoken": "{{a}} plus {{b}} times {{c}}"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 9
+        },
+        "b": {
+          "min": 2,
+          "max": 9
+        },
+        "c": {
+          "min": 2,
+          "max": 9
+        }
+      },
+      "derived": {
+        "product": {
+          "multiply": [
+            "b",
+            "c"
+          ]
+        },
+        "answer": {
+          "add": [
+            "a",
+            "product"
+          ]
+        }
       }
     },
     {
       "id": "equivalent-halves",
-      "title": "1/2 = 2/4",
-      "label": "1/2 = 2/4",
+      "title": "1/2 = {{scale}}/{{parts}}",
+      "label": "1/2 = {{scale}}/{{parts}}",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "fractions",
-      "initialExpression": "1/2 = 2/4",
+      "initialExpression": "1/2 = {{scale}}/{{parts}}",
       "objective": "See that equal fractions shade the same amount of the same whole.",
       "prerequisites": [
         "Read the symbols in this example"
@@ -792,19 +866,19 @@
           ]
         },
         {
-          "title": "Split each half in two",
+          "title": "Split each half in {{scale|words}}",
           "left": [
             {
               "id": "fraction",
-              "text": "1/2 = 2/4",
+              "text": "1/2 = {{scale}}/{{parts}}",
               "tone": "original",
-              "latex": "\\frac{1}{2} = \\frac{2}{4}",
-              "spoken": "1 divided by 2 equals 2 divided by 4"
+              "latex": "\\frac{1}{2} = \\frac{{{scale}}}{{{parts}}}",
+              "spoken": "1 divided by 2 equals {{scale}} divided by {{parts}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Divide each half into two equal parts. The shaded area stays the same.",
+          "explanation": "Divide each half into {{scale|words}} equal parts. The shaded area stays the same.",
           "detail": "",
           "operation": {
             "type": "partition"
@@ -812,8 +886,12 @@
           "bars": [
             {
               "id": "whole",
-              "parts": 4,
-              "shaded": 2
+              "parts": {
+                "$value": "parts"
+              },
+              "shaded": {
+                "$value": "scale"
+              }
             }
           ]
         },
@@ -822,15 +900,15 @@
           "left": [
             {
               "id": "fraction",
-              "text": "1/2 = 2/4",
+              "text": "1/2 = {{scale}}/{{parts}}",
               "tone": "original",
-              "latex": "\\frac{1}{2} = \\frac{2}{4}",
-              "spoken": "1 divided by 2 equals 2 divided by 4"
+              "latex": "\\frac{1}{2} = \\frac{{{scale}}}{{{parts}}}",
+              "spoken": "1 divided by 2 equals {{scale}} divided by {{parts}}"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "One of two parts is the same amount as two of four parts.",
+          "explanation": "One of two parts is the same amount as {{scale|words}} of {{parts|words}} part{{parts|s}}.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -843,29 +921,47 @@
             },
             {
               "id": "whole",
-              "parts": 4,
-              "shaded": 2
+              "parts": {
+                "$value": "parts"
+              },
+              "shaded": {
+                "$value": "scale"
+              }
             }
           ]
         }
       ],
       "notation": {
-        "latex": "\\frac{1}{2} = \\frac{2}{4}",
-        "spoken": "1 divided by 2 equals 2 divided by 4"
+        "latex": "\\frac{1}{2} = \\frac{{{scale}}}{{{parts}}}",
+        "spoken": "1 divided by 2 equals {{scale}} divided by {{parts}}"
+      },
+      "parameters": {
+        "scale": {
+          "min": 2,
+          "max": 6
+        }
+      },
+      "derived": {
+        "parts": {
+          "multiply": [
+            2,
+            "scale"
+          ]
+        }
       }
     },
     {
       "id": "fraction-amount",
-      "title": "Three quarters of 20",
-      "label": "Three quarters of 20",
+      "title": "{{numerator|Words}} {{denominator|fractions}} of {{total}}",
+      "label": "{{numerator|Words}} {{denominator|fractions}} of {{total}}",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "counter-groups",
-      "initialExpression": "Three quarters of 20",
+      "initialExpression": "{{numerator|Words}} {{denominator|fractions}} of {{total}}",
       "notation": {
-        "latex": "\\frac{3}{4}\\text{ of }20",
-        "spoken": "Three quarters of 20"
+        "latex": "\\frac{{{numerator}}}{{{denominator}}}\\text{ of }{{total}}",
+        "spoken": "{{numerator|Words}} {{denominator|fractions}} of {{total}}"
       },
       "objective": "Divide a quantity by the denominator, then select the numerator of equal groups.",
       "prerequisites": [
@@ -882,642 +978,269 @@
       "tutorNotes": {
         "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
         "misconception": "Dividing by the numerator instead of making denominator-many equal groups.",
-        "checkQuestion": "Why do we make four equal groups before selecting three?"
+        "checkQuestion": "Why do we make {{denominator|words}} equal groups before selecting {{numerator|words}}?"
       },
       "model": {
-        "total": 20,
-        "result": 15
+        "total": {
+          "$value": "total"
+        },
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
-          "title": "Start with twenty",
+          "title": "Start with {{total|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "three quarters of twenty",
-              "latex": "\\frac{3}{4}\\text{ of }20",
-              "spoken": "three quarters of twenty",
+              "text": "{{numerator|words}} {{denominator|fractions}} of {{total|words}}",
+              "latex": "\\frac{{{numerator}}}{{{denominator}}}\\text{ of }{{total}}",
+              "spoken": "{{numerator|words}} {{denominator|fractions}} of {{total|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "We want three of four equal parts of twenty counters.",
+          "explanation": "We want {{numerator|words}} of {{denominator|words}} equal parts of {{total|words}} counter{{total|s}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "description": "{{total|Words}} unit counters.",
+            "caption": "",
             "groups": [
               {
                 "id": "whole",
-                "label": "Twenty counters",
+                "label": "{{total|Words}} counter{{total|s}}",
                 "items": [
                   {
-                    "id": "fraction-amount-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "total",
+                      "as": "i",
+                      "item": {
+                        "id": "fraction-amount-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Twenty unit counters.",
-            "caption": ""
+            ]
           }
         },
         {
-          "title": "Split into four equal parts",
+          "title": "Split into {{denominator|words}} equal parts",
           "left": [
             {
               "id": "expression",
-              "text": "twenty divided by four equals five",
-              "latex": "\\frac{20}{4}=5",
-              "spoken": "twenty divided by four equals five",
+              "text": "{{total|words}} divided by {{denominator|words}} equals {{unit|words}}",
+              "latex": "\\frac{{{total}}}{{{denominator}}}={{unit}}",
+              "spoken": "{{total|words}} divided by {{denominator|words}} equals {{unit|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Four equal groups give five counters in each quarter.",
+          "explanation": "{{denominator|Words}} equal groups give {{unit|words}} counter{{unit|s}} in each {{denominator|fraction}}.",
           "detail": "",
           "operation": {
             "type": "split"
           },
           "scene": {
+            "description": "{{denominator|Words}} equal {{denominator|fractions}}, each with {{unit|words}} counter{{unit|s}}.",
+            "caption": "",
             "groups": [
               {
-                "id": "quarter-0",
-                "label": "Quarter 1",
-                "items": [
-                  {
-                    "id": "fraction-amount-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                "$repeat": {
+                  "count": "denominator",
+                  "as": "g",
+                  "item": {
+                    "id": "quarter-{{g}}",
+                    "label": "{{denominator|Fraction}} {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "fraction-amount-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "fraction-amount-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "fraction-amount-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "quarter-1",
-                "label": "Quarter 2",
-                "items": [
-                  {
-                    "id": "fraction-amount-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "quarter-2",
-                "label": "Quarter 3",
-                "items": [
-                  {
-                    "id": "fraction-amount-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "quarter-3",
-                "label": "Quarter 4",
-                "items": [
-                  {
-                    "id": "fraction-amount-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
+                  "start": 0
+                }
               }
-            ],
-            "description": "Four equal quarters, each with five counters.",
-            "caption": ""
+            ]
           },
           "highlight": [
             "expression"
           ]
         },
         {
-          "title": "Select three of the four quarters",
+          "title": "Select {{numerator|words}} of the {{denominator|words}} {{denominator|fractions}}",
           "left": [
             {
               "id": "expression",
-              "text": "three times five equals fifteen",
-              "latex": "3\\times5=15",
-              "spoken": "three times five equals fifteen",
+              "text": "{{numerator|words}} times {{unit|words}} equals {{answer|words}}",
+              "latex": "{{numerator}}\\times{{unit}}={{answer}}",
+              "spoken": "{{numerator|words}} times {{unit|words}} equals {{answer|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Select three groups of five. Three quarters of twenty is fifteen.",
+          "explanation": "Select {{numerator|words}} group{{numerator|s}} of {{unit|words}}. {{numerator|Words}} {{denominator|fractions}} of {{total|words}} is {{answer|words}}.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
+            "description": "{{numerator|Words}} of {{denominator|words}} {{denominator|fractions}} are highlighted; {{answer|words}} counter{{answer|s}} are selected.",
+            "caption": "",
             "groups": [
               {
-                "id": "quarter-0",
-                "label": "Quarter 1",
-                "items": [
-                  {
-                    "id": "fraction-amount-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                "$repeat": {
+                  "count": "denominator",
+                  "as": "g",
+                  "item": {
+                    "id": "quarter-{{g}}",
+                    "label": "{{denominator|Fraction}} {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "fraction-amount-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": {
+                              "$test": {
+                                "less": [
+                                  "g",
+                                  "numerator"
+                                ]
+                              }
+                            }
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "fraction-amount-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "fraction-amount-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "quarter-1",
-                "label": "Quarter 2",
-                "items": [
-                  {
-                    "id": "fraction-amount-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "quarter-2",
-                "label": "Quarter 3",
-                "items": [
-                  {
-                    "id": "fraction-amount-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "fraction-amount-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "quarter-3",
-                "label": "Quarter 4",
-                "items": [
-                  {
-                    "id": "fraction-amount-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "fraction-amount-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
+                  "start": 0
+                }
               }
-            ],
-            "description": "Three of four quarters are highlighted; fifteen counters are selected.",
-            "caption": ""
+            ]
           },
           "highlight": [
             "expression"
           ]
         }
+      ],
+      "parameters": {
+        "numerator": {
+          "min": 2,
+          "max": 3
+        },
+        "denominator": {
+          "min": 3,
+          "max": 4
+        },
+        "total": {
+          "min": 6,
+          "max": 24
+        }
+      },
+      "derived": {
+        "unit": {
+          "divide": [
+            "total",
+            "denominator"
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "numerator",
+            "unit"
+          ]
+        }
+      },
+      "integers": [
+        "unit"
+      ],
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "numerator",
+              "denominator"
+            ]
+          },
+          "message": "Select fewer parts than the whole."
+        }
       ]
     },
     {
       "id": "percentage-amount",
-      "title": "25% of 80",
-      "label": "25% of 80",
+      "title": "25% of {{total}}",
+      "label": "25% of {{total}}",
       "tier": "Foundation",
       "subjectArea": "number",
       "available": true,
       "kind": "counter-groups",
-      "initialExpression": "25% of 80",
+      "initialExpression": "25% of {{total}}",
       "notation": {
-        "latex": "25\\%\\text{ of }80",
-        "spoken": "25% of 80"
+        "latex": "25\\%\\text{ of }{{total}}",
+        "spoken": "25% of {{total}}"
       },
       "objective": "Connect twenty-five percent with one quarter of the original whole.",
       "prerequisites": [
@@ -1537,8 +1260,12 @@
         "checkQuestion": "Why does the whole amount matter when finding twenty-five percent?"
       },
       "model": {
-        "total": 80,
-        "result": 20
+        "total": {
+          "$value": "total"
+        },
+        "result": {
+          "$value": "quarter"
+        }
       },
       "steps": [
         {
@@ -1563,45 +1290,53 @@
             "groups": [
               {
                 "id": "whole",
-                "label": "The whole is 80",
+                "label": "The whole is {{total}}",
                 "items": [
                   {
                     "id": "twenty-0",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   },
                   {
                     "id": "twenty-1",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   },
                   {
                     "id": "twenty-2",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   },
                   {
                     "id": "twenty-3",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
                 ]
               }
             ],
-            "description": "Four equal cards of value twenty represent the whole eighty.",
-            "caption": "Each card represents 20, not one unit."
+            "description": "Four equal cards of value {{quarter|words}} represent the whole {{total|words}}.",
+            "caption": "Each card represents {{quarter}}, not one unit."
           }
         },
         {
@@ -1609,15 +1344,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "eighty divided by four equals twenty",
-              "latex": "\\frac{80}{4}=20",
-              "spoken": "eighty divided by four equals twenty",
+              "text": "{{total|words}} divided by four equals {{quarter|words}}",
+              "latex": "\\frac{{{total}}}{4}={{quarter}}",
+              "spoken": "{{total|words}} divided by four equals {{quarter|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Divide the whole eighty into four equal groups. Each quarter is twenty.",
+          "explanation": "Divide the whole {{total|words}} into four equal groups. Each quarter is {{quarter|words}}.",
           "detail": "",
           "operation": {
             "type": "split"
@@ -1630,9 +1365,11 @@
                 "items": [
                   {
                     "id": "twenty-0",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
@@ -1644,9 +1381,11 @@
                 "items": [
                   {
                     "id": "twenty-1",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
@@ -1658,9 +1397,11 @@
                 "items": [
                   {
                     "id": "twenty-2",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
@@ -1672,17 +1413,19 @@
                 "items": [
                   {
                     "id": "twenty-3",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
                 ]
               }
             ],
-            "description": "Four equal parts each have value twenty.",
-            "caption": "Each card represents 20."
+            "description": "Four equal parts each have value {{quarter|words}}.",
+            "caption": "Each card represents {{quarter}}."
           },
           "highlight": [
             "expression"
@@ -1693,15 +1436,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "twenty-five percent of eighty equals twenty",
-              "latex": "25\\%\\text{ of }80=20",
-              "spoken": "twenty-five percent of eighty equals twenty",
+              "text": "twenty-five percent of {{total|words}} equals {{quarter|words}}",
+              "latex": "25\\%\\text{ of }{{total}}={{quarter}}",
+              "spoken": "twenty-five percent of {{total|words}} equals {{quarter|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Select one of the four equal parts. Twenty-five percent of eighty is twenty.",
+          "explanation": "Select one of the four equal parts. Twenty-five percent of {{total|words}} is {{quarter|words}}.",
           "detail": "",
           "operation": {
             "type": "highlight"
@@ -1714,9 +1457,11 @@
                 "items": [
                   {
                     "id": "twenty-0",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": true
                   }
@@ -1728,9 +1473,11 @@
                 "items": [
                   {
                     "id": "twenty-1",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
@@ -1742,9 +1489,11 @@
                 "items": [
                   {
                     "id": "twenty-2",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
@@ -1756,22 +1505,41 @@
                 "items": [
                   {
                     "id": "twenty-3",
-                    "value": 20,
-                    "latex": "20",
-                    "spoken": "20",
+                    "value": {
+                      "$value": "quarter"
+                    },
+                    "latex": "{{quarter}}",
+                    "spoken": "{{quarter}}",
                     "tone": "original",
                     "highlight": false
                   }
                 ]
               }
             ],
-            "description": "One quarter of the whole eighty is selected: twenty.",
-            "caption": "Each card represents 20."
+            "description": "One quarter of the whole {{total|words}} is selected: {{quarter|words}}.",
+            "caption": "Each card represents {{quarter}}."
           },
           "highlight": [
             "expression"
           ]
         }
+      ],
+      "parameters": {
+        "total": {
+          "min": 8,
+          "max": 96
+        }
+      },
+      "derived": {
+        "quarter": {
+          "divide": [
+            "total",
+            4
+          ]
+        }
+      },
+      "integers": [
+        "quarter"
       ]
     },
     {
@@ -1784,7 +1552,7 @@
       "kind": "counter-groups",
       "initialExpression": "Add equal-denominator fractions",
       "notation": {
-        "latex": "\\frac{1}{6}+\\frac{2}{6}",
+        "latex": "\\frac{1}{{{denominator}}}+\\frac{{{b}}}{{{denominator}}}",
         "spoken": "Add equal-denominator fractions"
       },
       "objective": "Count equal fractional units while keeping the whole fixed.",
@@ -1802,336 +1570,306 @@
       "tutorNotes": {
         "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
         "misconception": "Adding denominators and changing the size of the fractional unit.",
-        "checkQuestion": "Why does the denominator stay six when we add sixths?"
+        "checkQuestion": "Why does the denominator stay {{denominator|words}} when we add {{denominator|fractions}}?"
       },
       "model": {
-        "total": 6,
+        "total": {
+          "$value": "denominator"
+        },
         "result": 0.5
       },
       "steps": [
         {
-          "title": "Six equal parts make one whole",
+          "title": "{{denominator|Words}} equal parts make one whole",
           "left": [
             {
               "id": "expression",
-              "text": "one sixth plus two sixths",
-              "latex": "\\frac{1}{6}+\\frac{2}{6}",
-              "spoken": "one sixth plus two sixths",
+              "text": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "b",
+                      1
+                    ]
+                  },
+                  "then": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fraction}}",
+                  "else": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fractions}}"
+                }
+              },
+              "latex": "\\frac{1}{{{denominator}}}+\\frac{{{b}}}{{{denominator}}}",
+              "spoken": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "b",
+                      1
+                    ]
+                  },
+                  "then": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fraction}}",
+                  "else": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fractions}}"
+                }
+              },
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Each card stands for one sixth of the same whole. There are six equal parts.",
+          "explanation": "Each card stands for one {{denominator|fraction}} of the same whole. There are {{denominator|words}} equal parts.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "description": "{{denominator|Words}} equal cards represent the {{denominator|words}} {{denominator|fractions}} of one whole.",
+            "caption": "Each card is one {{denominator|fraction}} of this whole.",
             "groups": [
               {
                 "id": "whole",
-                "label": "One whole: six sixths",
+                "label": "One whole: {{denominator|words}} {{denominator|fractions}}",
                 "items": [
                   {
-                    "id": "sixth-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "denominator",
+                      "as": "i",
+                      "item": {
+                        "id": "sixth-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Six equal cards represent the six sixths of one whole.",
-            "caption": "Each card is one sixth of this whole."
+            ]
           }
         },
         {
-          "title": "Select the first sixth",
+          "title": "Select the first {{denominator|fraction}}",
           "left": [
             {
               "id": "expression",
-              "text": "one sixth",
-              "latex": "\\frac{1}{6}",
-              "spoken": "one sixth",
+              "text": "one {{denominator|fraction}}",
+              "latex": "\\frac{1}{{{denominator}}}",
+              "spoken": "one {{denominator|fraction}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Select one of the six equal parts.",
+          "explanation": "Select one of the {{denominator|words}} equal parts.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
+            "description": "One of {{denominator|words}} equal parts is highlighted.",
+            "caption": "Each card is one {{denominator|fraction}} of this whole.",
             "groups": [
               {
                 "id": "whole",
-                "label": "One whole: six sixths",
+                "label": "One whole: {{denominator|words}} {{denominator|fractions}}",
                 "items": [
                   {
-                    "id": "sixth-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "denominator",
+                      "as": "i",
+                      "item": {
+                        "id": "sixth-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": {
+                          "$test": {
+                            "less": [
+                              "i",
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "One of six equal parts is highlighted.",
-            "caption": "Each card is one sixth of this whole."
+            ]
           },
           "highlight": [
             "expression"
           ]
         },
         {
-          "title": "Add two more sixths",
+          "title": {
+            "$if": {
+              "test": {
+                "equal": [
+                  "b",
+                  1
+                ]
+              },
+              "then": "Add {{b|words}} more {{denominator|fraction}}",
+              "else": "Add {{b|words}} more {{denominator|fractions}}"
+            }
+          },
           "left": [
             {
               "id": "expression",
-              "text": "one sixth plus two sixths equals three sixths",
-              "latex": "\\frac{1}{6}+\\frac{2}{6}=\\frac{3}{6}",
-              "spoken": "one sixth plus two sixths equals three sixths",
+              "text": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "b",
+                      1
+                    ]
+                  },
+                  "then": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fraction}} equals {{sum|words}} {{denominator|fractions}}",
+                  "else": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fractions}} equals {{sum|words}} {{denominator|fractions}}"
+                }
+              },
+              "latex": "\\frac{1}{{{denominator}}}+\\frac{{{b}}}{{{denominator}}}=\\frac{{{sum}}}{{{denominator}}}",
+              "spoken": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "b",
+                      1
+                    ]
+                  },
+                  "then": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fraction}} equals {{sum|words}} {{denominator|fractions}}",
+                  "else": "one {{denominator|fraction}} plus {{b|words}} {{denominator|fractions}} equals {{sum|words}} {{denominator|fractions}}"
+                }
+              },
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Add two more parts of the same size. Three sixths are now selected; the whole still has six parts.",
+          "explanation": "Add {{b|words}} more parts of the same size. {{sum|Words}} {{denominator|fractions}} are now selected; the whole still has {{denominator|words}} part{{denominator|s}}.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
+            "description": "{{sum|Words}} of {{denominator|words}} equal parts are highlighted.",
+            "caption": "Each card is one {{denominator|fraction}} of this whole.",
             "groups": [
               {
                 "id": "whole",
-                "label": "One whole: six sixths",
+                "label": "One whole: {{denominator|words}} {{denominator|fractions}}",
                 "items": [
                   {
-                    "id": "sixth-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "denominator",
+                      "as": "i",
+                      "item": {
+                        "id": "sixth-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": {
+                          "$test": {
+                            "less": [
+                              "i",
+                              "sum"
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Three of six equal parts are highlighted.",
-            "caption": "Each card is one sixth of this whole."
+            ]
           },
           "highlight": [
             "expression"
           ]
         },
         {
-          "title": "Three sixths is half",
+          "title": "{{sum|Words}} {{denominator|fractions}} is half",
           "left": [
             {
               "id": "expression",
-              "text": "three sixths equals one half",
-              "latex": "\\frac{3}{6}=\\frac{1}{2}",
-              "spoken": "three sixths equals one half",
+              "text": "{{sum|words}} {{denominator|fractions}} equals one half",
+              "latex": "\\frac{{{sum}}}{{{denominator}}}=\\frac{1}{2}",
+              "spoken": "{{sum|words}} {{denominator|fractions}} equals one half",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Three of six equal parts cover half the whole. The denominator was not added.",
+          "explanation": "{{sum|Words}} of {{denominator|words}} equal parts cover half the whole. The denominator was not added.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
+            "description": "Exactly half of the {{denominator|words}} part{{denominator|s}} are highlighted.",
+            "caption": "Each card is one {{denominator|fraction}} of this whole.",
             "groups": [
               {
                 "id": "whole",
-                "label": "One whole: six sixths",
+                "label": "One whole: {{denominator|words}} {{denominator|fractions}}",
                 "items": [
                   {
-                    "id": "sixth-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "sixth-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "sixth-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "denominator",
+                      "as": "i",
+                      "item": {
+                        "id": "sixth-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": {
+                          "$test": {
+                            "less": [
+                              "i",
+                              "sum"
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Exactly half of the six parts are highlighted.",
-            "caption": "Each card is one sixth of this whole."
+            ]
           }
         }
-      ]
+      ],
+      "parameters": {
+        "b": {
+          "min": 1,
+          "max": 4
+        }
+      },
+      "derived": {
+        "sum": {
+          "add": [
+            1,
+            "b"
+          ]
+        },
+        "denominator": {
+          "multiply": [
+            2,
+            "sum"
+          ]
+        }
+      }
     },
     {
       "id": "square-three",
@@ -2143,7 +1881,7 @@
       "kind": "tile-array",
       "initialExpression": "Square numbers",
       "notation": {
-        "latex": "3^2=9",
+        "latex": "{{base}}^2={{answer}}",
         "spoken": "Square numbers"
       },
       "objective": "Explain squaring as a square array and repeated multiplication.",
@@ -2161,13 +1899,17 @@
       ],
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
-        "misconception": "Confusing three squared with three times two.",
-        "checkQuestion": "Why does the small two give two factors of three?"
+        "misconception": "Confusing {{base|words}} squared with {{base|words}} times two.",
+        "checkQuestion": "Why does the small two give two factors of {{base|words}}?"
       },
       "model": {
-        "base": 3,
+        "base": {
+          "$value": "base"
+        },
         "exponent": 2,
-        "result": 9
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
@@ -2175,155 +1917,164 @@
           "left": [
             {
               "id": "expression",
-              "text": "three squared",
-              "latex": "3^2",
-              "spoken": "three squared",
+              "text": "{{base|words}} squared",
+              "latex": "{{base}}^2",
+              "spoken": "{{base|words}} squared",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The small two means two factors of three. It does not mean three times two.",
+          "explanation": "The small two means two factors of {{base|words}}. It does not mean {{base|words}} times two.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
-            "rows": 3,
-            "columns": 3,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
             "layers": 1,
             "visibleRows": 0,
             "visibleLayers": 1,
             "edges": false,
             "highlightRow": null,
-            "description": "An empty three-by-three grid.",
+            "description": "An empty {{base|words}}-by-{{base|words}} grid.",
             "caption": ""
           }
         },
         {
-          "title": "Build row 1",
+          "$repeat": {
+            "count": "base",
+            "as": "r",
+            "item": {
+              "title": "Build row {{n}}",
+              "left": [
+                {
+                  "id": "expression",
+                  "text": "{{base|words}} times {{base|words}}",
+                  "latex": "{{base}}\\times{{base}}",
+                  "spoken": "{{base|words}} times {{base|words}}",
+                  "tone": "original"
+                }
+              ],
+              "right": [],
+              "balance": null,
+              "explanation": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "r",
+                      0
+                    ]
+                  },
+                  "then": "Make the first row of {{base|words}} tiles. There are now {{tiles}} tiles.",
+                  "else": "Make a {{n|ordinal}} row of {{base|words}} tiles. There are now {{tiles}} tiles."
+                }
+              },
+              "detail": "",
+              "operation": {
+                "type": "partition"
+              },
+              "scene": {
+                "rows": {
+                  "$value": "base"
+                },
+                "columns": {
+                  "$value": "base"
+                },
+                "layers": 1,
+                "visibleRows": {
+                  "$value": "n"
+                },
+                "visibleLayers": 1,
+                "edges": true,
+                "highlightRow": {
+                  "$value": "r"
+                },
+                "description": "{{n}} filled rows of {{base|words}} tiles, {{tiles}} tiles in total.",
+                "caption": ""
+              }
+            },
+            "derived": {
+              "n": {
+                "add": [
+                  "r",
+                  1
+                ]
+              },
+              "tiles": {
+                "multiply": [
+                  {
+                    "add": [
+                      "r",
+                      1
+                    ]
+                  },
+                  "base"
+                ]
+              }
+            },
+            "start": 0
+          }
+        },
+        {
+          "title": "A square of {{answer|words}} tiles",
           "left": [
             {
               "id": "expression",
-              "text": "three times three",
-              "latex": "3\\times3",
-              "spoken": "three times three",
+              "text": "{{base|words}} squared equals {{base|words}} times {{base|words}} equals {{answer|words}}",
+              "latex": "{{base}}^2={{base}}\\times{{base}}={{answer}}",
+              "spoken": "{{base|words}} squared equals {{base|words}} times {{base|words}} equals {{answer|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Make the first row of three tiles. There are now 3 tiles.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "rows": 3,
-            "columns": 3,
-            "layers": 1,
-            "visibleRows": 1,
-            "visibleLayers": 1,
-            "edges": true,
-            "highlightRow": 0,
-            "description": "1 filled rows of three tiles, 3 tiles in total.",
-            "caption": ""
-          }
-        },
-        {
-          "title": "Build row 2",
-          "left": [
-            {
-              "id": "expression",
-              "text": "three times three",
-              "latex": "3\\times3",
-              "spoken": "three times three",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Make a second row of three tiles. There are now 6 tiles.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "rows": 3,
-            "columns": 3,
-            "layers": 1,
-            "visibleRows": 2,
-            "visibleLayers": 1,
-            "edges": true,
-            "highlightRow": 1,
-            "description": "2 filled rows of three tiles, 6 tiles in total.",
-            "caption": ""
-          }
-        },
-        {
-          "title": "Build row 3",
-          "left": [
-            {
-              "id": "expression",
-              "text": "three times three",
-              "latex": "3\\times3",
-              "spoken": "three times three",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Make a third row of three tiles. There are now 9 tiles.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "rows": 3,
-            "columns": 3,
-            "layers": 1,
-            "visibleRows": 3,
-            "visibleLayers": 1,
-            "edges": true,
-            "highlightRow": 2,
-            "description": "3 filled rows of three tiles, 9 tiles in total.",
-            "caption": ""
-          }
-        },
-        {
-          "title": "A square of nine tiles",
-          "left": [
-            {
-              "id": "expression",
-              "text": "three squared equals three times three equals nine",
-              "latex": "3^2=3\\times3=9",
-              "spoken": "three squared equals three times three equals nine",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Three rows of three make nine square tiles. Squaring repeats a factor, not addition.",
+          "explanation": "{{base|Words}} rows of {{base|words}} make {{answer|words}} square tiles. Squaring repeats a factor, not addition.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "rows": 3,
-            "columns": 3,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
             "layers": 1,
-            "visibleRows": 3,
+            "visibleRows": {
+              "$value": "base"
+            },
             "visibleLayers": 1,
             "edges": true,
             "highlightRow": null,
-            "description": "A complete three-by-three square of nine tiles.",
+            "description": "A complete {{base|words}}-by-{{base|words}} square of {{answer|words}} tiles.",
             "caption": ""
           },
           "highlight": [
             "expression"
           ]
         }
-      ]
+      ],
+      "parameters": {
+        "base": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "answer": {
+          "power": [
+            "base",
+            2
+          ]
+        }
+      }
     },
     {
       "id": "cube-two",
@@ -2335,10 +2086,10 @@
       "kind": "tile-array",
       "initialExpression": "Cube numbers",
       "notation": {
-        "latex": "2^3=8",
+        "latex": "{{base}}^3={{answer}}",
         "spoken": "Cube numbers"
       },
-      "objective": "Interpret a cube as two layers of a two-by-two array.",
+      "objective": "Interpret a cube as {{base|words}} layers of a {{base|words}}-by-{{base|words}} array.",
       "prerequisites": [
         "Understand square arrays and repeated multiplication."
       ],
@@ -2356,138 +2107,304 @@
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
         "misconception": "Interpreting cubed as multiplying by three.",
-        "checkQuestion": "What does the third factor of two count?"
+        "checkQuestion": "What does the third factor of {{base|words}} count?"
       },
       "model": {
-        "base": 2,
+        "base": {
+          "$value": "base"
+        },
         "exponent": 3,
-        "result": 8
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
-          "title": "Three factors of two",
+          "title": "Three factors of {{base|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "two cubed",
-              "latex": "2^3",
-              "spoken": "two cubed",
+              "text": "{{base|words}} cubed",
+              "latex": "{{base}}^3",
+              "spoken": "{{base|words}} cubed",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The small three means multiply three factors of two.",
+          "explanation": "The small three means multiply three factors of {{base|words}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
-            "rows": 2,
-            "columns": 2,
-            "layers": 2,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
+            "layers": {
+              "$value": "base"
+            },
             "visibleRows": 0,
             "visibleLayers": 1,
             "edges": false,
             "highlightRow": null,
-            "description": "The first empty two-by-two layer.",
+            "description": "The first empty {{base|words}}-by-{{base|words}} layer.",
             "caption": "Each tile represents one unit cube."
           }
         },
         {
-          "title": "Build the first layer",
-          "left": [
-            {
-              "id": "expression",
-              "text": "two times two equals four",
-              "latex": "2\\times2=4",
-              "spoken": "two times two equals four",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "One layer has two rows of two: four unit cubes.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "rows": 2,
-            "columns": 2,
-            "layers": 2,
-            "visibleRows": 2,
-            "visibleLayers": 1,
-            "edges": true,
-            "highlightRow": null,
-            "description": "One two-by-two layer contains four unit cubes.",
-            "caption": "Each tile represents one unit cube."
+          "$repeat": {
+            "count": "base",
+            "as": "g",
+            "item": {
+              "title": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "g",
+                      0
+                    ]
+                  },
+                  "then": "Build the first layer",
+                  "else": "Add a {{n|ordinal}} equal layer"
+                }
+              },
+              "left": [
+                {
+                  "id": "expression",
+                  "text": {
+                    "$if": {
+                      "test": {
+                        "equal": [
+                          "n",
+                          "base"
+                        ]
+                      },
+                      "then": "{{base|words}} times {{base|words}} times {{base|words}} equals {{answer|words}}",
+                      "else": {
+                        "$if": {
+                          "test": {
+                            "equal": [
+                              "g",
+                              0
+                            ]
+                          },
+                          "then": "{{base|words}} times {{base|words}} equals {{square|words}}",
+                          "else": "{{n|words}} times {{square|words}} equals {{subtotal|words}}"
+                        }
+                      }
+                    }
+                  },
+                  "latex": {
+                    "$if": {
+                      "test": {
+                        "equal": [
+                          "n",
+                          "base"
+                        ]
+                      },
+                      "then": "{{base}}\\times{{base}}\\times{{base}}={{answer}}",
+                      "else": {
+                        "$if": {
+                          "test": {
+                            "equal": [
+                              "g",
+                              0
+                            ]
+                          },
+                          "then": "{{base}}\\times{{base}}={{square}}",
+                          "else": "{{n}}\\times{{square}}={{subtotal}}"
+                        }
+                      }
+                    }
+                  },
+                  "spoken": {
+                    "$if": {
+                      "test": {
+                        "equal": [
+                          "n",
+                          "base"
+                        ]
+                      },
+                      "then": "{{base|words}} times {{base|words}} times {{base|words}} equals {{answer|words}}",
+                      "else": {
+                        "$if": {
+                          "test": {
+                            "equal": [
+                              "g",
+                              0
+                            ]
+                          },
+                          "then": "{{base|words}} times {{base|words}} equals {{square|words}}",
+                          "else": "{{n|words}} times {{square|words}} equals {{subtotal|words}}"
+                        }
+                      }
+                    }
+                  },
+                  "tone": "original"
+                }
+              ],
+              "right": [],
+              "balance": null,
+              "explanation": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "g",
+                      0
+                    ]
+                  },
+                  "then": "One layer has {{base|words}} rows of {{base|words}}: {{square|words}} unit cubes.",
+                  "else": "The third factor counts layers. {{n|Words}} layers of {{square|words}} make {{subtotal|words}} unit cubes."
+                }
+              },
+              "detail": "",
+              "operation": {
+                "type": "partition"
+              },
+              "scene": {
+                "rows": {
+                  "$value": "base"
+                },
+                "columns": {
+                  "$value": "base"
+                },
+                "layers": {
+                  "$value": "base"
+                },
+                "visibleRows": {
+                  "$value": "base"
+                },
+                "visibleLayers": {
+                  "$value": "n"
+                },
+                "edges": true,
+                "highlightRow": null,
+                "description": {
+                  "$if": {
+                    "test": {
+                      "equal": [
+                        "g",
+                        0
+                      ]
+                    },
+                    "then": "One {{base|words}}-by-{{base|words}} layer contains {{square|words}} unit cubes.",
+                    "else": "{{n|Words}} equal layers of {{square|words}} unit cubes make {{subtotal|words}}."
+                  }
+                },
+                "caption": {
+                  "$if": {
+                    "test": {
+                      "equal": [
+                        "n",
+                        "base"
+                      ]
+                    },
+                    "then": "{{base|Words}} layers form a cube {{base|words}} units along each edge.",
+                    "else": "Each tile represents one unit cube."
+                  }
+                }
+              },
+              "highlight": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "g",
+                      0
+                    ]
+                  },
+                  "else": [
+                    "expression"
+                  ]
+                }
+              }
+            },
+            "derived": {
+              "n": {
+                "add": [
+                  "g",
+                  1
+                ]
+              },
+              "subtotal": {
+                "multiply": [
+                  {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  },
+                  "square"
+                ]
+              }
+            },
+            "start": 0
           }
         },
         {
-          "title": "Add a second equal layer",
+          "title": "{{base|Words}} cubed is {{answer|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "two times two times two equals eight",
-              "latex": "2\\times2\\times2=8",
-              "spoken": "two times two times two equals eight",
+              "text": "{{base|words}} cubed equals {{answer|words}}",
+              "latex": "{{base}}^3={{answer}}",
+              "spoken": "{{base|words}} cubed equals {{answer|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The third factor counts layers. Two layers of four make eight unit cubes.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "rows": 2,
-            "columns": 2,
-            "layers": 2,
-            "visibleRows": 2,
-            "visibleLayers": 2,
-            "edges": true,
-            "highlightRow": null,
-            "description": "Two equal layers of four unit cubes make eight.",
-            "caption": "Two layers form a cube two units along each edge."
-          },
-          "highlight": [
-            "expression"
-          ]
-        },
-        {
-          "title": "Two cubed is eight",
-          "left": [
-            {
-              "id": "expression",
-              "text": "two cubed equals eight",
-              "latex": "2^3=8",
-              "spoken": "two cubed equals eight",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "The cube is two units wide, two high and two deep. There are eight unit cubes altogether.",
+          "explanation": "The cube is {{base|words}} units wide, {{base|words}} high and {{base|words}} deep. There are {{answer|words}} unit cubes altogether.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "rows": 2,
-            "columns": 2,
-            "layers": 2,
-            "visibleRows": 2,
-            "visibleLayers": 2,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
+            "layers": {
+              "$value": "base"
+            },
+            "visibleRows": {
+              "$value": "base"
+            },
+            "visibleLayers": {
+              "$value": "base"
+            },
             "edges": true,
             "highlightRow": null,
-            "description": "Eight unit cubes in two layers.",
-            "caption": "This flat drawing separates the two layers for clarity."
+            "description": "{{answer|Words}} unit cubes in {{base|words}} layers.",
+            "caption": "This flat drawing separates the {{base|words}} layers for clarity."
           }
         }
-      ]
+      ],
+      "parameters": {
+        "base": {
+          "min": 2,
+          "max": 3
+        }
+      },
+      "derived": {
+        "square": {
+          "power": [
+            "base",
+            2
+          ]
+        },
+        "answer": {
+          "power": [
+            "base",
+            3
+          ]
+        }
+      }
     },
     {
       "id": "square-root-25",
@@ -2499,7 +2416,7 @@
       "kind": "tile-array",
       "initialExpression": "Square roots",
       "notation": {
-        "latex": "\\sqrt{25}=5",
+        "latex": "\\sqrt{{{area}}}={{base}}",
         "spoken": "Square roots"
       },
       "objective": "Reverse a square array to find its positive side length.",
@@ -2519,24 +2436,30 @@
       ],
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
-        "misconception": "Dividing twenty-five by two, or writing plus-or-minus five as the value of the square-root symbol.",
+        "misconception": "Dividing {{area|words}} by two, or writing plus-or-minus {{base|words}} as the value of the square-root symbol.",
         "checkQuestion": "Why is a square root a side length rather than half an area?"
       },
       "model": {
-        "base": 5,
+        "base": {
+          "$value": "base"
+        },
         "exponent": 2,
-        "result": 25,
-        "root": 5
+        "result": {
+          "$value": "area"
+        },
+        "root": {
+          "$value": "base"
+        }
       },
       "steps": [
         {
-          "title": "Start with twenty-five tiles",
+          "title": "Start with {{area|words}} tiles",
           "left": [
             {
               "id": "expression",
-              "text": "square root of twenty-five",
-              "latex": "\\sqrt{25}",
-              "spoken": "square root of twenty-five",
+              "text": "square root of {{area|words}}",
+              "latex": "\\sqrt{{{area}}}",
+              "spoken": "square root of {{area|words}}",
               "tone": "original"
             }
           ],
@@ -2548,14 +2471,20 @@
             "type": "show"
           },
           "scene": {
-            "rows": 5,
-            "columns": 5,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
             "layers": 1,
-            "visibleRows": 5,
+            "visibleRows": {
+              "$value": "base"
+            },
             "visibleLayers": 1,
             "edges": false,
             "highlightRow": null,
-            "description": "A square containing twenty-five equal tiles.",
+            "description": "A square containing {{area|words}} equal tiles.",
             "caption": ""
           }
         },
@@ -2564,28 +2493,34 @@
           "left": [
             {
               "id": "expression",
-              "text": "five tiles across",
-              "latex": "5\\text{ tiles across}",
-              "spoken": "five tiles across",
+              "text": "{{base|words}} tiles across",
+              "latex": "{{base}}\\text{ tiles across}",
+              "spoken": "{{base|words}} tiles across",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "One row contains five equal tiles.",
+          "explanation": "One row contains {{base|words}} equal tiles.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
-            "rows": 5,
-            "columns": 5,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
             "layers": 1,
-            "visibleRows": 5,
+            "visibleRows": {
+              "$value": "base"
+            },
             "visibleLayers": 1,
             "edges": false,
             "highlightRow": 0,
-            "description": "The first row of five tiles is highlighted.",
+            "description": "The first row of {{base|words}} tiles is highlighted.",
             "caption": ""
           }
         },
@@ -2594,28 +2529,34 @@
           "left": [
             {
               "id": "expression",
-              "text": "five times five equals twenty-five",
-              "latex": "5\\times5=25",
-              "spoken": "five times five equals twenty-five",
+              "text": "{{base|words}} times {{base|words}} equals {{area|words}}",
+              "latex": "{{base}}\\times{{base}}={{area}}",
+              "spoken": "{{base|words}} times {{base|words}} equals {{area|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The square is five tiles across and five high. Its area is twenty-five.",
+          "explanation": "The square is {{base|words}} tiles across and {{base|words}} high. Its area is {{area|words}}.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
-            "rows": 5,
-            "columns": 5,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
             "layers": 1,
-            "visibleRows": 5,
+            "visibleRows": {
+              "$value": "base"
+            },
             "visibleLayers": 1,
             "edges": true,
             "highlightRow": null,
-            "description": "Five rows of five tiles confirm the area twenty-five.",
+            "description": "{{base|Words}} rows of {{base|words}} tiles confirm the area {{area|words}}.",
             "caption": ""
           }
         },
@@ -2624,35 +2565,55 @@
           "left": [
             {
               "id": "expression",
-              "text": "square root of twenty-five equals five",
-              "latex": "\\sqrt{25}=5",
-              "spoken": "square root of twenty-five equals five",
+              "text": "square root of {{area|words}} equals {{base|words}}",
+              "latex": "\\sqrt{{{area}}}={{base}}",
+              "spoken": "square root of {{area|words}} equals {{base|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The square-root symbol gives five, the nonnegative root. Solving an equation such as x squared equals twenty-five is a separate question.",
+          "explanation": "The square-root symbol gives {{base|words}}, the nonnegative root. Solving an equation such as x squared equals {{area|words}} is a separate question.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "rows": 5,
-            "columns": 5,
+            "rows": {
+              "$value": "base"
+            },
+            "columns": {
+              "$value": "base"
+            },
             "layers": 1,
-            "visibleRows": 5,
+            "visibleRows": {
+              "$value": "base"
+            },
             "visibleLayers": 1,
             "edges": true,
             "highlightRow": null,
-            "description": "The square root gives the side length five.",
+            "description": "The square root gives the side length {{base|words}}.",
             "caption": ""
           },
           "highlight": [
             "expression"
           ]
         }
-      ]
+      ],
+      "parameters": {
+        "base": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "area": {
+          "power": [
+            "base",
+            2
+          ]
+        }
+      }
     },
     {
       "id": "zero-power",
@@ -2664,7 +2625,7 @@
       "kind": "power-pattern",
       "initialExpression": "Zero powers",
       "notation": {
-        "latex": "5^0=1",
+        "latex": "{{base}}^0=1",
         "spoken": "Zero powers"
       },
       "objective": "Extend a nonzero-base power pattern consistently by division.",
@@ -2689,7 +2650,9 @@
         "checkQuestion": "Why must the next value be one to keep this pattern consistent?"
       },
       "model": {
-        "base": 5,
+        "base": {
+          "$value": "base"
+        },
         "result": 1
       },
       "steps": [
@@ -2698,21 +2661,23 @@
           "left": [
             {
               "id": "expression",
-              "text": "five cubed equals one hundred and twenty-five",
-              "latex": "5^3=125",
-              "spoken": "five cubed equals one hundred and twenty-five",
+              "text": "{{base|words}} cubed equals {{cube|words}}",
+              "latex": "{{base}}^3={{cube}}",
+              "spoken": "{{base|words}} cubed equals {{cube|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Five times five times five is one hundred and twenty-five.",
+          "explanation": "{{base|Words}} times {{base|words}} times {{base|words}} is {{cube|words}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
-            "base": 5,
+            "base": {
+              "$value": "base"
+            },
             "exponents": [
               3,
               2,
@@ -2720,8 +2685,8 @@
               0
             ],
             "visible": 1,
-            "description": "The first 1 values of the pattern five cubed, five squared, five, and five to power zero.",
-            "caption": "Lower the exponent by one: divide the value by five."
+            "description": "The first 1 values of the pattern {{base|words}} cubed, {{base|words}} squared, {{base|words}}, and {{base|words}} to power zero.",
+            "caption": "Lower the exponent by one: divide the value by {{base|words}}."
           }
         },
         {
@@ -2729,21 +2694,23 @@
           "left": [
             {
               "id": "expression",
-              "text": "one hundred and twenty-five divided by five equals twenty-five, five squared",
-              "latex": "\\frac{125}{5}=25=5^2",
-              "spoken": "one hundred and twenty-five divided by five equals twenty-five, five squared",
+              "text": "{{cube|words}} divided by {{base|words}} equals {{square|words}}, {{base|words}} squared",
+              "latex": "\\frac{{{cube}}}{{{base}}}={{square}}={{base}}^2",
+              "spoken": "{{cube|words}} divided by {{base|words}} equals {{square|words}}, {{base|words}} squared",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Lower the exponent from three to two. Divide the value by five.",
+          "explanation": "Lower the exponent from three to two. Divide the value by {{base|words}}.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "base": 5,
+            "base": {
+              "$value": "base"
+            },
             "exponents": [
               3,
               2,
@@ -2751,8 +2718,8 @@
               0
             ],
             "visible": 2,
-            "description": "The first 2 values of the pattern five cubed, five squared, five, and five to power zero.",
-            "caption": "Lower the exponent by one: divide the value by five."
+            "description": "The first 2 values of the pattern {{base|words}} cubed, {{base|words}} squared, {{base|words}}, and {{base|words}} to power zero.",
+            "caption": "Lower the exponent by one: divide the value by {{base|words}}."
           },
           "highlight": [
             "expression"
@@ -2763,21 +2730,23 @@
           "left": [
             {
               "id": "expression",
-              "text": "twenty-five divided by five equals five, five to power one",
-              "latex": "\\frac{25}{5}=5=5^1",
-              "spoken": "twenty-five divided by five equals five, five to power one",
+              "text": "{{square|words}} divided by {{base|words}} equals {{base|words}}, {{base|words}} to power one",
+              "latex": "\\frac{{{square}}}{{{base}}}={{base}}={{base}}^1",
+              "spoken": "{{square|words}} divided by {{base|words}} equals {{base|words}}, {{base|words}} to power one",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Lowering from two to one divides by five again.",
+          "explanation": "Lowering from two to one divides by {{base|words}} again.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "base": 5,
+            "base": {
+              "$value": "base"
+            },
             "exponents": [
               3,
               2,
@@ -2785,8 +2754,8 @@
               0
             ],
             "visible": 3,
-            "description": "The first 3 values of the pattern five cubed, five squared, five, and five to power zero.",
-            "caption": "Lower the exponent by one: divide the value by five."
+            "description": "The first 3 values of the pattern {{base|words}} cubed, {{base|words}} squared, {{base|words}}, and {{base|words}} to power zero.",
+            "caption": "Lower the exponent by one: divide the value by {{base|words}}."
           },
           "highlight": [
             "expression"
@@ -2797,21 +2766,23 @@
           "left": [
             {
               "id": "expression",
-              "text": "five divided by five equals one, five to power zero",
-              "latex": "\\frac{5}{5}=1=5^0",
-              "spoken": "five divided by five equals one, five to power zero",
+              "text": "{{base|words}} divided by {{base|words}} equals one, {{base|words}} to power zero",
+              "latex": "\\frac{{{base}}}{{{base}}}=1={{base}}^0",
+              "spoken": "{{base|words}} divided by {{base|words}} equals one, {{base|words}} to power zero",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "One more division by five gives one. Every nonzero number to power zero is one. This pattern does not use a base of zero.",
+          "explanation": "One more division by {{base|words}} gives one. Every nonzero number to power zero is one. This pattern does not use a base of zero.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "base": 5,
+            "base": {
+              "$value": "base"
+            },
             "exponents": [
               3,
               2,
@@ -2819,14 +2790,34 @@
               0
             ],
             "visible": 4,
-            "description": "The first 4 values of the pattern five cubed, five squared, five, and five to power zero.",
-            "caption": "Lower the exponent by one: divide the value by five."
+            "description": "The first 4 values of the pattern {{base|words}} cubed, {{base|words}} squared, {{base|words}}, and {{base|words}} to power zero.",
+            "caption": "Lower the exponent by one: divide the value by {{base|words}}."
           },
           "highlight": [
             "expression"
           ]
         }
-      ]
+      ],
+      "parameters": {
+        "base": {
+          "min": 2,
+          "max": 9
+        }
+      },
+      "derived": {
+        "square": {
+          "power": [
+            "base",
+            2
+          ]
+        },
+        "cube": {
+          "power": [
+            "base",
+            3
+          ]
+        }
+      }
     },
     {
       "id": "multiply-powers",
@@ -2838,7 +2829,7 @@
       "kind": "counter-groups",
       "initialExpression": "Multiply powers",
       "notation": {
-        "latex": "2^3\\times2^2=2^5",
+        "latex": "{{base}}^3\\times{{base}}^2={{base}}^5",
         "spoken": "Multiply powers"
       },
       "objective": "Count equal-base factors to explain addition of exponents.",
@@ -2869,12 +2860,16 @@
         "checkQuestion": "Why do we add the exponents rather than multiply them?"
       },
       "model": {
-        "base": 2,
+        "base": {
+          "$value": "base"
+        },
         "exponents": [
           3,
           2
         ],
-        "result": 32
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
@@ -2882,45 +2877,43 @@
           "left": [
             {
               "id": "expression",
-              "text": "two cubed times two squared",
-              "latex": "2^3\\times2^2",
-              "spoken": "two cubed times two squared",
+              "text": "{{base|words}} cubed times {{base|words}} squared",
+              "latex": "{{base}}^3\\times{{base}}^2",
+              "spoken": "{{base|words}} cubed times {{base|words}} squared",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The first power has three factors of two. The second has two factors of two.",
+          "explanation": "The first power has three factors of {{base|words}}. The second has two factors of {{base|words}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "description": "Three factors: 3 factors of {{base|words}}. Two factors: 2 factors of {{base|words}}",
+            "caption": "Each card is a factor of {{base|words}}, not an amount to add.",
             "groups": [
               {
                 "id": "first",
                 "label": "Three factors",
                 "items": [
                   {
-                    "id": "factor-0",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-1",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-2",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": 3,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               },
@@ -2929,24 +2922,25 @@
                 "label": "Two factors",
                 "items": [
                   {
-                    "id": "factor-3",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
-                  },
-                  {
-                    "id": "factor-4",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
+                    "$repeat": {
+                      "count": 2,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "operation"
+                      },
+                      "derived": {},
+                      "start": 3
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Three factors: 3 factors of two. Two factors: 2 factors of two",
-            "caption": "Each card is a factor of two, not an amount to add."
+            ]
           }
         },
         {
@@ -2954,9 +2948,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "two times two times two, times two times two",
-              "latex": "(2\\times2\\times2)\\times(2\\times2)",
-              "spoken": "two times two times two, times two times two",
+              "text": "{{base|words}} times {{base|words}} times {{base|words}}, times {{base|words}} times {{base|words}}",
+              "latex": "({{base}}\\times{{base}}\\times{{base}})\\times({{base}}\\times{{base}})",
+              "spoken": "{{base|words}} times {{base|words}} times {{base|words}}, times {{base|words}} times {{base|words}}",
               "tone": "original"
             }
           ],
@@ -2968,51 +2962,50 @@
             "type": "group"
           },
           "scene": {
+            "description": "Five factors: 5 factors of {{base|words}}",
+            "caption": "Each card is a factor of {{base|words}}, not an amount to add.",
             "groups": [
               {
                 "id": "all",
                 "label": "Five factors",
                 "items": [
                   {
-                    "id": "factor-0",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": 3,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   },
                   {
-                    "id": "factor-1",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-2",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-3",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
-                  },
-                  {
-                    "id": "factor-4",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
+                    "$repeat": {
+                      "count": 2,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "operation"
+                      },
+                      "derived": {},
+                      "start": 3
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Five factors: 5 factors of two",
-            "caption": "Each card is a factor of two, not an amount to add."
+            ]
           }
         },
         {
@@ -3020,9 +3013,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "two to power three plus two equals two to power five",
-              "latex": "2^{3+2}=2^5",
-              "spoken": "two to power three plus two equals two to power five",
+              "text": "{{base|words}} to power three plus two equals {{base|words}} to power five",
+              "latex": "{{base}}^{3+2}={{base}}^5",
+              "spoken": "{{base|words}} to power three plus two equals {{base|words}} to power five",
               "tone": "original"
             }
           ],
@@ -3034,51 +3027,50 @@
             "type": "simplify"
           },
           "scene": {
+            "description": "Five factors: 5 factors of {{base|words}}",
+            "caption": "Each card is a factor of {{base|words}}, not an amount to add.",
             "groups": [
               {
                 "id": "all",
                 "label": "Five factors",
                 "items": [
                   {
-                    "id": "factor-0",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": 3,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   },
                   {
-                    "id": "factor-1",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-2",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-3",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
-                  },
-                  {
-                    "id": "factor-4",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
+                    "$repeat": {
+                      "count": 2,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "operation"
+                      },
+                      "derived": {},
+                      "start": 3
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Five factors: 5 factors of two",
-            "caption": "Each card is a factor of two, not an amount to add."
+            ]
           },
           "highlight": [
             "expression"
@@ -3089,68 +3081,81 @@
           "left": [
             {
               "id": "expression",
-              "text": "two to power five equals thirty-two",
-              "latex": "2^5=32",
-              "spoken": "two to power five equals thirty-two",
+              "text": "{{base|words}} to power five equals {{answer|words}}",
+              "latex": "{{base}}^5={{answer}}",
+              "spoken": "{{base|words}} to power five equals {{answer|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Five factors of two multiply to thirty-two. This rule needs the same base and multiplication between the powers.",
+          "explanation": "Five factors of {{base|words}} multiply to {{answer|words}}. This rule needs the same base and multiplication between the powers.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
+            "description": "Five factors: 5 factors of {{base|words}}",
+            "caption": "Each card is a factor of {{base|words}}, not an amount to add.",
             "groups": [
               {
                 "id": "all",
                 "label": "Five factors",
                 "items": [
                   {
-                    "id": "factor-0",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
+                    "$repeat": {
+                      "count": 3,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "original"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   },
                   {
-                    "id": "factor-1",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-2",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "original"
-                  },
-                  {
-                    "id": "factor-3",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
-                  },
-                  {
-                    "id": "factor-4",
-                    "value": 2,
-                    "latex": "2",
-                    "spoken": "factor two",
-                    "tone": "operation"
+                    "$repeat": {
+                      "count": 2,
+                      "as": "i",
+                      "item": {
+                        "id": "factor-{{i}}",
+                        "value": {
+                          "$value": "base"
+                        },
+                        "latex": "{{base}}",
+                        "spoken": "factor {{base|words}}",
+                        "tone": "operation"
+                      },
+                      "derived": {},
+                      "start": 3
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Five factors: 5 factors of two",
-            "caption": "Each card is a factor of two, not an amount to add."
+            ]
           }
         }
-      ]
+      ],
+      "parameters": {
+        "base": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "answer": {
+          "power": [
+            "base",
+            5
+          ]
+        }
+      }
     },
     {
       "id": "prime-factors",
@@ -3162,7 +3167,7 @@
       "kind": "factor-tree",
       "initialExpression": "Prime factorisation",
       "notation": {
-        "latex": "18=2\\times3^2",
+        "latex": "{{whole}}={{p}}\\times{{q}}^2",
         "spoken": "Prime factorisation"
       },
       "objective": "Split composite factors until every leaf factor is prime.",
@@ -3186,11 +3191,19 @@
         "checkQuestion": "Why do we read only the leaves of the finished tree?"
       },
       "model": {
-        "value": 18,
+        "value": {
+          "$value": "whole"
+        },
         "primeFactors": [
-          2,
-          3,
-          3
+          {
+            "$value": "p"
+          },
+          {
+            "$value": "q"
+          },
+          {
+            "$value": "q"
+          }
         ]
       },
       "steps": [
@@ -3199,15 +3212,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "eighteen",
-              "latex": "18",
-              "spoken": "eighteen",
+              "text": "{{whole|words}}",
+              "latex": "{{whole}}",
+              "spoken": "{{whole|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Find a product of prime numbers equal to eighteen.",
+          "explanation": "Find a product of prime numbers equal to {{whole|words}}.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -3216,7 +3229,9 @@
             "nodes": [
               {
                 "id": "root",
-                "value": 18,
+                "value": {
+                  "$value": "whole"
+                },
                 "children": [
                   "two",
                   "nine"
@@ -3224,12 +3239,16 @@
               },
               {
                 "id": "two",
-                "value": 2,
+                "value": {
+                  "$value": "p"
+                },
                 "children": []
               },
               {
                 "id": "nine",
-                "value": 9,
+                "value": {
+                  "$value": "square"
+                },
                 "children": [
                   "three-a",
                   "three-b"
@@ -3237,12 +3256,16 @@
               },
               {
                 "id": "three-a",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               },
               {
                 "id": "three-b",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               }
             ],
@@ -3250,23 +3273,23 @@
               "root"
             ],
             "selected": [],
-            "description": "Visible factor nodes: 18. Selected prime factors: ."
+            "description": "Visible factor nodes: {{whole}}. Selected prime factors: ."
           }
         },
         {
-          "title": "Split eighteen into factors",
+          "title": "Split {{whole|words}} into factors",
           "left": [
             {
               "id": "expression",
-              "text": "eighteen equals two times nine",
-              "latex": "18=2\\times9",
-              "spoken": "eighteen equals two times nine",
+              "text": "{{whole|words}} equals {{p|words}} times {{square|words}}",
+              "latex": "{{whole}}={{p}}\\times{{square}}",
+              "spoken": "{{whole|words}} equals {{p|words}} times {{square|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Two times nine is eighteen. Two is prime; nine can be split further.",
+          "explanation": "{{p|Words}} times {{square|words}} is {{whole|words}}. {{p|Words}} is prime; {{square|words}} can be split further.",
           "detail": "",
           "operation": {
             "type": "split"
@@ -3275,7 +3298,9 @@
             "nodes": [
               {
                 "id": "root",
-                "value": 18,
+                "value": {
+                  "$value": "whole"
+                },
                 "children": [
                   "two",
                   "nine"
@@ -3283,12 +3308,16 @@
               },
               {
                 "id": "two",
-                "value": 2,
+                "value": {
+                  "$value": "p"
+                },
                 "children": []
               },
               {
                 "id": "nine",
-                "value": 9,
+                "value": {
+                  "$value": "square"
+                },
                 "children": [
                   "three-a",
                   "three-b"
@@ -3296,12 +3325,16 @@
               },
               {
                 "id": "three-a",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               },
               {
                 "id": "three-b",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               }
             ],
@@ -3313,7 +3346,7 @@
             "selected": [
               "two"
             ],
-            "description": "Visible factor nodes: 18, 2, 9. Selected prime factors: 2."
+            "description": "Visible factor nodes: {{whole}}, {{p}}, {{square}}. Selected prime factors: {{p}}."
           },
           "highlight": [
             "expression"
@@ -3324,15 +3357,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "nine equals three times three",
-              "latex": "9=3\\times3",
-              "spoken": "nine equals three times three",
+              "text": "{{square|words}} equals {{q|words}} times {{q|words}}",
+              "latex": "{{square}}={{q}}\\times{{q}}",
+              "spoken": "{{square|words}} equals {{q|words}} times {{q|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Nine is three times three. Both threes are prime.",
+          "explanation": "{{square|Words}} is {{q|words}} times {{q|words}}. Both {{q|words}}s are prime.",
           "detail": "",
           "operation": {
             "type": "split"
@@ -3341,7 +3374,9 @@
             "nodes": [
               {
                 "id": "root",
-                "value": 18,
+                "value": {
+                  "$value": "whole"
+                },
                 "children": [
                   "two",
                   "nine"
@@ -3349,12 +3384,16 @@
               },
               {
                 "id": "two",
-                "value": 2,
+                "value": {
+                  "$value": "p"
+                },
                 "children": []
               },
               {
                 "id": "nine",
-                "value": 9,
+                "value": {
+                  "$value": "square"
+                },
                 "children": [
                   "three-a",
                   "three-b"
@@ -3362,12 +3401,16 @@
               },
               {
                 "id": "three-a",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               },
               {
                 "id": "three-b",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               }
             ],
@@ -3383,7 +3426,7 @@
               "three-a",
               "three-b"
             ],
-            "description": "Visible factor nodes: 18, 2, 9, 3, 3. Selected prime factors: 2, 3, 3."
+            "description": "Visible factor nodes: {{whole}}, {{p}}, {{square}}, {{q}}, {{q}}. Selected prime factors: {{p}}, {{q}}, {{q}}."
           },
           "highlight": [
             "expression"
@@ -3394,15 +3437,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "eighteen equals two times three times three, or two times three squared",
-              "latex": "18=2\\times3\\times3=2\\times3^2",
-              "spoken": "eighteen equals two times three times three, or two times three squared",
+              "text": "{{whole|words}} equals {{p|words}} times {{q|words}} times {{q|words}}, or {{p|words}} times {{q|words}} squared",
+              "latex": "{{whole}}={{p}}\\times{{q}}\\times{{q}}={{p}}\\times{{q}}^2",
+              "spoken": "{{whole|words}} equals {{p|words}} times {{q|words}} times {{q|words}}, or {{p|words}} times {{q|words}} squared",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The prime factors multiply to eighteen. Do not multiply the parent nine again; its two children already replace it.",
+          "explanation": "The prime factors multiply to {{whole|words}}. Do not multiply the parent {{square|words}} again; its two children already replace it.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -3411,7 +3454,9 @@
             "nodes": [
               {
                 "id": "root",
-                "value": 18,
+                "value": {
+                  "$value": "whole"
+                },
                 "children": [
                   "two",
                   "nine"
@@ -3419,12 +3464,16 @@
               },
               {
                 "id": "two",
-                "value": 2,
+                "value": {
+                  "$value": "p"
+                },
                 "children": []
               },
               {
                 "id": "nine",
-                "value": 9,
+                "value": {
+                  "$value": "square"
+                },
                 "children": [
                   "three-a",
                   "three-b"
@@ -3432,12 +3481,16 @@
               },
               {
                 "id": "three-a",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               },
               {
                 "id": "three-b",
-                "value": 3,
+                "value": {
+                  "$value": "q"
+                },
                 "children": []
               }
             ],
@@ -3453,8 +3506,53 @@
               "three-a",
               "three-b"
             ],
-            "description": "Visible factor nodes: 18, 2, 9, 3, 3. Selected prime factors: 2, 3, 3."
+            "description": "Visible factor nodes: {{whole}}, {{p}}, {{square}}, {{q}}, {{q}}. Selected prime factors: {{p}}, {{q}}, {{q}}."
           }
+        }
+      ],
+      "parameters": {
+        "p": {
+          "min": 2,
+          "max": 5,
+          "choices": [
+            2,
+            3,
+            5
+          ]
+        },
+        "q": {
+          "min": 2,
+          "max": 5,
+          "choices": [
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "derived": {
+        "square": {
+          "power": [
+            "q",
+            2
+          ]
+        },
+        "whole": {
+          "multiply": [
+            "p",
+            "square"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              "whole",
+              100
+            ]
+          },
+          "message": "Keep the factor tree within one hundred."
         }
       ]
     },
@@ -3468,7 +3566,7 @@
       "kind": "place-value",
       "initialExpression": "Multiply by ten",
       "notation": {
-        "latex": "3.4\\times10=34",
+        "latex": "{{initial}}\\times10={{answer}}",
         "spoken": "Multiply by ten"
       },
       "objective": "Multiply each digit value by ten by changing its place, not moving the decimal point.",
@@ -3487,12 +3585,16 @@
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
         "misconception": "Teaching that the decimal point moves rather than digits changing place.",
-        "checkQuestion": "Why does the three now represent thirty rather than three?"
+        "checkQuestion": "Why does the {{a|words}} now represent {{tens|words}} rather than {{a|words}}?"
       },
       "model": {
-        "initial": 3.4,
+        "initial": {
+          "$value": "initial"
+        },
         "power": 1,
-        "result": 34
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
@@ -3500,15 +3602,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "three point four equals three plus four tenths",
-              "latex": "3.4=3+\\frac{4}{10}",
-              "spoken": "three point four equals three plus four tenths",
+              "text": "{{a|words}} point {{b|words}} equals {{a|words}} plus {{b|words}} tenths",
+              "latex": "{{initial}}={{a}}+\\frac{{{b}}}{10}",
+              "spoken": "{{a|words}} point {{b|words}} equals {{a|words}} plus {{b|words}} tenths",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Three is in the ones column. Four is in the tenths column.",
+          "explanation": "{{a|Words}} is in the ones column. {{b|Words}} is in the tenths column.",
           "detail": "",
           "operation": {
             "type": "show"
@@ -3518,16 +3620,20 @@
             "digits": [
               {
                 "id": "digit-three",
-                "digit": 3,
+                "digit": {
+                  "$value": "a"
+                },
                 "place": 0
               },
               {
                 "id": "digit-four",
-                "digit": 4,
+                "digit": {
+                  "$value": "b"
+                },
                 "place": -1
               }
             ],
-            "description": "Digit three is in ones and four is in tenths; the decimal boundary is fixed.",
+            "description": "Digit {{a|words}} is in ones and {{b|words}} is in tenths; the decimal boundary is fixed.",
             "caption": "The decimal point stays fixed. The digits change place."
           }
         },
@@ -3536,9 +3642,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "three point four times ten equals thirty-four",
-              "latex": "3.4\\times10=34",
-              "spoken": "three point four times ten equals thirty-four",
+              "text": "{{a|words}} point {{b|words}} times ten equals {{answer|words}}",
+              "latex": "{{initial}}\\times10={{answer}}",
+              "spoken": "{{a|words}} point {{b|words}} times ten equals {{answer|words}}",
               "tone": "original"
             }
           ],
@@ -3554,16 +3660,20 @@
             "digits": [
               {
                 "id": "digit-three",
-                "digit": 3,
+                "digit": {
+                  "$value": "a"
+                },
                 "place": 1
               },
               {
                 "id": "digit-four",
-                "digit": 4,
+                "digit": {
+                  "$value": "b"
+                },
                 "place": 0
               }
             ],
-            "description": "The same digit three is now in tens and four is in ones; the decimal boundary stays fixed.",
+            "description": "The same digit {{a|words}} is now in tens and {{b|words}} is in ones; the decimal boundary stays fixed.",
             "caption": "The decimal point stays fixed. The digits change place."
           },
           "highlight": [
@@ -3575,15 +3685,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "thirty-four equals thirty plus four",
-              "latex": "34=30+4",
-              "spoken": "thirty-four equals thirty plus four",
+              "text": "{{answer|words}} equals {{tens|words}} plus {{b|words}}",
+              "latex": "{{answer}}={{tens}}+{{b}}",
+              "spoken": "{{answer|words}} equals {{tens|words}} plus {{b|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Three tens and four ones make thirty-four. The digits stay the same; their place values change.",
+          "explanation": "{{a|Words}} tens and {{b|words}} ones make {{answer|words}}. The digits stay the same; their place values change.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -3593,20 +3703,54 @@
             "digits": [
               {
                 "id": "digit-three",
-                "digit": 3,
+                "digit": {
+                  "$value": "a"
+                },
                 "place": 1
               },
               {
                 "id": "digit-four",
-                "digit": 4,
+                "digit": {
+                  "$value": "b"
+                },
                 "place": 0
               }
             ],
-            "description": "The same digit three is now in tens and four is in ones; the decimal boundary stays fixed.",
+            "description": "The same digit {{a|words}} is now in tens and {{b|words}} is in ones; the decimal boundary stays fixed.",
             "caption": "The decimal point stays fixed. The digits change place."
           }
         }
-      ]
+      ],
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 9
+        },
+        "b": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "derived": {
+        "tens": {
+          "multiply": [
+            "a",
+            10
+          ]
+        },
+        "answer": {
+          "add": [
+            "tens",
+            "b"
+          ]
+        },
+        "initial": {
+          "divide": [
+            "answer",
+            10
+          ]
+        }
+      }
     }
   ]
 }

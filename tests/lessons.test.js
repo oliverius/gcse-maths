@@ -1,12 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-const algebra = JSON.parse(
-  readFileSync(new URL('../src/data/algebra.json', import.meta.url)),
-);
-const number = JSON.parse(
-  readFileSync(new URL('../src/data/number.json', import.meta.url)),
-);
+import { readFile } from 'node:fs/promises';
+import { createLoader } from '../src/js/lesson-loader.js';
+const areas = await createLoader(async (url) => ({
+  ok: true,
+  json: async () => JSON.parse(await readFile(url, 'utf8')),
+})).load();
+const algebra = areas.find((area) => area.id === 'algebra');
+const number = areas.find((area) => area.id === 'number');
 // Preserve the original three lessons' regression checks after the JSON migration.
 const lessons = [algebra.lessons[0], algebra.lessons[1], number.lessons[0]];
 test('all lessons have five deliberate steps with unique term identities', () => {

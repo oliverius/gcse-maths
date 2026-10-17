@@ -4,16 +4,16 @@
   "lessons": [
     {
       "id": "share-ratio",
-      "title": "Share 20 in 2:3",
-      "label": "Share 20 in 2:3",
+      "title": "Share {{total}} in {{a}}:{{b}}",
+      "label": "Share {{total}} in {{a}}:{{b}}",
       "tier": "Foundation",
       "subjectArea": "ratio",
       "available": true,
       "kind": "counter-groups",
-      "initialExpression": "Share 20 in 2:3",
+      "initialExpression": "Share {{total}} in {{a}}:{{b}}",
       "notation": {
-        "latex": "20\\text{ in }2:3",
-        "spoken": "Share 20 in 2:3"
+        "latex": "{{total}}\\text{ in }{{a}}:{{b}}",
+        "spoken": "Share {{total}} in {{a}}:{{b}}"
       },
       "objective": "Find equal parts before combining them into ratio shares.",
       "prerequisites": [
@@ -29,14 +29,20 @@
       ],
       "tutorNotes": {
         "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
-        "misconception": "Dividing twenty by two and twenty by three separately.",
-        "checkQuestion": "Why do we divide by five rather than by two or three?"
+        "misconception": "Dividing {{total|words}} by {{a|words}} and {{total|words}} by {{b|words}} separately.",
+        "checkQuestion": "Why do we divide by {{parts|words}} rather than by {{a|words}} or {{b|words}}?"
       },
       "model": {
-        "total": 20,
+        "total": {
+          "$value": "total"
+        },
         "shares": [
-          8,
-          12
+          {
+            "$value": "shareA"
+          },
+          {
+            "$value": "shareB"
+          }
         ]
       },
       "steps": [
@@ -45,190 +51,46 @@
           "left": [
             {
               "id": "expression",
-              "text": "twenty",
-              "latex": "20",
-              "spoken": "twenty",
+              "text": "{{total|words}}",
+              "latex": "{{total}}",
+              "spoken": "{{total|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Share twenty counters in the ratio two to three.",
+          "explanation": "Share {{total|words}} counter{{total|s}} in the ratio {{a|words}} to {{b|words}}.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "description": "{{total|Words}} counter{{total|s}} in one whole.",
+            "caption": "",
             "groups": [
               {
                 "id": "whole",
-                "label": "Twenty counters",
+                "label": "{{total|Words}} counter{{total|s}}",
                 "items": [
                   {
-                    "id": "share-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "total",
+                      "as": "i",
+                      "item": {
+                        "id": "share-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Twenty counters in one whole.",
-            "caption": ""
+            ]
           }
         },
         {
@@ -236,214 +98,67 @@
           "left": [
             {
               "id": "expression",
-              "text": "two plus three equals five",
-              "latex": "2+3=5",
-              "spoken": "two plus three equals five",
+              "text": "{{a|words}} plus {{b|words}} equals {{parts|words}}",
+              "latex": "{{a}}+{{b}}={{parts}}",
+              "spoken": "{{a|words}} plus {{b|words}} equals {{parts|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "We need five equal parts: two for A and three for B.",
+          "explanation": "We need {{parts|words}} equal parts: {{a|words}} for A and {{b|words}} for B.",
           "detail": "",
           "operation": {
             "type": "split"
           },
           "scene": {
+            "description": "{{parts|Words}} equal parts, each containing {{unit|words}} counter{{unit|s}}.",
+            "caption": "",
             "groups": [
               {
-                "id": "part-0",
-                "label": "Part 1",
-                "items": [
-                  {
-                    "id": "share-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                "$repeat": {
+                  "count": "parts",
+                  "as": "g",
+                  "item": {
+                    "id": "part-{{g}}",
+                    "label": "Part {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "share-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "share-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "share-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "part-1",
-                "label": "Part 2",
-                "items": [
-                  {
-                    "id": "share-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "part-2",
-                "label": "Part 3",
-                "items": [
-                  {
-                    "id": "share-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "part-3",
-                "label": "Part 4",
-                "items": [
-                  {
-                    "id": "share-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "part-4",
-                "label": "Part 5",
-                "items": [
-                  {
-                    "id": "share-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
+                  "start": 0
+                }
               }
-            ],
-            "description": "Five equal parts, each containing four counters.",
-            "caption": ""
+            ]
           }
         },
         {
@@ -451,637 +166,240 @@
           "left": [
             {
               "id": "expression",
-              "text": "twenty divided by five equals four",
-              "latex": "\\frac{20}{5}=4",
-              "spoken": "twenty divided by five equals four",
+              "text": "{{total|words}} divided by {{parts|words}} equals {{unit|words}}",
+              "latex": "\\frac{{{total}}}{{{parts}}}={{unit}}",
+              "spoken": "{{total|words}} divided by {{parts|words}} equals {{unit|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Twenty shared equally between five parts gives four in each part.",
+          "explanation": "{{total|Words}} shared equally between {{parts|words}} part{{parts|s}} gives {{unit|words}} in each part.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
+            "description": "Each of the {{parts|words}} part{{parts|s}} contains {{unit|words}}.",
+            "caption": "",
             "groups": [
               {
-                "id": "part-0",
-                "label": "Part 1",
-                "items": [
-                  {
-                    "id": "share-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                "$repeat": {
+                  "count": "parts",
+                  "as": "g",
+                  "item": {
+                    "id": "part-{{g}}",
+                    "label": "Part {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "share-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": true
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ],
+                    "summary": "{{unit}} in each part"
                   },
-                  {
-                    "id": "share-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "share-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "summary": "4 in each part"
-              },
-              {
-                "id": "part-1",
-                "label": "Part 2",
-                "items": [
-                  {
-                    "id": "share-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "summary": "4 in each part"
-              },
-              {
-                "id": "part-2",
-                "label": "Part 3",
-                "items": [
-                  {
-                    "id": "share-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "summary": "4 in each part"
-              },
-              {
-                "id": "part-3",
-                "label": "Part 4",
-                "items": [
-                  {
-                    "id": "share-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "summary": "4 in each part"
-              },
-              {
-                "id": "part-4",
-                "label": "Part 5",
-                "items": [
-                  {
-                    "id": "share-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "summary": "4 in each part"
+                  "start": 0
+                }
               }
-            ],
-            "description": "Each of the five parts contains four.",
-            "caption": ""
+            ]
           },
           "highlight": [
             "expression"
           ]
         },
         {
-          "title": "Give A two parts",
+          "title": "Give A {{a|words}} part{{a|s}}",
           "left": [
             {
               "id": "expression",
-              "text": "two times four equals eight",
-              "latex": "2\\times4=8",
-              "spoken": "two times four equals eight",
+              "text": "{{a|words}} times {{unit|words}} equals {{shareA|words}}",
+              "latex": "{{a}}\\times{{unit}}={{shareA}}",
+              "spoken": "{{a|words}} times {{unit|words}} equals {{shareA|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "A gets two parts. Two groups of four make eight.",
+          "explanation": "A gets {{a|words}} part{{a|s}}. {{a|Words}} group{{a|s}} of {{unit|words}} make{{a|verbS}} {{shareA|words}}.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
+            "description": {
+              "$if": {
+                "test": {
+                  "equal": [
+                    "a",
+                    1
+                  ]
+                },
+                "then": "The first of {{parts|words}} part{{parts|s}} belongs to A.",
+                "else": "The first {{a|words}} of {{parts|words}} part{{parts|s}} belong to A."
+              }
+            },
+            "caption": "",
             "groups": [
               {
-                "id": "part-0",
-                "label": "A: part 1",
-                "items": [
-                  {
-                    "id": "share-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                "$repeat": {
+                  "count": "parts",
+                  "as": "g",
+                  "item": {
+                    "id": "part-{{g}}",
+                    "label": {
+                      "$if": {
+                        "test": {
+                          "less": [
+                            "g",
+                            "a"
+                          ]
+                        },
+                        "then": "A: part {{n}}",
+                        "else": "Part {{n}}"
+                      }
+                    },
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "share-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": {
+                              "$test": {
+                                "less": [
+                                  "g",
+                                  "a"
+                                ]
+                              }
+                            }
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "share-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "share-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "part-1",
-                "label": "A: part 2",
-                "items": [
-                  {
-                    "id": "share-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "share-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "part-2",
-                "label": "Part 3",
-                "items": [
-                  {
-                    "id": "share-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "part-3",
-                "label": "Part 4",
-                "items": [
-                  {
-                    "id": "share-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "part-4",
-                "label": "Part 5",
-                "items": [
-                  {
-                    "id": "share-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
+                  "start": 0
+                }
               }
-            ],
-            "description": "The first two of five parts belong to A.",
-            "caption": ""
+            ]
           },
           "highlight": [
             "expression"
           ]
         },
         {
-          "title": "Give B the other three parts",
+          "title": "Give B the other {{b|words}} part{{b|s}}",
           "left": [
             {
               "id": "expression",
-              "text": "three times four equals twelve",
-              "latex": "3\\times4=12",
-              "spoken": "three times four equals twelve",
+              "text": "{{b|words}} times {{unit|words}} equals {{shareB|words}}",
+              "latex": "{{b}}\\times{{unit}}={{shareB}}",
+              "spoken": "{{b|words}} times {{unit|words}} equals {{shareB|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "B gets the other three parts. Three groups of four make twelve.",
+          "explanation": "B gets the other {{b|words}} part{{b|s}}. {{b|Words}} group{{b|s}} of {{unit|words}} make{{b|verbS}} {{shareB|words}}.",
           "detail": "",
           "operation": {
             "type": "group"
           },
           "scene": {
+            "description": "A has {{shareA|words}} and B has {{shareB|words}}; all {{total|words}} counter{{total|s}} are used.",
+            "caption": "",
             "groups": [
               {
                 "id": "A",
-                "label": "A gets 8",
+                "label": "A gets {{shareA}}",
                 "items": [
                   {
-                    "id": "share-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "shareA",
+                      "as": "i",
+                      "item": {
+                        "id": "share-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               },
               {
                 "id": "B",
-                "label": "B gets 12",
+                "label": "B gets {{shareB}}",
                 "items": [
                   {
-                    "id": "share-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "shareB",
+                      "as": "i",
+                      "item": {
+                        "id": "share-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "operation",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": "shareA"
+                    }
                   }
                 ]
               }
-            ],
-            "description": "A has eight and B has twelve; all twenty counters are used.",
-            "caption": ""
+            ]
           },
           "highlight": [
             "expression"
@@ -1092,197 +410,137 @@
           "left": [
             {
               "id": "expression",
-              "text": "eight plus twelve equals twenty",
-              "latex": "8+12=20",
-              "spoken": "eight plus twelve equals twenty",
+              "text": "{{shareA|words}} plus {{shareB|words}} equals {{total|words}}",
+              "latex": "{{shareA}}+{{shareB}}={{total}}",
+              "spoken": "{{shareA|words}} plus {{shareB|words}} equals {{total|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Eight plus twelve is twenty. Eight to twelve simplifies to two to three.",
+          "explanation": "{{shareA|Words}} plus {{shareB|words}} is {{total|words}}. {{shareA|Words}} to {{shareB|words}} simplifies to {{a|words}} to {{b|words}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
+            "description": "The final shares are {{shareA|words}} and {{shareB|words}}.",
+            "caption": "",
             "groups": [
               {
                 "id": "A",
-                "label": "A gets 8",
+                "label": "A gets {{shareA}}",
                 "items": [
                   {
-                    "id": "share-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "shareA",
+                      "as": "i",
+                      "item": {
+                        "id": "share-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               },
               {
                 "id": "B",
-                "label": "B gets 12",
+                "label": "B gets {{shareB}}",
                 "items": [
                   {
-                    "id": "share-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-9",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-10",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-11",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-12",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-13",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-14",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-15",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-16",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-17",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-18",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "share-19",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "shareB",
+                      "as": "i",
+                      "item": {
+                        "id": "share-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "operation",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": "shareA"
+                    }
                   }
                 ]
               }
-            ],
-            "description": "The final shares are eight and twelve.",
-            "caption": ""
+            ]
           }
+        }
+      ],
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 4
+        },
+        "b": {
+          "min": 1,
+          "max": 4
+        },
+        "total": {
+          "min": 4,
+          "max": 24
+        }
+      },
+      "derived": {
+        "parts": {
+          "add": [
+            "a",
+            "b"
+          ]
+        },
+        "unit": {
+          "divide": [
+            "total",
+            "parts"
+          ]
+        },
+        "shareA": {
+          "multiply": [
+            "a",
+            "unit"
+          ]
+        },
+        "shareB": {
+          "multiply": [
+            "b",
+            "unit"
+          ]
+        }
+      },
+      "integers": [
+        "unit"
+      ],
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              "parts",
+              5
+            ]
+          },
+          "message": "Use at most five ratio parts."
+        },
+        {
+          "test": {
+            "equal": [
+              {
+                "gcd": [
+                  "a",
+                  "b"
+                ]
+              },
+              1
+            ]
+          },
+          "message": "Use a simplest ratio."
         }
       ]
     },
@@ -1296,7 +554,7 @@
       "kind": "counter-groups",
       "initialExpression": "Equivalent ratios",
       "notation": {
-        "latex": "2:3=4:6",
+        "latex": "{{a}}:{{b}}={{doubleA}}:{{doubleB}}",
         "spoken": "Equivalent ratios"
       },
       "objective": "Explain why multiplying both parts by the same number preserves a ratio.",
@@ -1318,50 +576,56 @@
       },
       "model": {
         "ratio": [
-          2,
-          3
+          {
+            "$value": "a"
+          },
+          {
+            "$value": "b"
+          }
         ]
       },
       "steps": [
         {
-          "title": "Start with two parts and three parts",
+          "title": "Start with {{a|words}} part{{a|s}} and {{b|words}} part{{b|s}}",
           "left": [
             {
               "id": "expression",
-              "text": "two to three",
-              "latex": "2:3",
-              "spoken": "two to three",
+              "text": "{{a|words}} to {{b|words}}",
+              "latex": "{{a}}:{{b}}",
+              "spoken": "{{a|words}} to {{b|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "A has two counters for every three in B.",
+          "explanation": "A has {{a|words}} counter{{a|s}} for every {{b|words}} in B.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "description": "{{a|Words}} A counter{{a|s}} and {{b|words}} B counter{{b|s}}.",
+            "caption": "",
             "groups": [
               {
                 "id": "A",
                 "label": "A",
                 "items": [
                   {
-                    "id": "ratio-a-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-a-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "a",
+                      "as": "i",
+                      "item": {
+                        "id": "ratio-a-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "A"
@@ -1371,35 +635,25 @@
                 "label": "B",
                 "items": [
                   {
-                    "id": "ratio-b-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "b",
+                      "as": "i",
+                      "item": {
+                        "id": "ratio-b-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "operation",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "B"
               }
-            ],
-            "description": "Two A counters and three B counters.",
-            "caption": ""
+            ]
           }
         },
         {
@@ -1407,9 +661,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "two times two to three times two",
-              "latex": "2\\times2:3\\times2",
-              "spoken": "two times two to three times two",
+              "text": "{{a|words}} times two to {{b|words}} times two",
+              "latex": "{{a}}\\times2:{{b}}\\times2",
+              "spoken": "{{a|words}} times two to {{b|words}} times two",
               "tone": "original"
             }
           ],
@@ -1421,42 +675,35 @@
             "type": "distribute"
           },
           "scene": {
+            "description": "{{doubleA|Words}} A counters and {{doubleB|words}} B counters. New copies have gold outlines.",
+            "caption": "",
             "groups": [
               {
                 "id": "A",
                 "label": "A",
                 "items": [
                   {
-                    "id": "ratio-a-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-a-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-a-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "ratio-a-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                    "$repeat": {
+                      "count": "doubleA",
+                      "as": "i",
+                      "item": {
+                        "id": "ratio-a-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": {
+                          "$test": {
+                            "atMost": [
+                              "a",
+                              "i"
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "A"
@@ -1466,59 +713,32 @@
                 "label": "B",
                 "items": [
                   {
-                    "id": "ratio-b-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  },
-                  {
-                    "id": "ratio-b-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  },
-                  {
-                    "id": "ratio-b-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
+                    "$repeat": {
+                      "count": "doubleB",
+                      "as": "i",
+                      "item": {
+                        "id": "ratio-b-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "operation",
+                        "highlight": {
+                          "$test": {
+                            "atMost": [
+                              "b",
+                              "i"
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "B"
               }
-            ],
-            "description": "Four A counters and six B counters. New copies have gold outlines.",
-            "caption": ""
+            ]
           },
           "highlight": [
             "expression"
@@ -1529,56 +749,49 @@
           "left": [
             {
               "id": "expression",
-              "text": "two to three equals four to six",
-              "latex": "2:3=4:6",
-              "spoken": "two to three equals four to six",
+              "text": "{{a|words}} to {{b|words}} equals {{doubleA|words}} to {{doubleB|words}}",
+              "latex": "{{a}}:{{b}}={{doubleA}}:{{doubleB}}",
+              "spoken": "{{a|words}} to {{b|words}} equals {{doubleA|words}} to {{doubleB|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Four to six is equivalent to two to three. Each group is twice as large.",
+          "explanation": "{{doubleA|Words}} to {{doubleB|words}} is equivalent to {{a|words}} to {{b|words}}. Each group is twice as large.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
+            "description": "The groups remain in the ratio {{a|words}} to {{b|words}}.",
+            "caption": "",
             "groups": [
               {
                 "id": "A",
                 "label": "A",
                 "items": [
                   {
-                    "id": "ratio-a-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-a-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-a-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "ratio-a-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
+                    "$repeat": {
+                      "count": "doubleA",
+                      "as": "i",
+                      "item": {
+                        "id": "ratio-a-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": {
+                          "$test": {
+                            "atMost": [
+                              "a",
+                              "i"
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "A"
@@ -1588,75 +801,72 @@
                 "label": "B",
                 "items": [
                   {
-                    "id": "ratio-b-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "ratio-b-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  },
-                  {
-                    "id": "ratio-b-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  },
-                  {
-                    "id": "ratio-b-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
+                    "$repeat": {
+                      "count": "doubleB",
+                      "as": "i",
+                      "item": {
+                        "id": "ratio-b-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "operation",
+                        "highlight": {
+                          "$test": {
+                            "atMost": [
+                              "b",
+                              "i"
+                            ]
+                          }
+                        }
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "B"
               }
-            ],
-            "description": "The groups remain in the ratio two to three.",
-            "caption": ""
+            ]
           }
         }
-      ]
+      ],
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 6
+        },
+        "b": {
+          "min": 1,
+          "max": 6
+        }
+      },
+      "derived": {
+        "doubleA": {
+          "multiply": [
+            "a",
+            2
+          ]
+        },
+        "doubleB": {
+          "multiply": [
+            "b",
+            2
+          ]
+        }
+      }
     },
     {
       "id": "simplify-ratio",
-      "title": "Simplify 6:9",
-      "label": "Simplify 6:9",
+      "title": "Simplify {{a}}:{{b}}",
+      "label": "Simplify {{a}}:{{b}}",
       "tier": "Foundation",
       "subjectArea": "ratio",
       "available": true,
       "kind": "counter-groups",
-      "initialExpression": "Simplify 6:9",
+      "initialExpression": "Simplify {{a}}:{{b}}",
       "notation": {
-        "latex": "6:9=2:3",
-        "spoken": "Simplify 6:9"
+        "latex": "{{a}}:{{b}}={{simpleA}}:{{simpleB}}",
+        "spoken": "Simplify {{a}}:{{b}}"
       },
       "objective": "Count equal bundles to simplify both parts of a ratio.",
       "prerequisites": [
@@ -1677,19 +887,23 @@
       },
       "model": {
         "ratio": [
-          2,
-          3
+          {
+            "$value": "simpleA"
+          },
+          {
+            "$value": "simpleB"
+          }
         ]
       },
       "steps": [
         {
-          "title": "Six counters and nine counters",
+          "title": "{{a|Words}} counter{{a|s}} and {{b|words}} counter{{b|s}}",
           "left": [
             {
               "id": "expression",
-              "text": "six to nine",
-              "latex": "6:9",
-              "spoken": "six to nine",
+              "text": "{{a|words}} to {{b|words}}",
+              "latex": "{{a}}:{{b}}",
+              "spoken": "{{a|words}} to {{b|words}}",
               "tone": "original"
             }
           ],
@@ -1701,58 +915,28 @@
             "type": "show"
           },
           "scene": {
+            "description": "{{a|Words}} A counters and {{b|words}} B counters.",
+            "caption": "",
             "groups": [
               {
                 "id": "A",
                 "label": "A",
                 "items": [
                   {
-                    "id": "simplify-a-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-a-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-a-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-a-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-a-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-a-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "a",
+                      "as": "i",
+                      "item": {
+                        "id": "simplify-a-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "A"
@@ -1762,263 +946,138 @@
                 "label": "B",
                 "items": [
                   {
-                    "id": "simplify-b-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "b",
+                      "as": "i",
+                      "item": {
+                        "id": "simplify-b-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "operation",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ],
                 "category": "B"
               }
-            ],
-            "description": "Six A counters and nine B counters.",
-            "caption": ""
+            ]
           }
         },
         {
-          "title": "Make bundles of three",
+          "title": "Make bundles of {{factor|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "six to nine",
-              "latex": "6:9",
-              "spoken": "six to nine",
+              "text": "{{a|words}} to {{b|words}}",
+              "latex": "{{a}}:{{b}}",
+              "spoken": "{{a|words}} to {{b|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Put three counters in every bundle. A makes two bundles; B makes three.",
+          "explanation": "Put {{factor|words}} counter{{factor|s}} in every bundle. A makes {{simpleA|words}} bundle{{simpleA|s}}; B makes {{simpleB|words}}.",
           "detail": "",
           "operation": {
             "type": "group"
           },
           "scene": {
+            "description": "{{simpleA|Words}} A bundles of {{factor|words}} and {{simpleB|words}} B bundles of {{factor|words}}.",
+            "caption": "",
             "groups": [
               {
-                "id": "a-1",
-                "label": "A bundle 1",
-                "items": [
-                  {
-                    "id": "simplify-a-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                "$repeat": {
+                  "count": "simpleA",
+                  "as": "g",
+                  "item": {
+                    "id": "a-{{n}}",
+                    "label": "A bundle {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "factor",
+                          "as": "i",
+                          "item": {
+                            "id": "simplify-a-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ],
+                    "category": "A"
                   },
-                  {
-                    "id": "simplify-a-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "factor"
+                      ]
+                    }
                   },
-                  {
-                    "id": "simplify-a-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ],
-                "category": "A"
+                  "start": 0
+                }
               },
               {
-                "id": "a-2",
-                "label": "A bundle 2",
-                "items": [
-                  {
-                    "id": "simplify-a-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                "$repeat": {
+                  "count": "simpleB",
+                  "as": "g",
+                  "item": {
+                    "id": "b-{{g}}",
+                    "label": "B bundle {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "factor",
+                          "as": "i",
+                          "item": {
+                            "id": "simplify-b-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "operation",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ],
+                    "category": "B"
                   },
-                  {
-                    "id": "simplify-a-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "factor"
+                      ]
+                    }
                   },
-                  {
-                    "id": "simplify-a-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ],
-                "category": "A"
-              },
-              {
-                "id": "b-0",
-                "label": "B bundle 1",
-                "items": [
-                  {
-                    "id": "simplify-b-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-1",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-2",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  }
-                ],
-                "category": "B"
-              },
-              {
-                "id": "b-1",
-                "label": "B bundle 2",
-                "items": [
-                  {
-                    "id": "simplify-b-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-4",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-5",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  }
-                ],
-                "category": "B"
-              },
-              {
-                "id": "b-2",
-                "label": "B bundle 3",
-                "items": [
-                  {
-                    "id": "simplify-b-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-7",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  },
-                  {
-                    "id": "simplify-b-8",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": false
-                  }
-                ],
-                "category": "B"
+                  "start": 0
+                }
               }
-            ],
-            "description": "Two A bundles of three and three B bundles of three.",
-            "caption": ""
+            ]
           }
         },
         {
@@ -2026,118 +1085,186 @@
           "left": [
             {
               "id": "expression",
-              "text": "six divided by three to nine divided by three equals two to three",
-              "latex": "\\frac{6}{3}:\\frac{9}{3}=2:3",
-              "spoken": "six divided by three to nine divided by three equals two to three",
+              "text": "{{a|words}} divided by {{factor|words}} to {{b|words}} divided by {{factor|words}} equals {{simpleA|words}} to {{simpleB|words}}",
+              "latex": "\\frac{{{a}}}{{{factor}}}:\\frac{{{b}}}{{{factor}}}={{simpleA}}:{{simpleB}}",
+              "spoken": "{{a|words}} divided by {{factor|words}} to {{b|words}} divided by {{factor|words}} equals {{simpleA|words}} to {{simpleB|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Divide both counts by three. Two bundles to three bundles gives the simplest ratio.",
+          "explanation": "Divide both counts by {{factor|words}}. {{simpleA|Words}} bundle{{simpleA|s}} to {{simpleB|words}} bundle{{simpleB|s}} gives the simplest ratio.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
+            "description": "Each counter now represents one bundle of {{factor|words}}.",
+            "caption": "Each displayed counter now represents one bundle.",
             "groups": [
               {
-                "id": "a-1",
-                "label": "A bundle 1",
-                "items": [
-                  {
-                    "id": "simplify-a-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "category": "A"
+                "$repeat": {
+                  "count": "simpleA",
+                  "as": "g",
+                  "item": {
+                    "id": "a-{{n}}",
+                    "label": "A bundle {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": 1,
+                          "as": "i",
+                          "item": {
+                            "id": "simplify-a-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": true
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ],
+                    "category": "A"
+                  },
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "factor"
+                      ]
+                    }
+                  },
+                  "start": 0
+                }
               },
               {
-                "id": "a-2",
-                "label": "A bundle 2",
-                "items": [
-                  {
-                    "id": "simplify-a-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ],
-                "category": "A"
-              },
-              {
-                "id": "b-0",
-                "label": "B bundle 1",
-                "items": [
-                  {
-                    "id": "simplify-b-0",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  }
-                ],
-                "category": "B"
-              },
-              {
-                "id": "b-1",
-                "label": "B bundle 2",
-                "items": [
-                  {
-                    "id": "simplify-b-3",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  }
-                ],
-                "category": "B"
-              },
-              {
-                "id": "b-2",
-                "label": "B bundle 3",
-                "items": [
-                  {
-                    "id": "simplify-b-6",
-                    "value": 1,
-                    "latex": "1",
-                    "spoken": "1",
-                    "tone": "operation",
-                    "highlight": true
-                  }
-                ],
-                "category": "B"
+                "$repeat": {
+                  "count": "simpleB",
+                  "as": "g",
+                  "item": {
+                    "id": "b-{{g}}",
+                    "label": "B bundle {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": 1,
+                          "as": "i",
+                          "item": {
+                            "id": "simplify-b-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "operation",
+                            "highlight": true
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ],
+                    "category": "B"
+                  },
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "factor"
+                      ]
+                    }
+                  },
+                  "start": 0
+                }
               }
-            ],
-            "description": "Each counter now represents one bundle of three.",
-            "caption": "Each displayed counter now represents one bundle."
+            ]
           },
           "highlight": [
             "expression"
           ]
         }
+      ],
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 15
+        },
+        "b": {
+          "min": 2,
+          "max": 15
+        }
+      },
+      "derived": {
+        "factor": {
+          "gcd": [
+            "a",
+            "b"
+          ]
+        },
+        "simpleA": {
+          "divide": [
+            "a",
+            "factor"
+          ]
+        },
+        "simpleB": {
+          "divide": [
+            "b",
+            "factor"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              1,
+              "factor"
+            ]
+          },
+          "message": "The ratio needs a common factor greater than one."
+        },
+        {
+          "test": {
+            "atMost": [
+              {
+                "add": [
+                  "simpleA",
+                  "simpleB"
+                ]
+              },
+              5
+            ]
+          },
+          "message": "Use at most five bundles."
+        }
       ]
     },
     {
       "id": "unitary-cost",
-      "title": "Cost of five items",
-      "label": "Cost of five items",
+      "title": "Cost of {{wanted|words}} items",
+      "label": "Cost of {{wanted|words}} items",
       "tier": "Foundation",
       "subjectArea": "ratio",
       "available": true,
       "kind": "counter-groups",
-      "initialExpression": "Cost of five items",
+      "initialExpression": "Cost of {{wanted|words}} items",
       "notation": {
-        "latex": "3\\text{ items cost }\\pounds12",
-        "spoken": "Cost of five items"
+        "latex": "{{items}}\\text{ items cost }\\pounds{{cost}}",
+        "spoken": "Cost of {{wanted|words}} items"
       },
       "objective": "Find a unit cost, then scale it to the required number of identical items.",
       "prerequisites": [
@@ -2153,139 +1280,63 @@
       ],
       "tutorNotes": {
         "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
-        "misconception": "Adding five to the original cost instead of finding an equal cost per item.",
-        "checkQuestion": "Why does the unit cost stay the same when we buy five identical items?"
+        "misconception": "Adding {{wanted|words}} to the original cost instead of finding an equal cost per item.",
+        "checkQuestion": "Why does the unit cost stay the same when we buy {{wanted|words}} identical items?"
       },
       "model": {
-        "unitPrice": 4,
-        "result": 20
+        "unitPrice": {
+          "$value": "unit"
+        },
+        "result": {
+          "$value": "answer"
+        }
       },
       "steps": [
         {
-          "title": "Three identical items cost twelve pounds",
+          "title": "{{items|Words}} identical items cost {{cost|words}} pound{{cost|s}}",
           "left": [
             {
               "id": "expression",
-              "text": "three items cost twelve pounds",
-              "latex": "3\\text{ items}:\\pounds12",
-              "spoken": "three items cost twelve pounds",
+              "text": "{{items|words}} items cost {{cost|words}} pound{{cost|s}}",
+              "latex": "{{items}}\\text{ items}:\\pounds{{cost}}",
+              "spoken": "{{items|words}} items cost {{cost|words}} pound{{cost|s}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The total cost is twelve pounds. Share it equally between three identical items.",
+          "explanation": "The total cost is {{cost|words}} pound{{cost|s}}. Share it equally between {{items|words}} identical items.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
+            "description": "{{cost|Words}} one-pound cards represent the total cost.",
+            "caption": "Each card represents one pound.",
             "groups": [
               {
                 "id": "all",
-                "label": "Twelve pounds",
+                "label": "{{cost|Words}} pound{{cost|s}}",
                 "items": [
                   {
-                    "id": "cost-0",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-1",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-2",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-3",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-4",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-5",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-6",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-7",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-8",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-9",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-10",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-11",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "cost",
+                      "as": "i",
+                      "item": {
+                        "id": "cost-{{i}}",
+                        "value": 1,
+                        "latex": "\\pounds1",
+                        "spoken": "one pound",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "Twelve one-pound cards represent the total cost.",
-            "caption": "Each card represents one pound."
+            ]
           }
         },
         {
@@ -2293,138 +1344,67 @@
           "left": [
             {
               "id": "expression",
-              "text": "twelve pounds divided by three equals four pounds",
-              "latex": "\\frac{\\pounds12}{3}=\\pounds4",
-              "spoken": "twelve pounds divided by three equals four pounds",
+              "text": "{{cost|words}} pound{{cost|s}} divided by {{items|words}} equals {{unit|words}} pound{{unit|s}}",
+              "latex": "\\frac{\\pounds{{cost}}}{{{items}}}=\\pounds{{unit}}",
+              "spoken": "{{cost|words}} pound{{cost|s}} divided by {{items|words}} equals {{unit|words}} pound{{unit|s}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Split the total into three equal costs. Each item costs four pounds.",
+          "explanation": "Split the total into {{items|words}} equal costs. Each item costs {{unit|words}} pound{{unit|s}}.",
           "detail": "",
           "operation": {
             "type": "split"
           },
           "scene": {
+            "description": "{{items|Words}} equal groups each contain {{unit|words}} one-pound cards.",
+            "caption": "Each card represents one pound.",
             "groups": [
               {
-                "id": "item-0",
-                "label": "Item 1",
-                "items": [
-                  {
-                    "id": "cost-0",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
+                "$repeat": {
+                  "count": "items",
+                  "as": "g",
+                  "item": {
+                    "id": "item-{{g}}",
+                    "label": "Item {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "cost-{{i}}",
+                            "value": 1,
+                            "latex": "\\pounds1",
+                            "spoken": "one pound",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "cost-1",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "cost-2",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-3",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "item-1",
-                "label": "Item 2",
-                "items": [
-                  {
-                    "id": "cost-4",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-5",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-6",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-7",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "item-2",
-                "label": "Item 3",
-                "items": [
-                  {
-                    "id": "cost-8",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-9",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-10",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-11",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
+                  "start": 0
+                }
               }
-            ],
-            "description": "Three equal groups each contain four one-pound cards.",
-            "caption": "Each card represents one pound."
+            ]
           },
           "highlight": [
             "expression"
@@ -2435,282 +1415,157 @@
           "left": [
             {
               "id": "expression",
-              "text": "one item costs four pounds",
-              "latex": "1\\text{ item}:\\pounds4",
-              "spoken": "one item costs four pounds",
+              "text": "one item costs {{unit|words}} pound{{unit|s}}",
+              "latex": "1\\text{ item}:\\pounds{{unit}}",
+              "spoken": "one item costs {{unit|words}} pound{{unit|s}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The unit cost is four pounds. Keep this same cost for every item.",
+          "explanation": "The unit cost is {{unit|words}} pound{{unit|s}}. Keep this same cost for every item.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
+            "description": "One item costs {{unit|words}} pound{{unit|s}}.",
+            "caption": "Each card represents one pound.",
             "groups": [
               {
                 "id": "item-0",
                 "label": "One item",
                 "items": [
                   {
-                    "id": "cost-0",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-1",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-2",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-3",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
+                    "$repeat": {
+                      "count": "unit",
+                      "as": "i",
+                      "item": {
+                        "id": "cost-{{i}}",
+                        "value": 1,
+                        "latex": "\\pounds1",
+                        "spoken": "one pound",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
                   }
                 ]
               }
-            ],
-            "description": "One item costs four pounds.",
-            "caption": "Each card represents one pound."
+            ]
           }
         },
         {
-          "title": "Make five equal copies",
+          "title": "Make {{wanted|words}} equal copies",
           "left": [
             {
               "id": "expression",
-              "text": "five times four pounds equals twenty pounds",
-              "latex": "5\\times\\pounds4=\\pounds20",
-              "spoken": "five times four pounds equals twenty pounds",
+              "text": "{{wanted|words}} times {{unit|words}} pound{{unit|s}} equals {{answer|words}} pound{{answer|s}}",
+              "latex": "{{wanted}}\\times\\pounds{{unit}}=\\pounds{{answer}}",
+              "spoken": "{{wanted|words}} times {{unit|words}} pound{{unit|s}} equals {{answer|words}} pound{{answer|s}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Five identical items cost five lots of four pounds: twenty pounds.",
+          "explanation": "{{wanted|Words}} identical items cost {{wanted|words}} lots of {{unit|words}} pound{{unit|s}}: {{answer|words}} pound{{answer|s}}.",
           "detail": "",
           "operation": {
             "type": "distribute"
           },
           "scene": {
+            "description": "{{wanted|Words}} group{{wanted|s}} of {{unit|words}} one-pound cards total {{answer|words}} pound{{answer|s}}.",
+            "caption": "Each card represents one pound.",
             "groups": [
               {
-                "id": "item-0",
-                "label": "Item 1",
-                "items": [
-                  {
-                    "id": "cost-0",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
+                "$repeat": {
+                  "count": "wanted",
+                  "as": "g",
+                  "item": {
+                    "id": "item-{{g}}",
+                    "label": "Item {{n}}",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "unit",
+                          "as": "i",
+                          "item": {
+                            "id": "cost-{{i}}",
+                            "value": 1,
+                            "latex": "\\pounds1",
+                            "spoken": "one pound",
+                            "tone": "original",
+                            "highlight": {
+                              "$test": {
+                                "less": [
+                                  0,
+                                  "g"
+                                ]
+                              }
+                            }
+                          },
+                          "derived": {},
+                          "start": "offset"
+                        }
+                      }
+                    ]
                   },
-                  {
-                    "id": "cost-1",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
+                  "derived": {
+                    "n": {
+                      "add": [
+                        "g",
+                        1
+                      ]
+                    },
+                    "offset": {
+                      "multiply": [
+                        "g",
+                        "unit"
+                      ]
+                    }
                   },
-                  {
-                    "id": "cost-2",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  },
-                  {
-                    "id": "cost-3",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": false
-                  }
-                ]
-              },
-              {
-                "id": "item-1",
-                "label": "Item 2",
-                "items": [
-                  {
-                    "id": "cost-4",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-5",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-6",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-7",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "item-2",
-                "label": "Item 3",
-                "items": [
-                  {
-                    "id": "cost-8",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-9",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-10",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-11",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "item-3",
-                "label": "Item 4",
-                "items": [
-                  {
-                    "id": "cost-12",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-13",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-14",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-15",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
-              },
-              {
-                "id": "item-4",
-                "label": "Item 5",
-                "items": [
-                  {
-                    "id": "cost-16",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-17",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-18",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  },
-                  {
-                    "id": "cost-19",
-                    "value": 1,
-                    "latex": "\\pounds1",
-                    "spoken": "one pound",
-                    "tone": "original",
-                    "highlight": true
-                  }
-                ]
+                  "start": 0
+                }
               }
-            ],
-            "description": "Five groups of four one-pound cards total twenty pounds.",
-            "caption": "Each card represents one pound."
+            ]
           },
           "highlight": [
             "expression"
           ]
         }
+      ],
+      "parameters": {
+        "items": {
+          "min": 2,
+          "max": 5
+        },
+        "cost": {
+          "min": 4,
+          "max": 24
+        },
+        "wanted": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "unit": {
+          "divide": [
+            "cost",
+            "items"
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "wanted",
+            "unit"
+          ]
+        }
+      },
+      "integers": [
+        "unit"
       ]
     }
   ]
