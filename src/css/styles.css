@@ -235,6 +235,7 @@ h3 {
   min-height: 44px;
 }
 #visual {
+  position: relative;
   height: 350px;
   display: flex;
   align-items: center;
@@ -307,6 +308,17 @@ svg {
     box-shadow: 0 0 0 5px var(--highlight);
     border-radius: 3px;
   }
+}
+.diagram-math-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.math-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
 }
 .math-content {
   display: flex;

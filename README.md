@@ -77,6 +77,7 @@ src/
   js/animations.js          term identity transitions, cancellation, beam movement
   js/presentation.js        native fullscreen and in-page fallback
   js/notation.js            shared KaTeX renderer, spoken labels and term sizing
+  js/diagram-math.js        HTML equation layer following SVG geometry and animations
   vendor/katex/             pinned KaTeX 0.16.22, CSS, fonts and MIT license
 tests/                     dependency-free Node tests
 server.js                  local development tooling
@@ -179,7 +180,7 @@ These are fixed teaching templates rather than arbitrary datasets or expressions
 
 ### Mathematical notation
 
-KaTeX renders every mathematical display, including lesson headings/buttons, individual balance terms, equation signs, worked expressions, group tiles, and number-line labels. Each term remains a separate SVG `foreignObject` carrying its original `data-term` identity. Existing animations move and fade those containers; the entire equation is never flattened. New terms retain their purple colour and cancellation pairs retain their shared highlight.
+KaTeX renders every mathematical display, including lesson headings/buttons, individual balance terms, equation signs, worked expressions, group tiles, and number-line labels. Each term retains an SVG geometry slot with its original `data-term` identity. At mount time, its KaTeX content moves into an ordinary HTML overlay aligned with the slot?s screen matrix. This avoids Safari?s misplaced HTML layers inside SVG `foreignObject`. Resize observers update alignment after layout changes; animation frames mirror movement, rotation, opacity and highlight classes during transitions. Observers are disconnected when a diagram is replaced; idle diagrams do not run an animation loop. The entire equation is never flattened. New terms retain their purple colour and cancellation pairs retain their shared highlight.
 
 Notation is authored explicitly rather than converted from arbitrary input at runtime:
 
@@ -284,7 +285,7 @@ Baseline for the gap-analysis batch: **25 tests passed**. Current suite: **60 te
 
 Headless Edge checks use 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow and controls at least 56px. All **44 lesson sequences (145 forward transitions)** run at each main iPad orientation, including Back/Restart, rapid taps, fixed control positions within each lesson, notation bounds and plate clearance. Normal-motion tests exercise the original balance/cancellation and new diagram primitives; reduced-motion tests keep state changes instant. The Pythagoras transfer additionally checks 25 stable IDs and final rotation anchors. Fallback fullscreen and runtime-error checks are included. All 36 alternate non-Algebra templates are additionally rendered at both iPad orientations and checked for diagram-label bounds and page overflow. Representative diagrams have screenshots under ignored `temp`. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
 
-To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed. Set `MATHS_TEST_URL` if your server uses another port. The checks also measure KaTeX bounds and plate clearance at iPad sizes. Native OS fullscreen can stall in headless Windows, so supported-API behaviour is unit tested and native browser entry/exit remains a physical-device check; the browser suite checks both fallback paths.
+To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed. Set `MATHS_TEST_URL` if your server uses another port. The checks also verify that diagram KaTeX lives outside SVG, compare HTML overlay bounds with their SVG slots, and measure KaTeX bounds and plate clearance at iPad sizes. These Chromium checks do not verify Safari painting; the iPadOS rendering change still needs a physical Safari check. Native OS fullscreen can stall in headless Windows, so supported-API behaviour is unit tested and native browser entry/exit remains a physical-device check; the browser suite checks both fallback paths.
 
 On an iPad:
 

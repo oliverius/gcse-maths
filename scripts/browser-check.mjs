@@ -117,6 +117,11 @@ for (const [width, height] of [
   const length=Number(document.querySelector('#counter').textContent.match(/of (\\d+)/)[1]);
   const before=document.querySelector('.controls').getBoundingClientRect().top;
   const checkNotation=()=>{
+   if(document.querySelector('#visual svg .math-content'))throw new Error('KaTeX still inside SVG');
+   for(const slot of document.querySelectorAll('#visual foreignObject.math-object')){
+    const source=slot.getBoundingClientRect(),overlay=slot.mathOverlay.getBoundingClientRect();
+    for(const edge of ['left','top','right','bottom'])if(Math.abs(source[edge]-overlay[edge])>0.5)throw new Error('Math overlay displaced: '+edge);
+   }
    for(const node of document.querySelectorAll('#visual .math-content')){
     if(!node.querySelector('.katex'))throw new Error('Missing KaTeX');
     const math=node.querySelector('.katex-html').getBoundingClientRect();
@@ -127,7 +132,7 @@ for (const [width, height] of [
    if(plates.length)for(const node of document.querySelectorAll('#visual foreignObject[data-term]')){
     if(Number(node.getAttribute('y'))>200)continue;
     const side=Number(node.getAttribute('x'))<400?0:1;
-    const math=node.querySelector('.katex-html').getBoundingClientRect();
+    const math=node.mathOverlay.querySelector('.katex-html').getBoundingClientRect();
     if(math.bottom>plates[side].getBoundingClientRect().top-2)throw new Error('Notation overlaps plate');
    }
   };
@@ -344,7 +349,7 @@ for (const id of [
     `(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`,
   );
   const bounds = await evaluate(
-    `(()=>{const svg=document.querySelector('#visual>svg'),box=svg.getBoundingClientRect();return [...svg.querySelectorAll('text,.katex-html')].every(n=>{const r=n.getBoundingClientRect();return r.left>=box.left-2&&r.right<=box.right+2&&r.top>=box.top-2&&r.bottom<=box.bottom+2;});})()`,
+    `(()=>{const svg=document.querySelector('#visual>svg'),box=svg.getBoundingClientRect();return [...document.querySelectorAll('#visual text,#visual .katex-html')].every(n=>{const r=n.getBoundingClientRect();return r.left>=box.left-2&&r.right<=box.right+2&&r.top>=box.top-2&&r.bottom<=box.bottom+2;});})()`,
   );
   assert.equal(bounds, true, `Diagram labels outside canvas: ${id}`);
   const shot = await cdp('Page.captureScreenshot', {
@@ -409,6 +414,8 @@ for (const [width, height] of [
     const cases = ${JSON.stringify(templateCases)};
     const { instantiateLesson } = await import('./js/lesson-templates.js');
     const { draw } = await import('./js/renderers.js');
+    const { mountDiagramMath } = await import('./js/diagram-math.js');
+    let diagramMath;
     const { renderContent } = await import('./js/notation.js');
     const pause = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     let lessons = 0, states = 0;
@@ -419,7 +426,10 @@ for (const [width, height] of [
         for (const state of lesson.steps) {
           const visual = document.querySelector('#visual');
           visual.classList.toggle('has-groups', Boolean(state.groups));
-          visual.replaceChildren(draw(lesson, state));
+          diagramMath?.dispose();
+          const svg = draw(lesson, state);
+          visual.replaceChildren(svg);
+          diagramMath = mountDiagramMath(visual, svg);
           renderContent(document.querySelector('#step-title'), state.titleContent, state.title);
           renderContent(document.querySelector('#explanation'), state.explanationContent, state.explanation);
           renderContent(document.querySelector('#detail'), state.detailContent, state.detail || '');
@@ -435,6 +445,7 @@ for (const [width, height] of [
         lessons++;
       }
     }
+    diagramMath?.dispose();
     return { lessons, states };
   })()`);
   assert.equal(

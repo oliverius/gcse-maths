@@ -4,11 +4,13 @@ import { draw, describe } from './renderers.js';
 import { cancelTerms, transition } from './animations.js';
 import { createPresentation } from './presentation.js';
 import { renderMath, renderContent, prepareNotation } from './notation.js';
+import { mountDiagramMath } from './diagram-math.js';
 const byId = (id) => document.getElementById(id);
 const visual = byId('visual');
 let current;
 let engine;
 let busy = false;
+let diagramMath;
 const areaTitles = new Map();
 const lessonButtons = [];
 const narrow = window.matchMedia('(max-width: 999px)');
@@ -61,7 +63,9 @@ function render() {
   visual.setAttribute('aria-label', describe(current, state));
   visual.classList.toggle('has-groups', Boolean(state.groups));
   const svg = draw(current, state);
+  diagramMath?.dispose();
   visual.replaceChildren(svg);
+  diagramMath = mountDiagramMath(visual, svg);
   return svg;
 }
 function reference(ref) {
@@ -124,10 +128,11 @@ async function navigate(target) {
   try {
     await engine.go(target, async (state, forward, commit) => {
       const previous = visual.firstElementChild;
-      if (forward && state.cancel) await cancelTerms(visual, state.cancel);
+      if (forward && state.cancel)
+        await diagramMath.during(() => cancelTerms(visual, state.cancel));
       commit();
       const next = render();
-      if (forward) await transition(previous, next);
+      if (forward) await diagramMath.during(() => transition(previous, next));
     });
   } catch (error) {
     console.error('Lesson navigation failed.', error);
