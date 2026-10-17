@@ -2132,6 +2132,1481 @@
           }
         }
       ]
+    },
+    {
+      "id": "square-three",
+      "title": "Square numbers",
+      "label": "Square numbers",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "tile-array",
+      "initialExpression": "Square numbers",
+      "notation": {
+        "latex": "3^2=9",
+        "spoken": "Square numbers"
+      },
+      "objective": "Explain squaring as a square array and repeated multiplication.",
+      "prerequisites": [
+        "Multiplication as equal groups."
+      ],
+      "prerequisiteLessonIds": [],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N6",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Confusing three squared with three times two.",
+        "checkQuestion": "Why does the small two give two factors of three?"
+      },
+      "model": {
+        "base": 3,
+        "exponent": 2,
+        "result": 9
+      },
+      "steps": [
+        {
+          "title": "Read the exponent",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three squared",
+              "latex": "3^2",
+              "spoken": "three squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The small two means two factors of three. It does not mean three times two.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "rows": 3,
+            "columns": 3,
+            "layers": 1,
+            "visibleRows": 0,
+            "visibleLayers": 1,
+            "edges": false,
+            "highlightRow": null,
+            "description": "An empty three-by-three grid.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Build row 1",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three times three",
+              "latex": "3\\times3",
+              "spoken": "three times three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Make the first row of three tiles. There are now 3 tiles.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": 3,
+            "columns": 3,
+            "layers": 1,
+            "visibleRows": 1,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": 0,
+            "description": "1 filled rows of three tiles, 3 tiles in total.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Build row 2",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three times three",
+              "latex": "3\\times3",
+              "spoken": "three times three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Make a second row of three tiles. There are now 6 tiles.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": 3,
+            "columns": 3,
+            "layers": 1,
+            "visibleRows": 2,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": 1,
+            "description": "2 filled rows of three tiles, 6 tiles in total.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Build row 3",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three times three",
+              "latex": "3\\times3",
+              "spoken": "three times three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Make a third row of three tiles. There are now 9 tiles.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": 3,
+            "columns": 3,
+            "layers": 1,
+            "visibleRows": 3,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": 2,
+            "description": "3 filled rows of three tiles, 9 tiles in total.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "A square of nine tiles",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three squared equals three times three equals nine",
+              "latex": "3^2=3\\times3=9",
+              "spoken": "three squared equals three times three equals nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three rows of three make nine square tiles. Squaring repeats a factor, not addition.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "rows": 3,
+            "columns": 3,
+            "layers": 1,
+            "visibleRows": 3,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": null,
+            "description": "A complete three-by-three square of nine tiles.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cube-two",
+      "title": "Cube numbers",
+      "label": "Cube numbers",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "tile-array",
+      "initialExpression": "Cube numbers",
+      "notation": {
+        "latex": "2^3=8",
+        "spoken": "Cube numbers"
+      },
+      "objective": "Interpret a cube as two layers of a two-by-two array.",
+      "prerequisites": [
+        "Understand square arrays and repeated multiplication."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N6",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Interpreting cubed as multiplying by three.",
+        "checkQuestion": "What does the third factor of two count?"
+      },
+      "model": {
+        "base": 2,
+        "exponent": 3,
+        "result": 8
+      },
+      "steps": [
+        {
+          "title": "Three factors of two",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two cubed",
+              "latex": "2^3",
+              "spoken": "two cubed",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The small three means multiply three factors of two.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "rows": 2,
+            "columns": 2,
+            "layers": 2,
+            "visibleRows": 0,
+            "visibleLayers": 1,
+            "edges": false,
+            "highlightRow": null,
+            "description": "The first empty two-by-two layer.",
+            "caption": "Each tile represents one unit cube."
+          }
+        },
+        {
+          "title": "Build the first layer",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two times two equals four",
+              "latex": "2\\times2=4",
+              "spoken": "two times two equals four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One layer has two rows of two: four unit cubes.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": 2,
+            "columns": 2,
+            "layers": 2,
+            "visibleRows": 2,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": null,
+            "description": "One two-by-two layer contains four unit cubes.",
+            "caption": "Each tile represents one unit cube."
+          }
+        },
+        {
+          "title": "Add a second equal layer",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two times two times two equals eight",
+              "latex": "2\\times2\\times2=8",
+              "spoken": "two times two times two equals eight",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The third factor counts layers. Two layers of four make eight unit cubes.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": 2,
+            "columns": 2,
+            "layers": 2,
+            "visibleRows": 2,
+            "visibleLayers": 2,
+            "edges": true,
+            "highlightRow": null,
+            "description": "Two equal layers of four unit cubes make eight.",
+            "caption": "Two layers form a cube two units along each edge."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Two cubed is eight",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two cubed equals eight",
+              "latex": "2^3=8",
+              "spoken": "two cubed equals eight",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The cube is two units wide, two high and two deep. There are eight unit cubes altogether.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "rows": 2,
+            "columns": 2,
+            "layers": 2,
+            "visibleRows": 2,
+            "visibleLayers": 2,
+            "edges": true,
+            "highlightRow": null,
+            "description": "Eight unit cubes in two layers.",
+            "caption": "This flat drawing separates the two layers for clarity."
+          }
+        }
+      ]
+    },
+    {
+      "id": "square-root-25",
+      "title": "Square roots",
+      "label": "Square roots",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "tile-array",
+      "initialExpression": "Square roots",
+      "notation": {
+        "latex": "\\sqrt{25}=5",
+        "spoken": "Square roots"
+      },
+      "objective": "Reverse a square array to find its positive side length.",
+      "prerequisites": [
+        "Understand side length and square area."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N6, N7",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Dividing twenty-five by two, or writing plus-or-minus five as the value of the square-root symbol.",
+        "checkQuestion": "Why is a square root a side length rather than half an area?"
+      },
+      "model": {
+        "base": 5,
+        "exponent": 2,
+        "result": 25,
+        "root": 5
+      },
+      "steps": [
+        {
+          "title": "Start with twenty-five tiles",
+          "left": [
+            {
+              "id": "expression",
+              "text": "square root of twenty-five",
+              "latex": "\\sqrt{25}",
+              "spoken": "square root of twenty-five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The square root asks for the nonnegative side length of a square with this area.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "rows": 5,
+            "columns": 5,
+            "layers": 1,
+            "visibleRows": 5,
+            "visibleLayers": 1,
+            "edges": false,
+            "highlightRow": null,
+            "description": "A square containing twenty-five equal tiles.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Count one row",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five tiles across",
+              "latex": "5\\text{ tiles across}",
+              "spoken": "five tiles across",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One row contains five equal tiles.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "rows": 5,
+            "columns": 5,
+            "layers": 1,
+            "visibleRows": 5,
+            "visibleLayers": 1,
+            "edges": false,
+            "highlightRow": 0,
+            "description": "The first row of five tiles is highlighted.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Check the equal sides",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five times five equals twenty-five",
+              "latex": "5\\times5=25",
+              "spoken": "five times five equals twenty-five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The square is five tiles across and five high. Its area is twenty-five.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "rows": 5,
+            "columns": 5,
+            "layers": 1,
+            "visibleRows": 5,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": null,
+            "description": "Five rows of five tiles confirm the area twenty-five.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Undo squaring",
+          "left": [
+            {
+              "id": "expression",
+              "text": "square root of twenty-five equals five",
+              "latex": "\\sqrt{25}=5",
+              "spoken": "square root of twenty-five equals five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The square-root symbol gives five, the nonnegative root. Solving an equation such as x squared equals twenty-five is a separate question.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "rows": 5,
+            "columns": 5,
+            "layers": 1,
+            "visibleRows": 5,
+            "visibleLayers": 1,
+            "edges": true,
+            "highlightRow": null,
+            "description": "The square root gives the side length five.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zero-power",
+      "title": "Zero powers",
+      "label": "Zero powers",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "power-pattern",
+      "initialExpression": "Zero powers",
+      "notation": {
+        "latex": "5^0=1",
+        "spoken": "Zero powers"
+      },
+      "objective": "Extend a nonzero-base power pattern consistently by division.",
+      "prerequisites": [
+        "Repeated multiplication; division by a nonzero number."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three",
+        "cube-two"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N7",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Thinking power zero makes the answer zero.",
+        "checkQuestion": "Why must the next value be one to keep this pattern consistent?"
+      },
+      "model": {
+        "base": 5,
+        "result": 1
+      },
+      "steps": [
+        {
+          "title": "Begin with three factors",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five cubed equals one hundred and twenty-five",
+              "latex": "5^3=125",
+              "spoken": "five cubed equals one hundred and twenty-five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Five times five times five is one hundred and twenty-five.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "base": 5,
+            "exponents": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "visible": 1,
+            "description": "The first 1 values of the pattern five cubed, five squared, five, and five to power zero.",
+            "caption": "Lower the exponent by one: divide the value by five."
+          }
+        },
+        {
+          "title": "Remove one factor by division",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one hundred and twenty-five divided by five equals twenty-five, five squared",
+              "latex": "\\frac{125}{5}=25=5^2",
+              "spoken": "one hundred and twenty-five divided by five equals twenty-five, five squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Lower the exponent from three to two. Divide the value by five.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "base": 5,
+            "exponents": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "visible": 2,
+            "description": "The first 2 values of the pattern five cubed, five squared, five, and five to power zero.",
+            "caption": "Lower the exponent by one: divide the value by five."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Lower the exponent again",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty-five divided by five equals five, five to power one",
+              "latex": "\\frac{25}{5}=5=5^1",
+              "spoken": "twenty-five divided by five equals five, five to power one",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Lowering from two to one divides by five again.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "base": 5,
+            "exponents": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "visible": 3,
+            "description": "The first 3 values of the pattern five cubed, five squared, five, and five to power zero.",
+            "caption": "Lower the exponent by one: divide the value by five."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Keep the same division pattern",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five divided by five equals one, five to power zero",
+              "latex": "\\frac{5}{5}=1=5^0",
+              "spoken": "five divided by five equals one, five to power zero",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One more division by five gives one. Every nonzero number to power zero is one. This pattern does not use a base of zero.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "base": 5,
+            "exponents": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "visible": 4,
+            "description": "The first 4 values of the pattern five cubed, five squared, five, and five to power zero.",
+            "caption": "Lower the exponent by one: divide the value by five."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiply-powers",
+      "title": "Multiply powers",
+      "label": "Multiply powers",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Multiply powers",
+      "notation": {
+        "latex": "2^3\\times2^2=2^5",
+        "spoken": "Multiply powers"
+      },
+      "objective": "Count equal-base factors to explain addition of exponents.",
+      "prerequisites": [
+        "Powers represent repeated multiplication."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three",
+        "cube-two"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N7",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        },
+        {
+          "provider": "AQA",
+          "reference": "A4",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Multiplying the exponents, or using this rule when adding powers.",
+        "checkQuestion": "Why do we add the exponents rather than multiply them?"
+      },
+      "model": {
+        "base": 2,
+        "exponents": [
+          3,
+          2
+        ],
+        "result": 32
+      },
+      "steps": [
+        {
+          "title": "Read the two powers",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two cubed times two squared",
+              "latex": "2^3\\times2^2",
+              "spoken": "two cubed times two squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The first power has three factors of two. The second has two factors of two.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "first",
+                "label": "Three factors",
+                "items": [
+                  {
+                    "id": "factor-0",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-1",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-2",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  }
+                ]
+              },
+              {
+                "id": "second",
+                "label": "Two factors",
+                "items": [
+                  {
+                    "id": "factor-3",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  },
+                  {
+                    "id": "factor-4",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  }
+                ]
+              }
+            ],
+            "description": "Three factors: 3 factors of two. Two factors: 2 factors of two",
+            "caption": "Each card is a factor of two, not an amount to add."
+          }
+        },
+        {
+          "title": "Put all five factors together",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two times two times two, times two times two",
+              "latex": "(2\\times2\\times2)\\times(2\\times2)",
+              "spoken": "two times two times two, times two times two",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiplying the powers joins their factor lists. None of the factors change.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "all",
+                "label": "Five factors",
+                "items": [
+                  {
+                    "id": "factor-0",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-1",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-2",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-3",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  },
+                  {
+                    "id": "factor-4",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  }
+                ]
+              }
+            ],
+            "description": "Five factors: 5 factors of two",
+            "caption": "Each card is a factor of two, not an amount to add."
+          }
+        },
+        {
+          "title": "Count factors in the exponent",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two to power three plus two equals two to power five",
+              "latex": "2^{3+2}=2^5",
+              "spoken": "two to power three plus two equals two to power five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are five factors of the same base. Add the exponents because you are counting factors.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "all",
+                "label": "Five factors",
+                "items": [
+                  {
+                    "id": "factor-0",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-1",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-2",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-3",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  },
+                  {
+                    "id": "factor-4",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  }
+                ]
+              }
+            ],
+            "description": "Five factors: 5 factors of two",
+            "caption": "Each card is a factor of two, not an amount to add."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Check by multiplying",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two to power five equals thirty-two",
+              "latex": "2^5=32",
+              "spoken": "two to power five equals thirty-two",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Five factors of two multiply to thirty-two. This rule needs the same base and multiplication between the powers.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "all",
+                "label": "Five factors",
+                "items": [
+                  {
+                    "id": "factor-0",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-1",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-2",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "factor-3",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  },
+                  {
+                    "id": "factor-4",
+                    "value": 2,
+                    "latex": "2",
+                    "spoken": "factor two",
+                    "tone": "operation"
+                  }
+                ]
+              }
+            ],
+            "description": "Five factors: 5 factors of two",
+            "caption": "Each card is a factor of two, not an amount to add."
+          }
+        }
+      ]
+    },
+    {
+      "id": "prime-factors",
+      "title": "Prime factorisation",
+      "label": "Prime factorisation",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "factor-tree",
+      "initialExpression": "Prime factorisation",
+      "notation": {
+        "latex": "18=2\\times3^2",
+        "spoken": "Prime factorisation"
+      },
+      "objective": "Split composite factors until every leaf factor is prime.",
+      "prerequisites": [
+        "Factor pairs and multiplication."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N4",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Including composite parent nodes as extra factors, or calling one a prime.",
+        "checkQuestion": "Why do we read only the leaves of the finished tree?"
+      },
+      "model": {
+        "value": 18,
+        "primeFactors": [
+          2,
+          3,
+          3
+        ]
+      },
+      "steps": [
+        {
+          "title": "Start with the whole number",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eighteen",
+              "latex": "18",
+              "spoken": "eighteen",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Find a product of prime numbers equal to eighteen.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "nodes": [
+              {
+                "id": "root",
+                "value": 18,
+                "children": [
+                  "two",
+                  "nine"
+                ]
+              },
+              {
+                "id": "two",
+                "value": 2,
+                "children": []
+              },
+              {
+                "id": "nine",
+                "value": 9,
+                "children": [
+                  "three-a",
+                  "three-b"
+                ]
+              },
+              {
+                "id": "three-a",
+                "value": 3,
+                "children": []
+              },
+              {
+                "id": "three-b",
+                "value": 3,
+                "children": []
+              }
+            ],
+            "visible": [
+              "root"
+            ],
+            "selected": [],
+            "description": "Visible factor nodes: 18. Selected prime factors: ."
+          }
+        },
+        {
+          "title": "Split eighteen into factors",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eighteen equals two times nine",
+              "latex": "18=2\\times9",
+              "spoken": "eighteen equals two times nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Two times nine is eighteen. Two is prime; nine can be split further.",
+          "detail": "",
+          "operation": {
+            "type": "split"
+          },
+          "scene": {
+            "nodes": [
+              {
+                "id": "root",
+                "value": 18,
+                "children": [
+                  "two",
+                  "nine"
+                ]
+              },
+              {
+                "id": "two",
+                "value": 2,
+                "children": []
+              },
+              {
+                "id": "nine",
+                "value": 9,
+                "children": [
+                  "three-a",
+                  "three-b"
+                ]
+              },
+              {
+                "id": "three-a",
+                "value": 3,
+                "children": []
+              },
+              {
+                "id": "three-b",
+                "value": 3,
+                "children": []
+              }
+            ],
+            "visible": [
+              "root",
+              "two",
+              "nine"
+            ],
+            "selected": [
+              "two"
+            ],
+            "description": "Visible factor nodes: 18, 2, 9. Selected prime factors: 2."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Split the composite factor",
+          "left": [
+            {
+              "id": "expression",
+              "text": "nine equals three times three",
+              "latex": "9=3\\times3",
+              "spoken": "nine equals three times three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Nine is three times three. Both threes are prime.",
+          "detail": "",
+          "operation": {
+            "type": "split"
+          },
+          "scene": {
+            "nodes": [
+              {
+                "id": "root",
+                "value": 18,
+                "children": [
+                  "two",
+                  "nine"
+                ]
+              },
+              {
+                "id": "two",
+                "value": 2,
+                "children": []
+              },
+              {
+                "id": "nine",
+                "value": 9,
+                "children": [
+                  "three-a",
+                  "three-b"
+                ]
+              },
+              {
+                "id": "three-a",
+                "value": 3,
+                "children": []
+              },
+              {
+                "id": "three-b",
+                "value": 3,
+                "children": []
+              }
+            ],
+            "visible": [
+              "root",
+              "two",
+              "nine",
+              "three-a",
+              "three-b"
+            ],
+            "selected": [
+              "two",
+              "three-a",
+              "three-b"
+            ],
+            "description": "Visible factor nodes: 18, 2, 9, 3, 3. Selected prime factors: 2, 3, 3."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Read only the prime leaves",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eighteen equals two times three times three, or two times three squared",
+              "latex": "18=2\\times3\\times3=2\\times3^2",
+              "spoken": "eighteen equals two times three times three, or two times three squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The prime factors multiply to eighteen. Do not multiply the parent nine again; its two children already replace it.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "nodes": [
+              {
+                "id": "root",
+                "value": 18,
+                "children": [
+                  "two",
+                  "nine"
+                ]
+              },
+              {
+                "id": "two",
+                "value": 2,
+                "children": []
+              },
+              {
+                "id": "nine",
+                "value": 9,
+                "children": [
+                  "three-a",
+                  "three-b"
+                ]
+              },
+              {
+                "id": "three-a",
+                "value": 3,
+                "children": []
+              },
+              {
+                "id": "three-b",
+                "value": 3,
+                "children": []
+              }
+            ],
+            "visible": [
+              "root",
+              "two",
+              "nine",
+              "three-a",
+              "three-b"
+            ],
+            "selected": [
+              "two",
+              "three-a",
+              "three-b"
+            ],
+            "description": "Visible factor nodes: 18, 2, 9, 3, 3. Selected prime factors: 2, 3, 3."
+          }
+        }
+      ]
+    },
+    {
+      "id": "place-value-ten",
+      "title": "Multiply by ten",
+      "label": "Multiply by ten",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "place-value",
+      "initialExpression": "Multiply by ten",
+      "notation": {
+        "latex": "3.4\\times10=34",
+        "spoken": "Multiply by ten"
+      },
+      "objective": "Multiply each digit value by ten by changing its place, not moving the decimal point.",
+      "prerequisites": [
+        "Understand ones and tenths."
+      ],
+      "prerequisiteLessonIds": [],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N2",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Teaching that the decimal point moves rather than digits changing place.",
+        "checkQuestion": "Why does the three now represent thirty rather than three?"
+      },
+      "model": {
+        "initial": 3.4,
+        "power": 1,
+        "result": 34
+      },
+      "steps": [
+        {
+          "title": "Read each digit value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three point four equals three plus four tenths",
+              "latex": "3.4=3+\\frac{4}{10}",
+              "spoken": "three point four equals three plus four tenths",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three is in the ones column. Four is in the tenths column.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shift": 0,
+            "digits": [
+              {
+                "id": "digit-three",
+                "digit": 3,
+                "place": 0
+              },
+              {
+                "id": "digit-four",
+                "digit": 4,
+                "place": -1
+              }
+            ],
+            "description": "Digit three is in ones and four is in tenths; the decimal boundary is fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Multiply every digit value by ten",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three point four times ten equals thirty-four",
+              "latex": "3.4\\times10=34",
+              "spoken": "three point four times ten equals thirty-four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each digit moves one column left: ones become tens, and tenths become ones. The decimal point stays fixed.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "shift": 1,
+            "digits": [
+              {
+                "id": "digit-three",
+                "digit": 3,
+                "place": 1
+              },
+              {
+                "id": "digit-four",
+                "digit": 4,
+                "place": 0
+              }
+            ],
+            "description": "The same digit three is now in tens and four is in ones; the decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Read the new value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "thirty-four equals thirty plus four",
+              "latex": "34=30+4",
+              "spoken": "thirty-four equals thirty plus four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three tens and four ones make thirty-four. The digits stay the same; their place values change.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shift": 1,
+            "digits": [
+              {
+                "id": "digit-three",
+                "digit": 3,
+                "place": 1
+              },
+              {
+                "id": "digit-four",
+                "digit": 4,
+                "place": 0
+              }
+            ],
+            "description": "The same digit three is now in tens and four is in ones; the decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        }
+      ]
     }
   ]
 }

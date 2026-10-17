@@ -14,9 +14,9 @@ await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion'
 await cdp('Emulation.setDeviceMetricsOverride',{width:768,height:1024,deviceScaleFactor:1,mobile:false});
 await cdp('Page.navigate',{url:process.env.MATHS_TEST_URL || 'http://127.0.0.1:5500/'});
 // Wait for the app module and its JSON fetches, without assuming network timing.
-for(let i=0;i<100;i++){if(await evaluate("document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 32"))break;await new Promise(r=>setTimeout(r,50));}
+for(let i=0;i<100;i++){if(await evaluate("document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 44"))break;await new Promise(r=>setTimeout(r,50));}
 await evaluate("import('./js/app.js').then(m=>m.ready)");
-assert.equal(await evaluate("document.querySelectorAll('#lessons button').length"),32);
+assert.equal(await evaluate("document.querySelectorAll('#lessons button').length"),44);
 for(const [width,height,label] of [[768,1024,'portrait'],[1024,768,'landscape'],[1180,820,'wide-landscape'],[390,844,'phone']]){
  await cdp('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
  await evaluate("new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
@@ -95,7 +95,7 @@ for(let step=2;step<=5;step++) {
 }
 console.log('Normal-motion cancellation, beam interpolation and rapid-click checks passed');
 // Each new primitive must also animate safely with normal motion enabled.
-for(const id of ['share-ratio','straight-line','rectangle-area','probability-scale','mean','median','read-bar-chart']){
+for(const id of ['share-ratio','straight-line','rectangle-area','probability-scale','mean','median','read-bar-chart','square-three','cube-two','square-root-25','zero-power','multiply-powers','prime-factors','place-value-ten','substitution','coin-spinner-space','pythagoras-areas','pythagoras-hypotenuse','pythagoras-shorter']){
  await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
  await evaluate("document.querySelector('#next').click();document.querySelector('#next').click()");
  for(let attempt=0;attempt<100;attempt++){
@@ -106,11 +106,29 @@ for(const id of ['share-ratio','straight-line','rectangle-area','probability-sca
  assert.equal(await evaluate("document.querySelector('#error').hidden"),true);
 }
 console.log('New diagram primitives: normal-motion transitions passed');
+const idle=async()=>{
+ for(let attempt=0;attempt<120;attempt++){
+  if(await evaluate("document.querySelector('#visual').getAttribute('aria-busy')==='false'"))return;
+  await new Promise(resolve=>setTimeout(resolve,25));
+ }
+ throw new Error('Animation did not finish');
+};
+await evaluate("document.querySelector('[data-lesson=pythagoras-areas]').click()");
+for(let i=0;i<3;i++){await evaluate("document.querySelector('#next').click()");await idle();}
+const areaIds=await evaluate("[...document.querySelectorAll('[data-angle]')].map(n=>n.getAttribute('data-entity')).sort()");
+assert.equal(areaIds.length,25);
+await evaluate("document.querySelector('#next').click();document.querySelector('#next').click()");
+assert.ok(await evaluate('document.getAnimations().length>=25'));
+await idle();
+assert.deepEqual(await evaluate("[...document.querySelectorAll('[data-angle]')].map(n=>n.getAttribute('data-entity')).sort()"),areaIds);
+assert.equal(await evaluate(`(()=>{const svg=document.querySelector('#visual>svg');return [...svg.querySelectorAll('[data-angle]')].every(n=>{const point=new DOMPoint(Number(n.getAttribute('x')),Number(n.getAttribute('y')));const expected=point.matrixTransform(svg.getCTM()),actual=point.matrixTransform(n.getCTM());return Math.hypot(actual.x-expected.x,actual.y-expected.y)<1;});})()`),true);
+assert.ok(await evaluate("document.querySelector('#counter').textContent.startsWith('Step 5 ')"));
+console.log('Pythagoras area transfer: 25 stable rigid tiles and correct final transforms');
 await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
 await cdp('Emulation.setDeviceMetricsOverride',{width:768,height:1024,deviceScaleFactor:1,mobile:false});
 await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
-for(const id of ['share-ratio','angles-point','triangle-area','equally-likely','mean','median','read-bar-chart']){
- await evaluate(`(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<8&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`);
+for(const id of ['share-ratio','angles-point','triangle-area','equally-likely','mean','median','read-bar-chart','square-three','cube-two','square-root-25','zero-power','multiply-powers','prime-factors','place-value-ten','substitution','coin-spinner-space','pythagoras-areas','pythagoras-hypotenuse','pythagoras-shorter']){
+ await evaluate(`(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`);
  const bounds=await evaluate(`(()=>{const svg=document.querySelector('#visual>svg'),box=svg.getBoundingClientRect();return [...svg.querySelectorAll('text,.katex-html')].every(n=>{const r=n.getBoundingClientRect();return r.left>=box.left-2&&r.right<=box.right+2&&r.top>=box.top-2&&r.bottom<=box.bottom+2;});})()`);
  assert.equal(bounds,true,`Diagram labels outside canvas: ${id}`);
  const shot=await cdp('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});

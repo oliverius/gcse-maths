@@ -1,4 +1,4 @@
-export const timing = { duration: 650, cancellation: 750 };
+export const timing = { duration: 650, cancellation: 750, rotation: 1100 };
 export const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 async function animate(node, frames, duration) {
   if (!node || reducedMotion() || typeof node.animate !== 'function') return;
@@ -45,7 +45,12 @@ export async function transition(previous, current) {
       const dx=Number(old.getAttribute('x'))-Number(node.getAttribute('x'));
       const dy=Number(old.getAttribute('y'))-Number(node.getAttribute('y'));
       // Opacity uses the destination attribute so crossed-out data stays muted.
-      tasks.push(animate(node,[{transform:`translate(${dx}px, ${dy}px)`},{transform:'translate(0, 0)'}],timing.duration));
+      if(node.hasAttribute('data-angle')&&old.hasAttribute('data-angle')){
+        const oldAngle=Number(old.getAttribute('data-angle'));
+        const angle=oldAngle+((Number(node.getAttribute('data-angle'))-oldAngle+540)%360-180);
+        node.setAttribute('style',`transform-origin:${node.getAttribute('x')}px ${node.getAttribute('y')}px;transform:rotate(${Number(node.getAttribute('data-angle'))}deg)`);
+        tasks.push(animate(node,[{transform:`translate(${dx}px, ${dy}px) rotate(${oldAngle}deg)`},{transform:`translate(0, 0) rotate(${angle}deg)`}],timing.rotation));
+      }else tasks.push(animate(node,[{transform:`translate(${dx}px, ${dy}px)`},{transform:'translate(0, 0)'}],timing.duration));
       const oldPaint=old.querySelectorAll('rect, path, polygon, line');
       const newPaint=node.querySelectorAll('rect, path, polygon, line');
       if(oldPaint.length===newPaint.length)newPaint.forEach((shape,i)=>{

@@ -9,7 +9,7 @@ const areas=await createLoader(async url=>({ok:true,json:async()=>JSON.parse(awa
 const lessons=areas.flatMap(a=>a.lessons.filter(l=>l.available));
 const lesson=id=>lessons.find(l=>l.id===id);
 test('remaining sections contain implemented diagrams, not interactive placeholders',()=>{
-  assert.deepEqual(areas.map(a=>a.lessons.filter(l=>l.available).length),[8,7,4,5,3,5]);
+  assert.deepEqual(areas.map(a=>a.lessons.filter(l=>l.available).length),[15,8,4,8,4,5]);
   for(const area of areas.slice(2))for(const l of area.lessons){
     assert.equal(l.available,true);assert.ok(l.steps.length>=3);
     assert.ok(l.steps.every(s=>s.scene?.description));

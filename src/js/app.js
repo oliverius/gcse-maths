@@ -61,7 +61,7 @@ function notes() {
   byId('references').replaceChildren(...current.curriculum.map(reference));
   byId('tutor-notes').open = false;
   const content = byId('tutor-content'); content.replaceChildren();
-  const fields = [['Learning objective', current.objective], ['Prerequisites', current.prerequisites.join('; ')], ['Observe', current.tutorNotes.observe], ['Watch for', current.tutorNotes.misconception], ['Ask', current.tutorNotes.checkQuestion]];
+  const fields = [['Learning objective', current.objective], ['Prerequisites', current.prerequisites.join('; ')], ['Observe', current.tutorNotes.observe], ['Watch for', current.tutorNotes.misconception], [current.prerequisiteLessonIds ? 'Can you explain why?' : 'Ask', current.tutorNotes.checkQuestion]];
   for (const [label, value] of fields) {
     const paragraph = document.createElement('p'); paragraph.textContent = `${label}: ${value}`; content.append(paragraph);
   }

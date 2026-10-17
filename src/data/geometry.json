@@ -847,6 +847,927 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pythagoras-areas",
+      "title": "Pythagoras: square areas",
+      "label": "Pythagoras: square areas",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": true,
+      "kind": "pythagoras",
+      "initialExpression": "Pythagoras: square areas",
+      "notation": {
+        "latex": "a^2+b^2=c^2",
+        "spoken": "Pythagoras: square areas"
+      },
+      "objective": "Connect the two smaller square areas to the hypotenuse square in a three-four-five example.",
+      "prerequisites": [
+        "Square numbers and square roots; recognise a right angle."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three",
+        "square-root-25"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G6, G20",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Adding the side lengths directly rather than adding their squares.",
+        "checkQuestion": "Why do we compare nine plus sixteen with twenty-five rather than three plus four with five?"
+      },
+      "model": {
+        "a": 3,
+        "b": 4,
+        "c": 5
+      },
+      "steps": [
+        {
+          "title": "Find the right angle and hypotenuse",
+          "left": [
+            {
+              "id": "expression",
+              "text": "side lengths three, four and five",
+              "latex": "3,4,5",
+              "spoken": "side lengths three, four and five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The perpendicular sides are three and four. The opposite, longest side is five: the hypotenuse c.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "a": 3,
+            "b": 4,
+            "c": 5,
+            "squares": [],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. ",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          }
+        },
+        {
+          "title": "Build the first square",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three squared equals nine",
+              "latex": "3^2=9",
+              "spoken": "three squared equals nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The square on the three-unit side has nine unit tiles.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "a": 3,
+            "b": 4,
+            "c": 5,
+            "squares": [
+              "a"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a"
+            ],
+            "unitTiles": true,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9.",
+            "caption": "Unit tiles show areas; outlines keep their original sizes."
+          }
+        },
+        {
+          "title": "Build the second square",
+          "left": [
+            {
+              "id": "expression",
+              "text": "four squared equals sixteen",
+              "latex": "4^2=16",
+              "spoken": "four squared equals sixteen",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The square on the four-unit side has sixteen unit tiles.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "a": 3,
+            "b": 4,
+            "c": 5,
+            "squares": [
+              "a",
+              "b"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b"
+            ],
+            "unitTiles": true,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16.",
+            "caption": "Unit tiles show areas; outlines keep their original sizes."
+          }
+        },
+        {
+          "title": "Build the hypotenuse square",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five squared equals twenty-five",
+              "latex": "5^2=25",
+              "spoken": "five squared equals twenty-five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The square on the five-unit hypotenuse has room for twenty-five unit tiles.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "a": 3,
+            "b": 4,
+            "c": 5,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": true,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16, c: 25.",
+            "caption": "Unit tiles show areas; outlines keep their original sizes."
+          }
+        },
+        {
+          "title": "Compare the same total area",
+          "left": [
+            {
+              "id": "expression",
+              "text": "nine plus sixteen equals twenty-five",
+              "latex": "9+16=25",
+              "spoken": "nine plus sixteen equals twenty-five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Move the nine and sixteen unit tiles into the largest square. They fit without gaps or overlaps; no tile changes size.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "a": 3,
+            "b": 4,
+            "c": 5,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": true,
+            "transfer": true,
+            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16, c: 25.",
+            "caption": "Unit tiles show areas; outlines keep their original sizes."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "State the square-area relationship",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three squared plus four squared equals five squared",
+              "latex": "3^2+4^2=5^2",
+              "spoken": "three squared plus four squared equals five squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Pythagoras relates square areas on a right triangle. This example illustrates the theorem; checking one example is not a general proof.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "a": 3,
+            "b": 4,
+            "c": 5,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": true,
+            "transfer": true,
+            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16, c: 25.",
+            "caption": "Unit tiles show areas; outlines keep their original sizes."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pythagoras-hypotenuse",
+      "title": "Find the hypotenuse",
+      "label": "Find the hypotenuse",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": true,
+      "kind": "pythagoras",
+      "initialExpression": "Find the hypotenuse",
+      "notation": {
+        "latex": "\\text{Hypotenuse }c",
+        "spoken": "Find the hypotenuse"
+      },
+      "objective": "Square perpendicular sides, add square areas, then take a positive root.",
+      "prerequisites": [
+        "Understand square areas on a right triangle and principal square roots."
+      ],
+      "prerequisiteLessonIds": [
+        "square-three",
+        "square-root-25",
+        "pythagoras-areas"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G20",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Stopping at one hundred, or taking the square root before adding areas.",
+        "checkQuestion": "Why is one hundred an area, while ten is a length?"
+      },
+      "model": {
+        "a": 6,
+        "b": 8,
+        "c": 10,
+        "result": 10
+      },
+      "steps": [
+        {
+          "title": "Identify the unknown longest side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a equals six, b equals eight, c unknown",
+              "latex": "a=6,\\ b=8,\\ c=?",
+              "spoken": "a equals six, b equals eight, c unknown",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The unknown c is opposite the marked right angle. It is the hypotenuse.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "a": 6,
+            "b": 8,
+            "c": 10,
+            "squares": [],
+            "knownSides": [
+              "a",
+              "b"
+            ],
+            "knownAreas": [],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. ",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          }
+        },
+        {
+          "title": "Use the square-area relationship",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six squared plus eight squared equals c squared",
+              "latex": "6^2+8^2=c^2",
+              "spoken": "six squared plus eight squared equals c squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "For a right triangle, the two smaller square areas add to the hypotenuse square area.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "a": 6,
+            "b": 8,
+            "c": 10,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b"
+            ],
+            "knownAreas": [],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. ",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          }
+        },
+        {
+          "title": "Square the first shorter side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "thirty-six plus eight squared equals c squared",
+              "latex": "36+8^2=c^2",
+              "spoken": "thirty-six plus eight squared equals c squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Six squared is thirty-six.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "a": 6,
+            "b": 8,
+            "c": 10,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b"
+            ],
+            "knownAreas": [
+              "a"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. Known square areas: a: 36.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Square the other shorter side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "thirty-six plus sixty-four equals c squared",
+              "latex": "36+64=c^2",
+              "spoken": "thirty-six plus sixty-four equals c squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Eight squared is sixty-four.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "a": 6,
+            "b": 8,
+            "c": 10,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b"
+            ],
+            "knownAreas": [
+              "a",
+              "b"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. Known square areas: a: 36, b: 64.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Add the two square areas",
+          "left": [
+            {
+              "id": "expression",
+              "text": "c squared equals one hundred",
+              "latex": "c^2=100",
+              "spoken": "c squared equals one hundred",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Thirty-six plus sixty-four is one hundred. This is an area, not the side length.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "a": 6,
+            "b": 8,
+            "c": 10,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. Known square areas: a: 36, b: 64, c: 100.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Take the positive square root",
+          "left": [
+            {
+              "id": "expression",
+              "text": "c equals the square root of one hundred, which is ten",
+              "latex": "c=\\sqrt{100}=10",
+              "spoken": "c equals the square root of one hundred, which is ten",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The side length is the positive square root of its square area. The hypotenuse is ten units, longer than six or eight.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "a": 6,
+            "b": 8,
+            "c": 10,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse 10. Known square areas: a: 36, b: 64, c: 100.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pythagoras-shorter",
+      "title": "Find a shorter side",
+      "label": "Find a shorter side",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": true,
+      "kind": "pythagoras",
+      "initialExpression": "Find a shorter side",
+      "notation": {
+        "latex": "\\text{Shorter side }a",
+        "spoken": "Find a shorter side"
+      },
+      "objective": "Subtract a known square area from the hypotenuse square before taking a positive root.",
+      "prerequisites": [
+        "Square roots; subtract the same amount from both sides of an equation."
+      ],
+      "prerequisiteLessonIds": [
+        "square-root-25",
+        "pythagoras-areas",
+        "subtract-both"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G20",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Adding twelve squared and thirteen squared when the hypotenuse is already known.",
+        "checkQuestion": "Why does this example need subtraction rather than addition?"
+      },
+      "model": {
+        "a": 5,
+        "b": 12,
+        "c": 13,
+        "result": 5
+      },
+      "steps": [
+        {
+          "title": "The hypotenuse is already known",
+          "left": [
+            {
+              "id": "expression",
+              "text": "b equals twelve, c equals thirteen, a unknown",
+              "latex": "b=12,\\ c=13,\\ a=?",
+              "spoken": "b equals twelve, c equals thirteen, a unknown",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Thirteen is the hypotenuse, opposite the right angle. The unknown a is a shorter side.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [],
+            "knownSides": [
+              "b",
+              "c"
+            ],
+            "knownAreas": [],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. ",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          }
+        },
+        {
+          "title": "Set up the square areas",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a squared plus twelve squared equals thirteen squared",
+              "latex": "a^2+12^2=13^2",
+              "spoken": "a squared plus twelve squared equals thirteen squared",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The two smaller squares together have the same area as the hypotenuse square.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "b",
+              "c"
+            ],
+            "knownAreas": [],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. ",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          }
+        },
+        {
+          "title": "Square the hypotenuse",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a squared plus twelve squared equals one hundred and sixty-nine",
+              "latex": "a^2+12^2=169",
+              "spoken": "a squared plus twelve squared equals one hundred and sixty-nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Thirteen squared is one hundred and sixty-nine.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: c: 169.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Square the known shorter side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a squared plus one hundred and forty-four equals one hundred and sixty-nine",
+              "latex": "a^2+144=169",
+              "spoken": "a squared plus one hundred and forty-four equals one hundred and sixty-nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Twelve squared is one hundred and forty-four.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "b",
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: b: 144, c: 169.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Find the remaining square area",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a squared equals one hundred and sixty-nine minus one hundred and forty-four",
+              "latex": "a^2=169-144",
+              "spoken": "a squared equals one hundred and sixty-nine minus one hundred and forty-four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtract one hundred and forty-four from both sides. The unknown square is the remaining part of the hypotenuse square area.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "b",
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: b: 144, c: 169.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Calculate the difference",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a squared equals twenty-five",
+              "latex": "a^2=25",
+              "spoken": "a squared equals twenty-five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One hundred and sixty-nine minus one hundred and forty-four leaves twenty-five square units.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: a: 25, b: 144, c: 169.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Take the positive square root",
+          "left": [
+            {
+              "id": "expression",
+              "text": "a equals square root of twenty-five, which is five",
+              "latex": "a=\\sqrt{25}=5",
+              "spoken": "a equals square root of twenty-five, which is five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The shorter side is five units. We subtracted because one square area was missing from a known total.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "a": 5,
+            "b": 12,
+            "c": 13,
+            "squares": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownSides": [
+              "a",
+              "b",
+              "c"
+            ],
+            "knownAreas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "unitTiles": false,
+            "transfer": false,
+            "description": "A right triangle with perpendicular sides 5 and 12, and hypotenuse 13. Known square areas: a: 25, b: 144, c: 169.",
+            "caption": "The small corner marker is a right angle: 90 degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     }
   ]
 }

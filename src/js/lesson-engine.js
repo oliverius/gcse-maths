@@ -26,6 +26,7 @@ export function validateLesson(lesson, area) {
   }
   if (!lesson.tutorNotes || !text(lesson.tutorNotes.checkQuestion) || !text(lesson.tutorNotes.misconception) || !text(lesson.tutorNotes.observe)) fail('Missing tutor notes.');
   if (!Array.isArray(lesson.prerequisites) || !lesson.prerequisites.every(text)) fail('Invalid prerequisites.');
+  if(lesson.prerequisiteLessonIds!==undefined&&(!Array.isArray(lesson.prerequisiteLessonIds)||!lesson.prerequisiteLessonIds.every(text)||lesson.prerequisiteLessonIds.includes(lesson.id)))fail('Invalid prerequisite lesson IDs.');
   for (const state of lesson.steps) {
     if (!operations.has(state.operation?.type) || !text(state.title) || !text(state.explanation) || !Array.isArray(state.left) || !Array.isArray(state.right)) fail('Invalid step or unsupported operation.');
     const supported = {

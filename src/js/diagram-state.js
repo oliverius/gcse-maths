@@ -1,11 +1,13 @@
 import { validateNotation } from './notation.js';
+import {learningOperations,validateLearningScene} from './learning-state.js';
 export const diagramOperations = {
   'counter-groups':['show','group','split','distribute','highlight','simplify','replace'],
   'angle-diagram':['show','highlight','replace','simplify'],
   'shape-grid':['show','highlight','partition','simplify'],
   'data-cards':['show','group','highlight','simplify'],
   'bar-chart':['show','highlight','simplify'],
-  'probability-scale':['show','move']
+  'probability-scale':['show','move'],
+  ...learningOperations
 };
 const require = (condition,message) => { if(!condition)throw new Error(message); };
 const finite = value => typeof value==='number'&&Number.isFinite(value);
@@ -15,6 +17,7 @@ export function validateDiagram(lesson,state){
   const s=state.scene;
   require(s&&typeof s==='object'&&typeof s.description==='string'&&s.description.length>0,'Missing diagram description.');
   require(s.caption===undefined||typeof s.caption==='string','Invalid caption.');
+  if(learningOperations[lesson.kind])validateLearningScene(lesson,state);
   if(lesson.kind==='counter-groups'){
     require(Array.isArray(s.groups)&&s.groups.length>=1&&s.groups.length<=5,'Invalid counter groups.');
     const ids=[];

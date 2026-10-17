@@ -18,24 +18,27 @@ Use HTTP rather than `file://`: the app fetches JSON and imports ES modules. Onc
 
 | Subject | Fully implemented |
 | --- | --- |
-| Algebra | `x − 3 = 2`; `x + 3 = 2`; `3x = 12`; `x / 4 = 3`; `2x + 3 = 11`; `3x + 2x = 15`; `3(x + 2)` |
-| Number | `6 × (2 + 3)`; `2 − 5`; `4 + (−3)`; `4 + 3 × 2`; `1/2 = 2/4`; three quarters of 20; 25% of 80; adding sixths |
+| Algebra | `x − 3 = 2`; `x + 3 = 2`; `3x = 12`; `x / 4 = 3`; `2x + 3 = 11`; `3x + 2x = 15`; `3(x + 2)`; substitution into `3x + 2` |
+| Number | `6 × (2 + 3)`; `2 − 5`; `4 + (−3)`; `4 + 3 × 2`; `1/2 = 2/4`; three quarters of 20; 25% of 80; adding sixths; `3²`; `2³`; `√25`; `5⁰`; same-base power multiplication; prime factorisation of 18; `3.4 × 10` |
 | Ratio, Proportion and Rates of Change | Equivalent ratios `2:3 = 4:6`; simplifying `6:9`; sharing 20 in `2:3`; unitary cost (3 items cost £12, find 1 then 5) |
-| Geometry and Measures | Adjacent angles on a straight line; angles around a point; rectangle perimeter; rectangle area; right-triangle area by completing a rectangle |
-| Probability | Equally likely outcomes; complementary events; the probability scale |
+| Geometry and Measures | Adjacent angles on a straight line; angles around a point; rectangle perimeter; rectangle area; right-triangle area by completing a rectangle; Pythagorean square areas; finding a hypotenuse; finding a shorter side |
+| Probability | Equally likely outcomes; complementary events; the probability scale; coin-and-spinner sample space |
 | Statistics | Mean by redistribution; odd-sized median; mode; range; reading a bar chart |
 
 The algebra lessons use balances, equal groups and moving x/unit tiles. Distribution is an expression lesson with no balance; it is deliberately distinct from evaluating numeric brackets. Number-line lessons move one unit per tap. Fraction bars introduce partitions without changing the shaded area.
 
-There are **32 implemented lessons** across the six official areas. Fractions and percentages stay in Number: no duplicated navigation area is needed. All earlier Number and Algebra lessons remain available; the earlier planned entries have been replaced with working lessons. The sidebar is a teaching selection, not a claim of full GCSE coverage.
+There are **44 implemented lessons** across the six official areas. Fractions and percentages stay in Number: no duplicated navigation area is needed. All earlier lessons remain available. The sidebar is a teaching selection, not a claim of full GCSE coverage. See the [Foundation curriculum audit](docs/foundation-curriculum-audit.md) for coverage, gaps, Foundation/Higher distinctions, references and prerequisite dependencies.
+
+Suggested new sequence: **Square numbers → Cube numbers / Square roots → Zero powers / Multiply powers**. Before Pythagoras, teach squares and square roots, then the square-area relationship. The area demonstration preserves 25 unit-tile identities as nine plus sixteen tiles move into the hypotenuse square. The two calculation lessons separately teach addition for an unknown hypotenuse and subtraction for an unknown shorter side. Only positive lengths are returned; checking one 3–4–5 example is not presented as a general proof.
 
 Prioritised future work (not interactive placeholders):
 
-1. Number: decimal place value, a hundred grid, percentage increase/decrease.
-2. Geometry: triangle angle rearrangement, unit conversions, coordinate transformations, map scales and Pythagoras.
-3. Probability: combined-event sample spaces and relative frequency versus theoretical probability.
-4. Statistics: even-sized median, frequency tables to charts and pie charts.
-5. Ratio: linked direct-proportion bars and scale diagrams.
+1. Number: HCF/LCM, wider decimal/fraction operations, further place-value shifts, a hundred grid and percentage changes.
+2. Algebra: sequences, inequalities, coordinates/graphs and gradient/intercept.
+3. Geometry: triangle angle rearrangement, unit conversions, coordinate transformations, map scales and right-triangle trigonometry.
+4. Probability: relative frequency, more sample spaces and probability trees.
+5. Statistics: even-sized median, frequency tables to charts and pie charts.
+6. Ratio: linked direct-proportion bars, rates and scale diagrams.
 
 ## Architecture
 
@@ -53,6 +56,9 @@ src/
   js/renderers.js           renderer dispatch, number lines and fraction bars
   js/diagrams.js            counters, angles, shapes, data cards, charts, probability
   js/diagram-state.js       schema and mathematical invariants for diagram scenes
+  js/learning-diagrams.js   arrays, power patterns, Pythagoras, factors, places, grids
+  js/learning-state.js      validation for those reusable learning scenes
+  js/learning-geometry.js   exact outward-square geometry and prime checking
   js/animations.js          term identity transitions, cancellation, beam movement
   js/presentation.js        native fullscreen and in-page fallback
   js/notation.js            shared KaTeX renderer, spoken labels and term sizing
@@ -73,6 +79,8 @@ Each subject contains `id`, `title`, and `lessons`. Available lessons contain:
 - `initialExpression`, `objective`, `prerequisites` array, and `curriculum` array of `{provider, reference?, title, url}`.
 - `tutorNotes`: `observe`, `misconception`, `checkQuestion`.
 - `steps`: complete deterministic states, not executable transformations.
+
+New lessons also include optional `prerequisiteLessonIds`: stable available lesson IDs, checked for valid references and cycles by tests. Friendly `prerequisites` text remains in the collapsed tutor notes, alongside a **Can you explain why?** question. Dependencies guide the tutor; they do not lock lessons or track progress.
 
 Every step has `title`, `explanation`, optional `detail`, `operation: {type, value?}`, `left` and `right` term arrays, and `balance`. Terms have stable `id`, `text`, `latex`, `spoken`, and `tone` (`original`, `negative`, `operation`). `highlight` contains term IDs; `cancel` identifies opposite terms in the preceding frame. Reuse IDs for the same objects so they move smoothly.
 
@@ -116,6 +124,12 @@ The existing manifest still registers exactly six subject files. New lessons reu
 | `data-cards` | `items: [{id, value}]`, `selected` and `muted` ID arrays. Sorting moves original cards without changing their values. Paired-off median cards are crossed out as well as dimmed. Selected values get a contrasting border and background. |
 | `bar-chart` | Three `categories: [{id, label, value}]`, `active` (null or a category ID), and boolean `guide`. Equally spaced, labelled axis ticks run from zero to six. A dashed guide connects the selected bar's height to its frequency. |
 | `probability-scale` | `probability` between zero and one. A stable marker moves along a proportionally spaced scale with impossible/likely/certain labels and stacked quarter/half fractions. |
+| `tile-array` | Integer `rows`, `columns`, `layers`, `visibleRows`, `visibleLayers`, boolean `edges`, nullable `highlightRow`. Equal tiles build rows/layers; the `model` checks the array matches `base`, `exponent`, `result`. The cube lesson shows two separated 2D layers of unit cubes. |
+| `power-pattern` | Nonzero positive `base`, ordered `exponents`, `visible`. Reveal one more quotient at a time in the decreasing-exponent pattern; the final exponent is zero. |
+| `pythagoras` | Exact integer `a`, `b`, `c`; `squares`, `knownSides`, `knownAreas` ID lists; boolean `unitTiles`, `transfer`. Outward square polygons are computed from the actual side vectors. Unit tiles retain IDs and move/rotate rigidly; unknown numeric labels remain hidden until calculated. |
+| `factor-tree` | Factor `nodes: [{id, value, children}]`, `visible`, `selected`. Each split must multiply back to its parent; cycles, shared children and premature reveals are rejected. Final leaves must be prime. |
+| `place-value` | `digits: [{id, digit, place}]`, `shift` zero or one. Digits move columns, while the decimal boundary remains fixed. Validation checks digit identities and the resulting numeric value. |
+| `outcome-grid` | Two `rows`, three `columns`, `rowNames`/`columnNames` for spoken labels, integer `revealed`, `selected` pair IDs. Each reveal adds one distinct combined outcome. The fair, independent coin/spinner assumptions are stated. |
 
 New lessons may declare a `model` used for invariants and tests: `total` preserves counter value, `ratio` verifies the A/B relationship, and `values` preserves the data-card multiset. Additional numeric dimensions/results document worked examples and are checked in the tests. A counter card may represent one unit, one pound, or a labelled group of twenty: explanations and captions explicitly state its meaning. IDs describe mathematical objects, not their screen positions.
 
@@ -149,6 +163,8 @@ Each available lesson carries its own official reference and the UI displays tha
 
 The new lessons also reference verified AQA subject pages: [Ratio, proportion and rates of change](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.3-ratio-proportion-and-rates-of-change) (R4, R5, R11); [Geometry and measures](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures) (G3, G16, G17); [Probability](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability) (P2, P3, P4, P7); [Statistics](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics) (S2, S4). Fraction operators use N12 and adding sixths uses N2. Rectangle area intentionally carries a general Geometry subject reference rather than an inferred granular code. The tutor can check this general mapping; the other listed codes were checked against the official pages on 17 October 2026. AQA codes are not presented as universal exam-board codes.
 
+The gap-analysis batch adds N6/N7 for powers and roots, A4 for same-base index products, G6/G20 for Pythagoras, N4 for prime decomposition, N2 for place value, A2 for substitution, and P6/P7 for sample spaces. Both AQA Foundation columns are included: integer indices and 2D right-triangle Pythagoras/trigonometry are not Higher-only. The audit cross-checks the [DfE subject-content publication](https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives) and records excluded Higher extensions separately.
+
 Verify any new topic mapping before adding a granular code. If only a high-level official source is verified, omit the code; do not invent one. Planned entries have no fabricated references.
 
 ## Accessibility and presentation
@@ -170,9 +186,9 @@ Tests cover the original three lesson regressions; all available lesson navigati
 
 Notation tests also cover KaTeX fraction/power/root output, MathML, valid notation and spoken labels for all lesson terms, malformed LaTeX, stable cancellation IDs, and agreement between the new LaTeX and every existing balance state's numerical model.
 
-Baseline before extending the remaining sections: **16 tests passed**. Current suite: **25 tests passed**, including ratios/shares, costs, exact sector totals, shape formulas, complements, equal-share invariants, one-counter-at-a-time redistribution, median/mode/range, chart readings, fractional operators, preserved identities, and invalid diagram rejection. The UI navigation test visits all 32 available lessons, including Back/Restart, step bounds and rapid taps.
+Baseline for the gap-analysis batch: **25 tests passed**. Current suite: **34 tests passed**, adding array/exponent arithmetic, prerequisites, exact attached-square geometry, unit-tile conservation, unrevealed unknowns, prime leaves, digit identities and combined-outcome enumeration. The earlier ratio, angle, area, probability, statistics, notation and balance checks remain. The UI navigation test visits all 44 available lessons, including Back/Restart, step bounds and rapid taps.
 
-Headless Edge checks were also run at 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow and controls at least 56px. All **32 lesson sequences (97 forward transitions)** ran at each of the two main iPad orientations, including Back/Restart, rapid taps, fixed control positions within each lesson, notation bounds and plate clearance. Normal-motion tests exercise the original balance/cancellation and each new diagram primitive; reduced-motion tests keep state changes instant. Fallback fullscreen and runtime-error checks pass. Representative new diagrams have screenshots under ignored `temp`. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
+Headless Edge checks use 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow and controls at least 56px. All **44 lesson sequences (145 forward transitions)** run at each main iPad orientation, including Back/Restart, rapid taps, fixed control positions within each lesson, notation bounds and plate clearance. Normal-motion tests exercise the original balance/cancellation and new diagram primitives; reduced-motion tests keep state changes instant. The Pythagoras transfer additionally checks 25 stable IDs and final rotation anchors. Fallback fullscreen and runtime-error checks are included. Representative diagrams have screenshots under ignored `temp`. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
 
 To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed. Set `MATHS_TEST_URL` if your server uses another port. The checks also measure KaTeX bounds and plate clearance at iPad sizes. Native OS fullscreen can stall in headless Windows, so supported-API behaviour is unit tested and native browser entry/exit remains a physical-device check; the browser suite checks both fallback paths.
 
@@ -180,11 +196,11 @@ On an iPad:
 
 1. In portrait, open the menu, expand each area and select a lesson. Check the drawer closes and equations are legible. Rotate to landscape and check the sidebar and navigation controls.
 2. Run both original equations through all five steps. Check ≠ and tilt only during one-sided operations, matched purple terms, cancellation and the explanation of −1.
-3. Try sharing in a ratio, triangle area, equally likely outcomes and mean. Confirm counters and labels move together, highlighted quantities are clear, and each step pauses. Also test the existing bracket, number-line and fraction lessons. Tap Next rapidly, then Back and Restart.
+3. Try square/cube arrays, square roots, the zero-power pattern, all three Pythagoras lessons, decimal place value and the sample-space grid. Check that the 25 area tiles settle into the correct square, the decimal point stays fixed, and each step pauses. Tap Next rapidly, then Back and Restart. Recheck a ratio and a statistics lesson too.
 4. Enter and exit full screen; try the in-page fallback if native full screen is unavailable. The exit button must stay obvious.
 5. Enable Reduce Motion; check instant state changes. Use a keyboard and VoiceOver to check focus and announcements. Open tutor notes and the official reference.
 
-Known limits: this is a focused 32-lesson selection, not complete GCSE coverage. The triangle-area example uses a right triangle; it does not establish all triangle formulas visually. Median currently uses an odd-sized data set, and mode uses a single unambiguous mode. The chart renderer is bounded to the small worked example. New renderer types require code. Phone-sized equations and five-group diagrams are less spacious than on the primary iPad target. Native fullscreen, touch behaviour and VoiceOver still need verification on a physical iPad. The static server is for local development and binds to loopback.
+Known limits: this is a focused 44-lesson selection, not complete GCSE coverage; see the audit for the remaining gaps. Pythagoras calculations currently use integer-root examples; the theorem is not restricted to integer lengths. The 3–4–5 picture is an illustration, not a general proof. The triangle-area example uses a right triangle; it does not establish all triangle formulas visually. Median uses an odd-sized data set; mode has a single unambiguous answer. Charts/grids are bounded to small worked examples. New renderer types require code. Phone layouts are less spacious than the primary iPad target. Native fullscreen, touch behaviour and VoiceOver still need physical iPad verification. The local server binds to loopback.
 
 ## GitHub Pages
 

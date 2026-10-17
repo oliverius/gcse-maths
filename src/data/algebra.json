@@ -2810,6 +2810,560 @@
         "latex": "3\\left(x + 2\\right)",
         "spoken": "3 open bracket x plus 2 close bracket"
       }
+    },
+    {
+      "id": "substitution",
+      "title": "Substitute a value",
+      "label": "Substitute a value",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Substitute a value",
+      "notation": {
+        "latex": "3x+2,\\ x=4",
+        "spoken": "Substitute a value"
+      },
+      "objective": "Replace each x with its given value, then follow operation order.",
+      "prerequisites": [
+        "Read implicit multiplication; multiply before adding."
+      ],
+      "prerequisiteLessonIds": [
+        "multiply-before-add"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "A2",
+          "title": "GCSE Mathematics 8300 — Algebra",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Joining the digits three and four instead of multiplying.",
+        "checkQuestion": "Why does replacing x with four give three times four, not thirty-four?"
+      },
+      "model": {
+        "total": 14,
+        "x": 4,
+        "result": 14
+      },
+      "steps": [
+        {
+          "title": "Use the given value of x",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three x plus two, with x equal to four",
+              "latex": "3x+2,\\quad x=4",
+              "spoken": "three x plus two, with x equal to four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three x means three copies of x. We are given that each x is four.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "x-0",
+                "label": "Copy 1",
+                "items": [
+                  {
+                    "id": "x-card-0",
+                    "value": 4,
+                    "latex": "x",
+                    "spoken": "x equals four"
+                  }
+                ]
+              },
+              {
+                "id": "x-1",
+                "label": "Copy 2",
+                "items": [
+                  {
+                    "id": "x-card-1",
+                    "value": 4,
+                    "latex": "x",
+                    "spoken": "x equals four"
+                  }
+                ]
+              },
+              {
+                "id": "x-2",
+                "label": "Copy 3",
+                "items": [
+                  {
+                    "id": "x-card-2",
+                    "value": 4,
+                    "latex": "x",
+                    "spoken": "x equals four"
+                  }
+                ]
+              },
+              {
+                "id": "constant",
+                "label": "Plus two",
+                "items": [
+                  {
+                    "id": "constant-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "constant-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  }
+                ]
+              }
+            ],
+            "description": "Copy 1: 1 cards. Copy 2: 1 cards. Copy 3: 1 cards. Plus two: 2 cards",
+            "caption": "Given x = 4. Each unit card represents one."
+          }
+        },
+        {
+          "title": "Replace each x with four",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three times four plus two",
+              "latex": "3\\times4+2",
+              "spoken": "three times four plus two",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Replace every x by four. Three copies of four are not the number thirty-four.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "x-0",
+                "label": "Copy 1",
+                "items": [
+                  {
+                    "id": "sub-unit-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "x-1",
+                "label": "Copy 2",
+                "items": [
+                  {
+                    "id": "sub-unit-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "x-2",
+                "label": "Copy 3",
+                "items": [
+                  {
+                    "id": "sub-unit-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sub-unit-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "constant",
+                "label": "Plus two",
+                "items": [
+                  {
+                    "id": "constant-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "constant-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  }
+                ]
+              }
+            ],
+            "description": "Copy 1: 4 cards. Copy 2: 4 cards. Copy 3: 4 cards. Plus two: 2 cards",
+            "caption": "Given x = 4. Each unit card represents one."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Multiply before adding",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twelve plus two",
+              "latex": "12+2",
+              "spoken": "twelve plus two",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three groups of four give twelve. Keep the added two separate.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "product",
+                "label": "Three fours make 12",
+                "items": [
+                  {
+                    "id": "sub-unit-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  }
+                ]
+              },
+              {
+                "id": "constant",
+                "label": "Plus two",
+                "items": [
+                  {
+                    "id": "constant-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "constant-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  }
+                ]
+              }
+            ],
+            "description": "Three fours make 12: 12 cards. Plus two: 2 cards",
+            "caption": "Given x = 4. Each unit card represents one."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Now add the two",
+          "left": [
+            {
+              "id": "expression",
+              "text": "fourteen",
+              "latex": "14",
+              "spoken": "fourteen",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Twelve plus two is fourteen. That is the value of the expression when x is four.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "result",
+                "label": "Fourteen units",
+                "items": [
+                  {
+                    "id": "sub-unit-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "sub-unit-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "constant-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  },
+                  {
+                    "id": "constant-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "one unit",
+                    "tone": "original"
+                  }
+                ]
+              }
+            ],
+            "description": "Fourteen units: 14 cards",
+            "caption": "Given x = 4. Each unit card represents one."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     }
   ]
 }
