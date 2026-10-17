@@ -118,6 +118,12 @@ function format(value, style = 'number') {
       return value < 0 ? `minus ${-value}` : String(value);
     case 'words':
       return numberWords(value);
+    case 'wordsSpaced':
+      return numberWords(value).replaceAll('-', ' ');
+    case 'WordsSpaced': {
+      const text = format(value, 'wordsSpaced');
+      return text[0].toUpperCase() + text.slice(1);
+    }
     case 'Words': {
       const text = numberWords(value);
       return text[0].toUpperCase() + text.slice(1);
@@ -218,8 +224,17 @@ function expand(node, values) {
       const { test, then: yes, else: no } = node.$if;
       return expand(condition(test, values) ? yes : no, values);
     }
+    if (own(node, '$join')) {
+      const { items, separator } = node.$join;
+      if (!Array.isArray(items) || typeof separator !== 'string')
+        throw new Error('Invalid lesson text list.');
+      return expand(items, values).join(separator);
+    }
     return Object.fromEntries(
-      Object.entries(node).map(([key, value]) => [key, expand(value, values)]),
+      Object.entries(node).map(([key, value]) => [
+        expand(key, values),
+        expand(value, values),
+      ]),
     );
   }
   return node;

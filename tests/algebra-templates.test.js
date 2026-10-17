@@ -12,9 +12,9 @@ const readJSON = async (name) =>
   JSON.parse(
     await readFile(new URL(`../src/data/${name}`, import.meta.url), 'utf8'),
   );
-const templates = (await readJSON('algebra.json')).lessons;
+const templates = (await readJSON('lessons/algebra.json')).lessons;
 const examples = validateAlgebraExamples(
-  await readJSON('algebra-examples.json'),
+  await readJSON('examples/algebra.json'),
   templates,
 );
 const template = (id) => templates.find((candidate) => candidate.id === id);
@@ -186,7 +186,7 @@ test('additional curated examples keep one lesson entry and preserve its first e
   const areas = await createLoader(async (url) => ({
     ok: true,
     json: async () =>
-      url.href.endsWith('/algebra-examples.json')
+      url.href.endsWith('/examples/algebra.json')
         ? collection
         : JSON.parse(await readFile(url, 'utf8')),
   })).load();
@@ -200,7 +200,7 @@ test('additional curated examples keep one lesson entry and preserve its first e
 test('missing algebra examples isolate algebra while other subjects still load', async (t) => {
   t.mock.method(console, 'error', () => {});
   const areas = await createLoader(async (url) => {
-    if (url.href.endsWith('/algebra-examples.json'))
+    if (url.href.endsWith('/examples/algebra.json'))
       throw new Error('Missing example file');
     return {
       ok: true,

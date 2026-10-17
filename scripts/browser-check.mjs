@@ -413,7 +413,7 @@ for (const [width, height] of [
     const pause = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     let lessons = 0, states = 0;
     for (const [subject, examples] of Object.entries(cases)) {
-      const templates = (await (await fetch('./data/' + subject + '.json')).json()).lessons;
+      const templates = (await (await fetch('./data/lessons/' + subject + '.json')).json()).lessons;
       for (const [id, values] of Object.entries(examples)) {
         const lesson = instantiateLesson(templates.find(template => template.id === id), { id: id + '-2', values });
         for (const state of lesson.steps) {
@@ -437,8 +437,14 @@ for (const [width, height] of [
     }
     return { lessons, states };
   })()`);
-  assert.equal(result.lessons, 19);
-  console.log(`Alternative Number/Ratio templates ${width}×${height}`, result);
+  assert.equal(
+    result.lessons,
+    Object.values(templateCases).reduce(
+      (sum, cases) => sum + Object.keys(cases).length,
+      0,
+    ),
+  );
+  console.log(`Alternative subject templates ${width}×${height}`, result);
 }
 assert.deepEqual(errors, []);
 await cdp('Browser.close');

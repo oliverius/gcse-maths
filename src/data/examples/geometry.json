@@ -1,0 +1,99 @@
+{
+  "id": "geometry",
+  "lessons": [
+    {
+      "template": "straight-line",
+      "examples": [
+        {
+          "id": "straight-line-1",
+          "values": {
+            "angle": 110
+          }
+        }
+      ]
+    },
+    {
+      "template": "rectangle-area",
+      "examples": [
+        {
+          "id": "rectangle-area-1",
+          "values": {
+            "width": 5,
+            "height": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "angles-point",
+      "examples": [
+        {
+          "id": "angles-point-1",
+          "values": {
+            "angle": 140
+          }
+        }
+      ]
+    },
+    {
+      "template": "rectangle-perimeter",
+      "examples": [
+        {
+          "id": "rectangle-perimeter-1",
+          "values": {
+            "width": 6,
+            "height": 4
+          }
+        }
+      ]
+    },
+    {
+      "template": "triangle-area",
+      "examples": [
+        {
+          "id": "triangle-area-1",
+          "values": {
+            "base": 6,
+            "height": 4
+          }
+        }
+      ]
+    },
+    {
+      "template": "pythagoras-areas",
+      "examples": [
+        {
+          "id": "pythagoras-areas-1",
+          "values": {
+            "a": 3,
+            "b": 4
+          }
+        }
+      ]
+    },
+    {
+      "template": "pythagoras-hypotenuse",
+      "examples": [
+        {
+          "id": "pythagoras-hypotenuse-1",
+          "values": {
+            "a": 6,
+            "b": 8
+          }
+        }
+      ]
+    },
+    {
+      "template": "pythagoras-shorter",
+      "examples": [
+        {
+          "id": "pythagoras-shorter-1",
+          "values": {
+            "b": 12,
+            "c": 13
+          }
+        }
+      ]
+    }
+  ]
+}

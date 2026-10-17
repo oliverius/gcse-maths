@@ -1,0 +1,1452 @@
+{
+  "id": "probability",
+  "title": "Probability",
+  "lessons": [
+    {
+      "id": "equally-likely",
+      "title": "Equally likely outcomes",
+      "label": "Equally likely outcomes",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Equally likely outcomes",
+      "notation": {
+        "latex": "P(\\text{blue})",
+        "spoken": "Equally likely outcomes"
+      },
+      "objective": "Count equally likely favourable outcomes out of all possible outcomes.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P2, P7",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Dividing by only the unwanted outcomes rather than all outcomes.",
+        "checkQuestion": "Why is the denominator {{total|words}} rather than {{gold|words}}?"
+      },
+      "model": {
+        "favourable": {
+          "$value": "blue"
+        },
+        "total": {
+          "$value": "total"
+        }
+      },
+      "steps": [
+        {
+          "title": "{{total|Words}} equally likely counters",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{total|words}} outcomes",
+              "latex": "{{total}}\\text{ outcomes}",
+              "spoken": "{{total|words}} outcomes",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Mix {{total|words}} same-sized counters. Choose one without looking: each counter is equally likely.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "description": "{{blue|Words}} identical counter{{blue|s}} marked B for blue and {{gold|words}} marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely.",
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "blue",
+                      "as": "i",
+                      "item": {
+                        "id": "blue-{{i}}",
+                        "value": 1,
+                        "latex": "\\mathrm{B}",
+                        "spoken": "blue counter",
+                        "tone": "original",
+                        "highlight": false,
+                        "category": "blue",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "gold",
+                      "as": "j",
+                      "item": {
+                        "id": "gold-{{j}}",
+                        "value": 1,
+                        "latex": "\\mathrm{G}",
+                        "spoken": "gold counter",
+                        "tone": "operation",
+                        "highlight": false,
+                        "category": "gold",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "title": "Count the blue outcomes",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{blue|words}} blue out of {{total|words}}",
+              "latex": "{{blue}}\\text{ blue out of }{{total}}",
+              "spoken": "{{blue|words}} blue out of {{total|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "equal": [
+                  "blue",
+                  1
+                ]
+              },
+              "then": "One of the {{total|words}} counters is blue. This is the favourable outcome for blue.",
+              "else": "{{blue|Words}} of the {{total|words}} counters are blue. These are the favourable outcomes for blue."
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "description": "{{blue|Words}} identical counter{{blue|s}} marked B for blue and {{gold|words}} marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely.",
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "blue",
+                      "as": "i",
+                      "item": {
+                        "id": "blue-{{i}}",
+                        "value": 1,
+                        "latex": "\\mathrm{B}",
+                        "spoken": "blue counter",
+                        "tone": "original",
+                        "highlight": true,
+                        "category": "blue",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "gold",
+                      "as": "j",
+                      "item": {
+                        "id": "gold-{{j}}",
+                        "value": 1,
+                        "latex": "\\mathrm{G}",
+                        "spoken": "gold counter",
+                        "tone": "operation",
+                        "highlight": false,
+                        "category": "gold",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Write favourable over total",
+          "left": [
+            {
+              "id": "expression",
+              "text": {
+                "$join": {
+                  "items": [
+                    "probability of blue equals ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "blue",
+                            1
+                          ]
+                        },
+                        "then": "{{blue|words}} {{total|fraction}}",
+                        "else": "{{blue|words}} {{total|fractions}}"
+                      }
+                    }
+                  ],
+                  "separator": ""
+                }
+              },
+              "latex": "P(\\text{blue})=\\frac{{{blue}}}{{{total}}}",
+              "spoken": {
+                "$join": {
+                  "items": [
+                    "probability of blue equals ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "blue",
+                            1
+                          ]
+                        },
+                        "then": "{{blue|words}} {{total|fraction}}",
+                        "else": "{{blue|words}} {{total|fractions}}"
+                      }
+                    }
+                  ],
+                  "separator": ""
+                }
+              },
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put the number of blue counters over the total number of counters.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "description": "{{blue|Words}} identical counter{{blue|s}} marked B for blue and {{gold|words}} marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely.",
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "blue",
+                      "as": "i",
+                      "item": {
+                        "id": "blue-{{i}}",
+                        "value": 1,
+                        "latex": "\\mathrm{B}",
+                        "spoken": "blue counter",
+                        "tone": "original",
+                        "highlight": true,
+                        "category": "blue",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "gold",
+                      "as": "j",
+                      "item": {
+                        "id": "gold-{{j}}",
+                        "value": 1,
+                        "latex": "\\mathrm{G}",
+                        "spoken": "gold counter",
+                        "tone": "operation",
+                        "highlight": false,
+                        "category": "gold",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "blue": {
+          "min": 1,
+          "max": 5
+        },
+        "gold": {
+          "min": 1,
+          "max": 5
+        }
+      },
+      "derived": {
+        "total": {
+          "add": [
+            "blue",
+            "gold"
+          ]
+        }
+      }
+    },
+    {
+      "id": "complement",
+      "title": "The complementary event",
+      "label": "The complementary event",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "The complementary event",
+      "notation": {
+        "latex": "P(\\text{not blue})",
+        "spoken": "The complementary event"
+      },
+      "objective": "See that an event and its complement use every outcome exactly once.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P4",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Forgetting that the complement includes every other possible outcome.",
+        "checkQuestion": "Could one counter be both blue and not blue?"
+      },
+      "model": {
+        "favourable": {
+          "$value": "blue"
+        },
+        "total": {
+          "$value": "total"
+        },
+        "complement": {
+          "$value": "gold"
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with the blue event",
+          "left": [
+            {
+              "id": "expression",
+              "text": {
+                "$join": {
+                  "items": [
+                    "probability of blue equals ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "blue",
+                            1
+                          ]
+                        },
+                        "then": "{{blue|words}} {{total|fraction}}",
+                        "else": "{{blue|words}} {{total|fractions}}"
+                      }
+                    }
+                  ],
+                  "separator": ""
+                }
+              },
+              "latex": "P(\\text{blue})=\\frac{{{blue}}}{{{total}}}",
+              "spoken": {
+                "$join": {
+                  "items": [
+                    "probability of blue equals ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "blue",
+                            1
+                          ]
+                        },
+                        "then": "{{blue|words}} {{total|fraction}}",
+                        "else": "{{blue|words}} {{total|fractions}}"
+                      }
+                    }
+                  ],
+                  "separator": ""
+                }
+              },
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Blue accounts for {{blue|words}} of the {{total|words}} equally likely outcomes.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "description": "{{blue|Words}} identical counter{{blue|s}} marked B for blue and {{gold|words}} marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely.",
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "blue",
+                      "as": "i",
+                      "item": {
+                        "id": "blue-{{i}}",
+                        "value": 1,
+                        "latex": "\\mathrm{B}",
+                        "spoken": "blue counter",
+                        "tone": "original",
+                        "highlight": true,
+                        "category": "blue",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "gold",
+                      "as": "j",
+                      "item": {
+                        "id": "gold-{{j}}",
+                        "value": 1,
+                        "latex": "\\mathrm{G}",
+                        "spoken": "gold counter",
+                        "tone": "operation",
+                        "highlight": false,
+                        "category": "gold",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "title": "Look at everything that is not blue",
+          "left": [
+            {
+              "id": "expression",
+              "text": {
+                "$join": {
+                  "items": [
+                    "probability of not blue equals ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "gold",
+                            1
+                          ]
+                        },
+                        "then": "{{gold|words}} {{total|fraction}}",
+                        "else": "{{gold|words}} {{total|fractions}}"
+                      }
+                    }
+                  ],
+                  "separator": ""
+                }
+              },
+              "latex": "P(\\text{not blue})=\\frac{{{gold}}}{{{total}}}",
+              "spoken": {
+                "$join": {
+                  "items": [
+                    "probability of not blue equals ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "gold",
+                            1
+                          ]
+                        },
+                        "then": "{{gold|words}} {{total|fraction}}",
+                        "else": "{{gold|words}} {{total|fractions}}"
+                      }
+                    }
+                  ],
+                  "separator": ""
+                }
+              },
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "equal": [
+                  "gold",
+                  1
+                ]
+              },
+              "then": "Only one counter is not blue. Every counter is either blue or not blue.",
+              "else": "{{gold|Words}} counters are not blue. Every counter is either blue or not blue."
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "description": "{{blue|Words}} identical counter{{blue|s}} marked B for blue and {{gold|words}} marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely.",
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "blue",
+                      "as": "i",
+                      "item": {
+                        "id": "blue-{{i}}",
+                        "value": 1,
+                        "latex": "\\mathrm{B}",
+                        "spoken": "blue counter",
+                        "tone": "original",
+                        "highlight": false,
+                        "category": "blue",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "gold",
+                      "as": "j",
+                      "item": {
+                        "id": "gold-{{j}}",
+                        "value": 1,
+                        "latex": "\\mathrm{G}",
+                        "spoken": "gold counter",
+                        "tone": "operation",
+                        "highlight": true,
+                        "category": "gold",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "The probabilities make one whole",
+          "left": [
+            {
+              "id": "expression",
+              "text": {
+                "$join": {
+                  "items": [
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "blue",
+                            1
+                          ]
+                        },
+                        "then": "{{blue|words}} {{total|fraction}}",
+                        "else": "{{blue|words}} {{total|fractions}}"
+                      }
+                    },
+                    " plus ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "gold",
+                            1
+                          ]
+                        },
+                        "then": "{{gold|words}} {{total|fraction}}",
+                        "else": "{{gold|words}} {{total|fractions}}"
+                      }
+                    },
+                    " equals one"
+                  ],
+                  "separator": ""
+                }
+              },
+              "latex": "\\frac{{{blue}}}{{{total}}}+\\frac{{{gold}}}{{{total}}}=1",
+              "spoken": {
+                "$join": {
+                  "items": [
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "blue",
+                            1
+                          ]
+                        },
+                        "then": "{{blue|words}} {{total|fraction}}",
+                        "else": "{{blue|words}} {{total|fractions}}"
+                      }
+                    },
+                    " plus ",
+                    {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "gold",
+                            1
+                          ]
+                        },
+                        "then": "{{gold|words}} {{total|fraction}}",
+                        "else": "{{gold|words}} {{total|fractions}}"
+                      }
+                    },
+                    " equals one"
+                  ],
+                  "separator": ""
+                }
+              },
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Blue and not blue never overlap, and together they include every outcome.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "description": "{{blue|Words}} identical counter{{blue|s}} marked B for blue and {{gold|words}} marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely.",
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "blue",
+                      "as": "i",
+                      "item": {
+                        "id": "blue-{{i}}",
+                        "value": 1,
+                        "latex": "\\mathrm{B}",
+                        "spoken": "blue counter",
+                        "tone": "original",
+                        "highlight": false,
+                        "category": "blue",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "gold",
+                      "as": "j",
+                      "item": {
+                        "id": "gold-{{j}}",
+                        "value": 1,
+                        "latex": "\\mathrm{G}",
+                        "spoken": "gold counter",
+                        "tone": "operation",
+                        "highlight": false,
+                        "category": "gold",
+                        "shape": "circle"
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "blue": {
+          "min": 1,
+          "max": 5
+        },
+        "gold": {
+          "min": 1,
+          "max": 5
+        }
+      },
+      "derived": {
+        "total": {
+          "add": [
+            "blue",
+            "gold"
+          ]
+        }
+      }
+    },
+    {
+      "id": "probability-scale",
+      "title": "Probability scale",
+      "label": "Probability scale",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": true,
+      "kind": "probability-scale",
+      "initialExpression": "Probability scale",
+      "notation": {
+        "latex": "0\\leq P\\leq1",
+        "spoken": "Probability scale"
+      },
+      "objective": "Locate impossible, unlikely, even-chance, likely and certain events on a zero-to-one scale.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P3",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Likely means certain, or unlikely means impossible.",
+        "checkQuestion": "What is the difference between likely and certain?"
+      },
+      "model": {},
+      "steps": [
+        {
+          "title": "Impossible",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Impossible",
+              "latex": "0",
+              "spoken": "Impossible",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are no pink counters in a bag containing only blue and gold counters.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "probability": 0,
+            "description": "The marker is at probability 0: impossible."
+          }
+        },
+        {
+          "title": "Unlikely",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Unlikely",
+              "latex": "\\frac{{{gold}}}{{{total}}}",
+              "spoken": "Unlikely",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{gold|Words}} gold counter{{gold|s}} among {{total|words}} equally likely counters give{{gold|verbS}} a {{gold|words}}-in-{{total|words}} chance.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": {
+              "$value": "low"
+            },
+            "description": "The marker is at probability {{low}}: unlikely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Even chance",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Even chance",
+              "latex": "\\frac{1}{2}",
+              "spoken": "Even chance",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A fair coin has two equally likely sides. Heads has an even chance.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": 0.5,
+            "description": "The marker is at probability 0.5: even chance."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Likely",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Likely",
+              "latex": "\\frac{{{blue}}}{{{total}}}",
+              "spoken": "Likely",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{blue|Words}} blue counter{{blue|s}} among {{total|words}} equally likely counters give{{blue|verbS}} a {{blue|words}}-in-{{total|words}} chance.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": {
+              "$value": "high"
+            },
+            "description": "The marker is at probability {{high}}: likely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Certain",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Certain",
+              "latex": "1",
+              "spoken": "Certain",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A bag containing only blue and gold counters must give blue or gold.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": 1,
+            "description": "The marker is at probability 1: certain."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "blue": {
+          "min": 2,
+          "max": 5
+        },
+        "gold": {
+          "min": 1,
+          "max": 4
+        }
+      },
+      "derived": {
+        "total": {
+          "add": [
+            "blue",
+            "gold"
+          ]
+        },
+        "low": {
+          "divide": [
+            "gold",
+            {
+              "add": [
+                "blue",
+                "gold"
+              ]
+            }
+          ]
+        },
+        "high": {
+          "divide": [
+            "blue",
+            {
+              "add": [
+                "blue",
+                "gold"
+              ]
+            }
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "gold",
+              "blue"
+            ]
+          },
+          "message": "Keep gold unlikely and blue likely."
+        }
+      ]
+    },
+    {
+      "id": "coin-spinner-space",
+      "title": "Combined sample spaces",
+      "label": "Combined sample spaces",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": true,
+      "kind": "outcome-grid",
+      "initialExpression": "Combined sample spaces",
+      "notation": {
+        "latex": "\\text{Coin and spinner}",
+        "spoken": "Combined sample spaces"
+      },
+      "objective": "List all pairs systematically before finding a combined-event probability.",
+      "prerequisites": [
+        "Equally likely outcomes and fractions."
+      ],
+      "prerequisiteLessonIds": [
+        "equally-likely"
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P6, P7",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Let the student describe the visible change before selecting Next.",
+        "misconception": "Adding two and three instead of counting pairs, or forgetting an outcome.",
+        "checkQuestion": "Why is heads and {{target|words}} one outcome rather than two outcomes?"
+      },
+      "model": {
+        "total": 6,
+        "favourable": 1,
+        "result": 0.16666666666666666
+      },
+      "steps": [
+        {
+          "title": "Keep track of both choices",
+          "left": [
+            {
+              "id": "expression",
+              "text": "heads or tails, and {{first|words}}, {{second|words}} or {{third|words}}",
+              "latex": "\\{H,T\\}\\text{ and }\\{{{first}},{{second}},{{third}}\\}",
+              "spoken": "heads or tails, and {{first|words}}, {{second|words}} or {{third|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Toss a fair coin and spin a fair three-section spinner. Record the coin result and the spinner number together.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 0,
+            "selected": [],
+            "description": "0 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          }
+        },
+        {
+          "title": "Record heads and {{first}}",
+          "left": [
+            {
+              "id": "expression",
+              "text": "heads and {{first}}",
+              "latex": "(H,{{first}})",
+              "spoken": "heads and {{first}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add this pair to the grid. It is one combined outcome.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 1,
+            "selected": [],
+            "description": "1 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Record heads and {{second}}",
+          "left": [
+            {
+              "id": "expression",
+              "text": "heads and {{second}}",
+              "latex": "(H,{{second}})",
+              "spoken": "heads and {{second}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add this pair to the grid. It is one combined outcome.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 2,
+            "selected": [],
+            "description": "2 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Record heads and {{third}}",
+          "left": [
+            {
+              "id": "expression",
+              "text": "heads and {{third}}",
+              "latex": "(H,{{third}})",
+              "spoken": "heads and {{third}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add this pair to the grid. It is one combined outcome.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 3,
+            "selected": [],
+            "description": "3 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Record tails and {{first}}",
+          "left": [
+            {
+              "id": "expression",
+              "text": "tails and {{first}}",
+              "latex": "(T,{{first}})",
+              "spoken": "tails and {{first}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add this pair to the grid. It is one combined outcome.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 4,
+            "selected": [],
+            "description": "4 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Record tails and {{second}}",
+          "left": [
+            {
+              "id": "expression",
+              "text": "tails and {{second}}",
+              "latex": "(T,{{second}})",
+              "spoken": "tails and {{second}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add this pair to the grid. It is one combined outcome.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 5,
+            "selected": [],
+            "description": "5 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Record tails and {{third}}",
+          "left": [
+            {
+              "id": "expression",
+              "text": "tails and {{third}}",
+              "latex": "(T,{{third}})",
+              "spoken": "tails and {{third}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add this pair to the grid. It is one combined outcome.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 6,
+            "selected": [],
+            "description": "6 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Count every distinct pair",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two times three equals six",
+              "latex": "2\\times3=6",
+              "spoken": "two times three equals six",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are three spinner results for heads and three for tails: six equally likely pairs.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 6,
+            "selected": [],
+            "description": "6 of six coin-and-spinner pairs are visible. ",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          }
+        },
+        {
+          "title": "Select one combined outcome",
+          "left": [
+            {
+              "id": "expression",
+              "text": "probability of heads and {{target|words}} equals one sixth",
+              "latex": "P(H,{{target}})=\\frac{1}{6}",
+              "spoken": "probability of heads and {{target|words}} equals one sixth",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Heads and {{target|words}} is one of the six equally likely pairs. The fraction is one over six.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "rows": [
+              "H",
+              "T"
+            ],
+            "columns": [
+              "{{first}}",
+              "{{second}}",
+              "{{third}}"
+            ],
+            "rowNames": {
+              "H": "heads",
+              "T": "tails"
+            },
+            "columnNames": {
+              "{{first}}": "spinner {{first|words}}",
+              "{{second}}": "spinner {{second|words}}",
+              "{{third}}": "spinner {{third|words}}"
+            },
+            "revealed": 6,
+            "selected": [
+              "H-{{target}}"
+            ],
+            "description": "6 of six coin-and-spinner pairs are visible. Heads and {{target|words}} is selected.",
+            "caption": "Fair coin and fair three-section spinner; choices independent."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "first": {
+          "min": 1,
+          "max": 7
+        },
+        "target": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "derived": {
+        "second": {
+          "add": [
+            "first",
+            1
+          ]
+        },
+        "third": {
+          "add": [
+            "first",
+            2
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              "first",
+              "target"
+            ]
+          },
+          "message": "The selected spinner outcome must exist."
+        },
+        {
+          "test": {
+            "atMost": [
+              "target",
+              "third"
+            ]
+          },
+          "message": "The selected spinner outcome must exist."
+        }
+      ]
+    }
+  ]
+}

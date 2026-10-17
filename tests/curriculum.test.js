@@ -38,21 +38,22 @@ test('subject files are cached and all URLs retain a repository subpath', async 
   const requests = [];
   const loader = createLoader(async (url) => {
     requests.push(url.pathname);
-    const file = url.pathname.split('/').at(-1);
+    const file = url.pathname.split('/data/').at(-1);
     return fetchJSON(new URL(`../src/data/${file}`, import.meta.url));
   }, new URL('https://example.com/gcse-maths/data/manifest.json'));
   await loader.load();
   await loader.load();
-  assert.equal(requests.length, 10);
+  assert.equal(requests.length, 13);
   assert.ok(requests.every((url) => url.startsWith('/gcse-maths/data/')));
 });
 test('invalid JSON file, invalid lesson, and duplicate ID are isolated', async (t) => {
   const diagnostic = t.mock.method(console, 'error', () => {});
   const loader = createLoader(async (url) => {
-    if (url.href.endsWith('/geometry.json')) throw new Error('Invalid JSON');
+    if (url.href.endsWith('/lessons/geometry.json'))
+      throw new Error('Invalid JSON');
     const result = await fetchJSON(url);
     const data = await result.json();
-    if (url.href.endsWith('/algebra.json')) {
+    if (url.href.endsWith('/lessons/algebra.json')) {
       data.lessons.push({ ...data.lessons[0], id: 'broken', steps: [] });
       data.lessons.push(data.lessons[0]);
     }

@@ -1,25 +1,159 @@
 {
   "number": {
-    "brackets": { "a": 4, "b": 1, "c": 2 },
-    "subtract-five": { "a": 3, "b": 4 },
-    "add-negative": { "a": 2, "b": 4 },
-    "multiply-before-add": { "a": 3, "b": 2, "c": 4 },
-    "equivalent-halves": { "scale": 3 },
-    "fraction-amount": { "numerator": 2, "denominator": 3, "total": 12 },
-    "percentage-amount": { "total": 40 },
-    "add-sixths": { "b": 3 },
-    "square-three": { "base": 4 },
-    "cube-two": { "base": 3 },
-    "square-root-25": { "base": 4 },
-    "zero-power": { "base": 3 },
-    "multiply-powers": { "base": 3 },
-    "prime-factors": { "p": 3, "q": 2 },
-    "place-value-ten": { "a": 2, "b": 5 }
+    "brackets": {
+      "a": 4,
+      "b": 1,
+      "c": 2
+    },
+    "subtract-five": {
+      "a": 3,
+      "b": 4
+    },
+    "add-negative": {
+      "a": 2,
+      "b": 4
+    },
+    "multiply-before-add": {
+      "a": 3,
+      "b": 2,
+      "c": 4
+    },
+    "equivalent-halves": {
+      "scale": 3
+    },
+    "fraction-amount": {
+      "numerator": 2,
+      "denominator": 3,
+      "total": 12
+    },
+    "percentage-amount": {
+      "total": 40
+    },
+    "add-sixths": {
+      "b": 3
+    },
+    "square-three": {
+      "base": 4
+    },
+    "cube-two": {
+      "base": 3
+    },
+    "square-root-25": {
+      "base": 4
+    },
+    "zero-power": {
+      "base": 3
+    },
+    "multiply-powers": {
+      "base": 3
+    },
+    "prime-factors": {
+      "p": 3,
+      "q": 2
+    },
+    "place-value-ten": {
+      "a": 2,
+      "b": 5
+    }
   },
   "ratio": {
-    "share-ratio": { "a": 1, "b": 2, "total": 12 },
-    "equivalent-ratio": { "a": 3, "b": 4 },
-    "simplify-ratio": { "a": 4, "b": 6 },
-    "unitary-cost": { "items": 2, "cost": 6, "wanted": 3 }
+    "share-ratio": {
+      "a": 1,
+      "b": 2,
+      "total": 12
+    },
+    "equivalent-ratio": {
+      "a": 3,
+      "b": 4
+    },
+    "simplify-ratio": {
+      "a": 4,
+      "b": 6
+    },
+    "unitary-cost": {
+      "items": 2,
+      "cost": 6,
+      "wanted": 3
+    }
+  },
+  "geometry": {
+    "straight-line": {
+      "angle": 70
+    },
+    "rectangle-area": {
+      "width": 4,
+      "height": 2
+    },
+    "angles-point": {
+      "angle": 100
+    },
+    "rectangle-perimeter": {
+      "width": 5,
+      "height": 3
+    },
+    "triangle-area": {
+      "base": 4,
+      "height": 3
+    },
+    "pythagoras-areas": {
+      "a": 4,
+      "b": 3
+    },
+    "pythagoras-hypotenuse": {
+      "a": 5,
+      "b": 12
+    },
+    "pythagoras-shorter": {
+      "b": 4,
+      "c": 5
+    }
+  },
+  "probability": {
+    "equally-likely": {
+      "blue": 2,
+      "gold": 3
+    },
+    "complement": {
+      "blue": 2,
+      "gold": 3
+    },
+    "probability-scale": {
+      "blue": 4,
+      "gold": 1
+    },
+    "coin-spinner-space": {
+      "first": 2,
+      "target": 4
+    }
+  },
+  "statistics": {
+    "mean": {
+      "mean": 5,
+      "distance": 1
+    },
+    "median": {
+      "a": 1,
+      "b": 3,
+      "c": 6,
+      "d": 8,
+      "e": 10
+    },
+    "mode": {
+      "low": 1,
+      "mode": 3,
+      "high": 6
+    },
+    "range": {
+      "min": 2,
+      "b": 4,
+      "c": 7,
+      "d": 9,
+      "max": 13
+    },
+    "read-bar-chart": {
+      "cats": 4,
+      "dogs": 3,
+      "fish": 2
+    }
   }
 }

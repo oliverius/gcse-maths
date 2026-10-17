@@ -16,12 +16,13 @@ const alternatives = await readJSON('./fixtures/template-cases.json');
 const templates = new Map();
 const examples = new Map();
 for (const subject of ['number', 'ratio']) {
-  const entries = (await readJSON(`../src/data/${subject}.json`)).lessons;
+  const entries = (await readJSON(`../src/data/lessons/${subject}.json`))
+    .lessons;
   templates.set(subject, entries);
   examples.set(
     subject,
     validateExamples(
-      await readJSON(`../src/data/${subject}-examples.json`),
+      await readJSON(`../src/data/examples/${subject}.json`),
       entries,
       subject,
     ),
@@ -105,7 +106,9 @@ test('all 19 Number and Ratio templates reproduce their complete original exampl
 });
 
 test('every template generates a different simple example without unresolved parameters', () => {
-  for (const [subject, cases] of Object.entries(alternatives))
+  for (const [subject, cases] of Object.entries(alternatives).filter(
+    ([subject]) => ['number', 'ratio'].includes(subject),
+  ))
     for (const [id, values] of Object.entries(cases)) {
       const before = structuredClone(find(id));
       const lesson = make(id, values);
@@ -341,12 +344,12 @@ test('Number and Ratio examples load under project subpaths, keep their defaults
     return {
       ok: true,
       json: async () =>
-        readJSON(`../src/data/${url.pathname.split('/').at(-1)}`),
+        readJSON(`../src/data/${url.pathname.split('/data/').at(-1)}`),
     };
   }, new URL('https://example.com/maths/data/manifest.json'));
   const areas = await loader.load();
   await loader.load();
-  assert.equal(requests.length, 10);
+  assert.equal(requests.length, 13);
   assert.ok(requests.every((path) => path.startsWith('/maths/data/')));
   for (const subject of ['number', 'ratio'])
     assert.ok(
@@ -356,7 +359,7 @@ test('Number and Ratio examples load under project subpaths, keep their defaults
     );
   for (const subject of ['number', 'ratio']) {
     const failed = await createLoader(async (url) => {
-      if (url.href.endsWith(`/${subject}-examples.json`))
+      if (url.href.endsWith(`/examples/${subject}.json`))
         throw new Error('Unavailable');
       return {
         ok: true,

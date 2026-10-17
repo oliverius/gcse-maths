@@ -29,9 +29,8 @@ export function createLoader(
       const files = await Promise.allSettled(
         manifest.areas.map(async (area) => {
           const subject = await json(new URL(area.file, base));
-          if (!['algebra', 'number', 'ratio'].includes(area.id)) return subject;
           const examples = validateExamples(
-            await json(new URL(`./${area.id}-examples.json`, base)),
+            await json(new URL(area.examples, base)),
             subject.lessons,
             area.id,
           );
@@ -68,7 +67,7 @@ export function createLoader(
                 throw new Error('Missing curated lesson examples.');
               // Validate the whole curated set; the existing lesson shows the first.
               lesson = examples.map((example) =>
-                instantiateLesson(candidate, example),
+                instantiateLesson(candidate, example, area.id),
               )[0];
             } else {
               lesson = validateLesson(candidate, area.id);

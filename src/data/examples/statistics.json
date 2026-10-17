@@ -1,0 +1,73 @@
+{
+  "id": "statistics",
+  "lessons": [
+    {
+      "template": "mean",
+      "examples": [
+        {
+          "id": "mean-1",
+          "values": {
+            "mean": 4,
+            "distance": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "median",
+      "examples": [
+        {
+          "id": "median-1",
+          "values": {
+            "a": 2,
+            "b": 4,
+            "c": 5,
+            "d": 7,
+            "e": 9
+          }
+        }
+      ]
+    },
+    {
+      "template": "mode",
+      "examples": [
+        {
+          "id": "mode-1",
+          "values": {
+            "low": 2,
+            "mode": 4,
+            "high": 7
+          }
+        }
+      ]
+    },
+    {
+      "template": "range",
+      "examples": [
+        {
+          "id": "range-1",
+          "values": {
+            "min": 3,
+            "b": 5,
+            "c": 6,
+            "d": 8,
+            "max": 11
+          }
+        }
+      ]
+    },
+    {
+      "template": "read-bar-chart",
+      "examples": [
+        {
+          "id": "read-bar-chart-1",
+          "values": {
+            "cats": 2,
+            "dogs": 5,
+            "fish": 3
+          }
+        }
+      ]
+    }
+  ]
+}

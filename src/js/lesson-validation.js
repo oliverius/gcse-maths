@@ -41,7 +41,9 @@ export function validateManifest(manifest) {
       !text(area.id) ||
       ids.has(area.id) ||
       !text(area.title) ||
-      !/^\.\/[a-z-]+\.json$/.test(area.file)
+      !/^[a-z-]+$/.test(area.id) ||
+      area.file !== `./lessons/${area.id}.json` ||
+      area.examples !== `./examples/${area.id}.json`
     )
       fail('Invalid curriculum area.');
     ids.add(area.id);

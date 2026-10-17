@@ -1,0 +1,1840 @@
+{
+  "id": "statistics",
+  "title": "Statistics",
+  "lessons": [
+    {
+      "id": "mean",
+      "title": "Mean as equal sharing",
+      "label": "Mean as equal sharing",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Mean as equal sharing",
+      "notation": {
+        "latex": "\\text{Mean}",
+        "spoken": "Mean as equal sharing"
+      },
+      "objective": "Explain the mean as an equal share of the same total.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Changing the total while finding the average.",
+        "checkQuestion": "Why must the total stay {{total|words}} while we redistribute?"
+      },
+      "model": {
+        "total": {
+          "$value": "total"
+        },
+        "values": [
+          {
+            "$value": "low"
+          },
+          {
+            "$value": "mean"
+          },
+          {
+            "$value": "high"
+          }
+        ],
+        "result": {
+          "$value": "mean"
+        }
+      },
+      "steps": [
+        {
+          "title": "Different groups, same kind of counter",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{low|words}} plus {{mean|words}} plus {{high|words}} equals {{total|words}}",
+              "latex": "{{low}}+{{mean}}+{{high}}={{total}}",
+              "spoken": "{{low|words}} plus {{mean|words}} plus {{high|words}} equals {{total|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The groups contain {{low|words}}, {{mean|words}} and {{high|words}} counters. There are {{total|words}} counters altogether.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "description": "Three groups contain {{low|words}}, {{mean|words}} and {{high|words}} counters.",
+            "caption": "",
+            "groups": [
+              {
+                "id": "pile-0",
+                "label": "Group 1",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "low",
+                      "as": "i",
+                      "item": {
+                        "id": "mean-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": 0,
+                      "as": "j",
+                      "item": {
+                        "id": "mean-{{movedId}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {
+                        "movedId": {
+                          "subtract": [
+                            {
+                              "subtract": [
+                                "total",
+                                1
+                              ]
+                            },
+                            "j"
+                          ]
+                        }
+                      },
+                      "start": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "pile-1",
+                "label": "Group 2",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "mean",
+                      "as": "i",
+                      "item": {
+                        "id": "mean-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": "low"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "pile-2",
+                "label": "Group 3",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": {
+                        "subtract": [
+                          "high",
+                          0
+                        ]
+                      },
+                      "as": "i",
+                      "item": {
+                        "id": "mean-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": {
+                        "add": [
+                          "low",
+                          "mean"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "$repeat": {
+            "count": "distance",
+            "as": "g",
+            "item": {
+              "title": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "g",
+                      0
+                    ]
+                  },
+                  "then": "Move one from the largest group",
+                  "else": {
+                    "$if": {
+                      "test": {
+                        "equal": [
+                          "n",
+                          "distance"
+                        ]
+                      },
+                      "then": "Move one more to make equal groups",
+                      "else": "Move one more counter"
+                    }
+                  }
+                }
+              },
+              "left": [
+                {
+                  "id": "expression",
+                  "text": "{{small|words}}, {{mean|words}}, {{large|words}}",
+                  "latex": "{{small}},{{mean}},{{large}}",
+                  "spoken": "{{small|words}}, {{mean|words}}, {{large|words}}",
+                  "tone": "original"
+                }
+              ],
+              "right": [],
+              "balance": null,
+              "explanation": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "g",
+                      0
+                    ]
+                  },
+                  "then": "Move one counter from the group of {{high|words}} to the group of {{low|words}}. The total stays {{total|words}}.",
+                  "else": {
+                    "$if": {
+                      "test": {
+                        "equal": [
+                          "n",
+                          "distance"
+                        ]
+                      },
+                      "then": "Move one more counter from the largest group to the smallest. Now every group has {{mean|words}}.",
+                      "else": "Move one more counter from the largest group to the smallest. The total stays {{total|words}}."
+                    }
+                  }
+                }
+              },
+              "detail": "",
+              "operation": {
+                "type": "distribute"
+              },
+              "scene": {
+                "groups": [
+                  {
+                    "id": "pile-0",
+                    "label": "Group 1",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "low",
+                          "as": "i",
+                          "item": {
+                            "id": "mean-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": 0
+                        }
+                      },
+                      {
+                        "$repeat": {
+                          "count": "n",
+                          "as": "j",
+                          "item": {
+                            "id": "mean-{{movedId}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {
+                            "movedId": {
+                              "subtract": [
+                                {
+                                  "subtract": [
+                                    "total",
+                                    1
+                                  ]
+                                },
+                                "j"
+                              ]
+                            }
+                          },
+                          "start": 0
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "pile-1",
+                    "label": "Group 2",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": "mean",
+                          "as": "i",
+                          "item": {
+                            "id": "mean-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": "low"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "pile-2",
+                    "label": "Group 3",
+                    "items": [
+                      {
+                        "$repeat": {
+                          "count": {
+                            "subtract": [
+                              "high",
+                              "n"
+                            ]
+                          },
+                          "as": "i",
+                          "item": {
+                            "id": "mean-{{i}}",
+                            "value": 1,
+                            "latex": "1",
+                            "spoken": "1",
+                            "tone": "original",
+                            "highlight": false
+                          },
+                          "derived": {},
+                          "start": {
+                            "add": [
+                              "low",
+                              "mean"
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "description": {
+                  "$if": {
+                    "test": {
+                      "equal": [
+                        "g",
+                        0
+                      ]
+                    },
+                    "then": "One counter moved. The groups now contain {{small|words}}, {{mean|words}} and {{large|words}}.",
+                    "else": {
+                      "$if": {
+                        "test": {
+                          "equal": [
+                            "n",
+                            "distance"
+                          ]
+                        },
+                        "then": "A {{n|ordinal}} counter moved. Each of the three groups now has {{mean|words}}.",
+                        "else": "Another counter moved. The groups now contain {{small|words}}, {{mean|words}} and {{large|words}}."
+                      }
+                    }
+                  }
+                },
+                "caption": ""
+              }
+            },
+            "derived": {
+              "n": {
+                "add": [
+                  "g",
+                  1
+                ]
+              },
+              "small": {
+                "add": [
+                  "low",
+                  {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
+                ]
+              },
+              "large": {
+                "subtract": [
+                  "high",
+                  {
+                    "add": [
+                      "g",
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            "start": 0
+          }
+        },
+        {
+          "title": "The mean is the equal share",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{total|words}} divided by three equals {{mean|words}}",
+              "latex": "\\frac{{{total}}}{3}={{mean}}",
+              "spoken": "{{total|words}} divided by three equals {{mean|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{total|Words}} counters shared equally between three groups gives a mean of {{mean|words}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "description": "The total is still {{total|words}} and every group has {{mean|words}}.",
+            "caption": "",
+            "groups": [
+              {
+                "id": "pile-0",
+                "label": "Group 1",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "low",
+                      "as": "i",
+                      "item": {
+                        "id": "mean-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": 0
+                    }
+                  },
+                  {
+                    "$repeat": {
+                      "count": "distance",
+                      "as": "j",
+                      "item": {
+                        "id": "mean-{{movedId}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {
+                        "movedId": {
+                          "subtract": [
+                            {
+                              "subtract": [
+                                "total",
+                                1
+                              ]
+                            },
+                            "j"
+                          ]
+                        }
+                      },
+                      "start": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "pile-1",
+                "label": "Group 2",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": "mean",
+                      "as": "i",
+                      "item": {
+                        "id": "mean-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": "low"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "pile-2",
+                "label": "Group 3",
+                "items": [
+                  {
+                    "$repeat": {
+                      "count": {
+                        "subtract": [
+                          "high",
+                          "distance"
+                        ]
+                      },
+                      "as": "i",
+                      "item": {
+                        "id": "mean-{{i}}",
+                        "value": 1,
+                        "latex": "1",
+                        "spoken": "1",
+                        "tone": "original",
+                        "highlight": false
+                      },
+                      "derived": {},
+                      "start": {
+                        "add": [
+                          "low",
+                          "mean"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "mean": {
+          "min": 3,
+          "max": 6
+        },
+        "distance": {
+          "min": 1,
+          "max": 3
+        }
+      },
+      "derived": {
+        "low": {
+          "subtract": [
+            "mean",
+            "distance"
+          ]
+        },
+        "high": {
+          "add": [
+            "mean",
+            "distance"
+          ]
+        },
+        "total": {
+          "multiply": [
+            3,
+            "mean"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              0,
+              "low"
+            ]
+          },
+          "message": "Keep every starting pile positive."
+        }
+      ]
+    },
+    {
+      "id": "median",
+      "title": "Find the median",
+      "label": "Find the median",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the median",
+      "notation": {
+        "latex": "\\text{Median}",
+        "spoken": "Find the median"
+      },
+      "objective": "Order a data set and locate its middle value.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Choosing the middle value in the unsorted list.",
+        "checkQuestion": "Why do we sort the values before choosing the middle?"
+      },
+      "model": {
+        "values": [
+          {
+            "$value": "d"
+          },
+          {
+            "$value": "a"
+          },
+          {
+            "$value": "e"
+          },
+          {
+            "$value": "b"
+          },
+          {
+            "$value": "c"
+          }
+        ],
+        "result": {
+          "$value": "c"
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the five values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{d|words}}, {{a|words}}, {{e|words}}, {{b|words}}, {{c|words}}",
+              "latex": "{{d}},{{a}},{{e}},{{b}},{{c}}",
+              "spoken": "{{d|words}}, {{a|words}}, {{e|words}}, {{b|words}}, {{c|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The median is the middle value after the data is put in order.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "e"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "c"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Values {{d|words}}, {{a|words}}, {{e|words}}, {{b|words}} and {{c|words}} in their original order."
+          }
+        },
+        {
+          "title": "Put the same values in ascending order",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{a|words}}, {{b|words}}, {{c|words}}, {{d|words}}, {{e|words}}",
+              "latex": "{{a}},{{b}},{{c}},{{d}},{{e}}",
+              "spoken": "{{a|words}}, {{b|words}}, {{c|words}}, {{d|words}}, {{e|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Rearrange the cards from smallest to largest. No value is added or removed.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "e"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "The same cards sorted as {{a|words}}, {{b|words}}, {{c|words}}, {{d|words}} and {{e|words}}."
+          }
+        },
+        {
+          "title": "Pair the outside values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{a|words}}, {{b|words}}, {{c|words}}, {{d|words}}, {{e|words}}",
+              "latex": "{{a}},{{b}},{{c}},{{d}},{{e}}",
+              "spoken": "{{a|words}}, {{b|words}}, {{c|words}}, {{d|words}}, {{e|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Set aside the smallest and largest together. Three values remain between them.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "e"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [
+              "data-1",
+              "data-2"
+            ],
+            "description": "The outside values {{a|words}} and {{e|words}} are crossed out."
+          }
+        },
+        {
+          "title": "Find the middle value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "median equals {{c|words}}",
+              "latex": "\\text{Median}={{c}}",
+              "spoken": "median equals {{c|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Pair {{b|words}} with {{d|words}}. {{c|Words}} is left in the middle, with two values on each side.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "e"
+                }
+              }
+            ],
+            "selected": [
+              "data-4"
+            ],
+            "muted": [
+              "data-1",
+              "data-3",
+              "data-0",
+              "data-2"
+            ],
+            "description": "{{c|Words}} is selected in the middle. Two values lie on each side."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 16
+        },
+        "b": {
+          "min": 2,
+          "max": 17
+        },
+        "c": {
+          "min": 3,
+          "max": 18
+        },
+        "d": {
+          "min": 4,
+          "max": 19
+        },
+        "e": {
+          "min": 5,
+          "max": 20
+        }
+      },
+      "derived": {},
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "a",
+              "b"
+            ]
+          },
+          "message": "Keep the five median ranks in strict ascending order."
+        },
+        {
+          "test": {
+            "less": [
+              "b",
+              "c"
+            ]
+          },
+          "message": "Keep the five median ranks in strict ascending order."
+        },
+        {
+          "test": {
+            "less": [
+              "c",
+              "d"
+            ]
+          },
+          "message": "Keep the five median ranks in strict ascending order."
+        },
+        {
+          "test": {
+            "less": [
+              "d",
+              "e"
+            ]
+          },
+          "message": "Keep the five median ranks in strict ascending order."
+        }
+      ]
+    },
+    {
+      "id": "mode",
+      "title": "Find the mode",
+      "label": "Find the mode",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the mode",
+      "notation": {
+        "latex": "\\text{Mode}",
+        "spoken": "Find the mode"
+      },
+      "objective": "Find the value that occurs most frequently.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Reporting how many times a value occurs instead of the value itself.",
+        "checkQuestion": {
+          "$if": {
+            "test": {
+              "equal": [
+                "mode",
+                3
+              ]
+            },
+            "then": "Which value occurs most often, and how many times does it occur?",
+            "else": "Why is the mode {{mode|words}} rather than three?"
+          }
+        }
+      },
+      "model": {
+        "values": [
+          {
+            "$value": "mode"
+          },
+          {
+            "$value": "low"
+          },
+          {
+            "$value": "high"
+          },
+          {
+            "$value": "mode"
+          },
+          {
+            "$value": "mode"
+          }
+        ],
+        "result": {
+          "$value": "mode"
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{mode|words}}, {{low|words}}, {{high|words}}, {{mode|words}}, {{mode|words}}",
+              "latex": "{{mode}},{{low}},{{high}},{{mode}},{{mode}}",
+              "spoken": "{{mode|words}}, {{low|words}}, {{high|words}}, {{mode|words}}, {{mode|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The mode is the value that occurs most often.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "low"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "high"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "mode"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Values {{mode|words}}, {{low|words}}, {{high|words}}, {{mode|words}} and {{mode|words}}."
+          }
+        },
+        {
+          "title": "Group equal values together",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{low|words}}, {{mode|words}}, {{mode|words}}, {{mode|words}}, {{high|words}}",
+              "latex": "{{low}},{{mode}},{{mode}},{{mode}},{{high}}",
+              "spoken": "{{low|words}}, {{mode|words}}, {{mode|words}}, {{mode|words}}, {{high|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Rearrange the same cards so repeated values sit together.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "low"
+                }
+              },
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "high"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "The same values sorted as {{low|words}}, {{mode|words}}, {{mode|words}}, {{mode|words}} and {{high|words}}."
+          }
+        },
+        {
+          "title": "Count the most frequent value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "mode equals {{mode|words}}",
+              "latex": "\\text{Mode}={{mode}}",
+              "spoken": "mode equals {{mode|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "equal": [
+                  "mode",
+                  3
+                ]
+              },
+              "then": "Three appears three times. {{low|Words}} and {{high|words}} each appear once. The mode is the repeated value three.",
+              "else": "{{mode|Words}} appears three times. {{low|Words}} and {{high|words}} each appear once. The mode is {{mode|words}}, not three."
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "low"
+                }
+              },
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "mode"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "high"
+                }
+              }
+            ],
+            "selected": [
+              "data-0",
+              "data-3",
+              "data-4"
+            ],
+            "muted": [],
+            "description": "The three cards with value {{mode|words}} are selected."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "low": {
+          "min": 1,
+          "max": 18
+        },
+        "mode": {
+          "min": 2,
+          "max": 19
+        },
+        "high": {
+          "min": 3,
+          "max": 20
+        }
+      },
+      "derived": {},
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "low",
+              "mode"
+            ]
+          },
+          "message": "Keep the repeated value between the other two values."
+        },
+        {
+          "test": {
+            "less": [
+              "mode",
+              "high"
+            ]
+          },
+          "message": "Keep the repeated value between the other two values."
+        }
+      ]
+    },
+    {
+      "id": "range",
+      "title": "Find the range",
+      "label": "Find the range",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the range",
+      "notation": {
+        "latex": "\\text{Range}",
+        "spoken": "Find the range"
+      },
+      "objective": "Find spread by subtracting the minimum from the maximum.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Subtracting in the wrong order or reporting the maximum alone.",
+        "checkQuestion": "Why do the other three values not affect this range?"
+      },
+      "model": {
+        "values": [
+          {
+            "$value": "d"
+          },
+          {
+            "$value": "min"
+          },
+          {
+            "$value": "c"
+          },
+          {
+            "$value": "max"
+          },
+          {
+            "$value": "b"
+          }
+        ],
+        "result": {
+          "$value": "answer"
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the data",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{d|words}}, {{min|words}}, {{c|words}}, {{max|words}}, {{b|words}}",
+              "latex": "{{d}},{{min}},{{c}},{{max}},{{b}}",
+              "spoken": "{{d|words}}, {{min|words}}, {{c|words}}, {{max|words}}, {{b|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Range measures how far the data stretches, from its smallest to its largest value.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "min"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "max"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "b"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Values {{d|words}}, {{min|words}}, {{c|words}}, {{max|words}} and {{b|words}}."
+          }
+        },
+        {
+          "title": "Find the smallest value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "minimum equals {{min|words}}",
+              "latex": "\\min={{min}}",
+              "spoken": "minimum equals {{min|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{min|Words}} is the smallest value.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "min"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "max"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "b"
+                }
+              }
+            ],
+            "selected": [
+              "data-1"
+            ],
+            "muted": [],
+            "description": "The minimum value {{min|words}} is selected."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Find the largest value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "maximum equals {{max|words}}",
+              "latex": "\\max={{max}}",
+              "spoken": "maximum equals {{max|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{max|Words}} is the largest value. Keep the minimum in view too.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "min"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "max"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "b"
+                }
+              }
+            ],
+            "selected": [
+              "data-1",
+              "data-3"
+            ],
+            "muted": [],
+            "description": "The minimum {{min|words}} and maximum {{max|words}} are selected."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Subtract minimum from maximum",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{max|words}} minus {{min|words}} equals {{answer|words}}",
+              "latex": "{{max}}-{{min}}={{answer}}",
+              "spoken": "{{max|words}} minus {{min|words}} equals {{answer|words}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The range is {{answer|words}}. We measure the gap, not the number of values in the set.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "data-1",
+                "value": {
+                  "$value": "min"
+                }
+              },
+              {
+                "id": "data-2",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "data-3",
+                "value": {
+                  "$value": "max"
+                }
+              },
+              {
+                "id": "data-4",
+                "value": {
+                  "$value": "b"
+                }
+              }
+            ],
+            "selected": [
+              "data-1",
+              "data-3"
+            ],
+            "muted": [],
+            "description": "Subtract the minimum {{min|words}} from the maximum {{max|words}}."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ],
+      "parameters": {
+        "min": {
+          "min": 1,
+          "max": 16
+        },
+        "b": {
+          "min": 2,
+          "max": 17
+        },
+        "c": {
+          "min": 3,
+          "max": 18
+        },
+        "d": {
+          "min": 4,
+          "max": 19
+        },
+        "max": {
+          "min": 5,
+          "max": 20
+        }
+      },
+      "derived": {
+        "answer": {
+          "subtract": [
+            "max",
+            "min"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "min",
+              "b"
+            ]
+          },
+          "message": "Keep the data ranks strictly ordered."
+        },
+        {
+          "test": {
+            "less": [
+              "b",
+              "c"
+            ]
+          },
+          "message": "Keep the data ranks strictly ordered."
+        },
+        {
+          "test": {
+            "less": [
+              "c",
+              "d"
+            ]
+          },
+          "message": "Keep the data ranks strictly ordered."
+        },
+        {
+          "test": {
+            "less": [
+              "d",
+              "max"
+            ]
+          },
+          "message": "Keep the data ranks strictly ordered."
+        }
+      ]
+    },
+    {
+      "id": "read-bar-chart",
+      "title": "Read a bar chart",
+      "label": "Read a bar chart",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "bar-chart",
+      "initialExpression": "Read a bar chart",
+      "notation": {
+        "latex": "\\text{Read a bar chart}",
+        "spoken": "Read a bar chart"
+      },
+      "objective": "Read a labelled category against an equally spaced frequency axis.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S2",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Reading the width of a bar or counting grid lines instead of axis values.",
+        "checkQuestion": "What does each step on the vertical axis represent?"
+      },
+      "model": {
+        "result": {
+          "$value": "dogs"
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the category labels",
+          "left": [
+            {
+              "id": "expression",
+              "text": "favourite pet",
+              "latex": "\\text{Favourite pet}",
+              "spoken": "favourite pet",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "This chart records favourite-pet votes. The vertical axis counts votes in steps of one.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": {
+                  "$value": "cats"
+                }
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": {
+                  "$value": "dogs"
+                }
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": {
+                  "$value": "fish"
+                }
+              }
+            ],
+            "active": null,
+            "guide": false,
+            "description": "Cats received {{cats|words}} vote{{cats|s}}, dogs {{dogs|words}} and fish {{fish|words}}. The vertical axis runs from zero to six."
+          }
+        },
+        {
+          "title": "Choose the dogs category",
+          "left": [
+            {
+              "id": "expression",
+              "text": "dogs",
+              "latex": "\\text{Dogs}",
+              "spoken": "dogs",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Find Dogs along the bottom, then follow its bar upwards.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": {
+                  "$value": "cats"
+                }
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": {
+                  "$value": "dogs"
+                }
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": {
+                  "$value": "fish"
+                }
+              }
+            ],
+            "active": "dogs",
+            "guide": false,
+            "description": "The Dogs label and bar are selected."
+          }
+        },
+        {
+          "title": "Read across to the numbered axis",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{dogs|words}} vote{{dogs|s}}",
+              "latex": "{{dogs}}\\text{ vote{{dogs|s}}}",
+              "spoken": "{{dogs|words}} vote{{dogs|s}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The top of the dogs bar lines up with {{dogs|words}} on the votes axis.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": {
+                  "$value": "cats"
+                }
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": {
+                  "$value": "dogs"
+                }
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": {
+                  "$value": "fish"
+                }
+              }
+            ],
+            "active": "dogs",
+            "guide": true,
+            "description": "A dashed guide connects the top of the dogs bar to {{dogs|words}} on the vertical axis."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "State the reading",
+          "left": [
+            {
+              "id": "expression",
+              "text": "dogs, {{dogs|words}} vote{{dogs|s}}",
+              "latex": "\\text{Dogs}:{{dogs}}",
+              "spoken": "dogs, {{dogs|words}} vote{{dogs|s}}",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{dogs|Words}} people voted for dogs. Bar height shows frequency; bar width does not.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": {
+                  "$value": "cats"
+                }
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": {
+                  "$value": "dogs"
+                }
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": {
+                  "$value": "fish"
+                }
+              }
+            ],
+            "active": "dogs",
+            "guide": true,
+            "description": "Dogs received {{dogs|words}} vote{{dogs|s}}."
+          }
+        }
+      ],
+      "parameters": {
+        "cats": {
+          "min": 1,
+          "max": 6
+        },
+        "dogs": {
+          "min": 1,
+          "max": 6
+        },
+        "fish": {
+          "min": 1,
+          "max": 6
+        }
+      },
+      "derived": {}
+    }
+  ]
+}

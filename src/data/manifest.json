@@ -3,32 +3,38 @@
     {
       "id": "number",
       "title": "Number",
-      "file": "./number.json"
+      "file": "./lessons/number.json",
+      "examples": "./examples/number.json"
     },
     {
       "id": "algebra",
       "title": "Algebra",
-      "file": "./algebra.json"
+      "file": "./lessons/algebra.json",
+      "examples": "./examples/algebra.json"
     },
     {
       "id": "ratio",
       "title": "Ratio, Proportion and Rates of Change",
-      "file": "./ratio.json"
+      "file": "./lessons/ratio.json",
+      "examples": "./examples/ratio.json"
     },
     {
       "id": "geometry",
       "title": "Geometry and Measures",
-      "file": "./geometry.json"
+      "file": "./lessons/geometry.json",
+      "examples": "./examples/geometry.json"
     },
     {
       "id": "probability",
       "title": "Probability",
-      "file": "./probability.json"
+      "file": "./lessons/probability.json",
+      "examples": "./examples/probability.json"
     },
     {
       "id": "statistics",
       "title": "Statistics",
-      "file": "./statistics.json"
+      "file": "./lessons/statistics.json",
+      "examples": "./examples/statistics.json"
     }
   ]
 }

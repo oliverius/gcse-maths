@@ -1,0 +1,53 @@
+{
+  "id": "probability",
+  "lessons": [
+    {
+      "template": "equally-likely",
+      "examples": [
+        {
+          "id": "equally-likely-1",
+          "values": {
+            "blue": 3,
+            "gold": 1
+          }
+        }
+      ]
+    },
+    {
+      "template": "complement",
+      "examples": [
+        {
+          "id": "complement-1",
+          "values": {
+            "blue": 3,
+            "gold": 1
+          }
+        }
+      ]
+    },
+    {
+      "template": "probability-scale",
+      "examples": [
+        {
+          "id": "probability-scale-1",
+          "values": {
+            "blue": 3,
+            "gold": 1
+          }
+        }
+      ]
+    },
+    {
+      "template": "coin-spinner-space",
+      "examples": [
+        {
+          "id": "coin-spinner-space-1",
+          "values": {
+            "first": 1,
+            "target": 2
+          }
+        }
+      ]
+    }
+  ]
+}

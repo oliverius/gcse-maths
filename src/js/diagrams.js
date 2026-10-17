@@ -120,7 +120,8 @@ function angles(svg, scene) {
         },
         {
           x: x - 45,
-          y: y - 28,
+          // Keep a label near the bottom of a full turn inside the canvas.
+          y: Math.min(y, 380) - 28,
           width: 90,
           height: 56,
           size: 28,

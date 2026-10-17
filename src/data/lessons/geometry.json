@@ -12,7 +12,7 @@
       "kind": "angle-diagram",
       "initialExpression": "Angles on a line",
       "notation": {
-        "latex": "110^{\\circ}+?=180^{\\circ}",
+        "latex": "{{angle}}^{\\circ}+?=180^{\\circ}",
         "spoken": "Angles on a line"
       },
       "objective": "Use a straight angle to find a missing adjacent angle.",
@@ -35,8 +35,12 @@
       "model": {
         "total": 180,
         "angles": [
-          110,
-          70
+          {
+            "$value": "angle"
+          },
+          {
+            "$value": "missing"
+          }
         ]
       },
       "steps": [
@@ -77,15 +81,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "one hundred and ten degrees plus unknown equals one hundred and eighty degrees",
-              "latex": "110^{\\circ}+?=180^{\\circ}",
-              "spoken": "one hundred and ten degrees plus unknown equals one hundred and eighty degrees",
+              "text": "{{angle|words}} degrees plus unknown equals one hundred and eighty degrees",
+              "latex": "{{angle}}^{\\circ}+?=180^{\\circ}",
+              "spoken": "{{angle|words}} degrees plus unknown equals one hundred and eighty degrees",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The blue angle is one hundred and ten degrees. The purple angle fills the rest.",
+          "explanation": "The blue angle is {{angle|words}} degrees. The purple angle fills the rest.",
           "detail": "",
           "operation": {
             "type": "replace"
@@ -96,19 +100,23 @@
               {
                 "id": "known",
                 "start": 0,
-                "end": 110,
+                "end": {
+                  "$value": "angle"
+                },
                 "known": true,
                 "tone": "original"
               },
               {
                 "id": "missing",
-                "start": 110,
+                "start": {
+                  "$value": "angle"
+                },
                 "end": 180,
                 "known": false,
                 "tone": "operation"
               }
             ],
-            "description": "Adjacent sectors of one hundred and ten degrees and an unknown angle fill the straight angle."
+            "description": "Adjacent sectors of {{angle|words}} degrees and an unknown angle fill the straight angle."
           }
         },
         {
@@ -116,15 +124,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "one hundred and eighty minus one hundred and ten equals seventy degrees",
-              "latex": "180^{\\circ}-110^{\\circ}=70^{\\circ}",
-              "spoken": "one hundred and eighty minus one hundred and ten equals seventy degrees",
+              "text": "one hundred and eighty minus {{angle|words}} equals {{missing|words}} degrees",
+              "latex": "180^{\\circ}-{{angle}}^{\\circ}={{missing}}^{\\circ}",
+              "spoken": "one hundred and eighty minus {{angle|words}} equals {{missing|words}} degrees",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Subtract the known angle from the straight angle. The missing angle is seventy degrees.",
+          "explanation": "Subtract the known angle from the straight angle. The missing angle is {{missing|words}} degrees.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -135,25 +143,43 @@
               {
                 "id": "known",
                 "start": 0,
-                "end": 110,
+                "end": {
+                  "$value": "angle"
+                },
                 "known": true,
                 "tone": "original"
               },
               {
                 "id": "missing",
-                "start": 110,
+                "start": {
+                  "$value": "angle"
+                },
                 "end": 180,
                 "known": true,
                 "tone": "operation"
               }
             ],
-            "description": "The two adjacent angles measure one hundred and ten and seventy degrees."
+            "description": "The two adjacent angles measure {{angle|words}} and {{missing|words}} degrees."
           },
           "highlight": [
             "expression"
           ]
         }
-      ]
+      ],
+      "parameters": {
+        "angle": {
+          "min": 30,
+          "max": 150
+        }
+      },
+      "derived": {
+        "missing": {
+          "subtract": [
+            180,
+            "angle"
+          ]
+        }
+      }
     },
     {
       "id": "rectangle-area",
@@ -165,7 +191,7 @@
       "kind": "shape-grid",
       "initialExpression": "Rectangle area",
       "notation": {
-        "latex": "5\\times3=15",
+        "latex": "{{width}}\\times{{height}}={{area}}",
         "spoken": "Rectangle area"
       },
       "objective": "Connect rows of unit squares to length times width.",
@@ -186,9 +212,15 @@
         "checkQuestion": "Why is this answer in square units rather than units?"
       },
       "model": {
-        "width": 5,
-        "height": 3,
-        "result": 15
+        "width": {
+          "$value": "width"
+        },
+        "height": {
+          "$value": "height"
+        },
+        "result": {
+          "$value": "area"
+        }
       },
       "steps": [
         {
@@ -196,9 +228,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "five times three",
-              "latex": "5\\times3",
-              "spoken": "five times three",
+              "text": "{{width|words}} times {{height|words}}",
+              "latex": "{{width}}\\times{{height}}",
+              "spoken": "{{width|words}} times {{height|words}}",
               "tone": "original"
             }
           ],
@@ -211,131 +243,142 @@
           },
           "scene": {
             "shape": "rectangle",
-            "width": 5,
-            "height": 3,
-            "description": "A rectangle 5 units wide and 3 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "grid": true,
             "rows": 0
           }
         },
         {
-          "title": "Fill row 1",
-          "left": [
-            {
-              "id": "expression",
-              "text": "1 times five equals 5",
-              "latex": "1\\times5=5",
-              "spoken": "1 times five equals 5",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Each row contains five unit squares. One row covers five square units.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "shape": "rectangle",
-            "width": 5,
-            "height": 3,
-            "description": "1 complete rows of five shaded unit squares.",
-            "grid": true,
-            "rows": 1
-          },
-          "highlight": [
-            "expression"
-          ]
+          "$repeat": {
+            "count": "height",
+            "as": "r",
+            "item": {
+              "title": "Fill row {{n}}",
+              "left": [
+                {
+                  "id": "expression",
+                  "text": "{{n}} times {{width|words}} equals {{filled}}",
+                  "latex": "{{n}}\\times{{width}}={{filled}}",
+                  "spoken": "{{n}} times {{width|words}} equals {{filled}}",
+                  "tone": "original"
+                }
+              ],
+              "right": [],
+              "balance": null,
+              "explanation": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "n",
+                      1
+                    ]
+                  },
+                  "then": "Each row contains {{width|words}} unit squares. One row covers {{width|words}} square units.",
+                  "else": "Each row contains {{width|words}} unit squares. {{n}} rows cover {{filled}} square units."
+                }
+              },
+              "detail": "",
+              "operation": {
+                "type": "partition"
+              },
+              "scene": {
+                "shape": "rectangle",
+                "width": {
+                  "$value": "width"
+                },
+                "height": {
+                  "$value": "height"
+                },
+                "description": "{{n}} complete rows of {{width|words}} shaded unit squares.",
+                "grid": true,
+                "rows": {
+                  "$value": "n"
+                }
+              },
+              "highlight": [
+                "expression"
+              ]
+            },
+            "derived": {
+              "n": {
+                "add": [
+                  "r",
+                  1
+                ]
+              },
+              "filled": {
+                "multiply": [
+                  {
+                    "add": [
+                      "r",
+                      1
+                    ]
+                  },
+                  "width"
+                ]
+              }
+            },
+            "start": 0
+          }
         },
         {
-          "title": "Fill row 2",
+          "title": "{{height|Words}} rows of {{width|words}} make {{area|words}}",
           "left": [
             {
               "id": "expression",
-              "text": "2 times five equals 10",
-              "latex": "2\\times5=10",
-              "spoken": "2 times five equals 10",
+              "text": "{{width|words}} times {{height|words}} equals {{area|words}}",
+              "latex": "{{width}}\\times{{height}}={{area}}",
+              "spoken": "{{width|words}} times {{height|words}} equals {{area|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Each row contains five unit squares. 2 rows cover 10 square units.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "shape": "rectangle",
-            "width": 5,
-            "height": 3,
-            "description": "2 complete rows of five shaded unit squares.",
-            "grid": true,
-            "rows": 2
-          },
-          "highlight": [
-            "expression"
-          ]
-        },
-        {
-          "title": "Fill row 3",
-          "left": [
-            {
-              "id": "expression",
-              "text": "3 times five equals 15",
-              "latex": "3\\times5=15",
-              "spoken": "3 times five equals 15",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "Each row contains five unit squares. 3 rows cover 15 square units.",
-          "detail": "",
-          "operation": {
-            "type": "partition"
-          },
-          "scene": {
-            "shape": "rectangle",
-            "width": 5,
-            "height": 3,
-            "description": "3 complete rows of five shaded unit squares.",
-            "grid": true,
-            "rows": 3
-          },
-          "highlight": [
-            "expression"
-          ]
-        },
-        {
-          "title": "Three rows of five make fifteen",
-          "left": [
-            {
-              "id": "expression",
-              "text": "five times three equals fifteen",
-              "latex": "5\\times3=15",
-              "spoken": "five times three equals fifteen",
-              "tone": "original"
-            }
-          ],
-          "right": [],
-          "balance": null,
-          "explanation": "The area is fifteen square units. Each small square is one square unit.",
+          "explanation": "The area is {{area|words}} square units. Each small square is one square unit.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
             "shape": "rectangle",
-            "width": 5,
-            "height": 3,
-            "description": "A rectangle 5 units wide and 3 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "grid": true,
-            "rows": 3
+            "rows": {
+              "$value": "height"
+            }
           }
         }
-      ]
+      ],
+      "parameters": {
+        "width": {
+          "min": 2,
+          "max": 8
+        },
+        "height": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "area": {
+          "multiply": [
+            "width",
+            "height"
+          ]
+        }
+      }
     },
     {
       "id": "angles-point",
@@ -347,7 +390,7 @@
       "kind": "angle-diagram",
       "initialExpression": "Angles around a point",
       "notation": {
-        "latex": "140^{\\circ}+90^{\\circ}+?=360^{\\circ}",
+        "latex": "{{angle}}^{\\circ}+90^{\\circ}+?=360^{\\circ}",
         "spoken": "Angles around a point"
       },
       "objective": "Use a full turn to find the remaining angle around a point.",
@@ -370,9 +413,13 @@
       "model": {
         "total": 360,
         "angles": [
-          140,
+          {
+            "$value": "angle"
+          },
           90,
-          130
+          {
+            "$value": "missing"
+          }
         ]
       },
       "steps": [
@@ -381,9 +428,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "one hundred and forty degrees",
-              "latex": "140^{\\circ}",
-              "spoken": "one hundred and forty degrees",
+              "text": "{{angle|words}} degrees",
+              "latex": "{{angle}}^{\\circ}",
+              "spoken": "{{angle|words}} degrees",
               "tone": "original"
             }
           ],
@@ -400,12 +447,14 @@
               {
                 "id": "first",
                 "start": 0,
-                "end": 140,
+                "end": {
+                  "$value": "angle"
+                },
                 "known": true,
                 "tone": "original"
               }
             ],
-            "description": "A one hundred and forty degree sector."
+            "description": "A {{angle|words}} degree sector."
           }
         },
         {
@@ -413,15 +462,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "one hundred and forty plus ninety equals two hundred and thirty degrees",
-              "latex": "140^{\\circ}+90^{\\circ}=230^{\\circ}",
-              "spoken": "one hundred and forty plus ninety equals two hundred and thirty degrees",
+              "text": "{{angle|words}} plus ninety equals {{known|words}} degrees",
+              "latex": "{{angle}}^{\\circ}+90^{\\circ}={{known}}^{\\circ}",
+              "spoken": "{{angle|words}} plus ninety equals {{known|words}} degrees",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "A right angle adds ninety degrees. Together the known angles cover two hundred and thirty degrees.",
+          "explanation": "A right angle adds ninety degrees. Together the known angles cover {{known|words}} degrees.",
           "detail": "",
           "operation": {
             "type": "replace"
@@ -432,19 +481,25 @@
               {
                 "id": "first",
                 "start": 0,
-                "end": 140,
+                "end": {
+                  "$value": "angle"
+                },
                 "known": true,
                 "tone": "original"
               },
               {
                 "id": "second",
-                "start": 140,
-                "end": 230,
+                "start": {
+                  "$value": "angle"
+                },
+                "end": {
+                  "$value": "known"
+                },
                 "known": true,
                 "tone": "operation"
               }
             ],
-            "description": "The two known sectors total two hundred and thirty degrees."
+            "description": "The two known sectors total {{known|words}} degrees."
           },
           "highlight": [
             "expression"
@@ -455,15 +510,15 @@
           "left": [
             {
               "id": "expression",
-              "text": "three hundred and sixty minus two hundred and thirty equals one hundred and thirty degrees",
-              "latex": "360^{\\circ}-230^{\\circ}=130^{\\circ}",
-              "spoken": "three hundred and sixty minus two hundred and thirty equals one hundred and thirty degrees",
+              "text": "three hundred and sixty minus {{known|words}} equals {{missing|words}} degrees",
+              "latex": "360^{\\circ}-{{known}}^{\\circ}={{missing}}^{\\circ}",
+              "spoken": "three hundred and sixty minus {{known|words}} equals {{missing|words}} degrees",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The remaining angle is one hundred and thirty degrees. The three angles make a full turn.",
+          "explanation": "The remaining angle is {{missing|words}} degrees. The three angles make a full turn.",
           "detail": "",
           "operation": {
             "type": "simplify"
@@ -474,32 +529,65 @@
               {
                 "id": "first",
                 "start": 0,
-                "end": 140,
+                "end": {
+                  "$value": "angle"
+                },
                 "known": true,
                 "tone": "original"
               },
               {
                 "id": "second",
-                "start": 140,
-                "end": 230,
+                "start": {
+                  "$value": "angle"
+                },
+                "end": {
+                  "$value": "known"
+                },
                 "known": true,
                 "tone": "operation"
               },
               {
                 "id": "rest",
-                "start": 230,
+                "start": {
+                  "$value": "known"
+                },
                 "end": 360,
                 "known": true,
                 "tone": "operation"
               }
             ],
-            "description": "Angles of one hundred and forty, ninety and one hundred and thirty degrees make three hundred and sixty degrees."
+            "description": "Angles of {{angle|words}}, ninety and {{missing|words}} degrees make three hundred and sixty degrees."
           },
           "highlight": [
             "expression"
           ]
         }
-      ]
+      ],
+      "parameters": {
+        "angle": {
+          "min": 30,
+          "max": 240
+        }
+      },
+      "derived": {
+        "known": {
+          "add": [
+            "angle",
+            90
+          ]
+        },
+        "missing": {
+          "subtract": [
+            360,
+            {
+              "add": [
+                "angle",
+                90
+              ]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "rectangle-perimeter",
@@ -514,7 +602,7 @@
         "latex": "\\text{Perimeter}",
         "spoken": "Rectangle perimeter"
       },
-      "objective": "Find perimeter by adding all four boundary lengths.",
+      "objective": "Find perimeter by adding all {{height|words}} boundary lengths.",
       "prerequisites": [
         "Count small quantities and read the mathematical symbols used here."
       ],
@@ -532,9 +620,15 @@
         "checkQuestion": "Why must both long sides and both short sides be counted?"
       },
       "model": {
-        "width": 6,
-        "height": 4,
-        "result": 20
+        "width": {
+          "$value": "width"
+        },
+        "height": {
+          "$value": "height"
+        },
+        "result": {
+          "$value": "perimeter"
+        }
       },
       "steps": [
         {
@@ -542,9 +636,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "six units by four units",
-              "latex": "6\\text{ by }4",
-              "spoken": "six units by four units",
+              "text": "{{width|words}} units by {{height|words}} units",
+              "latex": "{{width}}\\text{ by }{{height}}",
+              "spoken": "{{width|words}} units by {{height|words}} units",
               "tone": "original"
             }
           ],
@@ -557,9 +651,13 @@
           },
           "scene": {
             "shape": "rectangle",
-            "width": 6,
-            "height": 4,
-            "description": "A rectangle 6 units wide and 4 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "sides": []
           }
         },
@@ -568,24 +666,28 @@
           "left": [
             {
               "id": "expression",
-              "text": "six",
-              "latex": "6",
-              "spoken": "six",
+              "text": "{{width|words}}",
+              "latex": "{{width}}",
+              "spoken": "{{width|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The top side is six units long.",
+          "explanation": "The top side is {{width|words}} units long.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
             "shape": "rectangle",
-            "width": 6,
-            "height": 4,
-            "description": "A rectangle 6 units wide and 4 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "sides": [
               "top"
             ]
@@ -599,24 +701,28 @@
           "left": [
             {
               "id": "expression",
-              "text": "six plus four",
-              "latex": "6+4",
-              "spoken": "six plus four",
+              "text": "{{width|words}} plus {{height|words}}",
+              "latex": "{{width}}+{{height}}",
+              "spoken": "{{width|words}} plus {{height|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The right side is four units long.",
+          "explanation": "The right side is {{height|words}} units long.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
             "shape": "rectangle",
-            "width": 6,
-            "height": 4,
-            "description": "A rectangle 6 units wide and 4 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "sides": [
               "top",
               "right"
@@ -631,24 +737,28 @@
           "left": [
             {
               "id": "expression",
-              "text": "six plus four plus six",
-              "latex": "6+4+6",
-              "spoken": "six plus four plus six",
+              "text": "{{width|words}} plus {{height|words}} plus {{width|words}}",
+              "latex": "{{width}}+{{height}}+{{width}}",
+              "spoken": "{{width|words}} plus {{height|words}} plus {{width|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The bottom side is six units long.",
+          "explanation": "The bottom side is {{width|words}} units long.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
             "shape": "rectangle",
-            "width": 6,
-            "height": 4,
-            "description": "A rectangle 6 units wide and 4 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "sides": [
               "top",
               "right",
@@ -664,24 +774,28 @@
           "left": [
             {
               "id": "expression",
-              "text": "six plus four plus six plus four",
-              "latex": "6+4+6+4",
-              "spoken": "six plus four plus six plus four",
+              "text": "{{width|words}} plus {{height|words}} plus {{width|words}} plus {{height|words}}",
+              "latex": "{{width}}+{{height}}+{{width}}+{{height}}",
+              "spoken": "{{width|words}} plus {{height|words}} plus {{width|words}} plus {{height|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The left side is four units long.",
+          "explanation": "The left side is {{height|words}} units long.",
           "detail": "",
           "operation": {
             "type": "highlight"
           },
           "scene": {
             "shape": "rectangle",
-            "width": 6,
-            "height": 4,
-            "description": "A rectangle 6 units wide and 4 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "sides": [
               "top",
               "right",
@@ -698,24 +812,28 @@
           "left": [
             {
               "id": "expression",
-              "text": "six plus four plus six plus four equals twenty",
-              "latex": "6+4+6+4=20",
-              "spoken": "six plus four plus six plus four equals twenty",
+              "text": "{{width|words}} plus {{height|words}} plus {{width|words}} plus {{height|words}} equals {{perimeter|words}}",
+              "latex": "{{width}}+{{height}}+{{width}}+{{height}}={{perimeter}}",
+              "spoken": "{{width|words}} plus {{height|words}} plus {{width|words}} plus {{height|words}} equals {{perimeter|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The perimeter is twenty units. This measures length around the edge, not the space inside.",
+          "explanation": "The perimeter is {{perimeter|words}} units. This measures length around the edge, not the space inside.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
             "shape": "rectangle",
-            "width": 6,
-            "height": 4,
-            "description": "A rectangle 6 units wide and 4 units high.",
+            "width": {
+              "$value": "width"
+            },
+            "height": {
+              "$value": "height"
+            },
+            "description": "A rectangle {{width}} units wide and {{height}} units high.",
             "sides": [
               "top",
               "right",
@@ -724,7 +842,30 @@
             ]
           }
         }
-      ]
+      ],
+      "parameters": {
+        "width": {
+          "min": 2,
+          "max": 8
+        },
+        "height": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "perimeter": {
+          "multiply": [
+            2,
+            {
+              "add": [
+                "width",
+                "height"
+              ]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "triangle-area",
@@ -736,7 +877,7 @@
       "kind": "shape-grid",
       "initialExpression": "Triangle area",
       "notation": {
-        "latex": "\\frac{1}{2}\\times6\\times4",
+        "latex": "\\frac{1}{2}\\times{{base}}\\times{{height}}",
         "spoken": "Triangle area"
       },
       "objective": "Explain the factor one half by completing a rectangle with a congruent triangle.",
@@ -757,9 +898,15 @@
         "checkQuestion": "Why does adding a congruent triangle help us find the area?"
       },
       "model": {
-        "base": 6,
-        "height": 4,
-        "result": 12
+        "base": {
+          "$value": "base"
+        },
+        "height": {
+          "$value": "height"
+        },
+        "result": {
+          "$value": "area"
+        }
       },
       "steps": [
         {
@@ -767,25 +914,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "base six, perpendicular height four",
-              "latex": "b=6,\\ h=4",
-              "spoken": "base six, perpendicular height four",
+              "text": "base {{base|words}}, perpendicular height {{height|words}}",
+              "latex": "b={{base}},\\ h={{height}}",
+              "spoken": "base {{base|words}}, perpendicular height {{height|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The base and perpendicular height are six and four units.",
+          "explanation": "The base and perpendicular height are {{base|words}} and {{height|words}} units.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
             "shape": "triangle",
-            "width": 6,
-            "height": 4,
+            "width": {
+              "$value": "base"
+            },
+            "height": {
+              "$value": "height"
+            },
             "copy": false,
-            "description": "A right triangle with perpendicular base six and height four."
+            "description": "A right triangle with perpendicular base {{base|words}} and height {{height|words}}."
           }
         },
         {
@@ -793,9 +944,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "six times four equals twenty four",
-              "latex": "6\\times4=24",
-              "spoken": "six times four equals twenty four",
+              "text": "{{base|words}} times {{height|words}} equals {{rectangle|wordsSpaced}}",
+              "latex": "{{base}}\\times{{height}}={{rectangle}}",
+              "spoken": "{{base|words}} times {{height|words}} equals {{rectangle|wordsSpaced}}",
               "tone": "original"
             }
           ],
@@ -808,10 +959,14 @@
           },
           "scene": {
             "shape": "triangle",
-            "width": 6,
-            "height": 4,
+            "width": {
+              "$value": "base"
+            },
+            "height": {
+              "$value": "height"
+            },
             "copy": true,
-            "description": "Two congruent right triangles fill a six by four rectangle."
+            "description": "Two congruent right triangles fill a {{base|words}} by {{height|words}} rectangle."
           },
           "highlight": [
             "expression"
@@ -822,30 +977,66 @@
           "left": [
             {
               "id": "expression",
-              "text": "twenty four divided by two equals twelve",
-              "latex": "\\frac{24}{2}=12",
-              "spoken": "twenty four divided by two equals twelve",
+              "text": "{{rectangle|wordsSpaced}} divided by two equals {{area|words}}",
+              "latex": "\\frac{{{rectangle}}}{2}={{area}}",
+              "spoken": "{{rectangle|wordsSpaced}} divided by two equals {{area|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The rectangle has twenty-four square units. Each congruent triangle has half: twelve.",
+          "explanation": "The rectangle has {{rectangle|words}} square units. Each congruent triangle has half: {{area|words}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
             "shape": "triangle",
-            "width": 6,
-            "height": 4,
+            "width": {
+              "$value": "base"
+            },
+            "height": {
+              "$value": "height"
+            },
             "copy": true,
-            "description": "Two congruent right triangles fill a six by four rectangle."
+            "description": "Two congruent right triangles fill a {{base|words}} by {{height|words}} rectangle."
           },
           "highlight": [
             "expression"
           ]
         }
+      ],
+      "parameters": {
+        "base": {
+          "min": 2,
+          "max": 8
+        },
+        "height": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "derived": {
+        "rectangle": {
+          "multiply": [
+            "base",
+            "height"
+          ]
+        },
+        "area": {
+          "divide": [
+            {
+              "multiply": [
+                "base",
+                "height"
+              ]
+            },
+            2
+          ]
+        }
+      },
+      "integers": [
+        "area"
       ]
     },
     {
@@ -861,7 +1052,7 @@
         "latex": "a^2+b^2=c^2",
         "spoken": "Pythagoras: square areas"
       },
-      "objective": "Connect the two smaller square areas to the hypotenuse square in a three-four-five example.",
+      "objective": "Connect the two smaller square areas to the hypotenuse square in a {{a|words}}-{{b|words}}-{{c|words}} example.",
       "prerequisites": [
         "Square numbers and square roots; recognise a right angle."
       ],
@@ -880,12 +1071,18 @@
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
         "misconception": "Adding the side lengths directly rather than adding their squares.",
-        "checkQuestion": "Why do we compare nine plus sixteen with twenty-five rather than three plus four with five?"
+        "checkQuestion": "Why do we compare {{aa|words}} plus {{bb|words}} with {{cc|words}} rather than {{a|words}} plus {{b|words}} with {{c|words}}?"
       },
       "model": {
-        "a": 3,
-        "b": 4,
-        "c": 5
+        "a": {
+          "$value": "a"
+        },
+        "b": {
+          "$value": "b"
+        },
+        "c": {
+          "$value": "c"
+        }
       },
       "steps": [
         {
@@ -893,23 +1090,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "side lengths three, four and five",
-              "latex": "3,4,5",
-              "spoken": "side lengths three, four and five",
+              "text": "side lengths {{a|words}}, {{b|words}} and {{c|words}}",
+              "latex": "{{a}},{{b}},{{c}}",
+              "spoken": "side lengths {{a|words}}, {{b|words}} and {{c|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The perpendicular sides are three and four. The opposite, longest side is five: the hypotenuse c.",
+          "explanation": "The perpendicular sides are {{a|words}} and {{b|words}}. The opposite, longest side is {{c|words}}: the hypotenuse c.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
-            "a": 3,
-            "b": 4,
-            "c": 5,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [],
             "knownSides": [
               "a",
@@ -919,7 +1122,7 @@
             "knownAreas": [],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. ",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. ",
             "caption": "The small corner marker is a right angle: 90 degrees."
           }
         },
@@ -928,23 +1131,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "three squared equals nine",
-              "latex": "3^2=9",
-              "spoken": "three squared equals nine",
+              "text": "{{a|words}} squared equals {{aa|words}}",
+              "latex": "{{a}}^2={{aa}}",
+              "spoken": "{{a|words}} squared equals {{aa|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The square on the three-unit side has nine unit tiles.",
+          "explanation": "The square on the {{a|words}}-unit side has {{aa|words}} unit tiles.",
           "detail": "",
           "operation": {
             "type": "partition"
           },
           "scene": {
-            "a": 3,
-            "b": 4,
-            "c": 5,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a"
             ],
@@ -958,7 +1167,7 @@
             ],
             "unitTiles": true,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}.",
             "caption": "Unit tiles show areas; outlines keep their original sizes."
           }
         },
@@ -967,23 +1176,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "four squared equals sixteen",
-              "latex": "4^2=16",
-              "spoken": "four squared equals sixteen",
+              "text": "{{b|words}} squared equals {{bb|words}}",
+              "latex": "{{b}}^2={{bb}}",
+              "spoken": "{{b|words}} squared equals {{bb|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The square on the four-unit side has sixteen unit tiles.",
+          "explanation": "The square on the {{b|words}}-unit side has {{bb|words}} unit tiles.",
           "detail": "",
           "operation": {
             "type": "partition"
           },
           "scene": {
-            "a": 3,
-            "b": 4,
-            "c": 5,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b"
@@ -999,7 +1214,7 @@
             ],
             "unitTiles": true,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}.",
             "caption": "Unit tiles show areas; outlines keep their original sizes."
           }
         },
@@ -1008,23 +1223,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "five squared equals twenty-five",
-              "latex": "5^2=25",
-              "spoken": "five squared equals twenty-five",
+              "text": "{{c|words}} squared equals {{cc|words}}",
+              "latex": "{{c}}^2={{cc}}",
+              "spoken": "{{c|words}} squared equals {{cc|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The square on the five-unit hypotenuse has room for twenty-five unit tiles.",
+          "explanation": "The square on the {{c|words}}-unit hypotenuse has room for {{cc|words}} unit tiles.",
           "detail": "",
           "operation": {
             "type": "partition"
           },
           "scene": {
-            "a": 3,
-            "b": 4,
-            "c": 5,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1042,7 +1263,7 @@
             ],
             "unitTiles": true,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16, c: 25.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "Unit tiles show areas; outlines keep their original sizes."
           }
         },
@@ -1051,23 +1272,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "nine plus sixteen equals twenty-five",
-              "latex": "9+16=25",
-              "spoken": "nine plus sixteen equals twenty-five",
+              "text": "{{aa|words}} plus {{bb|words}} equals {{cc|words}}",
+              "latex": "{{aa}}+{{bb}}={{cc}}",
+              "spoken": "{{aa|words}} plus {{bb|words}} equals {{cc|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Move the nine and sixteen unit tiles into the largest square. They fit without gaps or overlaps; no tile changes size.",
+          "explanation": "Move the {{aa|words}} and {{bb|words}} unit tiles into the largest square. They fit without gaps or overlaps; no tile changes size.",
           "detail": "",
           "operation": {
             "type": "group"
           },
           "scene": {
-            "a": 3,
-            "b": 4,
-            "c": 5,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1085,7 +1312,7 @@
             ],
             "unitTiles": true,
             "transfer": true,
-            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16, c: 25.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "Unit tiles show areas; outlines keep their original sizes."
           },
           "highlight": [
@@ -1097,9 +1324,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "three squared plus four squared equals five squared",
-              "latex": "3^2+4^2=5^2",
-              "spoken": "three squared plus four squared equals five squared",
+              "text": "{{a|words}} squared plus {{b|words}} squared equals {{c|words}} squared",
+              "latex": "{{a}}^2+{{b}}^2={{c}}^2",
+              "spoken": "{{a|words}} squared plus {{b|words}} squared equals {{c|words}} squared",
               "tone": "original"
             }
           ],
@@ -1111,9 +1338,15 @@
             "type": "simplify"
           },
           "scene": {
-            "a": 3,
-            "b": 4,
-            "c": 5,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1131,9 +1364,84 @@
             ],
             "unitTiles": true,
             "transfer": true,
-            "description": "A right triangle with perpendicular sides 3 and 4, and hypotenuse 5. Known square areas: a: 9, b: 16, c: 25.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "Unit tiles show areas; outlines keep their original sizes."
           }
+        }
+      ],
+      "parameters": {
+        "a": {
+          "min": 3,
+          "max": 4
+        },
+        "b": {
+          "min": 3,
+          "max": 4
+        }
+      },
+      "derived": {
+        "aa": {
+          "power": [
+            "a",
+            2
+          ]
+        },
+        "bb": {
+          "power": [
+            "b",
+            2
+          ]
+        },
+        "cc": {
+          "add": [
+            {
+              "power": [
+                "a",
+                2
+              ]
+            },
+            {
+              "power": [
+                "b",
+                2
+              ]
+            }
+          ]
+        },
+        "c": {
+          "power": [
+            {
+              "add": [
+                {
+                  "power": [
+                    "a",
+                    2
+                  ]
+                },
+                {
+                  "power": [
+                    "b",
+                    2
+                  ]
+                }
+              ]
+            },
+            0.5
+          ]
+        }
+      },
+      "integers": [
+        "c"
+      ],
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              "c",
+              5
+            ]
+          },
+          "message": "Keep the unit-tile transfer within a five-unit square."
         }
       ]
     },
@@ -1169,14 +1477,22 @@
       ],
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
-        "misconception": "Stopping at one hundred, or taking the square root before adding areas.",
-        "checkQuestion": "Why is one hundred an area, while ten is a length?"
+        "misconception": "Stopping at {{cc|words}}, or taking the square root before adding areas.",
+        "checkQuestion": "Why is {{cc|words}} an area, while {{c|words}} is a length?"
       },
       "model": {
-        "a": 6,
-        "b": 8,
-        "c": 10,
-        "result": 10
+        "a": {
+          "$value": "a"
+        },
+        "b": {
+          "$value": "b"
+        },
+        "c": {
+          "$value": "c"
+        },
+        "result": {
+          "$value": "c"
+        }
       },
       "steps": [
         {
@@ -1184,9 +1500,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "a equals six, b equals eight, c unknown",
-              "latex": "a=6,\\ b=8,\\ c=?",
-              "spoken": "a equals six, b equals eight, c unknown",
+              "text": "a equals {{a|words}}, b equals {{b|words}}, c unknown",
+              "latex": "a={{a}},\\ b={{b}},\\ c=?",
+              "spoken": "a equals {{a|words}}, b equals {{b|words}}, c unknown",
               "tone": "original"
             }
           ],
@@ -1198,9 +1514,15 @@
             "type": "show"
           },
           "scene": {
-            "a": 6,
-            "b": 8,
-            "c": 10,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [],
             "knownSides": [
               "a",
@@ -1209,7 +1531,7 @@
             "knownAreas": [],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. ",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse unknown c. ",
             "caption": "The small corner marker is a right angle: 90 degrees."
           }
         },
@@ -1218,9 +1540,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "six squared plus eight squared equals c squared",
-              "latex": "6^2+8^2=c^2",
-              "spoken": "six squared plus eight squared equals c squared",
+              "text": "{{a|words}} squared plus {{b|words}} squared equals c squared",
+              "latex": "{{a}}^2+{{b}}^2=c^2",
+              "spoken": "{{a|words}} squared plus {{b|words}} squared equals c squared",
               "tone": "original"
             }
           ],
@@ -1232,9 +1554,15 @@
             "type": "partition"
           },
           "scene": {
-            "a": 6,
-            "b": 8,
-            "c": 10,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1247,7 +1575,7 @@
             "knownAreas": [],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. ",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse unknown c. ",
             "caption": "The small corner marker is a right angle: 90 degrees."
           }
         },
@@ -1256,23 +1584,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "thirty-six plus eight squared equals c squared",
-              "latex": "36+8^2=c^2",
-              "spoken": "thirty-six plus eight squared equals c squared",
+              "text": "{{aa|words}} plus {{b|words}} squared equals c squared",
+              "latex": "{{aa}}+{{b}}^2=c^2",
+              "spoken": "{{aa|words}} plus {{b|words}} squared equals c squared",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Six squared is thirty-six.",
+          "explanation": "{{a|Words}} squared is {{aa|words}}.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "a": 6,
-            "b": 8,
-            "c": 10,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1287,7 +1621,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. Known square areas: a: 36.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse unknown c. Known square areas: a: {{aa}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1299,23 +1633,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "thirty-six plus sixty-four equals c squared",
-              "latex": "36+64=c^2",
-              "spoken": "thirty-six plus sixty-four equals c squared",
+              "text": "{{aa|words}} plus {{bb|words}} equals c squared",
+              "latex": "{{aa}}+{{bb}}=c^2",
+              "spoken": "{{aa|words}} plus {{bb|words}} equals c squared",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Eight squared is sixty-four.",
+          "explanation": "{{b|Words}} squared is {{bb|words}}.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "a": 6,
-            "b": 8,
-            "c": 10,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1331,7 +1671,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. Known square areas: a: 36, b: 64.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse unknown c. Known square areas: a: {{aa}}, b: {{bb}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1343,23 +1683,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "c squared equals one hundred",
-              "latex": "c^2=100",
-              "spoken": "c squared equals one hundred",
+              "text": "c squared equals {{cc|words}}",
+              "latex": "c^2={{cc}}",
+              "spoken": "c squared equals {{cc|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Thirty-six plus sixty-four is one hundred. This is an area, not the side length.",
+          "explanation": "{{aa|Words}} plus {{bb|words}} is {{cc|words}}. This is an area, not the side length.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "a": 6,
-            "b": 8,
-            "c": 10,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1376,7 +1722,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse unknown c. Known square areas: a: 36, b: 64, c: 100.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse unknown c. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1388,23 +1734,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "c equals the square root of one hundred, which is ten",
-              "latex": "c=\\sqrt{100}=10",
-              "spoken": "c equals the square root of one hundred, which is ten",
+              "text": "c equals the square root of {{cc|words}}, which is {{c|words}}",
+              "latex": "c=\\sqrt{{{cc}}}={{c}}",
+              "spoken": "c equals the square root of {{cc|words}}, which is {{c|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The side length is the positive square root of its square area. The hypotenuse is ten units, longer than six or eight.",
+          "explanation": "The side length is the positive square root of its square area. The hypotenuse is {{c|words}} units, longer than {{a|words}} or {{b|words}}.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "a": 6,
-            "b": 8,
-            "c": 10,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1422,13 +1774,77 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 6 and 8, and hypotenuse 10. Known square areas: a: 36, b: 64, c: 100.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
             "expression"
           ]
         }
+      ],
+      "parameters": {
+        "a": {
+          "min": 3,
+          "max": 12
+        },
+        "b": {
+          "min": 3,
+          "max": 12
+        }
+      },
+      "derived": {
+        "aa": {
+          "power": [
+            "a",
+            2
+          ]
+        },
+        "bb": {
+          "power": [
+            "b",
+            2
+          ]
+        },
+        "cc": {
+          "add": [
+            {
+              "power": [
+                "a",
+                2
+              ]
+            },
+            {
+              "power": [
+                "b",
+                2
+              ]
+            }
+          ]
+        },
+        "c": {
+          "power": [
+            {
+              "add": [
+                {
+                  "power": [
+                    "a",
+                    2
+                  ]
+                },
+                {
+                  "power": [
+                    "b",
+                    2
+                  ]
+                }
+              ]
+            },
+            0.5
+          ]
+        }
+      },
+      "integers": [
+        "c"
       ]
     },
     {
@@ -1463,14 +1879,22 @@
       ],
       "tutorNotes": {
         "observe": "Let the student describe the visible change before selecting Next.",
-        "misconception": "Adding twelve squared and thirteen squared when the hypotenuse is already known.",
+        "misconception": "Adding {{b|words}} squared and {{c|words}} squared when the hypotenuse is already known.",
         "checkQuestion": "Why does this example need subtraction rather than addition?"
       },
       "model": {
-        "a": 5,
-        "b": 12,
-        "c": 13,
-        "result": 5
+        "a": {
+          "$value": "a"
+        },
+        "b": {
+          "$value": "b"
+        },
+        "c": {
+          "$value": "c"
+        },
+        "result": {
+          "$value": "a"
+        }
       },
       "steps": [
         {
@@ -1478,23 +1902,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "b equals twelve, c equals thirteen, a unknown",
-              "latex": "b=12,\\ c=13,\\ a=?",
-              "spoken": "b equals twelve, c equals thirteen, a unknown",
+              "text": "b equals {{b|words}}, c equals {{c|words}}, a unknown",
+              "latex": "b={{b}},\\ c={{c}},\\ a=?",
+              "spoken": "b equals {{b|words}}, c equals {{c|words}}, a unknown",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Thirteen is the hypotenuse, opposite the right angle. The unknown a is a shorter side.",
+          "explanation": "{{c|Words}} is the hypotenuse, opposite the right angle. The unknown a is a shorter side.",
           "detail": "",
           "operation": {
             "type": "show"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [],
             "knownSides": [
               "b",
@@ -1503,7 +1933,7 @@
             "knownAreas": [],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. ",
+            "description": "A right triangle with perpendicular sides unknown a and {{b}}, and hypotenuse {{c}}. ",
             "caption": "The small corner marker is a right angle: 90 degrees."
           }
         },
@@ -1512,9 +1942,9 @@
           "left": [
             {
               "id": "expression",
-              "text": "a squared plus twelve squared equals thirteen squared",
-              "latex": "a^2+12^2=13^2",
-              "spoken": "a squared plus twelve squared equals thirteen squared",
+              "text": "a squared plus {{b|words}} squared equals {{c|words}} squared",
+              "latex": "a^2+{{b}}^2={{c}}^2",
+              "spoken": "a squared plus {{b|words}} squared equals {{c|words}} squared",
               "tone": "original"
             }
           ],
@@ -1526,9 +1956,15 @@
             "type": "partition"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1541,7 +1977,7 @@
             "knownAreas": [],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. ",
+            "description": "A right triangle with perpendicular sides unknown a and {{b}}, and hypotenuse {{c}}. ",
             "caption": "The small corner marker is a right angle: 90 degrees."
           }
         },
@@ -1550,23 +1986,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "a squared plus twelve squared equals one hundred and sixty-nine",
-              "latex": "a^2+12^2=169",
-              "spoken": "a squared plus twelve squared equals one hundred and sixty-nine",
+              "text": "a squared plus {{b|words}} squared equals {{cc|words}}",
+              "latex": "a^2+{{b}}^2={{cc}}",
+              "spoken": "a squared plus {{b|words}} squared equals {{cc|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Thirteen squared is one hundred and sixty-nine.",
+          "explanation": "{{c|Words}} squared is {{cc|words}}.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1581,7 +2023,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: c: 169.",
+            "description": "A right triangle with perpendicular sides unknown a and {{b}}, and hypotenuse {{c}}. Known square areas: c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1593,23 +2035,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "a squared plus one hundred and forty-four equals one hundred and sixty-nine",
-              "latex": "a^2+144=169",
-              "spoken": "a squared plus one hundred and forty-four equals one hundred and sixty-nine",
+              "text": "a squared plus {{bb|words}} equals {{cc|words}}",
+              "latex": "a^2+{{bb}}={{cc}}",
+              "spoken": "a squared plus {{bb|words}} equals {{cc|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Twelve squared is one hundred and forty-four.",
+          "explanation": "{{b|Words}} squared is {{bb|words}}.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1625,7 +2073,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: b: 144, c: 169.",
+            "description": "A right triangle with perpendicular sides unknown a and {{b}}, and hypotenuse {{c}}. Known square areas: b: {{bb}}, c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1637,23 +2085,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "a squared equals one hundred and sixty-nine minus one hundred and forty-four",
-              "latex": "a^2=169-144",
-              "spoken": "a squared equals one hundred and sixty-nine minus one hundred and forty-four",
+              "text": "a squared equals {{cc|words}} minus {{bb|words}}",
+              "latex": "a^2={{cc}}-{{bb}}",
+              "spoken": "a squared equals {{cc|words}} minus {{bb|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "Subtract one hundred and forty-four from both sides. The unknown square is the remaining part of the hypotenuse square area.",
+          "explanation": "Subtract {{bb|words}} from both sides. The unknown square is the remaining part of the hypotenuse square area.",
           "detail": "",
           "operation": {
             "type": "replace"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1669,7 +2123,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: b: 144, c: 169.",
+            "description": "A right triangle with perpendicular sides unknown a and {{b}}, and hypotenuse {{c}}. Known square areas: b: {{bb}}, c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1681,23 +2135,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "a squared equals twenty-five",
-              "latex": "a^2=25",
-              "spoken": "a squared equals twenty-five",
+              "text": "a squared equals {{aa|words}}",
+              "latex": "a^2={{aa}}",
+              "spoken": "a squared equals {{aa|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "One hundred and sixty-nine minus one hundred and forty-four leaves twenty-five square units.",
+          "explanation": "{{cc|Words}} minus {{bb|words}} leaves {{aa|words}} square units.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1714,7 +2174,7 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides unknown a and 12, and hypotenuse 13. Known square areas: a: 25, b: 144, c: 169.",
+            "description": "A right triangle with perpendicular sides unknown a and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
@@ -1726,23 +2186,29 @@
           "left": [
             {
               "id": "expression",
-              "text": "a equals square root of twenty-five, which is five",
-              "latex": "a=\\sqrt{25}=5",
-              "spoken": "a equals square root of twenty-five, which is five",
+              "text": "a equals square root of {{aa|words}}, which is {{a|words}}",
+              "latex": "a=\\sqrt{{{aa}}}={{a}}",
+              "spoken": "a equals square root of {{aa|words}}, which is {{a|words}}",
               "tone": "original"
             }
           ],
           "right": [],
           "balance": null,
-          "explanation": "The shorter side is five units. We subtracted because one square area was missing from a known total.",
+          "explanation": "The shorter side is {{a|words}} units. We subtracted because one square area was missing from a known total.",
           "detail": "",
           "operation": {
             "type": "simplify"
           },
           "scene": {
-            "a": 5,
-            "b": 12,
-            "c": 13,
+            "a": {
+              "$value": "a"
+            },
+            "b": {
+              "$value": "b"
+            },
+            "c": {
+              "$value": "c"
+            },
             "squares": [
               "a",
               "b",
@@ -1760,12 +2226,87 @@
             ],
             "unitTiles": false,
             "transfer": false,
-            "description": "A right triangle with perpendicular sides 5 and 12, and hypotenuse 13. Known square areas: a: 25, b: 144, c: 169.",
+            "description": "A right triangle with perpendicular sides {{a}} and {{b}}, and hypotenuse {{c}}. Known square areas: a: {{aa}}, b: {{bb}}, c: {{cc}}.",
             "caption": "The small corner marker is a right angle: 90 degrees."
           },
           "highlight": [
             "expression"
           ]
+        }
+      ],
+      "parameters": {
+        "b": {
+          "min": 3,
+          "max": 12
+        },
+        "c": {
+          "min": 5,
+          "max": 17
+        }
+      },
+      "derived": {
+        "bb": {
+          "power": [
+            "b",
+            2
+          ]
+        },
+        "cc": {
+          "power": [
+            "c",
+            2
+          ]
+        },
+        "aa": {
+          "subtract": [
+            {
+              "power": [
+                "c",
+                2
+              ]
+            },
+            {
+              "power": [
+                "b",
+                2
+              ]
+            }
+          ]
+        },
+        "a": {
+          "power": [
+            {
+              "subtract": [
+                {
+                  "power": [
+                    "c",
+                    2
+                  ]
+                },
+                {
+                  "power": [
+                    "b",
+                    2
+                  ]
+                }
+              ]
+            },
+            0.5
+          ]
+        }
+      },
+      "integers": [
+        "a"
+      ],
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              "a",
+              12
+            ]
+          },
+          "message": "Keep the shorter side within the supported drawing bounds."
         }
       ]
     }
