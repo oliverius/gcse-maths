@@ -1,5 +1,7 @@
 # Maths Lab — Foundation GCSE
 
+[![Open live demo](https://img.shields.io/badge/Open-Live_Demo-4f7c82?style=for-the-badge)](https://oliverius.github.io/gcse-maths/)
+
 A static visual maths tutor for a student who needs a calm pace, large controls and explicit mathematical reasoning. Each Next tap performs one step, then stops. The original balance lessons and highlighted new terms are preserved. KaTeX and its fonts are bundled locally; there are no accounts, CDN dependencies or build steps.
 
 ## Run locally
@@ -296,9 +298,13 @@ Known limits: this is a focused 44-lesson selection, not complete GCSE coverage;
 
 ## GitHub Pages
 
-No backend or build is required. All source and fetch paths are relative and support repository subpaths.
+The [live demo](https://oliverius.github.io/gcse-maths/) uses the same badge style and deployment workflow as Balance Game. No backend or build is required. All source and fetch paths are relative and support repository subpaths.
 
-- For simple branch hosting, choose your branch and `/ (root)` in Settings → Pages, then open `https://<user>.github.io/<repository>/src/`.
-- To publish at the project root, use GitHub Pages Actions and upload **`src`** as the Pages artifact. Pages branch hosting cannot select an arbitrary `src` directory.
+To enable the demo:
 
-The development server, tests and ignored `temp` directory do not belong in the Pages artifact. This change does not deploy the site.
+1. Push these changes to GitHub on the `main` branch.
+2. In this repository, open **Settings ? Pages ? Build and deployment** and set **Source** to **GitHub Actions**.
+3. Open **Actions ? Deploy to GitHub Pages ? Run workflow**, choose `main`, and run it. Later pushes to `main` deploy automatically.
+4. Once the workflow succeeds, open **https://oliverius.github.io/gcse-maths/**.
+
+The workflow in `.github/workflows/deploy-pages.yml` uploads only **`src`** as the Pages artifact, publishing the app at the project root. The development server, tests and ignored `temp` directory stay outside the artifact. The demo link becomes available after the first successful deployment.
