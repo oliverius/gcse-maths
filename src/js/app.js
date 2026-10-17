@@ -9,6 +9,7 @@ const visual = byId('visual');
 let current;
 let engine;
 let busy = false;
+const areaTitles = new Map();
 const lessonButtons = [];
 const narrow = window.matchMedia('(max-width: 999px)');
 let sidebarOpen = !narrow.matches;
@@ -38,7 +39,7 @@ function controls() {
 }
 function render() {
   const state = engine.state;
-  byId('topic').textContent = `${current.subjectArea === 'algebra' ? 'Algebra' : 'Number'} · Foundation`;
+  byId('topic').textContent = `${areaTitles.get(current.subjectArea)} · Foundation`;
   renderMath(byId('lesson-title'), current.notation);
   byId('counter').textContent = `Step ${engine.index + 1} of ${current.steps.length}`;
   renderContent(byId('step-title'), state.titleContent, state.title);
@@ -108,6 +109,7 @@ export const ready = (async () => {
     await prepareNotation();
     const areas = await createLoader().load();
     for (const area of areas) {
+      areaTitles.set(area.id,area.title);
       const details = document.createElement('details');
       const summary = document.createElement('summary'); summary.textContent = area.title; details.append(summary);
       for (const lesson of area.lessons) {

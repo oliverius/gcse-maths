@@ -1,7 +1,8 @@
 import { linearExpression } from './mathematics.js';
 import { validateNotation } from './notation.js';
+import { diagramOperations, validateDiagram } from './diagram-state.js';
 export const operations = new Set(['show', 'apply-left', 'apply-right', 'apply-both', 'cancel', 'simplify', 'highlight', 'replace', 'group', 'split', 'distribute', 'move', 'partition']);
-export const renderers = new Set(['balance', 'expression', 'number-line', 'fractions']);
+export const renderers = new Set(['balance', 'expression', 'number-line', 'fractions', ...Object.keys(diagramOperations)]);
 const fail = message => { throw new Error(message); };
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const finite = value => typeof value === 'number' && Number.isFinite(value);
@@ -31,10 +32,12 @@ export function validateLesson(lesson, area) {
       balance: ['show', 'apply-left', 'apply-right', 'apply-both', 'cancel', 'simplify', 'highlight', 'group', 'split'],
       expression: ['show', 'highlight', 'replace', 'simplify', 'group', 'distribute'],
       'number-line': ['show', 'move', 'simplify'],
-      fractions: ['show', 'partition']
+      fractions: ['show', 'partition'],
+      ...diagramOperations
     };
     if (!supported[lesson.kind].includes(state.operation.type) || !state.left.length) fail('This renderer does not support that operation.');
     if ('value' in state.operation && !finite(state.operation.value)) fail('Invalid operation value.');
+    if(diagramOperations[lesson.kind])validateDiagram(lesson,state);
     const terms = [...state.left, ...state.right];
     terms.forEach(validateNotation);
     for (const field of ['titleContent', 'explanationContent', 'detailContent']) {

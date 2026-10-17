@@ -7,12 +7,12 @@ import { createPresentation } from '../src/js/presentation.js';
 const fetchJSON = async url => ({ ok: true, json: async () => JSON.parse(await readFile(url, 'utf8')) });
 const areas = await createLoader(fetchJSON).load();
 const lessons = areas.flatMap(a => a.lessons.filter(l => l.available));
-test('six subjects load with globally unique IDs and twelve implemented lessons', () => {
+test('six subjects load with globally unique IDs and thirty-two implemented lessons', () => {
   assert.equal(areas.length, 6);
   assert.deepEqual(areas.flatMap(a => a.errors), []);
   const ids = areas.flatMap(a => a.lessons.map(l => l.id));
   assert.equal(ids.length, new Set(ids).size);
-  assert.equal(lessons.length, 12);
+  assert.equal(lessons.length, 32);
   for (const lesson of lessons) {
     assert.ok(lesson.curriculum.every(r => r.url.startsWith('https://www.aqa.org.uk/')));
     assert.ok(lesson.steps.every(s => operations.has(s.operation.type)));
@@ -45,7 +45,7 @@ test('invalid JSON file, invalid lesson, and duplicate ID are isolated', async (
   assert.equal(loaded.find(a=>a.id==='geometry').errors.length,1);
   assert.equal(loaded.find(a=>a.id==='algebra').errors.length,2);
   assert.equal(loaded.find(a=>a.id==='algebra').lessons.length,7);
-  assert.equal(loaded.find(a=>a.id==='number').lessons.filter(l=>l.available).length,5);
+  assert.equal(loaded.find(a=>a.id==='number').lessons.filter(l=>l.available).length,8);
 });
 test('validation rejects false equality, unsupported operations, unsafe URLs and malformed state', () => {
   const original = lessons.find(l=>l.id==='add-both');

@@ -36,6 +36,28 @@ export async function transition(previous, current) {
     }));
   }
   const oldObjects = new Set([...previous.querySelectorAll('[data-object]')].map(node => node.getAttribute('data-object')));
+  // Semantic diagram objects use the same deterministic offset animation as terms.
+  const oldEntities=new Map([...previous.querySelectorAll('[data-entity]')].map(node=>[node.getAttribute('data-entity'),node]));
+  for(const node of current.querySelectorAll('[data-entity]')){
+    const old=oldEntities.get(node.getAttribute('data-entity'));
+    if(!old)tasks.push(animate(node,[{opacity:0},{opacity:1}],timing.duration));
+    else {
+      const dx=Number(old.getAttribute('x'))-Number(node.getAttribute('x'));
+      const dy=Number(old.getAttribute('y'))-Number(node.getAttribute('y'));
+      // Opacity uses the destination attribute so crossed-out data stays muted.
+      tasks.push(animate(node,[{transform:`translate(${dx}px, ${dy}px)`},{transform:'translate(0, 0)'}],timing.duration));
+      const oldPaint=old.querySelectorAll('rect, path, polygon, line');
+      const newPaint=node.querySelectorAll('rect, path, polygon, line');
+      if(oldPaint.length===newPaint.length)newPaint.forEach((shape,i)=>{
+        const from={},to={};
+        for(const attribute of ['fill','stroke'])if(shape.hasAttribute(attribute)&&oldPaint[i].hasAttribute(attribute)&&shape.getAttribute(attribute)!==oldPaint[i].getAttribute(attribute)){
+          from[attribute]=oldPaint[i].getAttribute(attribute);to[attribute]=shape.getAttribute(attribute);
+        }
+        if(Object.keys(to).length)tasks.push(animate(shape,[from,to],timing.duration));
+      });
+      if(old.getAttribute('opacity')!==node.getAttribute('opacity'))tasks.push(animate(node,[{opacity:Number(old.getAttribute('opacity')||1)},{opacity:Number(node.getAttribute('opacity')||1)}],timing.duration));
+    }
+  }
   current.querySelectorAll('[data-object]').forEach(node => {
     if (!oldObjects.has(node.getAttribute('data-object'))) tasks.push(animate(node, [{ opacity: 0 }, { opacity: 1 }], timing.duration));
   });

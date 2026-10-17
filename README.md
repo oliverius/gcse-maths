@@ -19,17 +19,23 @@ Use HTTP rather than `file://`: the app fetches JSON and imports ES modules. Onc
 | Subject | Fully implemented |
 | --- | --- |
 | Algebra | `x − 3 = 2`; `x + 3 = 2`; `3x = 12`; `x / 4 = 3`; `2x + 3 = 11`; `3x + 2x = 15`; `3(x + 2)` |
-| Number | `6 × (2 + 3)`; `2 − 5`; `4 + (−3)`; `4 + 3 × 2`; `1/2 = 2/4` |
+| Number | `6 × (2 + 3)`; `2 − 5`; `4 + (−3)`; `4 + 3 × 2`; `1/2 = 2/4`; three quarters of 20; 25% of 80; adding sixths |
+| Ratio, Proportion and Rates of Change | Equivalent ratios `2:3 = 4:6`; simplifying `6:9`; sharing 20 in `2:3`; unitary cost (3 items cost £12, find 1 then 5) |
+| Geometry and Measures | Adjacent angles on a straight line; angles around a point; rectangle perimeter; rectangle area; right-triangle area by completing a rectangle |
+| Probability | Equally likely outcomes; complementary events; the probability scale |
+| Statistics | Mean by redistribution; odd-sized median; mode; range; reading a bar chart |
 
 The algebra lessons use balances, equal groups and moving x/unit tiles. Distribution is an expression lesson with no balance; it is deliberately distinct from evaluating numeric brackets. Number-line lessons move one unit per tap. Fraction bars introduce partitions without changing the shaded area.
 
-These are **non-clickable Coming later entries**, with no claim of an implemented renderer:
+There are **32 implemented lessons** across the six official areas. Fractions and percentages stay in Number: no duplicated navigation area is needed. All earlier Number and Algebra lessons remain available; the earlier planned entries have been replaced with working lessons. The sidebar is a teaching selection, not a claim of full GCSE coverage.
 
-- Number: three quarters of 20; 25% of 80.
-- Ratio, Proportion and Rates of Change: sharing 20 in 1:3; equivalent ratios 2:3 and 4:6.
-- Geometry and Measures: angles on a straight line; rectangle area.
-- Probability: equally likely outcomes.
-- Statistics: mean as equal sharing.
+Prioritised future work (not interactive placeholders):
+
+1. Number: decimal place value, a hundred grid, percentage increase/decrease.
+2. Geometry: triangle angle rearrangement, unit conversions, coordinate transformations, map scales and Pythagoras.
+3. Probability: combined-event sample spaces and relative frequency versus theoretical probability.
+4. Statistics: even-sized median, frequency tables to charts and pie charts.
+5. Ratio: linked direct-proportion bars and scale diagrams.
 
 ## Architecture
 
@@ -45,6 +51,8 @@ src/
   js/mathematics.js         non-executable linear-expression parser
   js/balance.js             original SVG balance/expression rendering, group tiles
   js/renderers.js           renderer dispatch, number lines and fraction bars
+  js/diagrams.js            counters, angles, shapes, data cards, charts, probability
+  js/diagram-state.js       schema and mathematical invariants for diagram scenes
   js/animations.js          term identity transitions, cancellation, beam movement
   js/presentation.js        native fullscreen and in-page fallback
   js/notation.js            shared KaTeX renderer, spoken labels and term sizing
@@ -61,7 +69,7 @@ The six-area manifest defines order, titles and JSON paths. Subject files load i
 Each subject contains `id`, `title`, and `lessons`. Available lessons contain:
 
 - `id` (globally unique), `title`, `label`, `tier: "Foundation"`, `subjectArea`, `available: true`.
-- `kind`: `balance`, `expression`, `number-line`, or `fractions`.
+- `kind`: `balance`, `expression`, `number-line`, `fractions`, or one of the diagram kinds below.
 - `initialExpression`, `objective`, `prerequisites` array, and `curriculum` array of `{provider, reference?, title, url}`.
 - `tutorNotes`: `observe`, `misconception`, `checkQuestion`.
 - `steps`: complete deterministic states, not executable transformations.
@@ -96,6 +104,23 @@ Balance steps declare `balance: -1 | 0 | 1`, explicit `unbalanced`, and `math: {
 
 Other renderers use `balance: null`. Number-line steps declare `position` from −5 to 5. Fraction steps declare `bars: [{id, parts, shaded}]`. Optional `groups: [{id, label, items: [{id, text, tone}]}]` render equal groups or tiles below a balance/expression. Keep groups small enough to remain readable.
 
+### Diagram scenes
+
+The existing manifest still registers exactly six subject files. New lessons reuse the same step engine, operation types, KaTeX terms and controls. They add `scene`, always with a meaningful `description` for the canvas's spoken equivalent and an optional `caption`.
+
+| Kind | Scene fields and visual behaviour |
+| --- | --- |
+| `counter-groups` | `groups: [{id, label, items, category?, summary?}]`. Items contain stable `id`, positive numeric `value`, `latex`, `spoken`, optional `tone`, `highlight`, `shape`, `category`. Counters move between groups, new copies fade in and selected quantities change fill/outline calmly. Maximum five groups; validation checks readable capacity. Blue/gold probability outcomes also carry B/G labels. |
+| `angle-diagram` | `total: 180 or 360`, `sectors: [{id, start, end, known, tone?}]`. Endpoints are angles in degrees; sectors must be contiguous and non-overlapping. SVG arcs use the actual angle, not an illustrative approximation. Final angles must fill the declared turn. |
+| `shape-grid` | `shape: "rectangle" or "triangle"`, integer `width`, `height`, optional `grid`, `rows`, `sides`, `copy`. Rectangle cells are equal squares; complete rows shade in sequence. Perimeter highlights actual boundary edges. A congruent right triangle fills the other half of a rectangle without distortion. |
+| `data-cards` | `items: [{id, value}]`, `selected` and `muted` ID arrays. Sorting moves original cards without changing their values. Paired-off median cards are crossed out as well as dimmed. Selected values get a contrasting border and background. |
+| `bar-chart` | Three `categories: [{id, label, value}]`, `active` (null or a category ID), and boolean `guide`. Equally spaced, labelled axis ticks run from zero to six. A dashed guide connects the selected bar's height to its frequency. |
+| `probability-scale` | `probability` between zero and one. A stable marker moves along a proportionally spaced scale with impossible/likely/certain labels and stacked quarter/half fractions. |
+
+New lessons may declare a `model` used for invariants and tests: `total` preserves counter value, `ratio` verifies the A/B relationship, and `values` preserves the data-card multiset. Additional numeric dimensions/results document worked examples and are checked in the tests. A counter card may represent one unit, one pound, or a labelled group of twenty: explanations and captions explicitly state its meaning. IDs describe mathematical objects, not their screen positions.
+
+The animation layer extends its existing term transitions with `data-entity` wrappers for whole diagram objects. This moves a counter and its label together, preserves selected/crossed-out states, and animates fill/stroke changes. No functions, coordinates to execute, or arbitrary HTML are stored in JSON. The original balance and fraction renderers remain in use.
+
 Supported operation types describe intent; each includes a complete destination state:
 
 | Types | Presentation |
@@ -122,6 +147,8 @@ The engine controls the index and locks transitions. The renderer reads the stat
 
 Each available lesson carries its own official reference and the UI displays that link and collapsed tutor notes. The current entries reference the verified AQA 8300 [Algebra](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.2-algebra) and [Number](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number) sections: A17 for equations, A4 for manipulation, N1/N2 for signed arithmetic, N3 for operation order, and the Number section for fraction arithmetic. These topics are included in the specification's Foundation content, and are not exclusive to Foundation. URLs and mappings checked on 17 October 2026.
 
+The new lessons also reference verified AQA subject pages: [Ratio, proportion and rates of change](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.3-ratio-proportion-and-rates-of-change) (R4, R5, R11); [Geometry and measures](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures) (G3, G16, G17); [Probability](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability) (P2, P3, P4, P7); [Statistics](https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics) (S2, S4). Fraction operators use N12 and adding sixths uses N2. Rectangle area intentionally carries a general Geometry subject reference rather than an inferred granular code. The tutor can check this general mapping; the other listed codes were checked against the official pages on 17 October 2026. AQA codes are not presented as universal exam-board codes.
+
 Verify any new topic mapping before adding a granular code. If only a high-level official source is verified, omit the code; do not invent one. Planned entries have no fabricated references.
 
 ## Accessibility and presentation
@@ -143,7 +170,9 @@ Tests cover the original three lesson regressions; all available lesson navigati
 
 Notation tests also cover KaTeX fraction/power/root output, MathML, valid notation and spoken labels for all lesson terms, malformed LaTeX, stable cancellation IDs, and agreement between the new LaTeX and every existing balance state's numerical model.
 
-Headless Edge checks were also run at 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow, controls at least 56px, all 12 lesson sequences, Back/Restart, rapid taps, fixed control positions within each lesson, fallback fullscreen and absence of runtime errors. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
+Baseline before extending the remaining sections: **16 tests passed**. Current suite: **25 tests passed**, including ratios/shares, costs, exact sector totals, shape formulas, complements, equal-share invariants, one-counter-at-a-time redistribution, median/mode/range, chart readings, fractional operators, preserved identities, and invalid diagram rejection. The UI navigation test visits all 32 available lessons, including Back/Restart, step bounds and rapid taps.
+
+Headless Edge checks were also run at 768×1024, 1024×768, 1180×820 and 390×844: no horizontal overflow and controls at least 56px. All **32 lesson sequences (97 forward transitions)** ran at each of the two main iPad orientations, including Back/Restart, rapid taps, fixed control positions within each lesson, notation bounds and plate clearance. Normal-motion tests exercise the original balance/cancellation and each new diagram primitive; reduced-motion tests keep state changes instant. Fallback fullscreen and runtime-error checks pass. Representative new diagrams have screenshots under ignored `temp`. These desktop browser checks do not replace iPad Safari and VoiceOver testing.
 
 To repeat browser checks, start `npm start`, then launch a separate headless Edge/Chromium instance with `--remote-debugging-port=9223` and a dedicated `--user-data-dir` (for example, under ignored `temp`). Run `node scripts/browser-check.mjs`. It uses Node's built-in WebSocket, saves viewport screenshots under `temp`, and closes that dedicated browser when finished. No browser package is installed. Set `MATHS_TEST_URL` if your server uses another port. The checks also measure KaTeX bounds and plate clearance at iPad sizes. Native OS fullscreen can stall in headless Windows, so supported-API behaviour is unit tested and native browser entry/exit remains a physical-device check; the browser suite checks both fallback paths.
 
@@ -151,11 +180,11 @@ On an iPad:
 
 1. In portrait, open the menu, expand each area and select a lesson. Check the drawer closes and equations are legible. Rotate to landscape and check the sidebar and navigation controls.
 2. Run both original equations through all five steps. Check ≠ and tilt only during one-sided operations, matched purple terms, cancellation and the explanation of −1.
-3. Try the group/tile, bracket, number-line and fraction lessons. Tap Next rapidly, then Back and Restart. Confirm each completed transformation pauses.
+3. Try sharing in a ratio, triangle area, equally likely outcomes and mean. Confirm counters and labels move together, highlighted quantities are clear, and each step pauses. Also test the existing bracket, number-line and fraction lessons. Tap Next rapidly, then Back and Restart.
 4. Enter and exit full screen; try the in-page fallback if native full screen is unavailable. The exit button must stay obvious.
 5. Enable Reduce Motion; check instant state changes. Use a keyboard and VoiceOver to check focus and announcements. Open tutor notes and the official reference.
 
-Known limits: only the twelve listed lessons are available; new renderer types require code. Phone-sized equations and five-group diagrams are less spacious than on the primary iPad target. Native fullscreen, touch behaviour and VoiceOver still need verification on a physical iPad. The static server is for local development and binds to loopback.
+Known limits: this is a focused 32-lesson selection, not complete GCSE coverage. The triangle-area example uses a right triangle; it does not establish all triangle formulas visually. Median currently uses an odd-sized data set, and mode uses a single unambiguous mode. The chart renderer is bounded to the small worked example. New renderer types require code. Phone-sized equations and five-group diagrams are less spacious than on the primary iPad target. Native fullscreen, touch behaviour and VoiceOver still need verification on a physical iPad. The static server is for local development and binds to loopback.
 
 ## GitHub Pages
 

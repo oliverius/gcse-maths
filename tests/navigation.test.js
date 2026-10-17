@@ -45,7 +45,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
   assert.equal(get('counter').textContent, 'Step 1 of 5');
   assert.equal(get('back').disabled, true);
   const buttons = get('lessons').querySelectorAll('button');
-  assert.equal(buttons.length, 12);
+  assert.equal(buttons.length, 32);
   const { createLoader } = await import('../src/js/lesson-loader.js');
   const available = (await createLoader().load()).flatMap(a => a.lessons.filter(l => l.available));
   for (let lesson = 0; lesson < buttons.length; lesson++) {
@@ -54,6 +54,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
     await settle();
     assert.equal(get('sidebar').hidden, true, 'portrait selection closes drawer');
     assert.equal(document.activeElement, get('lesson-title'));
+    assert.ok(get('topic').textContent.includes((await createLoader().load()).find(a=>a.id===available[lesson].subjectArea).title));
     const length = available[lesson].steps.length;
     for (let step = 2; step <= length; step++) {
       get('next').click();

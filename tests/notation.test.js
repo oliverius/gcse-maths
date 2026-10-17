@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { mathHTML, validateNotation } from '../src/js/notation.js';
 import { validateLesson } from '../src/js/lesson-engine.js';
 import { linearExpression } from '../src/js/mathematics.js';
-const subjects = await Promise.all(['algebra','number'].map(async area => JSON.parse(await readFile(new URL(`../src/data/${area}.json`,import.meta.url),'utf8'))));
+const subjects = await Promise.all(['algebra','number','ratio','geometry','probability','statistics'].map(async area => JSON.parse(await readFile(new URL(`../src/data/${area}.json`,import.meta.url),'utf8'))));
 const lessons = subjects.flatMap(s => s.lessons.filter(l => l.available));
 test('KaTeX renders stacked fractions, implicit products, powers, roots and negatives with MathML', () => {
   for (const [latex, markup] of [['\\frac{x}{4}','<mfrac>'],['3x','<mi>x</mi>'],['x^2','<msup>'],['\\sqrt{x}','<msqrt>'],['-1','<mo>−</mo>'],['6 \\times (2+3)','×']]) {

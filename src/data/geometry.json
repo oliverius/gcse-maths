@@ -4,17 +4,849 @@
   "lessons": [
     {
       "id": "straight-line",
-      "title": "Angles on a straight line",
+      "title": "Angles on a line",
+      "label": "Angles on a line",
       "tier": "Foundation",
       "subjectArea": "geometry",
-      "available": false
+      "available": true,
+      "kind": "angle-diagram",
+      "initialExpression": "Angles on a line",
+      "notation": {
+        "latex": "110^{\\circ}+?=180^{\\circ}",
+        "spoken": "Angles on a line"
+      },
+      "objective": "Use a straight angle to find a missing adjacent angle.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G3",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Calling adjacent angles on a straight line complementary; they sum to 180, not 90.",
+        "checkQuestion": "Why must the two angles add to one hundred and eighty degrees?"
+      },
+      "model": {
+        "total": 180,
+        "angles": [
+          110,
+          70
+        ]
+      },
+      "steps": [
+        {
+          "title": "A straight angle is half a turn",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one hundred and eighty degrees",
+              "latex": "180^{\\circ}",
+              "spoken": "one hundred and eighty degrees",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Angles meeting on this straight line fill a half turn.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "total": 180,
+            "sectors": [
+              {
+                "id": "whole",
+                "start": 0,
+                "end": 180,
+                "known": true,
+                "tone": "original"
+              }
+            ],
+            "description": "A half-turn sector measuring one hundred and eighty degrees."
+          }
+        },
+        {
+          "title": "Show the known angle",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one hundred and ten degrees plus unknown equals one hundred and eighty degrees",
+              "latex": "110^{\\circ}+?=180^{\\circ}",
+              "spoken": "one hundred and ten degrees plus unknown equals one hundred and eighty degrees",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The blue angle is one hundred and ten degrees. The purple angle fills the rest.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "total": 180,
+            "sectors": [
+              {
+                "id": "known",
+                "start": 0,
+                "end": 110,
+                "known": true,
+                "tone": "original"
+              },
+              {
+                "id": "missing",
+                "start": 110,
+                "end": 180,
+                "known": false,
+                "tone": "operation"
+              }
+            ],
+            "description": "Adjacent sectors of one hundred and ten degrees and an unknown angle fill the straight angle."
+          }
+        },
+        {
+          "title": "Find the rest of the half turn",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one hundred and eighty minus one hundred and ten equals seventy degrees",
+              "latex": "180^{\\circ}-110^{\\circ}=70^{\\circ}",
+              "spoken": "one hundred and eighty minus one hundred and ten equals seventy degrees",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtract the known angle from the straight angle. The missing angle is seventy degrees.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "total": 180,
+            "sectors": [
+              {
+                "id": "known",
+                "start": 0,
+                "end": 110,
+                "known": true,
+                "tone": "original"
+              },
+              {
+                "id": "missing",
+                "start": 110,
+                "end": 180,
+                "known": true,
+                "tone": "operation"
+              }
+            ],
+            "description": "The two adjacent angles measure one hundred and ten and seventy degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     },
     {
       "id": "rectangle-area",
-      "title": "Area of a 5 × 3 rectangle",
+      "title": "Rectangle area",
+      "label": "Rectangle area",
       "tier": "Foundation",
       "subjectArea": "geometry",
-      "available": false
+      "available": true,
+      "kind": "shape-grid",
+      "initialExpression": "Rectangle area",
+      "notation": {
+        "latex": "5\\times3=15",
+        "spoken": "Rectangle area"
+      },
+      "objective": "Connect rows of unit squares to length times width.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "General subject reference",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Using boundary units instead of square units for area.",
+        "checkQuestion": "Why is this answer in square units rather than units?"
+      },
+      "model": {
+        "width": 5,
+        "height": 3,
+        "result": 15
+      },
+      "steps": [
+        {
+          "title": "Area measures the inside",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five times three",
+              "latex": "5\\times3",
+              "spoken": "five times three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Cover the rectangle with equal unit squares, without gaps or overlaps.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 5,
+            "height": 3,
+            "description": "A rectangle 5 units wide and 3 units high.",
+            "grid": true,
+            "rows": 0
+          }
+        },
+        {
+          "title": "Fill row 1",
+          "left": [
+            {
+              "id": "expression",
+              "text": "1 times five equals 5",
+              "latex": "1\\times5=5",
+              "spoken": "1 times five equals 5",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each row contains five unit squares. One row covers five square units.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 5,
+            "height": 3,
+            "description": "1 complete rows of five shaded unit squares.",
+            "grid": true,
+            "rows": 1
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Fill row 2",
+          "left": [
+            {
+              "id": "expression",
+              "text": "2 times five equals 10",
+              "latex": "2\\times5=10",
+              "spoken": "2 times five equals 10",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each row contains five unit squares. 2 rows cover 10 square units.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 5,
+            "height": 3,
+            "description": "2 complete rows of five shaded unit squares.",
+            "grid": true,
+            "rows": 2
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Fill row 3",
+          "left": [
+            {
+              "id": "expression",
+              "text": "3 times five equals 15",
+              "latex": "3\\times5=15",
+              "spoken": "3 times five equals 15",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each row contains five unit squares. 3 rows cover 15 square units.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 5,
+            "height": 3,
+            "description": "3 complete rows of five shaded unit squares.",
+            "grid": true,
+            "rows": 3
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Three rows of five make fifteen",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five times three equals fifteen",
+              "latex": "5\\times3=15",
+              "spoken": "five times three equals fifteen",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The area is fifteen square units. Each small square is one square unit.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 5,
+            "height": 3,
+            "description": "A rectangle 5 units wide and 3 units high.",
+            "grid": true,
+            "rows": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "angles-point",
+      "title": "Angles around a point",
+      "label": "Angles around a point",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": true,
+      "kind": "angle-diagram",
+      "initialExpression": "Angles around a point",
+      "notation": {
+        "latex": "140^{\\circ}+90^{\\circ}+?=360^{\\circ}",
+        "spoken": "Angles around a point"
+      },
+      "objective": "Use a full turn to find the remaining angle around a point.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G3",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Using 180 for a full turn around a point.",
+        "checkQuestion": "How is a full turn different from a straight angle?"
+      },
+      "model": {
+        "total": 360,
+        "angles": [
+          140,
+          90,
+          130
+        ]
+      },
+      "steps": [
+        {
+          "title": "Start with the first angle",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one hundred and forty degrees",
+              "latex": "140^{\\circ}",
+              "spoken": "one hundred and forty degrees",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The first angle covers part of a full turn.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "total": 360,
+            "sectors": [
+              {
+                "id": "first",
+                "start": 0,
+                "end": 140,
+                "known": true,
+                "tone": "original"
+              }
+            ],
+            "description": "A one hundred and forty degree sector."
+          }
+        },
+        {
+          "title": "Add the next angle",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one hundred and forty plus ninety equals two hundred and thirty degrees",
+              "latex": "140^{\\circ}+90^{\\circ}=230^{\\circ}",
+              "spoken": "one hundred and forty plus ninety equals two hundred and thirty degrees",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A right angle adds ninety degrees. Together the known angles cover two hundred and thirty degrees.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "total": 360,
+            "sectors": [
+              {
+                "id": "first",
+                "start": 0,
+                "end": 140,
+                "known": true,
+                "tone": "original"
+              },
+              {
+                "id": "second",
+                "start": 140,
+                "end": 230,
+                "known": true,
+                "tone": "operation"
+              }
+            ],
+            "description": "The two known sectors total two hundred and thirty degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Complete the full turn",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three hundred and sixty minus two hundred and thirty equals one hundred and thirty degrees",
+              "latex": "360^{\\circ}-230^{\\circ}=130^{\\circ}",
+              "spoken": "three hundred and sixty minus two hundred and thirty equals one hundred and thirty degrees",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The remaining angle is one hundred and thirty degrees. The three angles make a full turn.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "total": 360,
+            "sectors": [
+              {
+                "id": "first",
+                "start": 0,
+                "end": 140,
+                "known": true,
+                "tone": "original"
+              },
+              {
+                "id": "second",
+                "start": 140,
+                "end": 230,
+                "known": true,
+                "tone": "operation"
+              },
+              {
+                "id": "rest",
+                "start": 230,
+                "end": 360,
+                "known": true,
+                "tone": "operation"
+              }
+            ],
+            "description": "Angles of one hundred and forty, ninety and one hundred and thirty degrees make three hundred and sixty degrees."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rectangle-perimeter",
+      "title": "Rectangle perimeter",
+      "label": "Rectangle perimeter",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": true,
+      "kind": "shape-grid",
+      "initialExpression": "Rectangle perimeter",
+      "notation": {
+        "latex": "\\text{Perimeter}",
+        "spoken": "Rectangle perimeter"
+      },
+      "objective": "Find perimeter by adding all four boundary lengths.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G17",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Multiplying length by width gives perimeter.",
+        "checkQuestion": "Why must both long sides and both short sides be counted?"
+      },
+      "model": {
+        "width": 6,
+        "height": 4,
+        "result": 20
+      },
+      "steps": [
+        {
+          "title": "Perimeter measures the boundary",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six units by four units",
+              "latex": "6\\text{ by }4",
+              "spoken": "six units by four units",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Walk around the outside. Count each of the four sides once.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 6,
+            "height": 4,
+            "description": "A rectangle 6 units wide and 4 units high.",
+            "sides": []
+          }
+        },
+        {
+          "title": "Count the top side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six",
+              "latex": "6",
+              "spoken": "six",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The top side is six units long.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 6,
+            "height": 4,
+            "description": "A rectangle 6 units wide and 4 units high.",
+            "sides": [
+              "top"
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Count the right side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six plus four",
+              "latex": "6+4",
+              "spoken": "six plus four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The right side is four units long.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 6,
+            "height": 4,
+            "description": "A rectangle 6 units wide and 4 units high.",
+            "sides": [
+              "top",
+              "right"
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Count the bottom side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six plus four plus six",
+              "latex": "6+4+6",
+              "spoken": "six plus four plus six",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The bottom side is six units long.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 6,
+            "height": 4,
+            "description": "A rectangle 6 units wide and 4 units high.",
+            "sides": [
+              "top",
+              "right",
+              "bottom"
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Count the left side",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six plus four plus six plus four",
+              "latex": "6+4+6+4",
+              "spoken": "six plus four plus six plus four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The left side is four units long.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 6,
+            "height": 4,
+            "description": "A rectangle 6 units wide and 4 units high.",
+            "sides": [
+              "top",
+              "right",
+              "bottom",
+              "left"
+            ]
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Add all four side lengths",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six plus four plus six plus four equals twenty",
+              "latex": "6+4+6+4=20",
+              "spoken": "six plus four plus six plus four equals twenty",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The perimeter is twenty units. This measures length around the edge, not the space inside.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shape": "rectangle",
+            "width": 6,
+            "height": 4,
+            "description": "A rectangle 6 units wide and 4 units high.",
+            "sides": [
+              "top",
+              "right",
+              "bottom",
+              "left"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "triangle-area",
+      "title": "Triangle area",
+      "label": "Triangle area",
+      "tier": "Foundation",
+      "subjectArea": "geometry",
+      "available": true,
+      "kind": "shape-grid",
+      "initialExpression": "Triangle area",
+      "notation": {
+        "latex": "\\frac{1}{2}\\times6\\times4",
+        "spoken": "Triangle area"
+      },
+      "objective": "Explain the factor one half by completing a rectangle with a congruent triangle.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "G16",
+          "title": "GCSE Mathematics 8300 — Geometry and Measures",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.4-geometry-and-measures"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Using the sloping side instead of the perpendicular height.",
+        "checkQuestion": "Why does adding a congruent triangle help us find the area?"
+      },
+      "model": {
+        "base": 6,
+        "height": 4,
+        "result": 12
+      },
+      "steps": [
+        {
+          "title": "Start with a right triangle",
+          "left": [
+            {
+              "id": "expression",
+              "text": "base six, perpendicular height four",
+              "latex": "b=6,\\ h=4",
+              "spoken": "base six, perpendicular height four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The base and perpendicular height are six and four units.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shape": "triangle",
+            "width": 6,
+            "height": 4,
+            "copy": false,
+            "description": "A right triangle with perpendicular base six and height four."
+          }
+        },
+        {
+          "title": "Add one congruent triangle",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six times four equals twenty four",
+              "latex": "6\\times4=24",
+              "spoken": "six times four equals twenty four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A second triangle of exactly the same shape and size completes the rectangle.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "shape": "triangle",
+            "width": 6,
+            "height": 4,
+            "copy": true,
+            "description": "Two congruent right triangles fill a six by four rectangle."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Take half the rectangle",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty four divided by two equals twelve",
+              "latex": "\\frac{24}{2}=12",
+              "spoken": "twenty four divided by two equals twelve",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The rectangle has twenty-four square units. Each congruent triangle has half: twelve.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shape": "triangle",
+            "width": 6,
+            "height": 4,
+            "copy": true,
+            "description": "Two congruent right triangles fill a six by four rectangle."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     }
   ]
 }

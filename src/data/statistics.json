@@ -5,9 +5,1478 @@
     {
       "id": "mean",
       "title": "Mean as equal sharing",
+      "label": "Mean as equal sharing",
       "tier": "Foundation",
       "subjectArea": "statistics",
-      "available": false
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Mean as equal sharing",
+      "notation": {
+        "latex": "\\text{Mean}",
+        "spoken": "Mean as equal sharing"
+      },
+      "objective": "Explain the mean as an equal share of the same total.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Changing the total while finding the average.",
+        "checkQuestion": "Why must the total stay twelve while we redistribute?"
+      },
+      "model": {
+        "total": 12,
+        "values": [
+          2,
+          4,
+          6
+        ],
+        "result": 4
+      },
+      "steps": [
+        {
+          "title": "Different groups, same kind of counter",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two plus four plus six equals twelve",
+              "latex": "2+4+6=12",
+              "spoken": "two plus four plus six equals twelve",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The groups contain two, four and six counters. There are twelve counters altogether.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "pile-0",
+                "label": "Group 1",
+                "items": [
+                  {
+                    "id": "mean-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-1",
+                "label": "Group 2",
+                "items": [
+                  {
+                    "id": "mean-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-2",
+                "label": "Group 3",
+                "items": [
+                  {
+                    "id": "mean-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Three groups contain two, four and six counters.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Move one from the largest group",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three, four, five",
+              "latex": "3,4,5",
+              "spoken": "three, four, five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Move one counter from the group of six to the group of two. The total stays twelve.",
+          "detail": "",
+          "operation": {
+            "type": "distribute"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "pile-0",
+                "label": "Group 1",
+                "items": [
+                  {
+                    "id": "mean-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-1",
+                "label": "Group 2",
+                "items": [
+                  {
+                    "id": "mean-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-2",
+                "label": "Group 3",
+                "items": [
+                  {
+                    "id": "mean-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "One counter moved. The groups now contain three, four and five.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Move one more to make equal groups",
+          "left": [
+            {
+              "id": "expression",
+              "text": "four, four, four",
+              "latex": "4,4,4",
+              "spoken": "four, four, four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Move one more counter from the largest group to the smallest. Now every group has four.",
+          "detail": "",
+          "operation": {
+            "type": "distribute"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "pile-0",
+                "label": "Group 1",
+                "items": [
+                  {
+                    "id": "mean-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-1",
+                "label": "Group 2",
+                "items": [
+                  {
+                    "id": "mean-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-2",
+                "label": "Group 3",
+                "items": [
+                  {
+                    "id": "mean-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "A second counter moved. Each of the three groups now has four.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "The mean is the equal share",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twelve divided by three equals four",
+              "latex": "\\frac{12}{3}=4",
+              "spoken": "twelve divided by three equals four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Twelve counters shared equally between three groups gives a mean of four.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "pile-0",
+                "label": "Group 1",
+                "items": [
+                  {
+                    "id": "mean-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-1",
+                "label": "Group 2",
+                "items": [
+                  {
+                    "id": "mean-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "pile-2",
+                "label": "Group 3",
+                "items": [
+                  {
+                    "id": "mean-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "mean-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The total is still twelve and every group has four.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "median",
+      "title": "Find the median",
+      "label": "Find the median",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the median",
+      "notation": {
+        "latex": "\\text{Median}",
+        "spoken": "Find the median"
+      },
+      "objective": "Order a data set and locate its middle value.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Choosing the middle value in the unsorted list.",
+        "checkQuestion": "Why do we sort the values before choosing the middle?"
+      },
+      "model": {
+        "values": [
+          7,
+          2,
+          9,
+          4,
+          5
+        ],
+        "result": 5
+      },
+      "steps": [
+        {
+          "title": "Read the five values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "seven, two, nine, four, five",
+              "latex": "7,2,9,4,5",
+              "spoken": "seven, two, nine, four, five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The median is the middle value after the data is put in order.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": 7
+              },
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-2",
+                "value": 9
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Values seven, two, nine, four and five in their original order."
+          }
+        },
+        {
+          "title": "Put the same values in ascending order",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two, four, five, seven, nine",
+              "latex": "2,4,5,7,9",
+              "spoken": "two, four, five, seven, nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Rearrange the cards from smallest to largest. No value is added or removed.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              },
+              {
+                "id": "data-0",
+                "value": 7
+              },
+              {
+                "id": "data-2",
+                "value": 9
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "The same cards sorted as two, four, five, seven and nine."
+          }
+        },
+        {
+          "title": "Pair the outside values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two, four, five, seven, nine",
+              "latex": "2,4,5,7,9",
+              "spoken": "two, four, five, seven, nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Set aside the smallest and largest together. Three values remain between them.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              },
+              {
+                "id": "data-0",
+                "value": 7
+              },
+              {
+                "id": "data-2",
+                "value": 9
+              }
+            ],
+            "selected": [],
+            "muted": [
+              "data-1",
+              "data-2"
+            ],
+            "description": "The outside values two and nine are crossed out."
+          }
+        },
+        {
+          "title": "Find the middle value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "median equals five",
+              "latex": "\\text{Median}=5",
+              "spoken": "median equals five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Pair four with seven. Five is left in the middle, with two values on each side.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              },
+              {
+                "id": "data-0",
+                "value": 7
+              },
+              {
+                "id": "data-2",
+                "value": 9
+              }
+            ],
+            "selected": [
+              "data-4"
+            ],
+            "muted": [
+              "data-1",
+              "data-3",
+              "data-0",
+              "data-2"
+            ],
+            "description": "Five is selected in the middle. Two values lie on each side."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mode",
+      "title": "Find the mode",
+      "label": "Find the mode",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the mode",
+      "notation": {
+        "latex": "\\text{Mode}",
+        "spoken": "Find the mode"
+      },
+      "objective": "Find the value that occurs most frequently.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Reporting how many times a value occurs instead of the value itself.",
+        "checkQuestion": "Why is the mode four rather than three?"
+      },
+      "model": {
+        "values": [
+          4,
+          2,
+          7,
+          4,
+          4
+        ],
+        "result": 4
+      },
+      "steps": [
+        {
+          "title": "Read the values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "four, two, seven, four, four",
+              "latex": "4,2,7,4,4",
+              "spoken": "four, two, seven, four, four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The mode is the value that occurs most often.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": 4
+              },
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-2",
+                "value": 7
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 4
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Values four, two, seven, four and four."
+          }
+        },
+        {
+          "title": "Group equal values together",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two, four, four, four, seven",
+              "latex": "2,4,4,4,7",
+              "spoken": "two, four, four, four, seven",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Rearrange the same cards so repeated values sit together.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-0",
+                "value": 4
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 4
+              },
+              {
+                "id": "data-2",
+                "value": 7
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "The same values sorted as two, four, four, four and seven."
+          }
+        },
+        {
+          "title": "Count the most frequent value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "mode equals four",
+              "latex": "\\text{Mode}=4",
+              "spoken": "mode equals four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Four appears three times. Two and seven each appear once. The mode is four, not three.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-1",
+                "value": 2
+              },
+              {
+                "id": "data-0",
+                "value": 4
+              },
+              {
+                "id": "data-3",
+                "value": 4
+              },
+              {
+                "id": "data-4",
+                "value": 4
+              },
+              {
+                "id": "data-2",
+                "value": 7
+              }
+            ],
+            "selected": [
+              "data-0",
+              "data-3",
+              "data-4"
+            ],
+            "muted": [],
+            "description": "The three cards with value four are selected."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "range",
+      "title": "Find the range",
+      "label": "Find the range",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the range",
+      "notation": {
+        "latex": "\\text{Range}",
+        "spoken": "Find the range"
+      },
+      "objective": "Find spread by subtracting the minimum from the maximum.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S4",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Subtracting in the wrong order or reporting the maximum alone.",
+        "checkQuestion": "Why do the other three values not affect this range?"
+      },
+      "model": {
+        "values": [
+          8,
+          3,
+          6,
+          11,
+          5
+        ],
+        "result": 8
+      },
+      "steps": [
+        {
+          "title": "Read the data",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eight, three, six, eleven, five",
+              "latex": "8,3,6,11,5",
+              "spoken": "eight, three, six, eleven, five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Range measures how far the data stretches, from its smallest to its largest value.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": 8
+              },
+              {
+                "id": "data-1",
+                "value": 3
+              },
+              {
+                "id": "data-2",
+                "value": 6
+              },
+              {
+                "id": "data-3",
+                "value": 11
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Values eight, three, six, eleven and five."
+          }
+        },
+        {
+          "title": "Find the smallest value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "minimum equals three",
+              "latex": "\\min=3",
+              "spoken": "minimum equals three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three is the smallest value.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": 8
+              },
+              {
+                "id": "data-1",
+                "value": 3
+              },
+              {
+                "id": "data-2",
+                "value": 6
+              },
+              {
+                "id": "data-3",
+                "value": 11
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              }
+            ],
+            "selected": [
+              "data-1"
+            ],
+            "muted": [],
+            "description": "The minimum value three is selected."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Find the largest value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "maximum equals eleven",
+              "latex": "\\max=11",
+              "spoken": "maximum equals eleven",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Eleven is the largest value. Keep the minimum in view too.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": 8
+              },
+              {
+                "id": "data-1",
+                "value": 3
+              },
+              {
+                "id": "data-2",
+                "value": 6
+              },
+              {
+                "id": "data-3",
+                "value": 11
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              }
+            ],
+            "selected": [
+              "data-1",
+              "data-3"
+            ],
+            "muted": [],
+            "description": "The minimum three and maximum eleven are selected."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Subtract minimum from maximum",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eleven minus three equals eight",
+              "latex": "11-3=8",
+              "spoken": "eleven minus three equals eight",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The range is eight. We measure the gap, not the number of values in the set.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "data-0",
+                "value": 8
+              },
+              {
+                "id": "data-1",
+                "value": 3
+              },
+              {
+                "id": "data-2",
+                "value": 6
+              },
+              {
+                "id": "data-3",
+                "value": 11
+              },
+              {
+                "id": "data-4",
+                "value": 5
+              }
+            ],
+            "selected": [
+              "data-1",
+              "data-3"
+            ],
+            "muted": [],
+            "description": "Subtract the minimum three from the maximum eleven."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "read-bar-chart",
+      "title": "Read a bar chart",
+      "label": "Read a bar chart",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "bar-chart",
+      "initialExpression": "Read a bar chart",
+      "notation": {
+        "latex": "\\text{Read a bar chart}",
+        "spoken": "Read a bar chart"
+      },
+      "objective": "Read a labelled category against an equally spaced frequency axis.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "S2",
+          "title": "GCSE Mathematics 8300 — Statistics",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.6-statistics"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Reading the width of a bar or counting grid lines instead of axis values.",
+        "checkQuestion": "What does each step on the vertical axis represent?"
+      },
+      "model": {
+        "result": 5
+      },
+      "steps": [
+        {
+          "title": "Read the category labels",
+          "left": [
+            {
+              "id": "expression",
+              "text": "favourite pet",
+              "latex": "\\text{Favourite pet}",
+              "spoken": "favourite pet",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "This chart records favourite-pet votes. The vertical axis counts votes in steps of one.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": 2
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": 5
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": 3
+              }
+            ],
+            "active": null,
+            "guide": false,
+            "description": "Cats received two votes, dogs five and fish three. The vertical axis runs from zero to six."
+          }
+        },
+        {
+          "title": "Choose the dogs category",
+          "left": [
+            {
+              "id": "expression",
+              "text": "dogs",
+              "latex": "\\text{Dogs}",
+              "spoken": "dogs",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Find Dogs along the bottom, then follow its bar upwards.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": 2
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": 5
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": 3
+              }
+            ],
+            "active": "dogs",
+            "guide": false,
+            "description": "The Dogs label and bar are selected."
+          }
+        },
+        {
+          "title": "Read across to the numbered axis",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five votes",
+              "latex": "5\\text{ votes}",
+              "spoken": "five votes",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The top of the dogs bar lines up with five on the votes axis.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": 2
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": 5
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": 3
+              }
+            ],
+            "active": "dogs",
+            "guide": true,
+            "description": "A dashed guide connects the top of the dogs bar to five on the vertical axis."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "State the reading",
+          "left": [
+            {
+              "id": "expression",
+              "text": "dogs, five votes",
+              "latex": "\\text{Dogs}:5",
+              "spoken": "dogs, five votes",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Five people voted for dogs. Bar height shows frequency; bar width does not.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "categories": [
+              {
+                "id": "cats",
+                "label": "Cats",
+                "value": 2
+              },
+              {
+                "id": "dogs",
+                "label": "Dogs",
+                "value": 5
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "value": 3
+              }
+            ],
+            "active": "dogs",
+            "guide": true,
+            "description": "Dogs received five votes."
+          }
+        }
+      ]
     }
   ]
 }

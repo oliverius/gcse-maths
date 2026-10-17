@@ -1,5 +1,6 @@
 import { draw as drawBalance, element, terms } from './balance.js';
 import { mathSVG } from './notation.js';
+import { drawDiagram, diagramKinds } from './diagrams.js';
 function numberLine(lesson, state) {
   const svg = element('svg', { viewBox: '0 0 800 310', 'aria-hidden': 'true' });
   terms(svg, state.left, 400, 65, state.highlight);
@@ -27,7 +28,7 @@ function fractions(lesson, state) {
   });
   return svg;
 }
-const renderers = { balance: drawBalance, expression: drawBalance, 'number-line': numberLine, fractions };
+const renderers = { balance: drawBalance, expression: drawBalance, 'number-line': numberLine, fractions, ...Object.fromEntries(diagramKinds.map(kind=>[kind,drawDiagram])) };
 export function draw(lesson, state) { return renderers[lesson.kind](lesson, state); }
 export function describe(lesson, state) {
   let text = state.left.map(term => term.spoken).join(' ');
@@ -35,5 +36,6 @@ export function describe(lesson, state) {
   if (state.groups) text += '. ' + state.groups.map(g => `${g.label}: ${g.items.map(t => t.spoken).join(', ')}`).join('. ');
   if (lesson.kind === 'number-line') text += `. Marker at ${state.position}.`;
   if (state.bars) text += '. ' + state.bars.map(b => `${b.shaded} of ${b.parts} equal parts shaded`).join('. ');
+  if (state.scene) text += '. ' + state.scene.description;
   return text;
 }

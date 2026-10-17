@@ -856,17 +856,1282 @@
     },
     {
       "id": "fraction-amount",
-      "title": "3/4 of 20",
+      "title": "Three quarters of 20",
+      "label": "Three quarters of 20",
       "tier": "Foundation",
       "subjectArea": "number",
-      "available": false
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Three quarters of 20",
+      "notation": {
+        "latex": "\\frac{3}{4}\\text{ of }20",
+        "spoken": "Three quarters of 20"
+      },
+      "objective": "Divide a quantity by the denominator, then select the numerator of equal groups.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N12",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Dividing by the numerator instead of making denominator-many equal groups.",
+        "checkQuestion": "Why do we make four equal groups before selecting three?"
+      },
+      "model": {
+        "total": 20,
+        "result": 15
+      },
+      "steps": [
+        {
+          "title": "Start with twenty",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three quarters of twenty",
+              "latex": "\\frac{3}{4}\\text{ of }20",
+              "spoken": "three quarters of twenty",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "We want three of four equal parts of twenty counters.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "Twenty counters",
+                "items": [
+                  {
+                    "id": "fraction-amount-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Twenty unit counters.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Split into four equal parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty divided by four equals five",
+              "latex": "\\frac{20}{4}=5",
+              "spoken": "twenty divided by four equals five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Four equal groups give five counters in each quarter.",
+          "detail": "",
+          "operation": {
+            "type": "split"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "quarter-0",
+                "label": "Quarter 1",
+                "items": [
+                  {
+                    "id": "fraction-amount-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "quarter-1",
+                "label": "Quarter 2",
+                "items": [
+                  {
+                    "id": "fraction-amount-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "quarter-2",
+                "label": "Quarter 3",
+                "items": [
+                  {
+                    "id": "fraction-amount-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "quarter-3",
+                "label": "Quarter 4",
+                "items": [
+                  {
+                    "id": "fraction-amount-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Four equal quarters, each with five counters.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Select three of the four quarters",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three times five equals fifteen",
+              "latex": "3\\times5=15",
+              "spoken": "three times five equals fifteen",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Select three groups of five. Three quarters of twenty is fifteen.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "quarter-0",
+                "label": "Quarter 1",
+                "items": [
+                  {
+                    "id": "fraction-amount-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "quarter-1",
+                "label": "Quarter 2",
+                "items": [
+                  {
+                    "id": "fraction-amount-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "quarter-2",
+                "label": "Quarter 3",
+                "items": [
+                  {
+                    "id": "fraction-amount-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "fraction-amount-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "quarter-3",
+                "label": "Quarter 4",
+                "items": [
+                  {
+                    "id": "fraction-amount-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "fraction-amount-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Three of four quarters are highlighted; fifteen counters are selected.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     },
     {
       "id": "percentage-amount",
       "title": "25% of 80",
+      "label": "25% of 80",
       "tier": "Foundation",
       "subjectArea": "number",
-      "available": false
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "25% of 80",
+      "notation": {
+        "latex": "25\\%\\text{ of }80",
+        "spoken": "25% of 80"
+      },
+      "objective": "Connect twenty-five percent with one quarter of the original whole.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N12",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Treating twenty-five percent as twenty-five objects for every original amount.",
+        "checkQuestion": "Why does the whole amount matter when finding twenty-five percent?"
+      },
+      "model": {
+        "total": 80,
+        "result": 20
+      },
+      "steps": [
+        {
+          "title": "Twenty-five percent is one quarter",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty-five percent equals twenty-five hundredths equals one quarter",
+              "latex": "25\\%=\\frac{25}{100}=\\frac{1}{4}",
+              "spoken": "twenty-five percent equals twenty-five hundredths equals one quarter",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Percent means parts per hundred. Twenty-five of a hundred is one quarter.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "The whole is 80",
+                "items": [
+                  {
+                    "id": "twenty-0",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "twenty-1",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "twenty-2",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "twenty-3",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Four equal cards of value twenty represent the whole eighty.",
+            "caption": "Each card represents 20, not one unit."
+          }
+        },
+        {
+          "title": "Split the whole into four equal parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eighty divided by four equals twenty",
+              "latex": "\\frac{80}{4}=20",
+              "spoken": "eighty divided by four equals twenty",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Divide the whole eighty into four equal groups. Each quarter is twenty.",
+          "detail": "",
+          "operation": {
+            "type": "split"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "part-0",
+                "label": "Quarter 1",
+                "items": [
+                  {
+                    "id": "twenty-0",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-1",
+                "label": "Quarter 2",
+                "items": [
+                  {
+                    "id": "twenty-1",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-2",
+                "label": "Quarter 3",
+                "items": [
+                  {
+                    "id": "twenty-2",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-3",
+                "label": "Quarter 4",
+                "items": [
+                  {
+                    "id": "twenty-3",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Four equal parts each have value twenty.",
+            "caption": "Each card represents 20."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Take one quarter",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty-five percent of eighty equals twenty",
+              "latex": "25\\%\\text{ of }80=20",
+              "spoken": "twenty-five percent of eighty equals twenty",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Select one of the four equal parts. Twenty-five percent of eighty is twenty.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "part-0",
+                "label": "Quarter 1",
+                "items": [
+                  {
+                    "id": "twenty-0",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "part-1",
+                "label": "Quarter 2",
+                "items": [
+                  {
+                    "id": "twenty-1",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-2",
+                "label": "Quarter 3",
+                "items": [
+                  {
+                    "id": "twenty-2",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-3",
+                "label": "Quarter 4",
+                "items": [
+                  {
+                    "id": "twenty-3",
+                    "value": 20,
+                    "latex": "20",
+                    "spoken": "20",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "One quarter of the whole eighty is selected: twenty.",
+            "caption": "Each card represents 20."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "add-sixths",
+      "title": "Add equal-denominator fractions",
+      "label": "Add equal-denominator fractions",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Add equal-denominator fractions",
+      "notation": {
+        "latex": "\\frac{1}{6}+\\frac{2}{6}",
+        "spoken": "Add equal-denominator fractions"
+      },
+      "objective": "Count equal fractional units while keeping the whole fixed.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "N2",
+          "title": "GCSE Mathematics 8300 — Number",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.1-number"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Adding denominators and changing the size of the fractional unit.",
+        "checkQuestion": "Why does the denominator stay six when we add sixths?"
+      },
+      "model": {
+        "total": 6,
+        "result": 0.5
+      },
+      "steps": [
+        {
+          "title": "Six equal parts make one whole",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one sixth plus two sixths",
+              "latex": "\\frac{1}{6}+\\frac{2}{6}",
+              "spoken": "one sixth plus two sixths",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each card stands for one sixth of the same whole. There are six equal parts.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "One whole: six sixths",
+                "items": [
+                  {
+                    "id": "sixth-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Six equal cards represent the six sixths of one whole.",
+            "caption": "Each card is one sixth of this whole."
+          }
+        },
+        {
+          "title": "Select the first sixth",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one sixth",
+              "latex": "\\frac{1}{6}",
+              "spoken": "one sixth",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Select one of the six equal parts.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "One whole: six sixths",
+                "items": [
+                  {
+                    "id": "sixth-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "One of six equal parts is highlighted.",
+            "caption": "Each card is one sixth of this whole."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Add two more sixths",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one sixth plus two sixths equals three sixths",
+              "latex": "\\frac{1}{6}+\\frac{2}{6}=\\frac{3}{6}",
+              "spoken": "one sixth plus two sixths equals three sixths",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add two more parts of the same size. Three sixths are now selected; the whole still has six parts.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "One whole: six sixths",
+                "items": [
+                  {
+                    "id": "sixth-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Three of six equal parts are highlighted.",
+            "caption": "Each card is one sixth of this whole."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Three sixths is half",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three sixths equals one half",
+              "latex": "\\frac{3}{6}=\\frac{1}{2}",
+              "spoken": "three sixths equals one half",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three of six equal parts cover half the whole. The denominator was not added.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "One whole: six sixths",
+                "items": [
+                  {
+                    "id": "sixth-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "sixth-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "sixth-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Exactly half of the six parts are highlighted.",
+            "caption": "Each card is one sixth of this whole."
+          }
+        }
+      ]
     }
   ]
 }

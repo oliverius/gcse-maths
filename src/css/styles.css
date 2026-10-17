@@ -56,6 +56,7 @@ svg text { font-family: inherit; font-weight: 650; font-size: 31px; fill: #213b3
 #lessons button { min-height: 76px; }
 .term.highlight, .term.cancel { paint-order: stroke; stroke: #f4d789; stroke-width: 12px; stroke-linejoin: round; }
 svg .group-label { font-size: 19px; fill: #54685f; }
+svg .diagram-label { font-size: 23px; font-weight: 550; fill: #213b35; }
 svg .tile-text { font-size: 20px; }
 .bracket-work { fill: #54685f; font-size: 23px; }
 .explanation { min-height: 145px; max-width: 720px; margin: auto; text-align: center; }

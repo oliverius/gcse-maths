@@ -14,9 +14,9 @@ await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion'
 await cdp('Emulation.setDeviceMetricsOverride',{width:768,height:1024,deviceScaleFactor:1,mobile:false});
 await cdp('Page.navigate',{url:process.env.MATHS_TEST_URL || 'http://127.0.0.1:5500/'});
 // Wait for the app module and its JSON fetches, without assuming network timing.
-for(let i=0;i<100;i++){if(await evaluate("document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 12"))break;await new Promise(r=>setTimeout(r,50));}
+for(let i=0;i<100;i++){if(await evaluate("document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 32"))break;await new Promise(r=>setTimeout(r,50));}
 await evaluate("import('./js/app.js').then(m=>m.ready)");
-assert.equal(await evaluate("document.querySelectorAll('#lessons button').length"),12);
+assert.equal(await evaluate("document.querySelectorAll('#lessons button').length"),32);
 for(const [width,height,label] of [[768,1024,'portrait'],[1024,768,'landscape'],[1180,820,'wide-landscape'],[390,844,'phone']]){
  await cdp('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
  await evaluate("new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
@@ -94,6 +94,28 @@ for(let step=2;step<=5;step++) {
  assert.equal(beam[0]===beam[1],step!==2);
 }
 console.log('Normal-motion cancellation, beam interpolation and rapid-click checks passed');
+// Each new primitive must also animate safely with normal motion enabled.
+for(const id of ['share-ratio','straight-line','rectangle-area','probability-scale','mean','median','read-bar-chart']){
+ await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
+ await evaluate("document.querySelector('#next').click();document.querySelector('#next').click()");
+ for(let attempt=0;attempt<100;attempt++){
+  if(await evaluate("document.querySelector('#visual').getAttribute('aria-busy')==='false'"))break;
+  await new Promise(resolve=>setTimeout(resolve,25));
+ }
+ assert.ok(await evaluate("document.querySelector('#counter').textContent.startsWith('Step 2 ')"),id);
+ assert.equal(await evaluate("document.querySelector('#error').hidden"),true);
+}
+console.log('New diagram primitives: normal-motion transitions passed');
+await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+await cdp('Emulation.setDeviceMetricsOverride',{width:768,height:1024,deviceScaleFactor:1,mobile:false});
+await evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
+for(const id of ['share-ratio','angles-point','triangle-area','equally-likely','mean','median','read-bar-chart']){
+ await evaluate(`(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<8&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`);
+ const bounds=await evaluate(`(()=>{const svg=document.querySelector('#visual>svg'),box=svg.getBoundingClientRect();return [...svg.querySelectorAll('text,.katex-html')].every(n=>{const r=n.getBoundingClientRect();return r.left>=box.left-2&&r.right<=box.right+2&&r.top>=box.top-2&&r.bottom<=box.bottom+2;});})()`);
+ assert.equal(bounds,true,`Diagram labels outside canvas: ${id}`);
+ const shot=await cdp('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+ await writeFile(new URL(`../temp/sections-${id}.png`,import.meta.url),Buffer.from(shot.data,'base64'));
+}
 // Force unsupported/rejected API paths; the browser must retain a visible exit button.
 for(const mode of ['unsupported','rejected']){
  await evaluate(`Object.defineProperty(document.documentElement,'requestFullscreen',{configurable:true,value:${mode==='unsupported'?'undefined':"()=>Promise.reject(new Error('Rejected test'))"}});document.querySelector('#fullscreen').click()`);

@@ -4,17 +4,2714 @@
   "lessons": [
     {
       "id": "share-ratio",
-      "title": "Share 20 in the ratio 1:3",
+      "title": "Share 20 in 2:3",
+      "label": "Share 20 in 2:3",
       "tier": "Foundation",
       "subjectArea": "ratio",
-      "available": false
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Share 20 in 2:3",
+      "notation": {
+        "latex": "20\\text{ in }2:3",
+        "spoken": "Share 20 in 2:3"
+      },
+      "objective": "Find equal parts before combining them into ratio shares.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "R5",
+          "title": "GCSE Mathematics 8300 — Ratio, Proportion and Rates of Change",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.3-ratio-proportion-and-rates-of-change"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Dividing twenty by two and twenty by three separately.",
+        "checkQuestion": "Why do we divide by five rather than by two or three?"
+      },
+      "model": {
+        "total": 20,
+        "shares": [
+          8,
+          12
+        ]
+      },
+      "steps": [
+        {
+          "title": "Start with the whole amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty",
+              "latex": "20",
+              "spoken": "twenty",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Share twenty counters in the ratio two to three.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "whole",
+                "label": "Twenty counters",
+                "items": [
+                  {
+                    "id": "share-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Twenty counters in one whole.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Count the equal parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two plus three equals five",
+              "latex": "2+3=5",
+              "spoken": "two plus three equals five",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "We need five equal parts: two for A and three for B.",
+          "detail": "",
+          "operation": {
+            "type": "split"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "part-0",
+                "label": "Part 1",
+                "items": [
+                  {
+                    "id": "share-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-1",
+                "label": "Part 2",
+                "items": [
+                  {
+                    "id": "share-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-2",
+                "label": "Part 3",
+                "items": [
+                  {
+                    "id": "share-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-3",
+                "label": "Part 4",
+                "items": [
+                  {
+                    "id": "share-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-4",
+                "label": "Part 5",
+                "items": [
+                  {
+                    "id": "share-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Five equal parts, each containing four counters.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Find the size of one part",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twenty divided by five equals four",
+              "latex": "\\frac{20}{5}=4",
+              "spoken": "twenty divided by five equals four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Twenty shared equally between five parts gives four in each part.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "part-0",
+                "label": "Part 1",
+                "items": [
+                  {
+                    "id": "share-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "summary": "4 in each part"
+              },
+              {
+                "id": "part-1",
+                "label": "Part 2",
+                "items": [
+                  {
+                    "id": "share-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "summary": "4 in each part"
+              },
+              {
+                "id": "part-2",
+                "label": "Part 3",
+                "items": [
+                  {
+                    "id": "share-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "summary": "4 in each part"
+              },
+              {
+                "id": "part-3",
+                "label": "Part 4",
+                "items": [
+                  {
+                    "id": "share-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "summary": "4 in each part"
+              },
+              {
+                "id": "part-4",
+                "label": "Part 5",
+                "items": [
+                  {
+                    "id": "share-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "summary": "4 in each part"
+              }
+            ],
+            "description": "Each of the five parts contains four.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Give A two parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two times four equals eight",
+              "latex": "2\\times4=8",
+              "spoken": "two times four equals eight",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A gets two parts. Two groups of four make eight.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "part-0",
+                "label": "A: part 1",
+                "items": [
+                  {
+                    "id": "share-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "part-1",
+                "label": "A: part 2",
+                "items": [
+                  {
+                    "id": "share-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "share-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "part-2",
+                "label": "Part 3",
+                "items": [
+                  {
+                    "id": "share-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-3",
+                "label": "Part 4",
+                "items": [
+                  {
+                    "id": "share-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "part-4",
+                "label": "Part 5",
+                "items": [
+                  {
+                    "id": "share-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The first two of five parts belong to A.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Give B the other three parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three times four equals twelve",
+              "latex": "3\\times4=12",
+              "spoken": "three times four equals twelve",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "B gets the other three parts. Three groups of four make twelve.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "A",
+                "label": "A gets 8",
+                "items": [
+                  {
+                    "id": "share-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "B",
+                "label": "B gets 12",
+                "items": [
+                  {
+                    "id": "share-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "A has eight and B has twelve; all twenty counters are used.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Check the whole and the ratio",
+          "left": [
+            {
+              "id": "expression",
+              "text": "eight plus twelve equals twenty",
+              "latex": "8+12=20",
+              "spoken": "eight plus twelve equals twenty",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Eight plus twelve is twenty. Eight to twelve simplifies to two to three.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "A",
+                "label": "A gets 8",
+                "items": [
+                  {
+                    "id": "share-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "B",
+                "label": "B gets 12",
+                "items": [
+                  {
+                    "id": "share-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-9",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-10",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-11",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-12",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-13",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-14",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-15",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-16",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-17",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-18",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "share-19",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The final shares are eight and twelve.",
+            "caption": ""
+          }
+        }
+      ]
     },
     {
       "id": "equivalent-ratio",
-      "title": "2:3 = 4:6",
+      "title": "Equivalent ratios",
+      "label": "Equivalent ratios",
       "tier": "Foundation",
       "subjectArea": "ratio",
-      "available": false
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Equivalent ratios",
+      "notation": {
+        "latex": "2:3=4:6",
+        "spoken": "Equivalent ratios"
+      },
+      "objective": "Explain why multiplying both parts by the same number preserves a ratio.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "R4",
+          "title": "GCSE Mathematics 8300 — Ratio, Proportion and Rates of Change",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.3-ratio-proportion-and-rates-of-change"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Doubling only one part preserves a ratio.",
+        "checkQuestion": "What would happen if we doubled A but left B unchanged?"
+      },
+      "model": {
+        "ratio": [
+          2,
+          3
+        ]
+      },
+      "steps": [
+        {
+          "title": "Start with two parts and three parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two to three",
+              "latex": "2:3",
+              "spoken": "two to three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A has two counters for every three in B.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "A",
+                "label": "A",
+                "items": [
+                  {
+                    "id": "ratio-a-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-a-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "B",
+                "label": "B",
+                "items": [
+                  {
+                    "id": "ratio-b-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ],
+                "category": "B"
+              }
+            ],
+            "description": "Two A counters and three B counters.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Double both groups",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two times two to three times two",
+              "latex": "2\\times2:3\\times2",
+              "spoken": "two times two to three times two",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add one matching copy to each group. Both groups double together.",
+          "detail": "",
+          "operation": {
+            "type": "distribute"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "A",
+                "label": "A",
+                "items": [
+                  {
+                    "id": "ratio-a-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-a-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-a-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "ratio-a-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "B",
+                "label": "B",
+                "items": [
+                  {
+                    "id": "ratio-b-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  },
+                  {
+                    "id": "ratio-b-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  },
+                  {
+                    "id": "ratio-b-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ],
+                "category": "B"
+              }
+            ],
+            "description": "Four A counters and six B counters. New copies have gold outlines.",
+            "caption": ""
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "The relationship stays the same",
+          "left": [
+            {
+              "id": "expression",
+              "text": "two to three equals four to six",
+              "latex": "2:3=4:6",
+              "spoken": "two to three equals four to six",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Four to six is equivalent to two to three. Each group is twice as large.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "A",
+                "label": "A",
+                "items": [
+                  {
+                    "id": "ratio-a-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-a-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-a-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "ratio-a-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "B",
+                "label": "B",
+                "items": [
+                  {
+                    "id": "ratio-b-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "ratio-b-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  },
+                  {
+                    "id": "ratio-b-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  },
+                  {
+                    "id": "ratio-b-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ],
+                "category": "B"
+              }
+            ],
+            "description": "The groups remain in the ratio two to three.",
+            "caption": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "simplify-ratio",
+      "title": "Simplify 6:9",
+      "label": "Simplify 6:9",
+      "tier": "Foundation",
+      "subjectArea": "ratio",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Simplify 6:9",
+      "notation": {
+        "latex": "6:9=2:3",
+        "spoken": "Simplify 6:9"
+      },
+      "objective": "Count equal bundles to simplify both parts of a ratio.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "R4",
+          "title": "GCSE Mathematics 8300 — Ratio, Proportion and Rates of Change",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.3-ratio-proportion-and-rates-of-change"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Subtracting the same number from both parts preserves a ratio.",
+        "checkQuestion": "Why must every bundle contain the same number of counters?"
+      },
+      "model": {
+        "ratio": [
+          2,
+          3
+        ]
+      },
+      "steps": [
+        {
+          "title": "Six counters and nine counters",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six to nine",
+              "latex": "6:9",
+              "spoken": "six to nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "We want the same relationship using smaller whole numbers.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "A",
+                "label": "A",
+                "items": [
+                  {
+                    "id": "simplify-a-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "B",
+                "label": "B",
+                "items": [
+                  {
+                    "id": "simplify-b-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ],
+                "category": "B"
+              }
+            ],
+            "description": "Six A counters and nine B counters.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Make bundles of three",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six to nine",
+              "latex": "6:9",
+              "spoken": "six to nine",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put three counters in every bundle. A makes two bundles; B makes three.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "a-1",
+                "label": "A bundle 1",
+                "items": [
+                  {
+                    "id": "simplify-a-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "a-2",
+                "label": "A bundle 2",
+                "items": [
+                  {
+                    "id": "simplify-a-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-a-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "b-0",
+                "label": "B bundle 1",
+                "items": [
+                  {
+                    "id": "simplify-b-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-1",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-2",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ],
+                "category": "B"
+              },
+              {
+                "id": "b-1",
+                "label": "B bundle 2",
+                "items": [
+                  {
+                    "id": "simplify-b-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-4",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-5",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ],
+                "category": "B"
+              },
+              {
+                "id": "b-2",
+                "label": "B bundle 3",
+                "items": [
+                  {
+                    "id": "simplify-b-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-7",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  },
+                  {
+                    "id": "simplify-b-8",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": false
+                  }
+                ],
+                "category": "B"
+              }
+            ],
+            "description": "Two A bundles of three and three B bundles of three.",
+            "caption": ""
+          }
+        },
+        {
+          "title": "Count bundles instead of counters",
+          "left": [
+            {
+              "id": "expression",
+              "text": "six divided by three to nine divided by three equals two to three",
+              "latex": "\\frac{6}{3}:\\frac{9}{3}=2:3",
+              "spoken": "six divided by three to nine divided by three equals two to three",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Divide both counts by three. Two bundles to three bundles gives the simplest ratio.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "a-1",
+                "label": "A bundle 1",
+                "items": [
+                  {
+                    "id": "simplify-a-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "a-2",
+                "label": "A bundle 2",
+                "items": [
+                  {
+                    "id": "simplify-a-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ],
+                "category": "A"
+              },
+              {
+                "id": "b-0",
+                "label": "B bundle 1",
+                "items": [
+                  {
+                    "id": "simplify-b-0",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ],
+                "category": "B"
+              },
+              {
+                "id": "b-1",
+                "label": "B bundle 2",
+                "items": [
+                  {
+                    "id": "simplify-b-3",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ],
+                "category": "B"
+              },
+              {
+                "id": "b-2",
+                "label": "B bundle 3",
+                "items": [
+                  {
+                    "id": "simplify-b-6",
+                    "value": 1,
+                    "latex": "1",
+                    "spoken": "1",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ],
+                "category": "B"
+              }
+            ],
+            "description": "Each counter now represents one bundle of three.",
+            "caption": "Each displayed counter now represents one bundle."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unitary-cost",
+      "title": "Cost of five items",
+      "label": "Cost of five items",
+      "tier": "Foundation",
+      "subjectArea": "ratio",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Cost of five items",
+      "notation": {
+        "latex": "3\\text{ items cost }\\pounds12",
+        "spoken": "Cost of five items"
+      },
+      "objective": "Find a unit cost, then scale it to the required number of identical items.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "R5, R11",
+          "title": "GCSE Mathematics 8300 — Ratio, Proportion and Rates of Change",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.3-ratio-proportion-and-rates-of-change"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Adding five to the original cost instead of finding an equal cost per item.",
+        "checkQuestion": "Why does the unit cost stay the same when we buy five identical items?"
+      },
+      "model": {
+        "unitPrice": 4,
+        "result": 20
+      },
+      "steps": [
+        {
+          "title": "Three identical items cost twelve pounds",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three items cost twelve pounds",
+              "latex": "3\\text{ items}:\\pounds12",
+              "spoken": "three items cost twelve pounds",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The total cost is twelve pounds. Share it equally between three identical items.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "all",
+                "label": "Twelve pounds",
+                "items": [
+                  {
+                    "id": "cost-0",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-1",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-2",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-3",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-4",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-5",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-6",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-7",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-8",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-9",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-10",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-11",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Twelve one-pound cards represent the total cost.",
+            "caption": "Each card represents one pound."
+          }
+        },
+        {
+          "title": "Separate the equal costs",
+          "left": [
+            {
+              "id": "expression",
+              "text": "twelve pounds divided by three equals four pounds",
+              "latex": "\\frac{\\pounds12}{3}=\\pounds4",
+              "spoken": "twelve pounds divided by three equals four pounds",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Split the total into three equal costs. Each item costs four pounds.",
+          "detail": "",
+          "operation": {
+            "type": "split"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "item-0",
+                "label": "Item 1",
+                "items": [
+                  {
+                    "id": "cost-0",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-1",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-2",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-3",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "item-1",
+                "label": "Item 2",
+                "items": [
+                  {
+                    "id": "cost-4",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-5",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-6",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-7",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "item-2",
+                "label": "Item 3",
+                "items": [
+                  {
+                    "id": "cost-8",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-9",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-10",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-11",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Three equal groups each contain four one-pound cards.",
+            "caption": "Each card represents one pound."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Focus on one item",
+          "left": [
+            {
+              "id": "expression",
+              "text": "one item costs four pounds",
+              "latex": "1\\text{ item}:\\pounds4",
+              "spoken": "one item costs four pounds",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The unit cost is four pounds. Keep this same cost for every item.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "item-0",
+                "label": "One item",
+                "items": [
+                  {
+                    "id": "cost-0",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-1",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-2",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-3",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "One item costs four pounds.",
+            "caption": "Each card represents one pound."
+          }
+        },
+        {
+          "title": "Make five equal copies",
+          "left": [
+            {
+              "id": "expression",
+              "text": "five times four pounds equals twenty pounds",
+              "latex": "5\\times\\pounds4=\\pounds20",
+              "spoken": "five times four pounds equals twenty pounds",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Five identical items cost five lots of four pounds: twenty pounds.",
+          "detail": "",
+          "operation": {
+            "type": "distribute"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "item-0",
+                "label": "Item 1",
+                "items": [
+                  {
+                    "id": "cost-0",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-1",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-2",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "cost-3",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "item-1",
+                "label": "Item 2",
+                "items": [
+                  {
+                    "id": "cost-4",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-5",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-6",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-7",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "item-2",
+                "label": "Item 3",
+                "items": [
+                  {
+                    "id": "cost-8",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-9",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-10",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-11",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "item-3",
+                "label": "Item 4",
+                "items": [
+                  {
+                    "id": "cost-12",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-13",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-14",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-15",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "item-4",
+                "label": "Item 5",
+                "items": [
+                  {
+                    "id": "cost-16",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-17",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-18",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "cost-19",
+                    "value": 1,
+                    "latex": "\\pounds1",
+                    "spoken": "one pound",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              }
+            ],
+            "description": "Five groups of four one-pound cards total twenty pounds.",
+            "caption": "Each card represents one pound."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     }
   ]
 }

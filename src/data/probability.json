@@ -5,9 +5,676 @@
     {
       "id": "equally-likely",
       "title": "Equally likely outcomes",
+      "label": "Equally likely outcomes",
       "tier": "Foundation",
       "subjectArea": "probability",
-      "available": false
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Equally likely outcomes",
+      "notation": {
+        "latex": "P(\\text{blue})",
+        "spoken": "Equally likely outcomes"
+      },
+      "objective": "Count equally likely favourable outcomes out of all possible outcomes.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P2, P7",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Dividing by only the unwanted outcomes rather than all outcomes.",
+        "checkQuestion": "Why is the denominator four rather than one?"
+      },
+      "model": {
+        "favourable": 3,
+        "total": 4
+      },
+      "steps": [
+        {
+          "title": "Four equally likely counters",
+          "left": [
+            {
+              "id": "expression",
+              "text": "four outcomes",
+              "latex": "4\\text{ outcomes}",
+              "spoken": "four outcomes",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Mix four same-sized counters. Choose one without looking: each counter is equally likely.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "id": "blue-0",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-1",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-2",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "gold-0",
+                    "value": 1,
+                    "latex": "\\mathrm{G}",
+                    "spoken": "gold counter",
+                    "tone": "operation",
+                    "highlight": false,
+                    "category": "gold",
+                    "shape": "circle"
+                  }
+                ]
+              }
+            ],
+            "description": "Three identical counters marked B for blue and one marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely."
+          }
+        },
+        {
+          "title": "Count the blue outcomes",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three blue out of four",
+              "latex": "3\\text{ blue out of }4",
+              "spoken": "three blue out of four",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three of the four counters are blue. These are the favourable outcomes for blue.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "id": "blue-0",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-1",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-2",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "gold-0",
+                    "value": 1,
+                    "latex": "\\mathrm{G}",
+                    "spoken": "gold counter",
+                    "tone": "operation",
+                    "highlight": false,
+                    "category": "gold",
+                    "shape": "circle"
+                  }
+                ]
+              }
+            ],
+            "description": "Three identical counters marked B for blue and one marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Write favourable over total",
+          "left": [
+            {
+              "id": "expression",
+              "text": "probability of blue equals three quarters",
+              "latex": "P(\\text{blue})=\\frac{3}{4}",
+              "spoken": "probability of blue equals three quarters",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put the number of blue counters over the total number of counters.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "id": "blue-0",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-1",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-2",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "gold-0",
+                    "value": 1,
+                    "latex": "\\mathrm{G}",
+                    "spoken": "gold counter",
+                    "tone": "operation",
+                    "highlight": false,
+                    "category": "gold",
+                    "shape": "circle"
+                  }
+                ]
+              }
+            ],
+            "description": "Three identical counters marked B for blue and one marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "complement",
+      "title": "The complementary event",
+      "label": "The complementary event",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "The complementary event",
+      "notation": {
+        "latex": "P(\\text{not blue})",
+        "spoken": "The complementary event"
+      },
+      "objective": "See that an event and its complement use every outcome exactly once.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P4",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Forgetting that the complement includes every other possible outcome.",
+        "checkQuestion": "Could one counter be both blue and not blue?"
+      },
+      "model": {
+        "favourable": 3,
+        "total": 4,
+        "complement": 1
+      },
+      "steps": [
+        {
+          "title": "Start with the blue event",
+          "left": [
+            {
+              "id": "expression",
+              "text": "probability of blue equals three quarters",
+              "latex": "P(\\text{blue})=\\frac{3}{4}",
+              "spoken": "probability of blue equals three quarters",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Blue accounts for three of the four equally likely outcomes.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "id": "blue-0",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-1",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-2",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": true,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "gold-0",
+                    "value": 1,
+                    "latex": "\\mathrm{G}",
+                    "spoken": "gold counter",
+                    "tone": "operation",
+                    "highlight": false,
+                    "category": "gold",
+                    "shape": "circle"
+                  }
+                ]
+              }
+            ],
+            "description": "Three identical counters marked B for blue and one marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely."
+          }
+        },
+        {
+          "title": "Look at everything that is not blue",
+          "left": [
+            {
+              "id": "expression",
+              "text": "probability of not blue equals one quarter",
+              "latex": "P(\\text{not blue})=\\frac{1}{4}",
+              "spoken": "probability of not blue equals one quarter",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Only one counter is not blue. Every counter is either blue or not blue.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "id": "blue-0",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-1",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-2",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "gold-0",
+                    "value": 1,
+                    "latex": "\\mathrm{G}",
+                    "spoken": "gold counter",
+                    "tone": "operation",
+                    "highlight": true,
+                    "category": "gold",
+                    "shape": "circle"
+                  }
+                ]
+              }
+            ],
+            "description": "Three identical counters marked B for blue and one marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "The probabilities make one whole",
+          "left": [
+            {
+              "id": "expression",
+              "text": "three quarters plus one quarter equals one",
+              "latex": "\\frac{3}{4}+\\frac{1}{4}=1",
+              "spoken": "three quarters plus one quarter equals one",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Blue and not blue never overlap, and together they include every outcome.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "bag",
+                "label": "One mixed bag",
+                "items": [
+                  {
+                    "id": "blue-0",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-1",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "blue-2",
+                    "value": 1,
+                    "latex": "\\mathrm{B}",
+                    "spoken": "blue counter",
+                    "tone": "original",
+                    "highlight": false,
+                    "category": "blue",
+                    "shape": "circle"
+                  },
+                  {
+                    "id": "gold-0",
+                    "value": 1,
+                    "latex": "\\mathrm{G}",
+                    "spoken": "gold counter",
+                    "tone": "operation",
+                    "highlight": false,
+                    "category": "gold",
+                    "shape": "circle"
+                  }
+                ]
+              }
+            ],
+            "description": "Three identical counters marked B for blue and one marked G for gold.",
+            "caption": "B = blue · G = gold · each counter is equally likely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "probability-scale",
+      "title": "Probability scale",
+      "label": "Probability scale",
+      "tier": "Foundation",
+      "subjectArea": "probability",
+      "available": true,
+      "kind": "probability-scale",
+      "initialExpression": "Probability scale",
+      "notation": {
+        "latex": "0\\leq P\\leq1",
+        "spoken": "Probability scale"
+      },
+      "objective": "Locate impossible, unlikely, even-chance, likely and certain events on a zero-to-one scale.",
+      "prerequisites": [
+        "Count small quantities and read the mathematical symbols used here."
+      ],
+      "curriculum": [
+        {
+          "provider": "AQA",
+          "reference": "P3",
+          "title": "GCSE Mathematics 8300 — Probability",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification/subject-content/3.5-probability"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the picture before continuing.",
+        "misconception": "Likely means certain, or unlikely means impossible.",
+        "checkQuestion": "What is the difference between likely and certain?"
+      },
+      "model": {},
+      "steps": [
+        {
+          "title": "Impossible",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Impossible",
+              "latex": "0",
+              "spoken": "Impossible",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are no pink counters in a bag containing only blue and gold counters.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "probability": 0,
+            "description": "The marker is at probability 0: impossible."
+          }
+        },
+        {
+          "title": "Unlikely",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Unlikely",
+              "latex": "\\frac{1}{4}",
+              "spoken": "Unlikely",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One gold counter among four equally likely counters gives a one-in-four chance.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": 0.25,
+            "description": "The marker is at probability 0.25: unlikely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Even chance",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Even chance",
+              "latex": "\\frac{1}{2}",
+              "spoken": "Even chance",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A fair coin has two equally likely sides. Heads has an even chance.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": 0.5,
+            "description": "The marker is at probability 0.5: even chance."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Likely",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Likely",
+              "latex": "\\frac{3}{4}",
+              "spoken": "Likely",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Three blue counters among four equally likely counters give a three-in-four chance.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": 0.75,
+            "description": "The marker is at probability 0.75: likely."
+          },
+          "highlight": [
+            "expression"
+          ]
+        },
+        {
+          "title": "Certain",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Certain",
+              "latex": "1",
+              "spoken": "Certain",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A bag containing only blue and gold counters must give blue or gold.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "probability": 1,
+            "description": "The marker is at probability 1: certain."
+          },
+          "highlight": [
+            "expression"
+          ]
+        }
+      ]
     }
   ]
 }
