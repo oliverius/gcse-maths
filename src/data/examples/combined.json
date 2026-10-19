@@ -7,7 +7,7 @@
         {
           "id": "earnings-tax-savings-1",
           "values": {
-            "income": 240000,
+            "income": 24000,
             "allowance": 12500,
             "taxRate": 12,
             "numerator": 3,

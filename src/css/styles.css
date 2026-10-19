@@ -278,6 +278,10 @@ svg {
 .math-object {
   overflow: visible;
 
+  &.pythagoras-side-label .math-content {
+    color: var(--operation);
+  }
+
   &.original .math-content {
     color: var(--original);
   }

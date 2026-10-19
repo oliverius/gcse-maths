@@ -1,5 +1,5 @@
 import { element, label, math, entity } from './svg.js';
-import { mathRow } from './notation.js';
+import { mathRow, mathSVG } from './notation.js';
 import { pythagorasGeometry, isPrime } from './learning-geometry.js';
 
 function tileArray(svg, s) {
@@ -203,18 +203,26 @@ function pythagoras(svg, s) {
       sq.origin[1] + sq.e[1] * sq.length * along,
     ];
     const mapped = g.map(mid),
-      offset = id === 'c' ? 14 : -12;
+      offset = id === 'a' ? -12 : 24;
     const x = mapped[0] + sq.n[0] * offset,
       y = mapped[1] + sq.n[1] * offset;
-    math(
-      svg,
-      s.knownSides.includes(id) ? String(s[id]) : id,
-      s.knownSides.includes(id) ? `${id} is ${s[id]}` : `unknown side ${id}`,
-      x,
-      y,
-      42,
-      22,
-      !s.unitTiles,
+    svg.append(
+      mathSVG(
+        {
+          latex: s.knownSides.includes(id) ? String(s[id]) : id,
+          spoken: s.knownSides.includes(id)
+            ? `${id} is ${s[id]}`
+            : `unknown side ${id}`,
+        },
+        {
+          x: x - 21,
+          y: y - 28,
+          width: 42,
+          height: 56,
+          size: 22,
+          className: 'pythagoras-side-label',
+        },
+      ),
     );
     if (s.squares.includes(id)) {
       const [cx, cy] = g.map(sq.centre);

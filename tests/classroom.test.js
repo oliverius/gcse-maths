@@ -16,7 +16,7 @@ const earnings = await read('combined', 'earnings-tax-savings');
 const make = (template, values) =>
   instantiateLesson(template, { id: `${template.id}-1`, values });
 const jessica = {
-  income: 240000,
+  income: 24000,
   allowance: 12500,
   taxRate: 12,
   numerator: 3,
@@ -24,6 +24,13 @@ const jessica = {
 };
 
 test('combined problems declare their skills, prerequisites and curriculum areas', async () => {
+  const examples = JSON.parse(
+    await readFile(
+      new URL('../src/data/examples/combined.json', import.meta.url),
+      'utf8',
+    ),
+  );
+  assert.deepEqual(examples.lessons[0].examples[0].values, jessica);
   assert.equal(earnings.subjectArea, 'combined');
   assert.equal(earnings.skills.length, 4);
   assert.deepEqual(earnings.prerequisiteLessonIds, [
@@ -86,12 +93,12 @@ test('gradient uses the same point order for rising, falling, horizontal and fra
 
 test('Jessica pays tax only on earnings over the allowance and saves from after-tax income', () => {
   const lesson = make(earnings, jessica);
-  assert.equal(lesson.model.taxable, 227500);
-  assert.equal(lesson.model.tax, 27300);
-  assert.equal(lesson.model.afterTax, 212700);
-  assert.equal(lesson.model.share, 26587.5);
-  assert.equal(lesson.model.savings, 79762.5);
-  assert.equal(lesson.model.result, 132937.5);
+  assert.equal(lesson.model.taxable, 11500);
+  assert.equal(lesson.model.tax, 1380);
+  assert.equal(lesson.model.afterTax, 22620);
+  assert.equal(lesson.model.share, 2827.5);
+  assert.equal(lesson.model.savings, 8482.5);
+  assert.equal(lesson.model.result, 14137.5);
   assert.equal(
     lesson.model.tax + lesson.model.savings + lesson.model.result,
     jessica.income,
@@ -100,10 +107,10 @@ test('Jessica pays tax only on earnings over the allowance and saves from after-
     lesson.steps.at(-1).scene.rows.reduce((sum, row) => sum + row.value, 0),
     jessica.income,
   );
-  assert.match(lesson.steps.at(-1).left[0].latex, /132,937\.50/);
-  const smaller = make(earnings, { ...jessica, income: 24000 });
-  assert.equal(smaller.model.tax, 1380);
-  assert.equal(smaller.model.result, 14137.5);
+  assert.match(lesson.steps.at(-1).left[0].latex, /14,137\.50/);
+  const alternative = make(earnings, { ...jessica, income: 32000 });
+  assert.equal(alternative.model.tax, 2340);
+  assert.equal(alternative.model.result, 18537.5);
 });
 
 test('classroom diagrams reject changed points, wrong gradients and mismatched financial amounts', () => {
@@ -140,8 +147,8 @@ test('classroom diagrams reject changed points, wrong gradients and mismatched f
 
 test('money formatting preserves pennies and earnings examples keep their bounded arithmetic', () => {
   const lesson = make(earnings, jessica);
-  assert.match(lesson.steps[0].left[0].latex, /240,000\.00/);
-  assert.match(lesson.steps[4].left[0].latex, /26,587\.50/);
+  assert.match(lesson.steps[0].left[0].latex, /24,000\.00/);
+  assert.match(lesson.steps[4].left[0].latex, /2,827\.50/);
   assert.throws(() => make(earnings, { ...jessica, income: 2000000 }));
   assert.throws(() =>
     make(earnings, { ...jessica, income: 20000, allowance: 25000 }),
@@ -150,6 +157,6 @@ test('money formatting preserves pennies and earnings examples keep their bounde
     make(earnings, { ...jessica, numerator: 7, denominator: 3 }),
   );
   const unsafe = structuredClone(earnings);
-  unsafe.derived.taxable = { multiply: ['income', 10] };
+  unsafe.derived.taxable = { multiply: ['income', 100] };
   assert.throws(() => make(unsafe, jessica), /out of range/);
 });
