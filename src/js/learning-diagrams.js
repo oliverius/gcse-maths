@@ -408,7 +408,7 @@ function outcomeGrid(svg, s) {
     345,
   );
 }
-function coordinateGradient(svg, s) {
+function coordinateGradient(svg, s, lesson) {
   const unit = 20,
     x = (value) => 320 + value * unit,
     y = (value) => 322 - value * unit;
@@ -536,6 +536,57 @@ function coordinateGradient(svg, s) {
     label(node, name, x(px) - 13, y(py) - 11);
     svg.append(node);
   }
+  if (s.intercept) {
+    const intercept = lesson.model.intercept;
+    svg.append(
+      element('circle', {
+        cx: x(0),
+        cy: y(intercept),
+        r: 6,
+        fill: 'var(--operation)',
+        'data-intercept': intercept,
+      }),
+    );
+    svg.append(
+      mathSVG(
+        {
+          latex: s.knownIntercept ? `n=${intercept}` : 'n=?',
+          spoken: s.knownIntercept
+            ? `y-intercept n is ${intercept}`
+            : 'Find the y-intercept n',
+        },
+        {
+          x: x(0) - 115,
+          y: y(intercept) - 28,
+          width: 100,
+          height: 56,
+          size: 22,
+          className: 'operation',
+        },
+      ),
+    );
+  }
+}
+
+function percentageGrid(svg, s) {
+  for (let i = 0; i < 100; i++) {
+    const x = 290 + (i % 10) * 22,
+      y = 125 + Math.floor(i / 10) * 22;
+    const node = entity(`percent-square-${i}`, x, y);
+    node.append(
+      element('rect', {
+        x,
+        y,
+        width: 22,
+        height: 22,
+        fill: i < s.selected ? 'var(--highlight)' : '#dceaf5',
+        stroke: 'var(--diagram-line)',
+        'stroke-width': 1,
+        'data-percent-selected': i < s.selected ? 'true' : 'false',
+      }),
+    );
+    svg.append(node);
+  }
 }
 
 function moneyBars(svg, s, lesson) {
@@ -579,6 +630,7 @@ function moneyBars(svg, s, lesson) {
 }
 
 const renderers = {
+  'percentage-grid': percentageGrid,
   'coordinate-gradient': coordinateGradient,
   'money-bars': moneyBars,
   'tile-array': tileArray,
@@ -590,7 +642,9 @@ const renderers = {
 };
 export const learningKinds = Object.keys(renderers);
 export function drawLearningDiagram(lesson, state) {
-  const graph = lesson.kind === 'coordinate-gradient';
+  const graph = ['coordinate-gradient', 'percentage-grid'].includes(
+    lesson.kind,
+  );
   const svg = element('svg', {
     viewBox: graph ? '160 0 480 400' : '0 0 800 400',
     'aria-hidden': 'true',

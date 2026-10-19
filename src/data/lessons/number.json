@@ -6541,6 +6541,832 @@
           "$value": "answer"
         }
       }
+    },
+    {
+      "id": "add-unlike-fractions",
+      "title": "Add fractions with different denominators",
+      "label": "Add fractions with different denominators",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "fractions",
+      "initialExpression": "Add fractions with different denominators",
+      "notation": {
+        "latex": "\\frac{{{a}}}{{{b}}}+\\frac{{{c}}}{{{d}}}",
+        "spoken": "{{a}} over {{b}} plus {{c}} over {{d}}"
+      },
+      "objective": "Rename fractions as equal-sized parts, add their numerators and simplify.",
+      "prerequisites": [
+        "Read the numbers and symbols in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "equivalent-halves",
+        "add-sixths"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N2, N8",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause at each step and ask the student to explain the picture.",
+        "misconception": "Adding denominators, or changing a denominator without changing its numerator.",
+        "checkQuestion": "Why must both fractions use equal-sized parts before we add them?"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 2
+        },
+        "b": {
+          "min": 2,
+          "max": 3
+        },
+        "c": {
+          "min": 1,
+          "max": 2
+        },
+        "d": {
+          "min": 3,
+          "max": 6
+        }
+      },
+      "derived": {
+        "product": {
+          "multiply": [
+            "b",
+            "d"
+          ]
+        },
+        "factor": {
+          "gcd": [
+            "b",
+            "d"
+          ]
+        },
+        "common": {
+          "divide": [
+            "product",
+            "factor"
+          ]
+        },
+        "left": {
+          "multiply": [
+            "a",
+            {
+              "divide": [
+                "common",
+                "b"
+              ]
+            }
+          ]
+        },
+        "right": {
+          "multiply": [
+            "c",
+            {
+              "divide": [
+                "common",
+                "d"
+              ]
+            }
+          ]
+        },
+        "sum": {
+          "add": [
+            "left",
+            "right"
+          ]
+        },
+        "reduction": {
+          "gcd": [
+            "sum",
+            "common"
+          ]
+        },
+        "numerator": {
+          "divide": [
+            "sum",
+            "reduction"
+          ]
+        },
+        "denominator": {
+          "divide": [
+            "common",
+            "reduction"
+          ]
+        },
+        "answer": {
+          "divide": [
+            "sum",
+            "common"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Compare the two fractions",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{a}} over {{b}} plus {{c}} over {{d}}.",
+              "latex": "\\frac{{{a}}}{{{b}}}+\\frac{{{c}}}{{{d}}}",
+              "spoken": "{{a}} over {{b}} plus {{c}} over {{d}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each bar represents the same-sized whole. The parts have different sizes, so we cannot add them yet.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "bars": [
+            {
+              "id": "first-fraction",
+              "parts": {
+                "$value": "b"
+              },
+              "shaded": {
+                "$value": "a"
+              },
+              "label": "First fraction"
+            },
+            {
+              "id": "second-fraction",
+              "parts": {
+                "$value": "d"
+              },
+              "shaded": {
+                "$value": "c"
+              },
+              "label": "Second fraction"
+            }
+          ]
+        },
+        {
+          "title": "Rename the first fraction",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{a}} over {{b}} equals {{left}} over {{common}}.",
+              "latex": "\\frac{{{a}}}{{{b}}}=\\frac{{{left}}}{{{common}}}",
+              "spoken": "{{a}} over {{b}} equals {{left}} over {{common}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Use {{common}} as a common denominator. Divide each first-fraction part into smaller equal parts without changing the shaded amount.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "first-fraction",
+              "parts": {
+                "$value": "common"
+              },
+              "shaded": {
+                "$value": "left"
+              },
+              "label": "Same first amount"
+            },
+            {
+              "id": "second-fraction",
+              "parts": {
+                "$value": "d"
+              },
+              "shaded": {
+                "$value": "c"
+              },
+              "label": "Second fraction"
+            }
+          ]
+        },
+        {
+          "title": "Rename the second fraction",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{left}} over {{common}} plus {{right}} over {{common}}.",
+              "latex": "\\frac{{{left}}}{{{common}}}+\\frac{{{right}}}{{{common}}}",
+              "spoken": "{{left}} over {{common}} plus {{right}} over {{common}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Now rename the second fraction. Both bars use {{common}} equal parts, so all parts have the same size.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "first-fraction",
+              "parts": {
+                "$value": "common"
+              },
+              "shaded": {
+                "$value": "left"
+              },
+              "label": "Same first amount"
+            },
+            {
+              "id": "second-fraction",
+              "parts": {
+                "$value": "common"
+              },
+              "shaded": {
+                "$value": "right"
+              },
+              "label": "Same second amount"
+            }
+          ]
+        },
+        {
+          "title": "Add equal-sized parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{left}} plus {{right}} makes {{sum}} equal parts.",
+              "latex": "\\frac{{{left}}}{{{common}}}+\\frac{{{right}}}{{{common}}}=\\frac{{{sum}}}{{{common}}}",
+              "spoken": "{{left}} plus {{right}} makes {{sum}} equal parts.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add the numerators: {{left}} + {{right}} = {{sum}}. Keep the denominator {{common}} because the size of each part stays the same.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "sum-fraction",
+              "parts": {
+                "$value": "common"
+              },
+              "shaded": {
+                "$value": "sum"
+              },
+              "label": "Combined amount"
+            }
+          ]
+        },
+        {
+          "title": "Write the simplest answer",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The answer is {{numerator}} over {{denominator}}.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "reduction",
+                      1
+                    ]
+                  },
+                  "then": "\\frac{{{sum}}}{{{common}}}",
+                  "else": "\\frac{{{sum}}}{{{common}}}=\\frac{{{numerator}}}{{{denominator}}}"
+                }
+              },
+              "spoken": "The answer is {{numerator}} over {{denominator}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "equal": [
+                  "reduction",
+                  1
+                ]
+              },
+              "then": "{{sum}}/{{common}} is already in simplest form. The bar shows the combined amount.",
+              "else": "Divide the numerator and denominator by {{reduction}}. The same shaded amount is {{numerator}}/{{denominator}}."
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "sum-fraction",
+              "parts": {
+                "$value": "denominator"
+              },
+              "shaded": {
+                "$value": "numerator"
+              },
+              "label": "Same combined amount"
+            }
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "b",
+              "d"
+            ]
+          },
+          "message": "Use different denominators, smaller first."
+        },
+        {
+          "test": {
+            "atMost": [
+              "a",
+              "b"
+            ]
+          },
+          "message": "Use at most one whole for the first fraction."
+        },
+        {
+          "test": {
+            "atMost": [
+              "common",
+              12
+            ]
+          },
+          "message": "Keep at most twelve visible parts."
+        },
+        {
+          "test": {
+            "atMost": [
+              "sum",
+              "common"
+            ]
+          },
+          "message": "This first addition lesson stays within one whole."
+        }
+      ],
+      "model": {
+        "a": {
+          "$value": "a"
+        },
+        "b": {
+          "$value": "b"
+        },
+        "c": {
+          "$value": "c"
+        },
+        "d": {
+          "$value": "d"
+        },
+        "common": {
+          "$value": "common"
+        },
+        "left": {
+          "$value": "left"
+        },
+        "right": {
+          "$value": "right"
+        },
+        "sum": {
+          "$value": "sum"
+        },
+        "numerator": {
+          "$value": "numerator"
+        },
+        "denominator": {
+          "$value": "denominator"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "decimal-to-fraction",
+      "title": "Convert a decimal to a fraction",
+      "label": "Convert a decimal to a fraction",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "fractions",
+      "initialExpression": "Convert a decimal to a fraction",
+      "notation": {
+        "latex": "{{decimal}}=\\frac{?}{?}",
+        "spoken": "Convert {{decimal}} to a fraction"
+      },
+      "objective": "Read a decimal as tenths and simplify the equivalent fraction.",
+      "prerequisites": [
+        "Read the numbers and symbols in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "equivalent-halves"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N10",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause at each step and ask the student to explain the picture.",
+        "misconception": "Using the decimal digits as a denominator or changing the shaded amount when simplifying.",
+        "checkQuestion": "Why do {{decimal}}, {{digit}}/10 and {{numerator}}/{{denominator}} describe the same amount?"
+      },
+      "parameters": {
+        "digit": {
+          "min": 2,
+          "max": 8,
+          "choices": [
+            2,
+            4,
+            5,
+            6,
+            8
+          ]
+        }
+      },
+      "derived": {
+        "decimal": {
+          "divide": [
+            "digit",
+            10
+          ]
+        },
+        "factor": {
+          "gcd": [
+            "digit",
+            10
+          ]
+        },
+        "numerator": {
+          "divide": [
+            "digit",
+            "factor"
+          ]
+        },
+        "denominator": {
+          "divide": [
+            10,
+            "factor"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the decimal",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{decimal}}.",
+              "latex": "{{decimal}}",
+              "spoken": "{{decimal}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The digit after the decimal point is in the tenths column. The whole bar is split into ten equal parts.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "bars": [
+            {
+              "id": "decimal-whole",
+              "parts": 10,
+              "shaded": {
+                "$value": "digit"
+              },
+              "label": "{{digit}} tenths of one whole"
+            }
+          ]
+        },
+        {
+          "title": "Count the tenths",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{decimal}} is {{digit}} tenths.",
+              "latex": "{{decimal}}={{digit}}\\times\\frac{1}{10}",
+              "spoken": "{{decimal}} is {{digit}} tenths.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are {{digit}} shaded tenths. Each shaded part is one tenth of the whole.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "decimal-whole",
+              "parts": 10,
+              "shaded": {
+                "$value": "digit"
+              },
+              "label": "{{digit}} tenths of one whole"
+            }
+          ]
+        },
+        {
+          "title": "Write a fraction",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{decimal}} equals {{digit}} over ten.",
+              "latex": "{{decimal}}=\\frac{{{digit}}}{10}",
+              "spoken": "{{decimal}} equals {{digit}} over ten.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The numerator counts shaded parts; the denominator says there are ten equal parts in the whole.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "decimal-whole",
+              "parts": 10,
+              "shaded": {
+                "$value": "digit"
+              },
+              "label": "{{digit}} tenths of one whole"
+            }
+          ]
+        },
+        {
+          "title": "Simplify both numbers",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Divide both fraction numbers by {{factor}}.",
+              "latex": "\\frac{{{digit}}}{10}=\\frac{{{digit}}\\div{{factor}}}{10\\div{{factor}}}",
+              "spoken": "Divide both fraction numbers by {{factor}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Both {{digit}} and ten are divisible by {{factor}}. Divide the numerator and denominator by the same number.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "decimal-whole",
+              "parts": 10,
+              "shaded": {
+                "$value": "digit"
+              },
+              "label": "{{digit}} tenths of one whole"
+            }
+          ]
+        },
+        {
+          "title": "Read the equivalent fraction",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{decimal}} equals {{numerator}} over {{denominator}}.",
+              "latex": "{{decimal}}=\\frac{{{numerator}}}{{{denominator}}}",
+              "spoken": "{{decimal}} equals {{numerator}} over {{denominator}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The bar has fewer, larger parts, but the shaded proportion stays the same: {{numerator}}/{{denominator}}.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "decimal-whole",
+              "parts": {
+                "$value": "denominator"
+              },
+              "shaded": {
+                "$value": "numerator"
+              },
+              "label": "Same shaded amount"
+            }
+          ]
+        }
+      ],
+      "model": {
+        "initial": {
+          "$value": "decimal"
+        },
+        "numerator": {
+          "$value": "numerator"
+        },
+        "denominator": {
+          "$value": "denominator"
+        },
+        "result": {
+          "$value": "decimal"
+        }
+      }
+    },
+    {
+      "id": "percentage-one-percent",
+      "title": "Find a percentage using one percent",
+      "label": "Find a percentage using one percent",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "percentage-grid",
+      "initialExpression": "Find a percentage using one percent",
+      "notation": {
+        "latex": "{{percent}}\\%\\text{ of }{{whole}}",
+        "spoken": "Find {{percent}} percent of {{whole}}"
+      },
+      "objective": "Find 1% by dividing by 100, then multiply by the required whole-number percentage.",
+      "prerequisites": [
+        "Read the numbers and symbols in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-10"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N12",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        },
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "R9",
+          "title": "GCSE Mathematics 1MA1 — Ratio, Proportion and Rates of Change",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=20"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause at each step and ask the student to explain the picture.",
+        "misconception": "Dividing by the requested percentage instead of one hundred, or stopping at the value of 1%.",
+        "checkQuestion": "Why do we divide the original amount by 100 before multiplying by {{percent}}?"
+      },
+      "parameters": {
+        "whole": {
+          "min": 100,
+          "max": 50000
+        },
+        "percent": {
+          "min": 1,
+          "max": 100
+        }
+      },
+      "derived": {
+        "onePercent": {
+          "divide": [
+            "whole",
+            100
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "onePercent",
+            "percent"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with one hundred percent",
+          "left": [
+            {
+              "id": "expression",
+              "text": "One hundred percent is {{whole}}.",
+              "latex": "100\\%={{whole}}",
+              "spoken": "One hundred percent is {{whole}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The entire grid represents {{whole}}. There are one hundred equal squares.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "selected": 0,
+            "description": "A hundred-square grid represents the whole amount {{whole}}. Each square is 1%, worth {{onePercent}}. No squares are highlighted yet.",
+            "caption": "Each square represents 1%."
+          }
+        },
+        {
+          "title": "Find the value of one percent",
+          "left": [
+            {
+              "id": "expression",
+              "text": "One percent is {{whole}} divided by one hundred, giving {{onePercent}}.",
+              "latex": "1\\%={{whole}}\\div100={{onePercent}}",
+              "spoken": "One percent is {{whole}} divided by one hundred, giving {{onePercent}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Divide the whole by one hundred. One highlighted square represents 1%, worth {{onePercent}}.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "selected": 1,
+            "description": "A hundred-square grid represents the whole amount {{whole}}. Each square is 1%, worth {{onePercent}}. Highlighted squares show the selected percentage.",
+            "caption": "Each square represents 1%."
+          }
+        },
+        {
+          "title": "Multiply by the percentage",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Multiply {{onePercent}} by {{percent}}.",
+              "latex": "{{percent}}\\%={{onePercent}}\\times{{percent}}",
+              "spoken": "Multiply {{onePercent}} by {{percent}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{percent}}% means {{percent}} of these 1% squares. Multiply the value of one square by {{percent}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "selected": {
+              "$value": "percent"
+            },
+            "description": "A hundred-square grid represents the whole amount {{whole}}. Each square is 1%, worth {{onePercent}}. Highlighted squares show the selected percentage.",
+            "caption": "Each square represents 1%."
+          }
+        },
+        {
+          "title": "Read the selected amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{percent}} percent of {{whole}} is {{answer}}.",
+              "latex": "{{percent}}\\%\\text{ of }{{whole}}={{answer}}",
+              "spoken": "{{percent}} percent of {{whole}} is {{answer}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The highlighted squares are worth {{answer}} in total. We used the original amount to find 1%, then multiplied by {{percent}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "selected": {
+              "$value": "percent"
+            },
+            "description": "A hundred-square grid represents the whole amount {{whole}}. Each square is 1%, worth {{onePercent}}. Highlighted squares show the selected percentage.",
+            "caption": "Each square represents 1%."
+          }
+        }
+      ],
+      "integers": [
+        "onePercent"
+      ],
+      "model": {
+        "whole": {
+          "$value": "whole"
+        },
+        "percent": {
+          "$value": "percent"
+        },
+        "onePercent": {
+          "$value": "onePercent"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
     }
   ]
 }

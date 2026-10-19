@@ -86,7 +86,7 @@ const originalHashes = {
 };
 
 test('all 19 Number and Ratio templates reproduce their complete original example states', () => {
-  assert.equal([...templates.values()].flat().length, 28);
+  assert.equal([...templates.values()].flat().length, 31);
   for (const [subject, entries] of templates)
     for (const template of entries.filter((template) =>
       Object.hasOwn(originalHashes, template.id),

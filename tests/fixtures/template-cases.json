@@ -80,6 +80,19 @@
       "a": 7,
       "b": 3,
       "d": 8
+    },
+    "add-unlike-fractions": {
+      "a": 1,
+      "b": 2,
+      "c": 1,
+      "d": 6
+    },
+    "decimal-to-fraction": {
+      "digit": 8
+    },
+    "percentage-one-percent": {
+      "whole": 2500,
+      "percent": 7
     }
   },
   "ratio": {
@@ -207,6 +220,12 @@
       "y1": 8,
       "x2": 5,
       "y2": 2
+    },
+    "line-intercept": {
+      "x1": 2,
+      "y1": 1,
+      "x2": 4,
+      "y2": 3
     }
   },
   "combined": {

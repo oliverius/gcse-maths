@@ -1,5 +1,6 @@
 import { isPrime } from './learning-geometry.js';
 export const learningOperations = {
+  'percentage-grid': ['show', 'partition', 'highlight', 'simplify'],
   'coordinate-gradient': ['show', 'highlight', 'simplify'],
   'money-bars': ['show', 'partition', 'highlight', 'simplify'],
   'tile-array': ['show', 'partition', 'highlight', 'simplify'],
@@ -26,6 +27,19 @@ const subset = (values, allowed) =>
   values.every((v) => allowed.includes(v));
 export function validateLearningScene(lesson, state) {
   const s = state.scene;
+  if (lesson.kind === 'percentage-grid') {
+    const m = lesson.model;
+    ensure(
+      m &&
+        Number.isFinite(m.whole) &&
+        m.whole > 0 &&
+        integer(m.percent, 1, 100) &&
+        m.onePercent === m.whole / 100 &&
+        m.result === m.onePercent * m.percent &&
+        [0, 1, m.percent].includes(s.selected),
+      'Invalid percentage grid.',
+    );
+  }
   if (lesson.kind === 'coordinate-gradient') {
     const m = lesson.model;
     ensure(
@@ -44,6 +58,19 @@ export function validateLearningScene(lesson, state) {
         (!s.rise || s.run),
       'Invalid gradient reveal.',
     );
+    if (m.intercept !== undefined) {
+      ensure(
+        Number.isFinite(m.intercept) &&
+          m.intercept >= -2 &&
+          m.intercept <= 10 &&
+          Math.abs(m.intercept - (m.y1 - m.result * m.x1)) < 1e-9 &&
+          typeof s.intercept === 'boolean' &&
+          typeof s.knownIntercept === 'boolean' &&
+          (!s.knownIntercept || s.intercept),
+        'Invalid line intercept.',
+      );
+    } else
+      ensure(!s.intercept && !s.knownIntercept, 'Missing intercept model.');
   }
   if (lesson.kind === 'money-bars') {
     const m = lesson.model;

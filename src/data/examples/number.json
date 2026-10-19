@@ -257,6 +257,43 @@
           }
         }
       ]
+    },
+    {
+      "template": "add-unlike-fractions",
+      "examples": [
+        {
+          "id": "add-unlike-fractions-1",
+          "values": {
+            "a": 1,
+            "b": 2,
+            "c": 1,
+            "d": 3
+          }
+        }
+      ]
+    },
+    {
+      "template": "decimal-to-fraction",
+      "examples": [
+        {
+          "id": "decimal-to-fraction-1",
+          "values": {
+            "digit": 6
+          }
+        }
+      ]
+    },
+    {
+      "template": "percentage-one-percent",
+      "examples": [
+        {
+          "id": "percentage-one-percent-1",
+          "values": {
+            "whole": 200,
+            "percent": 12
+          }
+        }
+      ]
     }
   ]
 }

@@ -105,7 +105,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
   assert.equal(get('counter').textContent, 'Step 1 of 5');
   assert.equal(get('back').disabled, true);
   const buttons = get('lessons').querySelectorAll('button');
-  assert.equal(buttons.length, 57);
+  assert.equal(buttons.length, 61);
   const { createLoader } = await import('../src/js/lesson-loader.js');
   const available = (await createLoader().load()).flatMap((a) =>
     a.lessons.filter((l) => l.available),

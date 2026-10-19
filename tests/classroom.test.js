@@ -34,7 +34,7 @@ test('combined problems declare their skills, prerequisites and curriculum areas
   assert.equal(earnings.subjectArea, 'combined');
   assert.equal(earnings.skills.length, 4);
   assert.deepEqual(earnings.prerequisiteLessonIds, [
-    'percentage-10',
+    'percentage-one-percent',
     'fraction-amount',
   ]);
   assert.deepEqual(

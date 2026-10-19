@@ -26,7 +26,7 @@ const ids = [
   'coin-spinner-space',
 ];
 test('mandatory powers/roots and Pythagoras lessons are available with acyclic prerequisites', () => {
-  assert.equal(lessons.length, 57);
+  assert.equal(lessons.length, 61);
   assert.deepEqual(
     areas.flatMap((a) => a.errors),
     [],

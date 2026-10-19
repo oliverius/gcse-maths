@@ -3664,6 +3664,391 @@
           "$value": "gradient"
         }
       }
+    },
+    {
+      "id": "line-intercept",
+      "title": "Find the intercept and line equation",
+      "label": "Find the intercept and line equation",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "coordinate-gradient",
+      "initialExpression": "Find the intercept and line equation",
+      "notation": {
+        "latex": "y=mx+n",
+        "spoken": "Find n, the y-intercept, then write the line equation"
+      },
+      "objective": "Read the y-intercept at x = 0 and combine it with the gradient to write a straight-line equation.",
+      "prerequisites": [
+        "Read the numbers and symbols in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "gradient-two-points"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A9, A10",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause at each step and ask the student to explain the picture.",
+        "misconception": "Reading the x-axis crossing as the y-intercept, or swapping the gradient and intercept.",
+        "checkQuestion": "Why does setting x to zero leave only n in y = mx + n?"
+      },
+      "parameters": {
+        "x1": {
+          "min": 1,
+          "max": 9
+        },
+        "y1": {
+          "min": 1,
+          "max": 9
+        },
+        "x2": {
+          "min": 1,
+          "max": 9
+        },
+        "y2": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "derived": {
+        "run": {
+          "subtract": [
+            "x2",
+            "x1"
+          ]
+        },
+        "rise": {
+          "subtract": [
+            "y2",
+            "y1"
+          ]
+        },
+        "gradient": {
+          "divide": [
+            "rise",
+            "run"
+          ]
+        },
+        "intercept": {
+          "subtract": [
+            "y1",
+            {
+              "multiply": [
+                "gradient",
+                "x1"
+              ]
+            }
+          ]
+        },
+        "negativeIntercept": {
+          "subtract": [
+            0,
+            "intercept"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with the gradient",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The gradient m is {{gradient}}.",
+              "latex": "m={{gradient}}",
+              "spoken": "The gradient m is {{gradient}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The gradient is {{gradient}}. We still need n, where the line crosses the y-axis.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": false,
+            "rise": false,
+            "intercept": false,
+            "knownIntercept": false,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). ",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Look where x is zero",
+          "left": [
+            {
+              "id": "expression",
+              "text": "When x is zero, y equals n.",
+              "latex": "x=0\\;\\Rightarrow\\;y=n",
+              "spoken": "When x is zero, y equals n.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Follow the vertical y-axis, where x is zero. Find where our line crosses it.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": false,
+            "rise": false,
+            "intercept": true,
+            "knownIntercept": false,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). Its y-axis crossing is marked. ",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Read the intercept",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The intercept n is {{intercept}}.",
+              "latex": "n={{intercept}}",
+              "spoken": "The intercept n is {{intercept}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The line crosses the y-axis at (0, {{intercept}}), so n is {{intercept}}. Read the scale, not just the number of squares.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": false,
+            "rise": false,
+            "intercept": true,
+            "knownIntercept": true,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). Its y-axis crossing is marked. The y-intercept is {{intercept}}.",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Write the line equation",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Use gradient {{gradient}} and intercept {{intercept}}.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "gradient",
+                      0
+                    ]
+                  },
+                  "then": "y={{intercept}}",
+                  "else": {
+                    "$if": {
+                      "test": {
+                        "less": [
+                          "intercept",
+                          0
+                        ]
+                      },
+                      "then": "y={{gradient}}x-{{negativeIntercept}}",
+                      "else": {
+                        "$if": {
+                          "test": {
+                            "equal": [
+                              "intercept",
+                              0
+                            ]
+                          },
+                          "then": "y={{gradient}}x",
+                          "else": "y={{gradient}}x+{{intercept}}"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "spoken": "Use gradient {{gradient}} and intercept {{intercept}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put the gradient in front of x and the intercept after it. n is often called c in y = mx + c.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": false,
+            "rise": false,
+            "intercept": true,
+            "knownIntercept": true,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). Its y-axis crossing is marked. The y-intercept is {{intercept}}.",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Check a point on the line",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Substitute x = {{x1}} and recover y = {{y1}}.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "intercept",
+                      0
+                    ]
+                  },
+                  "then": "{{gradient}}\\times{{x1}}-{{negativeIntercept}}={{y1}}",
+                  "else": "{{gradient}}\\times{{x1}}+{{intercept}}={{y1}}"
+                }
+              },
+              "spoken": "Substitute x = {{x1}} and recover y = {{y1}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "At A, x is {{x1}}. Our equation gives y = {{y1}}, matching A({{x1}}, {{y1}}).",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": false,
+            "rise": false,
+            "intercept": true,
+            "knownIntercept": true,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). Its y-axis crossing is marked. The y-intercept is {{intercept}}.",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        }
+      ],
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "x1",
+              "x2"
+            ]
+          },
+          "message": "Choose point B to the right of point A."
+        },
+        {
+          "test": {
+            "atMost": [
+              -2,
+              "intercept"
+            ]
+          },
+          "message": "Keep the intercept on the visible grid."
+        },
+        {
+          "test": {
+            "atMost": [
+              "intercept",
+              10
+            ]
+          },
+          "message": "Keep the intercept on the visible grid."
+        }
+      ],
+      "model": {
+        "x1": {
+          "$value": "x1"
+        },
+        "y1": {
+          "$value": "y1"
+        },
+        "x2": {
+          "$value": "x2"
+        },
+        "y2": {
+          "$value": "y2"
+        },
+        "run": {
+          "$value": "run"
+        },
+        "rise": {
+          "$value": "rise"
+        },
+        "intercept": {
+          "$value": "intercept"
+        },
+        "result": {
+          "$value": "gradient"
+        }
+      }
     }
   ]
 }

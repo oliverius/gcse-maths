@@ -54,7 +54,7 @@ await cdp('Page.navigate', {
 for (let i = 0; i < 100; i++) {
   if (
     await evaluate(
-      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 57",
+      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 61",
     )
   )
     break;
@@ -63,7 +63,7 @@ for (let i = 0; i < 100; i++) {
 await evaluate("import('./js/app.js').then(m=>m.ready)");
 assert.equal(
   await evaluate("document.querySelectorAll('#lessons button').length"),
-  57,
+  61,
 );
 // Combined skills navigation and practice shortcuts must work at every size.
 for (const width of [390, 768, 1024]) {
@@ -298,6 +298,10 @@ for (const id of [
   'factorise-common',
   'gradient-two-points',
   'earnings-tax-savings',
+  'line-intercept',
+  'add-unlike-fractions',
+  'decimal-to-fraction',
+  'percentage-one-percent',
 ]) {
   await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
   await evaluate(
@@ -414,6 +418,10 @@ for (const id of [
   'factorise-common',
   'gradient-two-points',
   'earnings-tax-savings',
+  'line-intercept',
+  'add-unlike-fractions',
+  'decimal-to-fraction',
+  'percentage-one-percent',
 ]) {
   await evaluate(
     `(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`,
