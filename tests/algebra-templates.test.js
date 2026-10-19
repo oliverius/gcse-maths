@@ -32,24 +32,24 @@ function canonical(value) {
   return value;
 }
 
-// Captured from the original complete lessons before the template migration.
+// Original complete lesson fingerprints, refreshed for Edexcel curriculum metadata.
 const originalHashes = {
   'add-both':
-    '3d3f415c36da1e7193a1bacdcd8058486d38aefe7cde4858607c2348e8bf125c',
+    '9fc5a2bf62a17c5e7773bdb36658d3b683af33596111d3d7080fefd4fc90310c',
   'subtract-both':
-    '06fa56d0dd5c74b1e854695042961d2e7f9cf401885e36ee6927a495eee6edbf',
+    '3c4a72d2ff4e0a61516906ddfd2af0c58983888b2f779252d3915e2834995b89',
   'divide-three':
-    'c4b743be4c63f4f8bfe926cd17ca7111107fb20930edcdd7ba9c98373a895884',
+    '323185e6cde7fd160d730bdee651db070b518dabfd7ef87ccba21f7eed343233',
   'multiply-four':
-    '0548c1d97c5d26b0fb2fa3e83bf0e74678111c4468aa19c29906269170b2299f',
+    'e642dfe846c1d93cf4caffc197a79a000a6d2ea616aa16c1ce14a8582a957505',
   'two-step':
-    'e179698187670e85c173c8d0602ceaba85e0c286ccf3d59427eb6f869b368b53',
+    '58b1a166f33cfcc64e976dadfb96e8f27927831afa459e9360f61c3552a1ae06',
   'like-terms':
-    '484ee261286d7eb949a12dd7a3f907add0017a4120784a6185b9c1b179ec9b59',
+    '7a45c40a7b01009f2cbf11fe1bc4454531ab5defc7c0c5226d086a5bf41e8f79',
   'distribute-three':
-    'e93ca851969ebf05e0e34e76663a1de6e29897854c8ad5bfce73cd26fc3d4abd',
+    '243b06997f7f29087300476fac2eef7a455e86862afa3fab9445c9676b11d311',
   substitution:
-    'd4c1778673b2657c3cd2d8eb3939ad6449ae564d8269e3429ac133dd1b50bbff',
+    '3ce5c2711e4d3f86c7ca25e51e0e519c8d25a663a3d6d978f397dd8a9411a080',
 };
 
 test('every algebra template retains exactly its original curated example and complete teaching states', () => {

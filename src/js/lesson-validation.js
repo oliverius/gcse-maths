@@ -76,7 +76,7 @@ export function validateLesson(lesson, area) {
     if (
       !text(ref.provider) ||
       !text(ref.title) ||
-      !/^https:\/\/(www\.aqa\.org\.uk|www\.gov\.uk)\//.test(ref.url)
+      !/^https:\/\/(qualifications\.pearson\.com|www\.gov\.uk)\//.test(ref.url)
     )
       fail('Invalid official curriculum reference.');
   }

@@ -35,7 +35,11 @@ test('mandatory powers/roots and Pythagoras lessons are available with acyclic p
     const l = get(id);
     assert.ok(l?.available, id);
     assert.ok(l.tutorNotes.checkQuestion);
-    assert.ok(l.curriculum[0].url.startsWith('https://www.aqa.org.uk/'));
+    assert.ok(
+      l.curriculum[0].url.startsWith(
+        'https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=',
+      ),
+    );
   }
   const visit = (id, path = []) => {
     assert.ok(!path.includes(id), 'cyclic prerequisite');

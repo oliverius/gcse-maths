@@ -27,7 +27,9 @@ test('six subjects load with globally unique IDs and forty-four implemented less
   for (const lesson of lessons) {
     assert.ok(
       lesson.curriculum.every((r) =>
-        r.url.startsWith('https://www.aqa.org.uk/'),
+        r.url.startsWith(
+          'https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=',
+        ),
       ),
     );
     assert.ok(lesson.steps.every((s) => operations.has(s.operation.type)));

@@ -44,45 +44,45 @@ function canonical(value) {
     );
   return value;
 }
-// Whole-lesson fingerprints captured before migrating the Number and Ratio data.
+// Original complete lesson fingerprints, refreshed for Edexcel curriculum metadata.
 const originalHashes = {
-  brackets: 'c46629694ffa591346f9bf21bba940787626bbc9852998054eac62eefbf5f978',
+  brackets: '2fb53090d7040114ba7f00c09144b13cdd9c6c8ee4a0e886e9dd8512b26ad76d',
   'subtract-five':
-    '67ff218c3465fce7869454999522578a92a05c5fca06bfbd44c6454fa95756b2',
+    'fef6da185200064963fa4103d68579290bd568df16db9fcd16109f9d21c6f805',
   'add-negative':
-    '93ef7cf952861740a138f91b2f10ad093fd05875a11e6645bb6f0d0e69179761',
+    '82f67c1fe151122a3b0b8ef98bf87b93d7c64d1e697abbe2812abfc25c0b3c67',
   'multiply-before-add':
-    'c44ab2f34014bca65e24eaecbb680739f8892abcadaf74a0c869d8d28c99ad3e',
+    'af41fa6f074fc5aa318114936c8f44d171e3f64b269c18fc2eeedd13f3c0e482',
   'equivalent-halves':
-    '6af91df941d5f675383b9d3624c0f9202b9ef280a8179831fb9377acaa66653f',
+    '753db76b535752e7d10a22202b887666e3e120b05acc90373b6d950476ac73d8',
   'fraction-amount':
-    '47ce3a50f8a330a0bbdbddf711d44c0c681f2ba63a3e86b2ed5864fc609bdfc4',
+    '945e538d24442285ae1cb8b654f1614b762b89566de3ff98cec28e40d15e454b',
   'percentage-amount':
-    '1caae2292aa15f7e56d03941689c68542ddea0b15d96f58fda983dacfd561225',
+    '655f29ad2c2be4a4d2e99685adb26f94a609e7bdb27a0971bb209aeb538758f3',
   'add-sixths':
-    '8cb36531c81d6cdf879a39353963469bad74e223a6b836a2418cbd3139fd65bf',
+    '1870a72686a87cd9136fe1cc4374b05dc7816ee74142240629f04a5fe58d5b96',
   'square-three':
-    '5354340ad8715eff34654509fa97da1342b1c0a55bc26947ec1e427d7faf5a14',
+    '2c2df23b1d82fba4a153615b3c95f0418550f257bbd8ba5dcb51d169759164e4',
   'cube-two':
-    'd482a776c2234e247fba1a8961f033f6f275e99896dfcc57dece30a65068f3a3',
+    '3fb53359c609a5a5c95179697710f66ea30f50fbc4834d3930ef08c41fb1fbcb',
   'square-root-25':
-    '72d0b08f80d50bab4454f270405c6644016391fa89eb7b0f332861ddbe932b45',
+    '0a096759de63643a34edc40b7221b9d1417501e749fc524d6a857e7f218fee76',
   'zero-power':
-    'bdffca3e3bc5958222f918aad0312c8cf79d21b82e71c96fb43b1253742c3117',
+    '0c7f56e3d254790f3e586701145dc62c8e7770c423c69135c6aaf0ae1cfb8b48',
   'multiply-powers':
-    '9218914a3f38c2b873b2f8c4e94bb96c927f802f297bfba44ddd37dbe7f2d0ce',
+    '0ef681b597624b0c0f809cb4715631e95ace12569cbc87d12b56975415ccf7fc',
   'prime-factors':
-    'dad6850378cf39607c95f4d0c1d8e4b886c91df856d669022ccdd4e524477907',
+    '4c634b9007b4624ae0e2501eb5e94e633ff40e0084d78eb0429de6856cffc679',
   'place-value-ten':
-    'dfbcfa73ce5e15940311eadc2cb76940b12d56ff2ee4e982f0d1f4a3a427ae92',
+    'b2d05754db73846371bbc9ec6febe23cfbffbe43c2f18348f3008701b8c5533b',
   'share-ratio':
-    'b2d94fe4f7d084b4a5f6cb40e10b6b402e0ed08ad41ae98f648023ac4625de13',
+    '5d9dcda99ca224dd3b9bc4e8adcfa95f698ef7bbc9f8fb6aaebcf546791b1504',
   'equivalent-ratio':
-    'a76e58cfb81ef48abd4bea500402b77657704440a666fccbd1ac96ec0d0ff1eb',
+    'e46780fa95b5e46fdb476ce44446cc55d127a4ee7a5812cba9568533de98efd8',
   'simplify-ratio':
-    '19e800583ae1a89f99dd125e01746db47520371a7857deab5bca0118e9d135a2',
+    '9c448696001b096ab80b0e423a577f04ab326d907242e57c81b35aa0793199c4',
   'unitary-cost':
-    '34785c9f440ffce4156944e14af36d4b43cc7331fb15382f9b3291238b09e16d',
+    '31969c8f5916eae09d76a7029b12936db6f220b0227066fc4d289e073fbd9121',
 };
 
 test('all 19 Number and Ratio templates reproduce their complete original example states', () => {

@@ -43,38 +43,38 @@ function canonical(value) {
     );
   return value;
 }
-// Fingerprints of the complete original lessons, captured before conversion.
+// Original complete lesson fingerprints, refreshed for Edexcel curriculum metadata.
 const originalHashes = {
   'straight-line':
-    '2461b72856a259a40fe7b553a6ec84364fceed89cced34f587f43759971460c8',
+    '3ce2789680ee396bc8e1598d172fd7318ced077f1f2eec012f66ffcf0d3413b6',
   'rectangle-area':
-    '3cb0f8861b55449b7d007f4d1f08b5900144c29f825f98241ea708d3a4f84968',
+    '8dfce52437eb8c556450b7a22212ea100ecc1bc4aac10636b087ea4cff5d0f1d',
   'angles-point':
-    '9d361493214784baecdaf1cf6b76d5d9e532578f7d74fec91f1c3ef341a1f340',
+    '4405beab9ac209cf5c4036fa9d16ef9b3a157cbdd553224e812f6c3be0c1efe0',
   'rectangle-perimeter':
-    'c54dbe8ad8c6d3a8f610d84271d384128d4fc3dcbc4f07bb3b90452a41e9d41d',
+    '5db972c8da989f7905dc7356dbd04dbc514c93c04c4f614e3d7a218468737771',
   'triangle-area':
-    'e08366a6798b0c4ee0d736fd1c45bdaea3f1833c7e52c6098148daf5b3f63ba8',
+    'd557ec7912a8855e0386ed998efbce9801595ff12058e53101c12e211fb6b516',
   'pythagoras-areas':
-    'd54ce046fee0559513a1c0d4090304723f0baf00736957d10b0993a16846badf',
+    'd4d292b2db3cb5c4e873eefe26cf0dc6eb7ad1f397082379ba8a27e4cd8d4cf7',
   'pythagoras-hypotenuse':
-    '8d1bc4fe4f9644623f9000c3bacf6a001be5749fb1ee48a0fd38850c621fd1d7',
+    '12393e27eeba6600e4b153eaa824bc780666f97ce89b21a69f0482e60c702354',
   'pythagoras-shorter':
-    '78e20858cecc65c3338e490e8b3a72627d40719788621e30506e1c2a2cb285ab',
+    'ba9228347de0c0005758a62a83d3197c7abe7678f5dd5e83db64d727356c070c',
   'equally-likely':
-    '068c5e1b12e8172678ecc4d2710f70b217b22de4b93dcb2f67775b43ce10cbe9',
+    '0c71f5b7588f1a5c7b29ce6924ad6d02c6cb1e5f46fda72b16ab5fc2ccd31231',
   complement:
-    '0e704655af3af968f19d49f8313b4f1a3bf53913b335870f1ae6021370cc2596',
+    '43030efeaf377743926dbe519766c662f31c234155e14d3704137699e25de91f',
   'probability-scale':
-    '588e6410a88716f24747c94f8210ac40f8fb13c15d7680553e515a1fd2494f80',
+    '846ca9a71c06ad2ac614ad86d0773df828a38d09de428a76b47fa86878600721',
   'coin-spinner-space':
-    '76284d5c77f09615b40777610072f922a4f1f9083a999705192a1c4b325ad4d1',
-  mean: 'a52bfab918b76896533ad504c43eccd07f1cdd61bb146714b79df3c457bf5773',
-  median: '5990e1aa95f2c02e451e53ecc320f24540582667f5a617336f48a93c77415e43',
-  mode: 'a7cef1094861e3eb2b516e640053c692cbc93aaa4ceefa3b18672da68f19f2a3',
-  range: 'e3121634b3b7bfea4a7fb348a5425ebe6760ecb4b9e0a7e05e627efe7a220c7e',
+    'e8a652f6dd7b90e5627d248b2a8a0e42a3019d84414bc049b64e8a077bb38735',
+  mean: 'b4956aa5f171c5d7b1c4e1af9f443b389f27163d6118f66e8c6ffb841d593bb1',
+  median: '415ca67e189ea142fcc9396b70d5e5b76ec05db070deeba94b2db98051439701',
+  mode: 'a1d90fa1f6752626d6843a5c010fff8ee68ed8c2cdb8b5991b964810d6b0f1fd',
+  range: '77fffb7103c1566def9da4f10bc6ec26f9bb0ac9604d97bf7d2829ed0859d62f',
   'read-bar-chart':
-    'd88b7e1dc6e468c1f65078950f7004ba490b44a2d1e74617c3c822f30d963958',
+    '87cae57fc6e9f5a172730ba5073f05d622df234e1b529ee7cec7df92212cad47',
 };
 
 test('all 17 remaining templates preserve the original teaching states, wording and identities exactly', () => {
