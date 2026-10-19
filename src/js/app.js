@@ -8,6 +8,7 @@ import { mountDiagramMath } from './diagram-math.js';
 const byId = (id) => document.getElementById(id);
 const visual = byId('visual');
 let current;
+let returnToProblem;
 let engine;
 let busy = false;
 let diagramMath;
@@ -36,6 +37,11 @@ const presentation = createPresentation(document, (active) => {
 });
 byId('fullscreen').addEventListener('click', () => presentation.toggle());
 function controls() {
+  byId('skill-practice-links')
+    .querySelectorAll('button')
+    .forEach((button) => {
+      button.disabled = busy;
+    });
   lessonButtons.forEach(({ button, lesson }) => {
     button.disabled = busy;
     button.setAttribute('aria-pressed', String(lesson.id === current?.id));
@@ -77,6 +83,37 @@ function reference(ref) {
   return link;
 }
 function notes() {
+  const combined = current.subjectArea === 'combined';
+  byId('skill-practice').hidden = !combined && !returnToProblem;
+  byId('skill-practice-title').textContent = combined
+    ? 'Skills used'
+    : 'Continue your problem';
+  byId('skill-practice-description').textContent = combined
+    ? current.skills.join('; ')
+    : 'Return to the combined problem when you are ready.';
+  const links = byId('skill-practice-links');
+  links.replaceChildren();
+  if (combined) {
+    for (const id of current.prerequisiteLessonIds) {
+      const introductory = lessonButtons.find(
+        ({ lesson }) => lesson.id === id,
+      )?.lesson;
+      if (!introductory) continue;
+      const button = document.createElement('button');
+      button.textContent = `Practise first: ${introductory.title}`;
+      const problem = current;
+      button.addEventListener('click', () =>
+        choose(introductory, true, problem),
+      );
+      links.append(button);
+    }
+  } else if (returnToProblem) {
+    const problem = returnToProblem;
+    const button = document.createElement('button');
+    button.textContent = `Return to: ${problem.title}`;
+    button.addEventListener('click', () => choose(problem));
+    links.append(button);
+  }
   byId('references').replaceChildren(...current.curriculum.map(reference));
   byId('tutor-notes').open = false;
   const content = byId('tutor-content');
@@ -98,8 +135,9 @@ function notes() {
   }
   current.curriculum.forEach((ref) => content.append(reference(ref)));
 }
-function choose(lesson, focus = true) {
+function choose(lesson, focus = true, problem = null) {
   if (busy) return;
+  returnToProblem = problem;
   current = lesson;
   engine = createLessonEngine(current);
   byId('error').hidden = true;

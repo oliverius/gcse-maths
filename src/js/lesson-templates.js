@@ -83,7 +83,7 @@ function calculate(expression, values) {
   if (!own(operations, operation))
     throw new Error('Unsupported lesson calculation.');
   const result = operations[operation]();
-  if (!Number.isFinite(result) || Math.abs(result) > 10000)
+  if (!Number.isFinite(result) || Math.abs(result) > 1000000)
     throw new Error('Lesson calculation is out of range.');
   return result;
 }
@@ -110,6 +110,11 @@ function condition(test, values) {
 function format(value, style = 'number') {
   const display = String(value).replace('-', '−');
   switch (style) {
+    case 'money':
+      return value.toLocaleString('en-GB', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
     case 'number':
       return String(value);
     case 'display':

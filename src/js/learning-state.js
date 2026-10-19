@@ -1,5 +1,7 @@
 import { isPrime } from './learning-geometry.js';
 export const learningOperations = {
+  'coordinate-gradient': ['show', 'highlight', 'simplify'],
+  'money-bars': ['show', 'partition', 'highlight', 'simplify'],
   'tile-array': ['show', 'partition', 'highlight', 'simplify'],
   'power-pattern': ['show', 'replace', 'simplify'],
   pythagoras: [
@@ -24,6 +26,80 @@ const subset = (values, allowed) =>
   values.every((v) => allowed.includes(v));
 export function validateLearningScene(lesson, state) {
   const s = state.scene;
+  if (lesson.kind === 'coordinate-gradient') {
+    const m = lesson.model;
+    ensure(
+      m &&
+        ['x1', 'y1', 'x2', 'y2'].every((key) => integer(m[key], -2, 10)) &&
+        m.x2 > m.x1 &&
+        m.run === m.x2 - m.x1 &&
+        m.rise === m.y2 - m.y1 &&
+        m.result === m.rise / m.run,
+      'Invalid gradient model.',
+    );
+    ensure(
+      ['x1', 'y1', 'x2', 'y2'].every((key) => s[key] === m[key]) &&
+        typeof s.run === 'boolean' &&
+        typeof s.rise === 'boolean' &&
+        (!s.rise || s.run),
+      'Invalid gradient reveal.',
+    );
+  }
+  if (lesson.kind === 'money-bars') {
+    const m = lesson.model;
+    const pennies = (value) =>
+      Number.isFinite(value) &&
+      value >= 0 &&
+      Math.abs(value * 100 - Math.round(value * 100)) < 1e-6;
+    ensure(
+      m &&
+        [
+          'income',
+          'allowance',
+          'taxable',
+          'tax',
+          'afterTax',
+          'share',
+          'savings',
+          'result',
+        ].every((key) => pennies(m[key])) &&
+        m.income > 0 &&
+        m.income <= 1000000 &&
+        m.allowance <= m.income &&
+        m.taxable === m.income - m.allowance &&
+        m.taxRate >= 0 &&
+        m.taxRate <= 100 &&
+        Math.abs(m.tax - (m.taxable * m.taxRate) / 100) < 1e-6 &&
+        m.afterTax === m.income - m.tax &&
+        integer(m.numerator, 1, 12) &&
+        integer(m.denominator, 2, 12) &&
+        m.numerator < m.denominator &&
+        Math.abs(m.share - m.afterTax / m.denominator) < 1e-6 &&
+        Math.abs(m.savings - (m.afterTax * m.numerator) / m.denominator) <
+          1e-6 &&
+        m.result === m.afterTax - m.savings,
+      'Invalid earnings model.',
+    );
+    ensure(
+      Array.isArray(s.rows) &&
+        s.rows.length >= 1 &&
+        s.rows.length <= 3 &&
+        new Set(s.rows.map((row) => row.id)).size === s.rows.length &&
+        s.rows.every(
+          (row) =>
+            typeof row.id === 'string' &&
+            typeof row.label === 'string' &&
+            row.label.length <= 28 &&
+            pennies(row.value) &&
+            row.value <= m.income &&
+            row.id.startsWith('money-') &&
+            row.value ===
+              m[row.id === 'money-left' ? 'result' : row.id.slice(6)] &&
+            ['original', 'operation', 'negative'].includes(row.tone),
+        ),
+      'Invalid money bars.',
+    );
+  }
   if (lesson.kind === 'tile-array') {
     ensure(
       integer(s.rows, 1, 5) &&

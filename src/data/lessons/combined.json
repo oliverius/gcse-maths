@@ -1,0 +1,462 @@
+{
+  "id": "combined",
+  "title": "Combined skills",
+  "lessons": [
+    {
+      "id": "earnings-tax-savings",
+      "title": "Earnings, tax and savings",
+      "label": "Earnings, tax and savings",
+      "tier": "Foundation",
+      "subjectArea": "combined",
+      "available": true,
+      "kind": "money-bars",
+      "initialExpression": "Earnings, tax and savings",
+      "notation": {
+        "latex": "\\text{Tax and savings}",
+        "spoken": "Find the money left after tax and savings"
+      },
+      "objective": "Apply a tax-free allowance, calculate tax on the excess, then save a fraction of the after-tax income.",
+      "prerequisites": [
+        "Calculate a percentage and a fraction of an amount."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-10",
+        "fraction-amount"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "R9",
+          "title": "GCSE Mathematics 1MA1 — Ratio, Proportion and Rates of Change",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=20"
+        },
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N12",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause at each step and ask the student to explain the calculation.",
+        "misconception": "Taxing the full salary, or calculating savings from the salary before tax.",
+        "checkQuestion": "Which amount is taxed, and which amount is the savings fraction applied to?"
+      },
+      "steps": [
+        {
+          "title": "Read the question",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Annual earnings of {{income|money}} pounds.",
+              "latex": "\\pounds{{income|money}}",
+              "spoken": "Annual earnings of {{income|money}} pounds.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Jessica earns {{income|money}} pounds per year. She pays {{taxRate}}% tax on earnings over {{allowance|money}} pounds, then saves {{numerator}}/{{denominator}} of the rest. How much is left?",
+          "detail": "Use the simplified tax rule stated in this question.",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-income",
+                "label": "Annual earnings",
+                "value": {
+                  "$value": "income"
+                },
+                "tone": "original"
+              }
+            ],
+            "description": "Annual earnings: {{income|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        },
+        {
+          "title": "Subtract the tax-free allowance",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The first {{allowance|money}} pounds is not taxed. Only {{taxable|money}} pounds is taxable.",
+              "latex": "\\pounds{{income|money}}-\\pounds{{allowance|money}}=\\pounds{{taxable|money}}",
+              "spoken": "The first {{allowance|money}} pounds is not taxed. Only {{taxable|money}} pounds is taxable.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The first {{allowance|money}} pounds is not taxed. Only {{taxable|money}} pounds is taxable.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-allowance",
+                "label": "Tax-free allowance",
+                "value": {
+                  "$value": "allowance"
+                },
+                "tone": "original"
+              },
+              {
+                "id": "money-taxable",
+                "label": "Taxable earnings",
+                "value": {
+                  "$value": "taxable"
+                },
+                "tone": "original"
+              }
+            ],
+            "description": "Tax-free allowance: {{allowance|money}} pounds. Taxable earnings: {{taxable|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        },
+        {
+          "title": "Calculate tax on the excess",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Find {{taxRate}}% of the taxable earnings, giving {{tax|money}} pounds in tax. Do not tax the allowance.",
+              "latex": "\\frac{{{taxRate}}}{100}\\times\\pounds{{taxable|money}}=\\pounds{{tax|money}}",
+              "spoken": "Find {{taxRate}}% of the taxable earnings, giving {{tax|money}} pounds in tax. Do not tax the allowance.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Find {{taxRate}}% of the taxable earnings, giving {{tax|money}} pounds in tax. Do not tax the allowance.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-taxable",
+                "label": "Taxable earnings",
+                "value": {
+                  "$value": "taxable"
+                },
+                "tone": "original"
+              },
+              {
+                "id": "money-tax",
+                "label": "Tax",
+                "value": {
+                  "$value": "tax"
+                },
+                "tone": "negative"
+              }
+            ],
+            "description": "Taxable earnings: {{taxable|money}} pounds. Tax: {{tax|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        },
+        {
+          "title": "Find the amount after tax",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Subtract the tax from the full annual earnings. Jessica has {{afterTax|money}} pounds after tax, including her tax-free allowance.",
+              "latex": "\\pounds{{income|money}}-\\pounds{{tax|money}}=\\pounds{{afterTax|money}}",
+              "spoken": "Subtract the tax from the full annual earnings. Jessica has {{afterTax|money}} pounds after tax, including her tax-free allowance.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtract the tax from the full annual earnings. Jessica has {{afterTax|money}} pounds after tax, including her tax-free allowance.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-tax",
+                "label": "Tax",
+                "value": {
+                  "$value": "tax"
+                },
+                "tone": "negative"
+              },
+              {
+                "id": "money-afterTax",
+                "label": "After tax",
+                "value": {
+                  "$value": "afterTax"
+                },
+                "tone": "original"
+              }
+            ],
+            "description": "Tax: {{tax|money}} pounds. After tax: {{afterTax|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        },
+        {
+          "title": "Find one equal savings share",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The savings fraction applies to the after-tax amount. Divide {{afterTax|money}} pounds into {{denominator}} equal shares of {{share|money}} pounds.",
+              "latex": "\\pounds{{afterTax|money}}\\div{{denominator}}=\\pounds{{share|money}}",
+              "spoken": "The savings fraction applies to the after-tax amount. Divide {{afterTax|money}} pounds into {{denominator}} equal shares of {{share|money}} pounds.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The savings fraction applies to the after-tax amount. Divide {{afterTax|money}} pounds into {{denominator}} equal shares of {{share|money}} pounds.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-afterTax",
+                "label": "After tax",
+                "value": {
+                  "$value": "afterTax"
+                },
+                "tone": "original"
+              },
+              {
+                "id": "money-share",
+                "label": "One equal share",
+                "value": {
+                  "$value": "share"
+                },
+                "tone": "operation"
+              }
+            ],
+            "description": "After tax: {{afterTax|money}} pounds. One equal share: {{share|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        },
+        {
+          "title": "Calculate the savings",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Save {{numerator}} shares, totalling {{savings|money}} pounds. This money is set aside.",
+              "latex": "\\pounds{{share|money}}\\times{{numerator}}=\\pounds{{savings|money}}",
+              "spoken": "Save {{numerator}} shares, totalling {{savings|money}} pounds. This money is set aside.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Save {{numerator}} shares, totalling {{savings|money}} pounds. This money is set aside.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-afterTax",
+                "label": "After tax",
+                "value": {
+                  "$value": "afterTax"
+                },
+                "tone": "original"
+              },
+              {
+                "id": "money-savings",
+                "label": "Savings",
+                "value": {
+                  "$value": "savings"
+                },
+                "tone": "operation"
+              }
+            ],
+            "description": "After tax: {{afterTax|money}} pounds. Savings: {{savings|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        },
+        {
+          "title": "Subtract savings to find what is left",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Jessica has {{left|money}} pounds left to spend after paying tax and setting aside her savings. Tax, savings and money left add back to her original earnings.",
+              "latex": "\\pounds{{afterTax|money}}-\\pounds{{savings|money}}=\\pounds{{left|money}}",
+              "spoken": "Jessica has {{left|money}} pounds left to spend after paying tax and setting aside her savings. Tax, savings and money left add back to her original earnings.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Jessica has {{left|money}} pounds left to spend after paying tax and setting aside her savings. Tax, savings and money left add back to her original earnings.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "rows": [
+              {
+                "id": "money-tax",
+                "label": "Tax",
+                "value": {
+                  "$value": "tax"
+                },
+                "tone": "negative"
+              },
+              {
+                "id": "money-savings",
+                "label": "Savings",
+                "value": {
+                  "$value": "savings"
+                },
+                "tone": "operation"
+              },
+              {
+                "id": "money-left",
+                "label": "Left to spend",
+                "value": {
+                  "$value": "left"
+                },
+                "tone": "original"
+              }
+            ],
+            "description": "Tax: {{tax|money}} pounds. Savings: {{savings|money}} pounds. Left to spend: {{left|money}} pounds.",
+            "caption": "All bars use the original annual earnings as the same scale."
+          }
+        }
+      ],
+      "parameters": {
+        "income": {
+          "min": 20000,
+          "max": 500000
+        },
+        "allowance": {
+          "min": 1000,
+          "max": 50000
+        },
+        "taxRate": {
+          "min": 1,
+          "max": 50
+        },
+        "numerator": {
+          "min": 1,
+          "max": 7
+        },
+        "denominator": {
+          "min": 2,
+          "max": 8
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "allowance",
+              "income"
+            ]
+          },
+          "message": "This worked example needs earnings above the allowance."
+        },
+        {
+          "test": {
+            "less": [
+              "numerator",
+              "denominator"
+            ]
+          },
+          "message": "Save less than the whole after-tax amount."
+        }
+      ],
+      "derived": {
+        "taxable": {
+          "subtract": [
+            "income",
+            "allowance"
+          ]
+        },
+        "tax": {
+          "multiply": [
+            {
+              "divide": [
+                "taxable",
+                100
+              ]
+            },
+            "taxRate"
+          ]
+        },
+        "afterTax": {
+          "subtract": [
+            "income",
+            "tax"
+          ]
+        },
+        "share": {
+          "divide": [
+            "afterTax",
+            "denominator"
+          ]
+        },
+        "savings": {
+          "multiply": [
+            "share",
+            "numerator"
+          ]
+        },
+        "left": {
+          "subtract": [
+            "afterTax",
+            "savings"
+          ]
+        }
+      },
+      "model": {
+        "income": {
+          "$value": "income"
+        },
+        "allowance": {
+          "$value": "allowance"
+        },
+        "taxable": {
+          "$value": "taxable"
+        },
+        "taxRate": {
+          "$value": "taxRate"
+        },
+        "tax": {
+          "$value": "tax"
+        },
+        "afterTax": {
+          "$value": "afterTax"
+        },
+        "numerator": {
+          "$value": "numerator"
+        },
+        "denominator": {
+          "$value": "denominator"
+        },
+        "savings": {
+          "$value": "savings"
+        },
+        "result": {
+          "$value": "left"
+        },
+        "share": {
+          "$value": "share"
+        }
+      },
+      "skills": [
+        "Calculate a percentage of an amount",
+        "Subtract amounts",
+        "Find a fraction of an amount",
+        "Choose the order of calculations"
+      ]
+    }
+  ]
+}

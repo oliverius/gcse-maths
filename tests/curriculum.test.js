@@ -15,15 +15,15 @@ const fetchJSON = async (url) => ({
 });
 const areas = await createLoader(fetchJSON).load();
 const lessons = areas.flatMap((a) => a.lessons.filter((l) => l.available));
-test('six subjects load with globally unique IDs and fifty-five implemented lessons', () => {
-  assert.equal(areas.length, 6);
+test('seven sections load with globally unique IDs and fifty-seven implemented lessons', () => {
+  assert.equal(areas.length, 7);
   assert.deepEqual(
     areas.flatMap((a) => a.errors),
     [],
   );
   const ids = areas.flatMap((a) => a.lessons.map((l) => l.id));
   assert.equal(ids.length, new Set(ids).size);
-  assert.equal(lessons.length, 55);
+  assert.equal(lessons.length, 57);
   for (const lesson of lessons) {
     assert.ok(
       lesson.curriculum.every((r) =>
@@ -45,7 +45,7 @@ test('subject files are cached and all URLs retain a repository subpath', async 
   }, new URL('https://example.com/gcse-maths/data/manifest.json'));
   await loader.load();
   await loader.load();
-  assert.equal(requests.length, 13);
+  assert.equal(requests.length, 15);
   assert.ok(requests.every((url) => url.startsWith('/gcse-maths/data/')));
 });
 test('invalid JSON file, invalid lesson, and duplicate ID are isolated', async (t) => {
@@ -70,7 +70,7 @@ test('invalid JSON file, invalid lesson, and duplicate ID are isolated', async (
   );
   assert.equal(loaded.find((a) => a.id === 'geometry').errors.length, 1);
   assert.equal(loaded.find((a) => a.id === 'algebra').errors.length, 2);
-  assert.equal(loaded.find((a) => a.id === 'algebra').lessons.length, 9);
+  assert.equal(loaded.find((a) => a.id === 'algebra').lessons.length, 10);
   assert.equal(
     loaded.find((a) => a.id === 'number').lessons.filter((l) => l.available)
       .length,

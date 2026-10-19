@@ -35,6 +35,12 @@
       "title": "Statistics",
       "file": "./lessons/statistics.json",
       "examples": "./examples/statistics.json"
+    },
+    {
+      "id": "combined",
+      "title": "Combined skills",
+      "file": "./lessons/combined.json",
+      "examples": "./examples/combined.json"
     }
   ]
 }

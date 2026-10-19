@@ -3373,6 +3373,297 @@
           "$value": "constant"
         }
       }
+    },
+    {
+      "id": "gradient-two-points",
+      "title": "Find the gradient from two points",
+      "label": "Find the gradient from two points",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "coordinate-gradient",
+      "initialExpression": "Find the gradient from two points",
+      "notation": {
+        "latex": "y=mx+n",
+        "spoken": "y equals m x plus n; find the gradient m"
+      },
+      "objective": "Read two coordinates and calculate change in y divided by change in x.",
+      "prerequisites": [
+        "Read coordinates and simple arithmetic."
+      ],
+      "prerequisiteLessonIds": [],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A8, A9, A10",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause at each step and ask the student to explain the calculation.",
+        "misconception": "Dividing the horizontal change by the vertical change, or ignoring a downward change.",
+        "checkQuestion": "What does the gradient tell us about the change in y for each unit increase in x?"
+      },
+      "steps": [
+        {
+          "title": "Read the two coordinates",
+          "left": [
+            {
+              "id": "expression",
+              "text": "A is ({{x1}}, {{y1}}) and B is ({{x2}}, {{y2}}). Read x first, then y.",
+              "latex": "A=({{x1}},{{y1}}),\\quad B=({{x2}},{{y2}})",
+              "spoken": "A is ({{x1}}, {{y1}}) and B is ({{x2}}, {{y2}}). Read x first, then y.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "A is ({{x1}}, {{y1}}) and B is ({{x2}}, {{y2}}). Read x first, then y.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": false,
+            "rise": false,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). ",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Find the horizontal change",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Move from A towards B, from left to right. The change in x is {{x2}} minus {{x1}}, giving {{run}}.",
+              "latex": "\\Delta x={{x2}}-{{x1}}={{run}}",
+              "spoken": "Move from A towards B, from left to right. The change in x is {{x2}} minus {{x1}}, giving {{run}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Move from A towards B, from left to right. The change in x is {{x2}} minus {{x1}}, giving {{run}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": true,
+            "rise": false,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). The horizontal change is {{run}}. ",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Find the signed vertical change",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Use the same point order: B minus A. The change in y is {{y2}} minus {{y1}}, giving {{rise}}.",
+              "latex": "\\Delta y={{y2}}-{{y1}}={{rise}}",
+              "spoken": "Use the same point order: B minus A. The change in y is {{y2}} minus {{y1}}, giving {{rise}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Use the same point order: B minus A. The change in y is {{y2}} minus {{y1}}, giving {{rise}}.",
+          "detail": "Up gives a positive change, down gives a negative change, and a horizontal line gives zero.",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": true,
+            "rise": true,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). The horizontal change is {{run}}. The signed vertical change is {{rise}}.",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Divide rise by run",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The gradient is change in y divided by change in x. Divide {{rise}} by {{run}}.",
+              "latex": "m=\\frac{\\Delta y}{\\Delta x}=\\frac{{{rise}}}{{{run}}}",
+              "spoken": "The gradient is change in y divided by change in x. Divide {{rise}} by {{run}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The gradient is change in y divided by change in x. Divide {{rise}} by {{run}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": true,
+            "rise": true,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). The horizontal change is {{run}}. The signed vertical change is {{rise}}.",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        },
+        {
+          "title": "Interpret the gradient",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The gradient is {{gradient}}: y changes by {{gradient}} for each increase of 1 in x.",
+              "latex": "m=\\frac{{{rise}}}{{{run}}}={{gradient}}",
+              "spoken": "The gradient is {{gradient}}: y changes by {{gradient}} for each increase of 1 in x.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The gradient is {{gradient}}: y changes by {{gradient}} for each increase of 1 in x.",
+          "detail": "n (or c) is the y-intercept. Vertical lines have no finite gradient.",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "x1": {
+              "$value": "x1"
+            },
+            "y1": {
+              "$value": "y1"
+            },
+            "x2": {
+              "$value": "x2"
+            },
+            "y2": {
+              "$value": "y2"
+            },
+            "run": true,
+            "rise": true,
+            "description": "A straight line passes through A({{x1}}, {{y1}}) and B({{x2}}, {{y2}}). The horizontal change is {{run}}. The signed vertical change is {{rise}}.",
+            "caption": "Grid: 1 unit; A({{x1}},{{y1}}), B({{x2}},{{y2}})"
+          }
+        }
+      ],
+      "parameters": {
+        "x1": {
+          "min": 1,
+          "max": 9
+        },
+        "y1": {
+          "min": 1,
+          "max": 9
+        },
+        "x2": {
+          "min": 1,
+          "max": 9
+        },
+        "y2": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "x1",
+              "x2"
+            ]
+          },
+          "message": "Choose point B to the right of point A; vertical lines have no finite gradient."
+        }
+      ],
+      "derived": {
+        "run": {
+          "subtract": [
+            "x2",
+            "x1"
+          ]
+        },
+        "rise": {
+          "subtract": [
+            "y2",
+            "y1"
+          ]
+        },
+        "gradient": {
+          "divide": [
+            "rise",
+            "run"
+          ]
+        }
+      },
+      "model": {
+        "x1": {
+          "$value": "x1"
+        },
+        "y1": {
+          "$value": "y1"
+        },
+        "x2": {
+          "$value": "x2"
+        },
+        "y2": {
+          "$value": "y2"
+        },
+        "run": {
+          "$value": "run"
+        },
+        "rise": {
+          "$value": "rise"
+        },
+        "result": {
+          "$value": "gradient"
+        }
+      }
     }
   ]
 }

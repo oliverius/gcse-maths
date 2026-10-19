@@ -32,9 +32,9 @@ export function validateManifest(manifest) {
   if (
     !manifest ||
     !Array.isArray(manifest.areas) ||
-    manifest.areas.length !== 6
+    manifest.areas.length !== 7
   )
-    fail('Expected six curriculum areas.');
+    fail('Expected seven lesson sections.');
   const ids = new Set();
   for (const area of manifest.areas) {
     if (
@@ -61,6 +61,14 @@ export function validateLesson(lesson, area) {
   )
     fail('Invalid lesson metadata.');
   if (!lesson.available) return lesson;
+  if (
+    area === 'combined' &&
+    (!Array.isArray(lesson.skills) ||
+      lesson.skills.length < 2 ||
+      !lesson.skills.every(text) ||
+      !lesson.prerequisiteLessonIds?.length)
+  )
+    fail('Combined problems need skills and introductory lesson references.');
   validateNotation(lesson.notation);
   if (
     !text(lesson.objective) ||

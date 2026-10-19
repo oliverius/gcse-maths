@@ -400,7 +400,179 @@ function outcomeGrid(svg, s) {
     345,
   );
 }
+function coordinateGradient(svg, s) {
+  const unit = 20,
+    x = (value) => 320 + value * unit,
+    y = (value) => 322 - value * unit;
+  const clip = element('clipPath', { id: 'gradient-grid-clip' });
+  clip.append(element('rect', { x: x(-2), y: y(10), width: 240, height: 240 }));
+  const defs = element('defs');
+  defs.append(clip);
+  svg.append(defs);
+  for (let value = -2; value <= 10; value++) {
+    svg.append(
+      element('line', {
+        x1: x(value),
+        x2: x(value),
+        y1: y(-2),
+        y2: y(10),
+        stroke: 'var(--diagram-grid)',
+        'stroke-width': 1,
+      }),
+    );
+    svg.append(
+      element('line', {
+        x1: x(-2),
+        x2: x(10),
+        y1: y(value),
+        y2: y(value),
+        stroke: 'var(--diagram-grid)',
+        'stroke-width': 1,
+      }),
+    );
+    if (value !== 0 && value % 2 === 0) {
+      label(svg, String(value), x(value), y(0) + 17, { 'font-size': 12 });
+      label(svg, String(value), x(0) - 14, y(value) + 4, { 'font-size': 12 });
+    }
+  }
+  svg.append(
+    element('line', {
+      x1: x(-2),
+      x2: x(10),
+      y1: y(0),
+      y2: y(0),
+      stroke: 'var(--text)',
+      'stroke-width': 2,
+    }),
+  );
+  svg.append(
+    element('line', {
+      x1: x(0),
+      x2: x(0),
+      y1: y(-2),
+      y2: y(10),
+      stroke: 'var(--text)',
+      'stroke-width': 2,
+    }),
+  );
+  label(svg, 'x', x(10) + 15, y(0) + 5);
+  label(svg, 'y', x(0), y(10) - 10);
+  const slope = (s.y2 - s.y1) / (s.x2 - s.x1);
+  svg.append(
+    element('line', {
+      x1: x(-2),
+      x2: x(10),
+      y1: y(s.y1 + slope * (-2 - s.x1)),
+      y2: y(s.y1 + slope * (10 - s.x1)),
+      stroke: '#174f7a',
+      'stroke-width': 3,
+      'clip-path': 'url(#gradient-grid-clip)',
+    }),
+  );
+  if (s.run) {
+    svg.append(
+      element('line', {
+        x1: x(s.x1),
+        x2: x(s.x2),
+        y1: y(s.y1),
+        y2: y(s.y1),
+        stroke: '#6740a0',
+        'stroke-width': 4,
+        'stroke-dasharray': '6 3',
+        'data-gradient-run': s.x2 - s.x1,
+      }),
+    );
+    math(
+      svg,
+      `\\Delta x=${s.x2 - s.x1}`,
+      `Change in x: ${s.x2 - s.x1}`,
+      (x(s.x1) + x(s.x2)) / 2,
+      y(s.y1) + 25,
+      100,
+      20,
+      true,
+    );
+  }
+  if (s.rise) {
+    svg.append(
+      element('line', {
+        x1: x(s.x2),
+        x2: x(s.x2),
+        y1: y(s.y1),
+        y2: y(s.y2),
+        stroke: '#963d39',
+        'stroke-width': 4,
+        'stroke-dasharray': '6 3',
+        'data-gradient-rise': s.y2 - s.y1,
+      }),
+    );
+    math(
+      svg,
+      `\\Delta y=${s.y2 - s.y1}`,
+      `Change in y: ${s.y2 - s.y1}`,
+      x(s.x2) + 75,
+      (y(s.y1) + y(s.y2)) / 2,
+      110,
+      20,
+      true,
+    );
+  }
+  for (const [name, px, py] of [
+    ['A', s.x1, s.y1],
+    ['B', s.x2, s.y2],
+  ]) {
+    const node = entity(`gradient-point-${name}`, x(px), y(py));
+    node.append(
+      element('circle', { cx: x(px), cy: y(py), r: 5, fill: '#174f7a' }),
+    );
+    label(node, name, x(px) - 13, y(py) - 11);
+    svg.append(node);
+  }
+}
+
+function moneyBars(svg, s, lesson) {
+  s.rows.forEach((row, index) => {
+    const top = 130 + index * 78;
+    label(svg, row.label, 110, top, { 'text-anchor': 'start' });
+    svg.append(
+      element('rect', {
+        x: 110,
+        y: top + 10,
+        width: 400,
+        height: 24,
+        rx: 3,
+        fill: 'var(--sidebar)',
+        stroke: 'var(--border)',
+      }),
+    );
+    const node = entity(row.id, 110, top + 10);
+    node.append(
+      element('rect', {
+        x: 110,
+        y: top + 10,
+        width: (400 * row.value) / lesson.model.income,
+        height: 24,
+        rx: 3,
+        fill:
+          row.tone === 'negative'
+            ? '#963d39'
+            : row.tone === 'operation'
+              ? '#6740a0'
+              : '#174f7a',
+      }),
+    );
+    svg.append(node);
+    const amount = row.value.toLocaleString('en-GB', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    math(svg, `\\pounds${amount}`, `${amount} pounds`, 625, top + 22, 195, 27);
+  });
+}
+
 const renderers = {
+  'coordinate-gradient': coordinateGradient,
+  'money-bars': moneyBars,
   'tile-array': tileArray,
   'power-pattern': powerPattern,
   pythagoras,
@@ -410,9 +582,17 @@ const renderers = {
 };
 export const learningKinds = Object.keys(renderers);
 export function drawLearningDiagram(lesson, state) {
-  const svg = element('svg', { viewBox: '0 0 800 400', 'aria-hidden': 'true' });
-  mathRow(svg, state.left, 400, 53, state.highlight, { size: 38, height: 94 });
-  renderers[lesson.kind](svg, state.scene);
+  const graph = lesson.kind === 'coordinate-gradient';
+  const svg = element('svg', {
+    viewBox: graph ? '160 0 480 400' : '0 0 800 400',
+    'aria-hidden': 'true',
+  });
+  mathRow(svg, state.left, 400, 53, state.highlight, {
+    maxWidth: graph ? 440 : 740,
+    size: 38,
+    height: 94,
+  });
+  renderers[lesson.kind](svg, state.scene, lesson);
   if (state.scene.caption) label(svg, state.scene.caption, 400, 386);
   return svg;
 }

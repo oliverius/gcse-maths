@@ -112,6 +112,20 @@
           }
         }
       ]
+    },
+    {
+      "template": "gradient-two-points",
+      "examples": [
+        {
+          "id": "gradient-two-points-1",
+          "values": {
+            "x1": 1,
+            "y1": 3,
+            "x2": 4,
+            "y2": 9
+          }
+        }
+      ]
     }
   ]
 }

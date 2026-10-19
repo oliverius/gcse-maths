@@ -18,9 +18,11 @@ Use HTTP rather than `file://`: the app fetches JSON and imports ES modules. Onc
 
 See the [technical guide](docs/technical-guide.md) for development, architecture, lesson authoring, testing and deployment. The [Foundation curriculum audit](docs/foundation-curriculum-audit.md) covers curriculum coverage, gaps and prerequisites.
 
+The lesson library has six curriculum areas plus **Combined skills** for multi-step problems. Jessica's earnings, tax and savings problem is in Combined skills, with the skills it uses and shortcuts to introductory lessons.
+
 ## Curriculum source policy
 
-Each available lesson carries an official Pearson Edexcel GCSE Mathematics **1MA1** reference, displayed alongside collapsed tutor notes. All 44 existing lessons retain their worked examples; 11 additions bring coverage to 55 lessons. Links open the relevant Foundation subject section in the [official specification](https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf): Number (PDF page 17), Algebra (18), Ratio, proportion and rates of change (20), Geometry and measures (21), and Probability and Statistics (23). PDF page numbers include the cover pages; a viewer that ignores page anchors will open the full specification.
+Each available lesson carries an official Pearson Edexcel GCSE Mathematics **1MA1** reference, displayed alongside collapsed tutor notes. All 44 existing lessons retain their worked examples; 11 small additions and two classroom topics bring coverage to 57 lessons. Links open the relevant Foundation subject section in the [official specification](https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf): Number (PDF page 17), Algebra (18), Ratio, proportion and rates of change (20), Geometry and measures (21), and Probability and Statistics (23). PDF page numbers include the cover pages; a viewer that ignores page anchors will open the full specification.
 
 The existing lesson codes (such as A17 for linear equations and G20 for Pythagoras) were checked against Pearson's Foundation section on 19 October 2026. These references describe the bounded concept taught, rather than claiming complete coverage of each code. Rectangle area retains a general subject reference. The [Foundation curriculum audit](docs/foundation-curriculum-audit.md) records remaining gaps and cross-checks the national DfE framework.
 

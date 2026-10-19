@@ -1,0 +1,20 @@
+{
+  "id": "combined",
+  "lessons": [
+    {
+      "template": "earnings-tax-savings",
+      "examples": [
+        {
+          "id": "earnings-tax-savings-1",
+          "values": {
+            "income": 240000,
+            "allowance": 12500,
+            "taxRate": 12,
+            "numerator": 3,
+            "denominator": 8
+          }
+        }
+      ]
+    }
+  ]
+}

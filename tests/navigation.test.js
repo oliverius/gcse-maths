@@ -105,7 +105,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
   assert.equal(get('counter').textContent, 'Step 1 of 5');
   assert.equal(get('back').disabled, true);
   const buttons = get('lessons').querySelectorAll('button');
-  assert.equal(buttons.length, 55);
+  assert.equal(buttons.length, 57);
   const { createLoader } = await import('../src/js/lesson-loader.js');
   const available = (await createLoader().load()).flatMap((a) =>
     a.lessons.filter((l) => l.available),
@@ -172,4 +172,32 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
   get('fullscreen').click();
   await settle();
   assert.equal(get('fullscreen').getAttribute('aria-pressed'), 'false');
+});
+
+test('combined problems link to introductory lessons and provide a route back', async () => {
+  const app = await import('../src/js/app.js');
+  await app.ready;
+  const get = (id) => document.getElementById(id);
+  const select = (id) =>
+    get('lessons')
+      .querySelectorAll('button')
+      .find((button) => button.getAttribute('data-lesson') === id)
+      .click();
+  select('earnings-tax-savings');
+  assert.match(get('topic').textContent, /Combined skills/);
+  assert.equal(get('skill-practice').hidden, false);
+  assert.match(get('skill-practice-description').textContent, /percentage/);
+  assert.match(get('skill-practice-description').textContent, /fraction/);
+  assert.equal(get('skill-practice-links').children.length, 2);
+  for (const index of [0, 1]) {
+    get('skill-practice-links').children[index].click();
+    assert.match(get('topic').textContent, /Number/);
+    assert.equal(get('skill-practice').hidden, false);
+    assert.equal(get('skill-practice-links').children.length, 1);
+    get('skill-practice-links').children[0].click();
+    assert.match(get('topic').textContent, /Combined skills/);
+    assert.equal(get('counter').textContent, 'Step 1 of 7');
+  }
+  select('gradient-two-points');
+  assert.equal(get('skill-practice').hidden, true);
 });

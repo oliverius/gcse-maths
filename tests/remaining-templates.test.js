@@ -334,8 +334,8 @@ test('matching lesson/example filenames stay distinct, cached and safe under a p
   }, new URL('https://example.com/maths/data/manifest.json'));
   const areas = await loader.load();
   await loader.load();
-  assert.equal(requests.length, 13);
-  assert.equal(new Set(requests).size, 13);
+  assert.equal(requests.length, 15);
+  assert.equal(new Set(requests).size, 15);
   for (const area of areas) {
     assert.ok(requests.includes(`/maths/data/lessons/${area.id}.json`));
     assert.ok(requests.includes(`/maths/data/examples/${area.id}.json`));

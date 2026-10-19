@@ -54,7 +54,7 @@ await cdp('Page.navigate', {
 for (let i = 0; i < 100; i++) {
   if (
     await evaluate(
-      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 55",
+      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 57",
     )
   )
     break;
@@ -63,8 +63,52 @@ for (let i = 0; i < 100; i++) {
 await evaluate("import('./js/app.js').then(m=>m.ready)");
 assert.equal(
   await evaluate("document.querySelectorAll('#lessons button').length"),
-  55,
+  57,
 );
+// Combined skills navigation and practice shortcuts must work at every size.
+for (const width of [390, 768, 1024]) {
+  await cdp('Emulation.setDeviceMetricsOverride', {
+    width,
+    height: 1024,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  const combined = await evaluate(`(async()=>{
+    const pause=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+    const sections=[...document.querySelectorAll('#lessons details')];
+    if(sections.length!==7 || sections.at(-1).querySelector('summary').textContent!=='Combined skills')throw new Error('Missing combined section');
+    document.querySelector('[data-lesson="earnings-tax-savings"]').click();await pause();
+    const panel=document.querySelector('#skill-practice');
+    const links=document.querySelector('#skill-practice-links');
+    for(let i=0;i<2;i++){
+      if(panel.hidden || !document.querySelector('#topic').textContent.startsWith('Combined skills'))throw new Error('Problem not in combined section');
+      const buttons=links.querySelectorAll('button');
+      if(buttons.length!==2)throw new Error('Missing introductory lessons');
+      const button=buttons[i];button.scrollIntoView({block:'center'});await pause();
+      const box=button.getBoundingClientRect();
+      if(box.height<44 || !button.contains(document.elementFromPoint(box.x+box.width/2,box.y+box.height/2)))throw new Error('Practice button unavailable');
+      button.click();await pause();
+      if(!document.querySelector('#topic').textContent.startsWith('Number') || panel.hidden)throw new Error('Practice navigation failed');
+      links.querySelector('button').click();await pause();
+      if(!document.querySelector('#topic').textContent.startsWith('Combined skills'))throw new Error('Return to problem failed');
+    }
+    if(document.querySelectorAll('#references a').length!==2)throw new Error('Missing Number/Ratio references');
+    if(document.documentElement.scrollWidth>innerWidth)throw new Error('Combined skills overflow');
+    panel.scrollIntoView({block:'center'});await pause();
+    return true;
+  })()`);
+  assert.equal(combined, true);
+  const shot = await cdp('Page.captureScreenshot', {
+    format: 'png',
+    captureBeyondViewport: true,
+  });
+  await writeFile(
+    new URL(`../temp/combined-skills-${width}.png`, import.meta.url),
+    Buffer.from(shot.data, 'base64'),
+  );
+  console.log(`Combined skills practice links ${width}px passed`);
+}
+await evaluate('document.querySelector(\'[data-lesson="add-both"]\').click()');
 for (const [width, height, label] of [
   [768, 1024, 'portrait'],
   [1024, 768, 'landscape'],
@@ -252,6 +296,8 @@ for (const id of [
   'subtract-fractions',
   'median-even',
   'factorise-common',
+  'gradient-two-points',
+  'earnings-tax-savings',
 ]) {
   await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
   await evaluate(
@@ -366,6 +412,8 @@ for (const id of [
   'subtract-fractions',
   'median-even',
   'factorise-common',
+  'gradient-two-points',
+  'earnings-tax-savings',
 ]) {
   await evaluate(
     `(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`,
@@ -385,10 +433,6 @@ for (const id of [
 }
 // Fullscreen must retain usable workspace controls and lesson selection at
 // narrow and wide widths, including unsupported/rejected native API paths.
-// Start the menu-open/close check from a closed library at every viewport.
-await evaluate(
-  "if (!document.querySelector('#sidebar').hidden) document.querySelector('#menu').click()",
-);
 for (const [width, mode] of [
   [768, 'unsupported'],
   [1024, 'rejected'],
@@ -400,6 +444,13 @@ for (const [width, mode] of [
     deviceScaleFactor: 1,
     mobile: false,
   });
+  // Let the responsive sidebar listener settle before entering fullscreen.
+  await evaluate(
+    'new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))',
+  );
+  await evaluate(
+    "if (!document.querySelector('#sidebar').hidden) document.querySelector('#menu').click()",
+  );
   await evaluate(
     `Object.defineProperty(document.documentElement,'requestFullscreen',{configurable:true,value:${mode === 'unsupported' ? 'undefined' : "()=>Promise.reject(new Error('Rejected test'))"}});document.querySelector('#fullscreen').click()`,
   );

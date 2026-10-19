@@ -351,7 +351,7 @@ test('Number and Ratio examples load under project subpaths, keep their defaults
   }, new URL('https://example.com/maths/data/manifest.json'));
   const areas = await loader.load();
   await loader.load();
-  assert.equal(requests.length, 13);
+  assert.equal(requests.length, 15);
   assert.ok(requests.every((path) => path.startsWith('/maths/data/')));
   for (const subject of ['number', 'ratio'])
     assert.ok(
