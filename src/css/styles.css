@@ -466,10 +466,13 @@ a {
     margin-bottom: 16px;
   }
   .toolbar-actions {
+    order: -1;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
     width: 100%;
     margin-left: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
     gap: 8px;
 
     button {
