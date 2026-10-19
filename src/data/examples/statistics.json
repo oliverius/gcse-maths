@@ -68,6 +68,22 @@
           }
         }
       ]
+    },
+    {
+      "template": "median-even",
+      "examples": [
+        {
+          "id": "median-even-1",
+          "values": {
+            "a": 1,
+            "b": 2,
+            "c": 4,
+            "d": 7,
+            "e": 9,
+            "f": 12
+          }
+        }
+      ]
     }
   ]
 }

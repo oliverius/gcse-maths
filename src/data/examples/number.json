@@ -175,6 +175,88 @@
           }
         }
       ]
+    },
+    {
+      "template": "percentage-50",
+      "examples": [
+        {
+          "id": "percentage-50-1",
+          "values": {
+            "total": 40
+          }
+        }
+      ]
+    },
+    {
+      "template": "percentage-10",
+      "examples": [
+        {
+          "id": "percentage-10-1",
+          "values": {
+            "total": 40
+          }
+        }
+      ]
+    },
+    {
+      "template": "percentage-20",
+      "examples": [
+        {
+          "id": "percentage-20-1",
+          "values": {
+            "total": 40
+          }
+        }
+      ]
+    },
+    {
+      "template": "place-value-divide-ten",
+      "examples": [
+        {
+          "id": "place-value-divide-ten-1",
+          "values": {
+            "a": 3,
+            "b": 4
+          }
+        }
+      ]
+    },
+    {
+      "template": "place-value-hundred",
+      "examples": [
+        {
+          "id": "place-value-hundred-1",
+          "values": {
+            "a": 3,
+            "b": 4
+          }
+        }
+      ]
+    },
+    {
+      "template": "place-value-divide-hundred",
+      "examples": [
+        {
+          "id": "place-value-divide-hundred-1",
+          "values": {
+            "a": 3,
+            "b": 4
+          }
+        }
+      ]
+    },
+    {
+      "template": "subtract-fractions",
+      "examples": [
+        {
+          "id": "subtract-fractions-1",
+          "values": {
+            "a": 5,
+            "b": 2,
+            "d": 6
+          }
+        }
+      ]
     }
   ]
 }

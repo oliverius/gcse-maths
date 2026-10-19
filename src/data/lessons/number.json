@@ -3751,6 +3751,2796 @@
           ]
         }
       }
+    },
+    {
+      "id": "percentage-50",
+      "title": "Find 50% of an amount",
+      "label": "Find 50% of an amount",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Find 50% of an amount",
+      "notation": {
+        "latex": "50\\%\\text{ of }{{total}}",
+        "spoken": "50 percent of {{total}}"
+      },
+      "objective": "Find 50% by dividing the whole into equal parts.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-amount"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N12",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Treating 50% as 50 rather than 50 parts per hundred.",
+        "checkQuestion": "How many equal 50% parts make the whole?"
+      },
+      "parameters": {
+        "total": {
+          "min": 10,
+          "max": 100
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with the whole",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The ten cards together represent 100% of {{total}}.",
+              "latex": "100\\%={{total}}",
+              "spoken": "The ten cards together represent 100% of {{total}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The ten cards together represent 100% of {{total}}.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards, each worth {{tenth}}, make the whole {{total}}.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Make equal percentage groups",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Split the whole into two equal groups. Each group is 50%.",
+              "latex": "{{total}}\\div2={{answer}}",
+              "spoken": "Split the whole into two equal groups. Each group is 50%.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Split the whole into two equal groups. Each group is 50%.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "50%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "50%",
+                "items": [
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The same ten cards regrouped without changing the whole.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Select 50%",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Select 5 of the ten equal cards. That is 50% of the original whole.",
+              "latex": "50\\%=5\\times10\\%",
+              "spoken": "Select 5 of the ten equal cards. That is 50% of the original whole.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Select 5 of the ten equal cards. That is 50% of the original whole.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "50%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "50%",
+                "items": [
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "5 equal cards are selected; all ten remain visible.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Read the selected amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "50% of {{total}} is {{answer}}. The whole is still {{total}}.",
+              "latex": "50\\%\\text{ of }{{total}}={{answer}}",
+              "spoken": "50% of {{total}} is {{answer}}. The whole is still {{total}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "50% of {{total}} is {{answer}}. The whole is still {{total}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "50%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "50%",
+                "items": [
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The selected cards total {{answer}}.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        }
+      ],
+      "derived": {
+        "tenth": {
+          "divide": [
+            "total",
+            10
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "tenth",
+            5
+          ]
+        }
+      },
+      "integers": [
+        "tenth"
+      ],
+      "model": {
+        "total": {
+          "$value": "total"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "percentage-10",
+      "title": "Find 10% of an amount",
+      "label": "Find 10% of an amount",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Find 10% of an amount",
+      "notation": {
+        "latex": "10\\%\\text{ of }{{total}}",
+        "spoken": "10 percent of {{total}}"
+      },
+      "objective": "Find 10% by dividing the whole into equal parts.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-amount"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N12",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Treating 10% as 10 rather than 10 parts per hundred.",
+        "checkQuestion": "How many equal 10% parts make the whole?"
+      },
+      "parameters": {
+        "total": {
+          "min": 10,
+          "max": 100
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with the whole",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The ten cards together represent 100% of {{total}}.",
+              "latex": "100\\%={{total}}",
+              "spoken": "The ten cards together represent 100% of {{total}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The ten cards together represent 100% of {{total}}.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards, each worth {{tenth}}, make the whole {{total}}.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Make equal percentage groups",
+          "left": [
+            {
+              "id": "expression",
+              "text": "There are ten equal 10% cards. Pairs of cards make 20% groups.",
+              "latex": "{{total}}\\div10={{tenth}}",
+              "spoken": "There are ten equal 10% cards. Pairs of cards make 20% groups.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are ten equal 10% cards. Pairs of cards make 20% groups.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-2",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-3",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-4",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The same ten cards regrouped without changing the whole.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Select 10%",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Select 1 of the ten equal cards. That is 10% of the original whole.",
+              "latex": "10\\%=1\\times10\\%",
+              "spoken": "Select 1 of the ten equal cards. That is 10% of the original whole.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Select 1 of the ten equal cards. That is 10% of the original whole.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-2",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-3",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-4",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "1 equal cards are selected; all ten remain visible.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Read the selected amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "10% of {{total}} is {{answer}}. The whole is still {{total}}.",
+              "latex": "10\\%\\text{ of }{{total}}={{answer}}",
+              "spoken": "10% of {{total}} is {{answer}}. The whole is still {{total}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "10% of {{total}} is {{answer}}. The whole is still {{total}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-2",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-3",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-4",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The selected cards total {{answer}}.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        }
+      ],
+      "derived": {
+        "tenth": {
+          "divide": [
+            "total",
+            10
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "tenth",
+            1
+          ]
+        }
+      },
+      "integers": [
+        "tenth"
+      ],
+      "model": {
+        "total": {
+          "$value": "total"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "percentage-20",
+      "title": "Find 20% of an amount",
+      "label": "Find 20% of an amount",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Find 20% of an amount",
+      "notation": {
+        "latex": "20\\%\\text{ of }{{total}}",
+        "spoken": "20 percent of {{total}}"
+      },
+      "objective": "Find 20% by dividing the whole into equal parts.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-amount"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N12",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Treating 20% as 20 rather than 20 parts per hundred.",
+        "checkQuestion": "How many equal 20% parts make the whole?"
+      },
+      "parameters": {
+        "total": {
+          "min": 10,
+          "max": 100
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with the whole",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The ten cards together represent 100% of {{total}}.",
+              "latex": "100\\%={{total}}",
+              "spoken": "The ten cards together represent 100% of {{total}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The ten cards together represent 100% of {{total}}.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards, each worth {{tenth}}, make the whole {{total}}.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Make equal percentage groups",
+          "left": [
+            {
+              "id": "expression",
+              "text": "There are ten equal 10% cards. Pairs of cards make 20% groups.",
+              "latex": "{{total}}\\div10={{tenth}}",
+              "spoken": "There are ten equal 10% cards. Pairs of cards make 20% groups.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are ten equal 10% cards. Pairs of cards make 20% groups.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-2",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-3",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-4",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The same ten cards regrouped without changing the whole.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Select 20%",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Select 2 of the ten equal cards. That is 20% of the original whole.",
+              "latex": "20\\%=2\\times10\\%",
+              "spoken": "Select 2 of the ten equal cards. That is 20% of the original whole.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Select 2 of the ten equal cards. That is 20% of the original whole.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-2",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-3",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-4",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "2 equal cards are selected; all ten remain visible.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        },
+        {
+          "title": "Read the selected amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "20% of {{total}} is {{answer}}. The whole is still {{total}}.",
+              "latex": "20\\%\\text{ of }{{total}}={{answer}}",
+              "spoken": "20% of {{total}} is {{answer}}. The whole is still {{total}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "20% of {{total}} is {{answer}}. The whole is still {{total}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-1",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-2",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-3",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              },
+              {
+                "id": "percent-group-4",
+                "label": "20%",
+                "items": [
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "The selected cards total {{answer}}.",
+            "caption": "Each value card represents 10% of the original whole."
+          }
+        }
+      ],
+      "derived": {
+        "tenth": {
+          "divide": [
+            "total",
+            10
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "tenth",
+            2
+          ]
+        }
+      },
+      "integers": [
+        "tenth"
+      ],
+      "model": {
+        "total": {
+          "$value": "total"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "place-value-divide-ten",
+      "title": "Divide by ten",
+      "label": "Divide by ten",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "place-value",
+      "initialExpression": "Divide by ten",
+      "notation": {
+        "latex": "{{initial}}\\div10",
+        "spoken": "Divide by ten: {{initial}}"
+      },
+      "objective": "Change each digit’s place value while keeping the decimal point fixed.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "place-value-ten"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N2",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Moving the decimal point instead of changing digit values.",
+        "checkQuestion": "How does each digit’s value change when it moves one column?"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 9
+        },
+        "b": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the starting value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Read the places of both digits before changing them.",
+              "latex": "{{initial}}",
+              "spoken": "Read the places of both digits before changing them.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read the places of both digits before changing them.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shift": 0,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 1
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": 0
+              }
+            ],
+            "description": "The same two digits have shifted 0 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Move one column right",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Each digit moves one column right and becomes one tenth of its previous value. The decimal point stays fixed.",
+              "latex": "{{initial}}\\div10",
+              "spoken": "Each digit moves one column right and becomes one tenth of its previous value. The decimal point stays fixed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each digit moves one column right and becomes one tenth of its previous value. The decimal point stays fixed.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "shift": -1,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 0
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": -1
+              }
+            ],
+            "description": "The same two digits have shifted 1 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Read the result",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+              "latex": "{{initial}}\\div10={{answer}}",
+              "spoken": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shift": -1,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 0
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": -1
+              }
+            ],
+            "description": "The same two digits have shifted 1 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        }
+      ],
+      "derived": {
+        "digits": {
+          "add": [
+            {
+              "multiply": [
+                "a",
+                10
+              ]
+            },
+            "b"
+          ]
+        },
+        "initial": "digits",
+        "answer": {
+          "divide": [
+            "digits",
+            10
+          ]
+        }
+      },
+      "model": {
+        "initial": {
+          "$value": "initial"
+        },
+        "power": -1,
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "place-value-hundred",
+      "title": "Multiply by one hundred",
+      "label": "Multiply by one hundred",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "place-value",
+      "initialExpression": "Multiply by one hundred",
+      "notation": {
+        "latex": "{{initial}}\\times100",
+        "spoken": "Multiply by one hundred: {{initial}}"
+      },
+      "objective": "Change each digit’s place value while keeping the decimal point fixed.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "place-value-ten"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N2",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Moving the decimal point instead of changing digit values.",
+        "checkQuestion": "How does each digit’s value change when it moves one column?"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 9
+        },
+        "b": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the starting value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Read the places of both digits before changing them.",
+              "latex": "{{initial}}",
+              "spoken": "Read the places of both digits before changing them.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read the places of both digits before changing them.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shift": 0,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 0
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": -1
+              }
+            ],
+            "description": "The same two digits have shifted 0 column(s) left. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Move one column left",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Each digit moves one column left and becomes ten times as large. The decimal point stays fixed.",
+              "latex": "{{initial}}\\times10",
+              "spoken": "Each digit moves one column left and becomes ten times as large. The decimal point stays fixed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each digit moves one column left and becomes ten times as large. The decimal point stays fixed.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "shift": 1,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 1
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": 0
+              }
+            ],
+            "description": "The same two digits have shifted 1 column(s) left. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Move one more column left",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Each digit moves one column left and becomes ten times as large. Two moves give a factor of one hundred.",
+              "latex": "{{initial}}\\times100",
+              "spoken": "Each digit moves one column left and becomes ten times as large. Two moves give a factor of one hundred.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each digit moves one column left and becomes ten times as large. Two moves give a factor of one hundred.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "shift": 2,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 2
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": 1
+              }
+            ],
+            "description": "The same two digits have shifted 2 column(s) left. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Read the result",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+              "latex": "{{initial}}\\times100={{answer}}",
+              "spoken": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shift": 2,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 2
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": 1
+              }
+            ],
+            "description": "The same two digits have shifted 2 column(s) left. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        }
+      ],
+      "derived": {
+        "digits": {
+          "add": [
+            {
+              "multiply": [
+                "a",
+                10
+              ]
+            },
+            "b"
+          ]
+        },
+        "initial": {
+          "divide": [
+            "digits",
+            10
+          ]
+        },
+        "answer": {
+          "multiply": [
+            "digits",
+            10
+          ]
+        }
+      },
+      "model": {
+        "initial": {
+          "$value": "initial"
+        },
+        "power": 2,
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "place-value-divide-hundred",
+      "title": "Divide by one hundred",
+      "label": "Divide by one hundred",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "place-value",
+      "initialExpression": "Divide by one hundred",
+      "notation": {
+        "latex": "{{initial}}\\div100",
+        "spoken": "Divide by one hundred: {{initial}}"
+      },
+      "objective": "Change each digit’s place value while keeping the decimal point fixed.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "place-value-ten"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N2",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Moving the decimal point instead of changing digit values.",
+        "checkQuestion": "How does each digit’s value change when it moves one column?"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 9
+        },
+        "b": {
+          "min": 1,
+          "max": 9
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the starting value",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Read the places of both digits before changing them.",
+              "latex": "{{initial}}",
+              "spoken": "Read the places of both digits before changing them.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read the places of both digits before changing them.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "shift": 0,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 1
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": 0
+              }
+            ],
+            "description": "The same two digits have shifted 0 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Move one column right",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Each digit moves one column right and becomes one tenth of its previous value. The decimal point stays fixed.",
+              "latex": "{{initial}}\\div10",
+              "spoken": "Each digit moves one column right and becomes one tenth of its previous value. The decimal point stays fixed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each digit moves one column right and becomes one tenth of its previous value. The decimal point stays fixed.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "shift": -1,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": 0
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": -1
+              }
+            ],
+            "description": "The same two digits have shifted 1 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Move one more column right",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Each digit moves one column right and becomes one tenth of its previous value. Two moves give a factor of one hundred.",
+              "latex": "{{initial}}\\div100",
+              "spoken": "Each digit moves one column right and becomes one tenth of its previous value. Two moves give a factor of one hundred.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each digit moves one column right and becomes one tenth of its previous value. Two moves give a factor of one hundred.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "shift": -2,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": -1
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": -2
+              }
+            ],
+            "description": "The same two digits have shifted 2 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        },
+        {
+          "title": "Read the result",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+              "latex": "{{initial}}\\div100={{answer}}",
+              "spoken": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The result is {{answer}}. Read any empty places as zero; the decimal boundary has stayed fixed.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "shift": -2,
+            "digits": [
+              {
+                "id": "place-a",
+                "digit": {
+                  "$value": "a"
+                },
+                "place": -1
+              },
+              {
+                "id": "place-b",
+                "digit": {
+                  "$value": "b"
+                },
+                "place": -2
+              }
+            ],
+            "description": "The same two digits have shifted 2 column(s) right. The decimal boundary stays fixed.",
+            "caption": "The decimal point stays fixed. The digits change place."
+          }
+        }
+      ],
+      "derived": {
+        "digits": {
+          "add": [
+            {
+              "multiply": [
+                "a",
+                10
+              ]
+            },
+            "b"
+          ]
+        },
+        "initial": "digits",
+        "answer": {
+          "divide": [
+            "digits",
+            100
+          ]
+        }
+      },
+      "model": {
+        "initial": {
+          "$value": "initial"
+        },
+        "power": -2,
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "subtract-fractions",
+      "title": "Subtract fractions with equal denominators",
+      "label": "Subtract fractions with equal denominators",
+      "tier": "Foundation",
+      "subjectArea": "number",
+      "available": true,
+      "kind": "fractions",
+      "initialExpression": "Subtract fractions with equal denominators",
+      "notation": {
+        "latex": "\\frac{{{a}}}{{{d}}}-\\frac{{{b}}}{{{d}}}",
+        "spoken": "{{a}} over {{d}} minus {{b}} over {{d}}"
+      },
+      "objective": "Subtract equal-sized fractional parts without changing their size.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "add-sixths"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "N2",
+          "title": "GCSE Mathematics 1MA1 — Number",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=17"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Subtracting the denominators as well as the numerators.",
+        "checkQuestion": "Why does the denominator stay the same?"
+      },
+      "parameters": {
+        "a": {
+          "min": 2,
+          "max": 10
+        },
+        "b": {
+          "min": 1,
+          "max": 9
+        },
+        "d": {
+          "min": 3,
+          "max": 12
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with equal-sized parts",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The whole is split into {{d}} equal parts. Start with {{a}} shaded parts.",
+              "latex": "\\frac{{{a}}}{{{d}}}-\\frac{{{b}}}{{{d}}}",
+              "spoken": "The whole is split into {{d}} equal parts. Start with {{a}} shaded parts.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The whole is split into {{d}} equal parts. Start with {{a}} shaded parts.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "bars": [
+            {
+              "id": "fraction-whole",
+              "parts": {
+                "$value": "d"
+              },
+              "shaded": {
+                "$value": "a"
+              },
+              "label": "Start: {{a}} of {{d}} parts"
+            }
+          ]
+        },
+        {
+          "title": "Identify the parts to remove",
+          "left": [
+            {
+              "id": "expression",
+              "text": "We will remove {{b}} of those same-sized parts. The whole stays split into {{d}} parts.",
+              "latex": "\\frac{{{a}}}{{{d}}}-\\frac{{{b}}}{{{d}}}",
+              "spoken": "We will remove {{b}} of those same-sized parts. The whole stays split into {{d}} parts.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "We will remove {{b}} of those same-sized parts. The whole stays split into {{d}} parts.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "fraction-whole",
+              "parts": {
+                "$value": "d"
+              },
+              "shaded": {
+                "$value": "a"
+              },
+              "label": "Start: {{a}} of {{d}} parts"
+            }
+          ]
+        },
+        {
+          "title": "Subtract the numerators",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{a}} minus {{b}} leaves {{answer}} parts. Keep the denominator {{d}} because each part has the same size.",
+              "latex": "\\frac{{{a}}}{{{d}}}-\\frac{{{b}}}{{{d}}}=\\frac{{{answer}}}{{{d}}}",
+              "spoken": "{{a}} minus {{b}} leaves {{answer}} parts. Keep the denominator {{d}} because each part has the same size.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{a}} minus {{b}} leaves {{answer}} parts. Keep the denominator {{d}} because each part has the same size.",
+          "detail": "",
+          "operation": {
+            "type": "partition"
+          },
+          "bars": [
+            {
+              "id": "fraction-whole",
+              "parts": {
+                "$value": "d"
+              },
+              "shaded": {
+                "$value": "answer"
+              },
+              "label": "Remaining: {{answer}} of {{d}} parts"
+            }
+          ]
+        }
+      ],
+      "derived": {
+        "answer": {
+          "subtract": [
+            "a",
+            "b"
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "less": [
+              "b",
+              "a"
+            ]
+          },
+          "message": "Remove fewer parts than the starting numerator."
+        },
+        {
+          "test": {
+            "atMost": [
+              "a",
+              "d"
+            ]
+          },
+          "message": "Use at most one whole."
+        }
+      ],
+      "model": {
+        "numerator": {
+          "$value": "a"
+        },
+        "removed": {
+          "$value": "b"
+        },
+        "denominator": {
+          "$value": "d"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
     }
   ]
 }

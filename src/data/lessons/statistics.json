@@ -1835,6 +1835,474 @@
         }
       },
       "derived": {}
+    },
+    {
+      "id": "median-even",
+      "title": "Find the median of six values",
+      "label": "Find the median of six values",
+      "tier": "Foundation",
+      "subjectArea": "statistics",
+      "available": true,
+      "kind": "data-cards",
+      "initialExpression": "Find the median of six values",
+      "notation": {
+        "latex": "\\text{Median}",
+        "spoken": "Find the median of six values"
+      },
+      "objective": "Order an even-sized data set and average its two middle values.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "median",
+        "mean"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "S4",
+          "title": "GCSE Mathematics 1MA1 — Statistics",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=23"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Choosing either middle value, or averaging the two values before sorting.",
+        "checkQuestion": "Why do we average the third and fourth values rather than choosing one?"
+      },
+      "parameters": {
+        "a": {
+          "min": 1,
+          "max": 20
+        },
+        "b": {
+          "min": 1,
+          "max": 20
+        },
+        "c": {
+          "min": 1,
+          "max": 20
+        },
+        "d": {
+          "min": 1,
+          "max": 20
+        },
+        "e": {
+          "min": 1,
+          "max": 20
+        },
+        "f": {
+          "min": 1,
+          "max": 20
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the six values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "With six values there will be two middle positions after sorting.",
+              "latex": "{{d}},{{a}},{{f}},{{b}},{{e}},{{c}}",
+              "spoken": "With six values there will be two middle positions after sorting.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "With six values there will be two middle positions after sorting.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "median-d",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "median-a",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "median-f",
+                "value": {
+                  "$value": "f"
+                }
+              },
+              {
+                "id": "median-b",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "median-e",
+                "value": {
+                  "$value": "e"
+                }
+              },
+              {
+                "id": "median-c",
+                "value": {
+                  "$value": "c"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "Six unsorted values: {{d}}, {{a}}, {{f}}, {{b}}, {{e}}, {{c}}."
+          }
+        },
+        {
+          "title": "Sort the values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Put the same cards in ascending order. Keep every value, including any repeats.",
+              "latex": "{{a}},{{b}},{{c}},{{d}},{{e}},{{f}}",
+              "spoken": "Put the same cards in ascending order. Keep every value, including any repeats.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put the same cards in ascending order. Keep every value, including any repeats.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "median-a",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "median-b",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "median-c",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "median-d",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "median-e",
+                "value": {
+                  "$value": "e"
+                }
+              },
+              {
+                "id": "median-f",
+                "value": {
+                  "$value": "f"
+                }
+              }
+            ],
+            "selected": [],
+            "muted": [],
+            "description": "The same six cards in ascending order: {{a}}, {{b}}, {{c}}, {{d}}, {{e}}, {{f}}."
+          }
+        },
+        {
+          "title": "Select the two middle values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The third and fourth values are {{c}} and {{d}}. Two values lie outside them on each side.",
+              "latex": "{{c}},{{d}}",
+              "spoken": "The third and fourth values are {{c}} and {{d}}. Two values lie outside them on each side.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The third and fourth values are {{c}} and {{d}}. Two values lie outside them on each side.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "median-a",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "median-b",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "median-c",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "median-d",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "median-e",
+                "value": {
+                  "$value": "e"
+                }
+              },
+              {
+                "id": "median-f",
+                "value": {
+                  "$value": "f"
+                }
+              }
+            ],
+            "selected": [
+              "median-c",
+              "median-d"
+            ],
+            "muted": [],
+            "description": "The same six cards in ascending order: {{a}}, {{b}}, {{c}}, {{d}}, {{e}}, {{f}}."
+          }
+        },
+        {
+          "title": "Add the middle values",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Add the two middle values to get {{sum}}.",
+              "latex": "{{c}}+{{d}}={{sum}}",
+              "spoken": "Add the two middle values to get {{sum}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add the two middle values to get {{sum}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "median-a",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "median-b",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "median-c",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "median-d",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "median-e",
+                "value": {
+                  "$value": "e"
+                }
+              },
+              {
+                "id": "median-f",
+                "value": {
+                  "$value": "f"
+                }
+              }
+            ],
+            "selected": [
+              "median-c",
+              "median-d"
+            ],
+            "muted": [],
+            "description": "The same six cards in ascending order: {{a}}, {{b}}, {{c}}, {{d}}, {{e}}, {{f}}."
+          }
+        },
+        {
+          "title": "Divide their sum by two",
+          "left": [
+            {
+              "id": "expression",
+              "text": "{{sum}} divided by two is {{answer}}. The median can lie between two data values.",
+              "latex": "\\frac{{{c}}+{{d}}}{2}={{answer}}",
+              "spoken": "{{sum}} divided by two is {{answer}}. The median can lie between two data values.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "{{sum}} divided by two is {{answer}}. The median can lie between two data values.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "items": [
+              {
+                "id": "median-a",
+                "value": {
+                  "$value": "a"
+                }
+              },
+              {
+                "id": "median-b",
+                "value": {
+                  "$value": "b"
+                }
+              },
+              {
+                "id": "median-c",
+                "value": {
+                  "$value": "c"
+                }
+              },
+              {
+                "id": "median-d",
+                "value": {
+                  "$value": "d"
+                }
+              },
+              {
+                "id": "median-e",
+                "value": {
+                  "$value": "e"
+                }
+              },
+              {
+                "id": "median-f",
+                "value": {
+                  "$value": "f"
+                }
+              }
+            ],
+            "selected": [
+              "median-c",
+              "median-d"
+            ],
+            "muted": [],
+            "description": "The same six cards in ascending order: {{a}}, {{b}}, {{c}}, {{d}}, {{e}}, {{f}}."
+          }
+        }
+      ],
+      "derived": {
+        "sum": {
+          "add": [
+            "c",
+            "d"
+          ]
+        },
+        "answer": {
+          "divide": [
+            "sum",
+            2
+          ]
+        }
+      },
+      "constraints": [
+        {
+          "test": {
+            "atMost": [
+              "a",
+              "b"
+            ]
+          },
+          "message": "Keep values in ascending rank order."
+        },
+        {
+          "test": {
+            "atMost": [
+              "b",
+              "c"
+            ]
+          },
+          "message": "Keep values in ascending rank order."
+        },
+        {
+          "test": {
+            "atMost": [
+              "c",
+              "d"
+            ]
+          },
+          "message": "Keep values in ascending rank order."
+        },
+        {
+          "test": {
+            "atMost": [
+              "d",
+              "e"
+            ]
+          },
+          "message": "Keep values in ascending rank order."
+        },
+        {
+          "test": {
+            "atMost": [
+              "e",
+              "f"
+            ]
+          },
+          "message": "Keep values in ascending rank order."
+        }
+      ],
+      "model": {
+        "values": [
+          {
+            "$value": "d"
+          },
+          {
+            "$value": "a"
+          },
+          {
+            "$value": "f"
+          },
+          {
+            "$value": "b"
+          },
+          {
+            "$value": "e"
+          },
+          {
+            "$value": "c"
+          }
+        ],
+        "result": {
+          "$value": "answer"
+        }
+      }
     }
   ]
 }

@@ -50,6 +50,28 @@
           }
         }
       ]
+    },
+    {
+      "template": "percentage-increase",
+      "examples": [
+        {
+          "id": "percentage-increase-1",
+          "values": {
+            "total": 40
+          }
+        }
+      ]
+    },
+    {
+      "template": "percentage-decrease",
+      "examples": [
+        {
+          "id": "percentage-decrease-1",
+          "values": {
+            "total": 40
+          }
+        }
+      ]
     }
   ]
 }

@@ -165,7 +165,7 @@ export function validateLearningScene(lesson, state) {
   }
   if (lesson.kind === 'place-value') {
     ensure(
-      [0, 1].includes(s.shift) &&
+      integer(s.shift, -2, 2) &&
         Array.isArray(s.digits) &&
         s.digits.length >= 1 &&
         s.digits.length <= 5 &&
@@ -183,6 +183,17 @@ export function validateLearningScene(lesson, state) {
       'Duplicate digit or place.',
     );
     const first = lesson.steps[0].scene.digits;
+    ensure(
+      [-2, -1, 1, 2].includes(lesson.model.power) &&
+        Math.abs(
+          lesson.model.result - lesson.model.initial * 10 ** lesson.model.power,
+        ) < 1e-9 &&
+        (s.shift === 0 ||
+          (Math.sign(s.shift) === Math.sign(lesson.model.power) &&
+            Math.abs(s.shift) <= Math.abs(lesson.model.power))) &&
+        lesson.steps.at(-1).scene.shift === lesson.model.power,
+      'Invalid place-value operation.',
+    );
     ensure(
       s.digits.length === first.length &&
         s.digits.every((d) =>

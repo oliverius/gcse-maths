@@ -54,6 +54,32 @@
     "place-value-ten": {
       "a": 2,
       "b": 5
+    },
+    "percentage-50": {
+      "total": 60
+    },
+    "percentage-10": {
+      "total": 60
+    },
+    "percentage-20": {
+      "total": 60
+    },
+    "place-value-divide-ten": {
+      "a": 5,
+      "b": 6
+    },
+    "place-value-hundred": {
+      "a": 5,
+      "b": 6
+    },
+    "place-value-divide-hundred": {
+      "a": 5,
+      "b": 6
+    },
+    "subtract-fractions": {
+      "a": 7,
+      "b": 3,
+      "d": 8
     }
   },
   "ratio": {
@@ -74,6 +100,12 @@
       "items": 2,
       "cost": 6,
       "wanted": 3
+    },
+    "percentage-increase": {
+      "total": 60
+    },
+    "percentage-decrease": {
+      "total": 60
     }
   },
   "geometry": {
@@ -154,6 +186,21 @@
       "cats": 4,
       "dogs": 3,
       "fish": 2
+    },
+    "median-even": {
+      "a": 2,
+      "b": 4,
+      "c": 4,
+      "d": 6,
+      "e": 8,
+      "f": 10
+    }
+  },
+  "algebra": {
+    "factorise-common": {
+      "k": 2,
+      "a": 1,
+      "b": 3
     }
   }
 }

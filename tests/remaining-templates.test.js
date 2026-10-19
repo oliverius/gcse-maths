@@ -78,9 +78,11 @@ const originalHashes = {
 };
 
 test('all 17 remaining templates preserve the original teaching states, wording and identities exactly', () => {
-  assert.equal([...templates.values()].flat().length, 17);
+  assert.equal([...templates.values()].flat().length, 18);
   for (const [subject, lessons] of templates)
-    for (const template of lessons) {
+    for (const template of lessons.filter((template) =>
+      Object.hasOwn(originalHashes, template.id),
+    )) {
       const collection = examples.get(subject).get(template.id);
       assert.equal(collection.length, 1);
       const lesson = instantiateLesson(template, collection[0]);

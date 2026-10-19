@@ -2965,6 +2965,414 @@
           ]
         }
       }
+    },
+    {
+      "id": "factorise-common",
+      "title": "Factorise using a common factor",
+      "label": "Factorise using a common factor",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "expression",
+      "initialExpression": "Factorise using a common factor",
+      "notation": {
+        "latex": "{{coefficient}}x+{{constant}}",
+        "spoken": "{{coefficient}} x plus {{constant}}"
+      },
+      "objective": "Rewrite a sum as a product of a common factor and a bracket.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "distribute-three"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A4",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Taking a factor out of only one term, or treating an expression as an equation to solve.",
+        "checkQuestion": "How does expanding your bracket recover both original terms?"
+      },
+      "parameters": {
+        "k": {
+          "min": 2,
+          "max": 3
+        },
+        "a": {
+          "min": 1,
+          "max": 2
+        },
+        "b": {
+          "min": 1,
+          "max": 3
+        }
+      },
+      "steps": [
+        {
+          "title": "Read both terms",
+          "left": [
+            {
+              "id": "expression",
+              "text": "There are {{coefficient}} x-tiles and {{constant}} unit tiles.",
+              "latex": "{{coefficient}}x+{{constant}}",
+              "spoken": "There are {{coefficient}} x-tiles and {{constant}} unit tiles.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "There are {{coefficient}} x-tiles and {{constant}} unit tiles.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "groups": [
+            {
+              "id": "factor-all-x",
+              "label": "{{coefficient}} x-tiles",
+              "items": [
+                {
+                  "$repeat": {
+                    "count": "k",
+                    "as": "g",
+                    "item": [
+                      {
+                        "$repeat": {
+                          "count": "a",
+                          "as": "i",
+                          "item": {
+                            "id": "factor-x-{{g}}-{{i}}",
+                            "text": "x",
+                            "latex": "x",
+                            "spoken": "x",
+                            "tone": "original"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "factor-all-units",
+              "label": "{{constant}} unit tiles",
+              "items": [
+                {
+                  "$repeat": {
+                    "count": "k",
+                    "as": "g",
+                    "item": [
+                      {
+                        "$repeat": {
+                          "count": "b",
+                          "as": "i",
+                          "item": {
+                            "id": "factor-unit-{{g}}-{{i}}",
+                            "text": "1",
+                            "latex": "1",
+                            "spoken": "one",
+                            "tone": "operation"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Find a common factor",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Both coefficients are divisible by {{k}}, so we can make {{k}} identical groups.",
+              "latex": "{{coefficient}}\\div{{k}}={{a}},\\quad{{constant}}\\div{{k}}={{b}}",
+              "spoken": "Both coefficients are divisible by {{k}}, so we can make {{k}} identical groups.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Both coefficients are divisible by {{k}}, so we can make {{k}} identical groups.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "groups": [
+            {
+              "id": "factor-all-x",
+              "label": "{{coefficient}} x-tiles",
+              "items": [
+                {
+                  "$repeat": {
+                    "count": "k",
+                    "as": "g",
+                    "item": [
+                      {
+                        "$repeat": {
+                          "count": "a",
+                          "as": "i",
+                          "item": {
+                            "id": "factor-x-{{g}}-{{i}}",
+                            "text": "x",
+                            "latex": "x",
+                            "spoken": "x",
+                            "tone": "original"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "factor-all-units",
+              "label": "{{constant}} unit tiles",
+              "items": [
+                {
+                  "$repeat": {
+                    "count": "k",
+                    "as": "g",
+                    "item": [
+                      {
+                        "$repeat": {
+                          "count": "b",
+                          "as": "i",
+                          "item": {
+                            "id": "factor-unit-{{g}}-{{i}}",
+                            "text": "1",
+                            "latex": "1",
+                            "spoken": "one",
+                            "tone": "operation"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Make identical groups",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Each of the {{k}} groups contains {{a}} x-tiles and {{b}} units. No tiles were added or removed.",
+              "latex": "{{k}}({{a}}x+{{b}})",
+              "spoken": "Each of the {{k}} groups contains {{a}} x-tiles and {{b}} units. No tiles were added or removed.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each of the {{k}} groups contains {{a}} x-tiles and {{b}} units. No tiles were added or removed.",
+          "detail": "",
+          "operation": {
+            "type": "group"
+          },
+          "groups": [
+            {
+              "$repeat": {
+                "count": "k",
+                "as": "g",
+                "item": {
+                  "id": "factor-group-{{g}}",
+                  "label": "{{a}} x and {{b}} units",
+                  "items": [
+                    {
+                      "$repeat": {
+                        "count": "a",
+                        "as": "i",
+                        "item": {
+                          "id": "factor-x-{{g}}-{{i}}",
+                          "text": "x",
+                          "latex": "x",
+                          "spoken": "x",
+                          "tone": "original"
+                        }
+                      }
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "i",
+                        "item": {
+                          "id": "factor-unit-{{g}}-{{i}}",
+                          "text": "1",
+                          "latex": "1",
+                          "spoken": "one",
+                          "tone": "operation"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "title": "Write the factorised expression",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The common factor {{k}} goes outside the bracket. Both divided terms go inside.",
+              "latex": "{{coefficient}}x+{{constant}}={{k}}({{a}}x+{{b}})",
+              "spoken": "The common factor {{k}} goes outside the bracket. Both divided terms go inside.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The common factor {{k}} goes outside the bracket. Both divided terms go inside.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "groups": [
+            {
+              "$repeat": {
+                "count": "k",
+                "as": "g",
+                "item": {
+                  "id": "factor-group-{{g}}",
+                  "label": "{{a}} x and {{b}} units",
+                  "items": [
+                    {
+                      "$repeat": {
+                        "count": "a",
+                        "as": "i",
+                        "item": {
+                          "id": "factor-x-{{g}}-{{i}}",
+                          "text": "x",
+                          "latex": "x",
+                          "spoken": "x",
+                          "tone": "original"
+                        }
+                      }
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "i",
+                        "item": {
+                          "id": "factor-unit-{{g}}-{{i}}",
+                          "text": "1",
+                          "latex": "1",
+                          "spoken": "one",
+                          "tone": "operation"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "title": "Check by expanding",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Multiply {{k}} by each term in the bracket to recover the original expression. There is no value of x to solve for here.",
+              "latex": "{{k}}({{a}}x+{{b}})={{coefficient}}x+{{constant}}",
+              "spoken": "Multiply {{k}} by each term in the bracket to recover the original expression. There is no value of x to solve for here.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiply {{k}} by each term in the bracket to recover the original expression. There is no value of x to solve for here.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "groups": [
+            {
+              "$repeat": {
+                "count": "k",
+                "as": "g",
+                "item": {
+                  "id": "factor-group-{{g}}",
+                  "label": "{{a}} x and {{b}} units",
+                  "items": [
+                    {
+                      "$repeat": {
+                        "count": "a",
+                        "as": "i",
+                        "item": {
+                          "id": "factor-x-{{g}}-{{i}}",
+                          "text": "x",
+                          "latex": "x",
+                          "spoken": "x",
+                          "tone": "original"
+                        }
+                      }
+                    },
+                    {
+                      "$repeat": {
+                        "count": "b",
+                        "as": "i",
+                        "item": {
+                          "id": "factor-unit-{{g}}-{{i}}",
+                          "text": "1",
+                          "latex": "1",
+                          "spoken": "one",
+                          "tone": "operation"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "derived": {
+        "coefficient": {
+          "multiply": [
+            "k",
+            "a"
+          ]
+        },
+        "constant": {
+          "multiply": [
+            "k",
+            "b"
+          ]
+        }
+      },
+      "model": {
+        "factor": {
+          "$value": "k"
+        },
+        "xPerGroup": {
+          "$value": "a"
+        },
+        "unitsPerGroup": {
+          "$value": "b"
+        },
+        "coefficient": {
+          "$value": "coefficient"
+        },
+        "constant": {
+          "$value": "constant"
+        }
+      }
     }
   ]
 }

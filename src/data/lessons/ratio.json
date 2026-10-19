@@ -1567,6 +1567,1194 @@
       "integers": [
         "unit"
       ]
+    },
+    {
+      "id": "percentage-increase",
+      "title": "Increase an amount by 10%",
+      "label": "Increase an amount by 10%",
+      "tier": "Foundation",
+      "subjectArea": "ratio",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Increase an amount by 10%",
+      "notation": {
+        "latex": "{{total}}+10\\%\\text{ of }{{total}}",
+        "spoken": "Increase {{total}} by ten percent"
+      },
+      "objective": "Increase an amount by finding 10% of the original amount first.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-10"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "R9",
+          "title": "GCSE Mathematics 1MA1 — Ratio, Proportion and Rates of Change",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=20"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Using the changed amount as the base, or confusing the change with the final amount.",
+        "checkQuestion": "What is 10% of the original amount, and do we add or subtract it?"
+      },
+      "parameters": {
+        "total": {
+          "min": 10,
+          "max": 100
+        }
+      },
+      "steps": [
+        {
+          "title": "Identify the original amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Start with the original amount {{total}}, which represents 100%.",
+              "latex": "100\\%={{total}}",
+              "spoken": "Start with the original amount {{total}}, which represents 100%.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Start with the original amount {{total}}, which represents 100%.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards worth {{tenth}} each represent the original amount {{total}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        },
+        {
+          "title": "Find ten percent",
+          "left": [
+            {
+              "id": "expression",
+              "text": "One of the ten equal cards is 10%, worth {{tenth}}.",
+              "latex": "{{total}}\\div10={{tenth}}",
+              "spoken": "One of the ten equal cards is 10%, worth {{tenth}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One of the ten equal cards is 10%, worth {{tenth}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards worth {{tenth}} each represent the original amount {{total}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        },
+        {
+          "title": "Add the increase",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Add another card worth {{tenth}} to the original amount.",
+              "latex": "{{total}}+{{tenth}}",
+              "spoken": "Add another card worth {{tenth}} to the original amount.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Add another card worth {{tenth}} to the original amount.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "110% of original",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-added",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}} added",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ]
+              }
+            ],
+            "description": "Eleven cards now total {{answer}}, including the extra {{tenth}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        },
+        {
+          "title": "Read the new amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Increase {{total}} by {{tenth}} to get {{answer}}. The change is {{tenth}}; the final amount is {{answer}}.",
+              "latex": "{{total}}+{{tenth}}={{answer}}",
+              "spoken": "Increase {{total}} by {{tenth}} to get {{answer}}. The change is {{tenth}}; the final amount is {{answer}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Increase {{total}} by {{tenth}} to get {{answer}}. The change is {{tenth}}; the final amount is {{answer}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "110% of original",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-added",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}} added",
+                    "tone": "operation",
+                    "highlight": true
+                  }
+                ]
+              }
+            ],
+            "description": "Eleven cards now total {{answer}}, including the extra {{tenth}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        }
+      ],
+      "derived": {
+        "tenth": {
+          "divide": [
+            "total",
+            10
+          ]
+        },
+        "answer": {
+          "add": [
+            "total",
+            "tenth"
+          ]
+        }
+      },
+      "integers": [
+        "tenth"
+      ],
+      "model": {
+        "initial": {
+          "$value": "total"
+        },
+        "change": {
+          "$value": "tenth"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
+    },
+    {
+      "id": "percentage-decrease",
+      "title": "Decrease an amount by 10%",
+      "label": "Decrease an amount by 10%",
+      "tier": "Foundation",
+      "subjectArea": "ratio",
+      "available": true,
+      "kind": "counter-groups",
+      "initialExpression": "Decrease an amount by 10%",
+      "notation": {
+        "latex": "{{total}}-10\\%\\text{ of }{{total}}",
+        "spoken": "Decrease {{total}} by ten percent"
+      },
+      "objective": "Decrease an amount by finding 10% of the original amount first.",
+      "prerequisites": [
+        "Read the symbols and quantities in this example."
+      ],
+      "prerequisiteLessonIds": [
+        "percentage-10"
+      ],
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "R9",
+          "title": "GCSE Mathematics 1MA1 — Ratio, Proportion and Rates of Change",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=20"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each step and ask the student to explain the diagram.",
+        "misconception": "Using the changed amount as the base, or confusing the change with the final amount.",
+        "checkQuestion": "What is 10% of the original amount, and do we add or subtract it?"
+      },
+      "parameters": {
+        "total": {
+          "min": 10,
+          "max": 100
+        }
+      },
+      "steps": [
+        {
+          "title": "Identify the original amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Start with the original amount {{total}}, which represents 100%.",
+              "latex": "100\\%={{total}}",
+              "spoken": "Start with the original amount {{total}}, which represents 100%.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Start with the original amount {{total}}, which represents 100%.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards worth {{tenth}} each represent the original amount {{total}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        },
+        {
+          "title": "Find ten percent",
+          "left": [
+            {
+              "id": "expression",
+              "text": "One of the ten equal cards is 10%, worth {{tenth}}.",
+              "latex": "{{total}}\\div10={{tenth}}",
+              "spoken": "One of the ten equal cards is 10%, worth {{tenth}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "One of the ten equal cards is 10%, worth {{tenth}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "100%",
+                "items": [
+                  {
+                    "id": "percent-part-0",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": true
+                  },
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Ten equal cards worth {{tenth}} each represent the original amount {{total}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        },
+        {
+          "title": "Subtract the decrease",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Remove one card worth {{tenth}} from the original amount.",
+              "latex": "{{total}}-{{tenth}}",
+              "spoken": "Remove one card worth {{tenth}} from the original amount.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Remove one card worth {{tenth}} from the original amount.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "90% of original",
+                "items": [
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Nine cards remain, totalling {{answer}}, after removing {{tenth}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        },
+        {
+          "title": "Read the new amount",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Decrease {{total}} by {{tenth}} to get {{answer}}. The change is {{tenth}}; the final amount is {{answer}}.",
+              "latex": "{{total}}-{{tenth}}={{answer}}",
+              "spoken": "Decrease {{total}} by {{tenth}} to get {{answer}}. The change is {{tenth}}; the final amount is {{answer}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Decrease {{total}} by {{tenth}} to get {{answer}}. The change is {{tenth}}; the final amount is {{answer}}.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "groups": [
+              {
+                "id": "percent-group-0",
+                "label": "90% of original",
+                "items": [
+                  {
+                    "id": "percent-part-1",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-2",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-3",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-4",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-5",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-6",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-7",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-8",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  },
+                  {
+                    "id": "percent-part-9",
+                    "value": {
+                      "$value": "tenth"
+                    },
+                    "latex": "{{tenth}}",
+                    "spoken": "{{tenth}}",
+                    "tone": "original",
+                    "highlight": false
+                  }
+                ]
+              }
+            ],
+            "description": "Nine cards remain, totalling {{answer}}, after removing {{tenth}}.",
+            "caption": "10% is calculated from the original amount."
+          }
+        }
+      ],
+      "derived": {
+        "tenth": {
+          "divide": [
+            "total",
+            10
+          ]
+        },
+        "answer": {
+          "subtract": [
+            "total",
+            "tenth"
+          ]
+        }
+      },
+      "integers": [
+        "tenth"
+      ],
+      "model": {
+        "initial": {
+          "$value": "total"
+        },
+        "change": {
+          "$value": "tenth"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
     }
   ]
 }

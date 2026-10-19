@@ -54,7 +54,7 @@ await cdp('Page.navigate', {
 for (let i = 0; i < 100; i++) {
   if (
     await evaluate(
-      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 44",
+      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 55",
     )
   )
     break;
@@ -63,7 +63,7 @@ for (let i = 0; i < 100; i++) {
 await evaluate("import('./js/app.js').then(m=>m.ready)");
 assert.equal(
   await evaluate("document.querySelectorAll('#lessons button').length"),
-  44,
+  55,
 );
 for (const [width, height, label] of [
   [768, 1024, 'portrait'],
@@ -241,6 +241,17 @@ for (const id of [
   'pythagoras-areas',
   'pythagoras-hypotenuse',
   'pythagoras-shorter',
+  'percentage-50',
+  'percentage-10',
+  'percentage-20',
+  'percentage-increase',
+  'percentage-decrease',
+  'place-value-divide-ten',
+  'place-value-hundred',
+  'place-value-divide-hundred',
+  'subtract-fractions',
+  'median-even',
+  'factorise-common',
 ]) {
   await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
   await evaluate(
@@ -344,6 +355,17 @@ for (const id of [
   'pythagoras-areas',
   'pythagoras-hypotenuse',
   'pythagoras-shorter',
+  'percentage-50',
+  'percentage-10',
+  'percentage-20',
+  'percentage-increase',
+  'percentage-decrease',
+  'place-value-divide-ten',
+  'place-value-hundred',
+  'place-value-divide-hundred',
+  'subtract-fractions',
+  'median-even',
+  'factorise-common',
 ]) {
   await evaluate(
     `(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`,
@@ -363,6 +385,10 @@ for (const id of [
 }
 // Fullscreen must retain usable workspace controls and lesson selection at
 // narrow and wide widths, including unsupported/rejected native API paths.
+// Start the menu-open/close check from a closed library at every viewport.
+await evaluate(
+  "if (!document.querySelector('#sidebar').hidden) document.querySelector('#menu').click()",
+);
 for (const [width, mode] of [
   [768, 'unsupported'],
   [1024, 'rejected'],

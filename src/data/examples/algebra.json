@@ -99,6 +99,19 @@
           }
         }
       ]
+    },
+    {
+      "template": "factorise-common",
+      "examples": [
+        {
+          "id": "factorise-common-1",
+          "values": {
+            "k": 3,
+            "a": 2,
+            "b": 3
+          }
+        }
+      ]
     }
   ]
 }

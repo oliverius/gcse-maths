@@ -86,9 +86,11 @@ const originalHashes = {
 };
 
 test('all 19 Number and Ratio templates reproduce their complete original example states', () => {
-  assert.equal([...templates.values()].flat().length, 19);
+  assert.equal([...templates.values()].flat().length, 28);
   for (const [subject, entries] of templates)
-    for (const template of entries) {
+    for (const template of entries.filter((template) =>
+      Object.hasOwn(originalHashes, template.id),
+    )) {
       const curated = examples.get(subject).get(template.id);
       assert.equal(curated.length, 1);
       const lesson = instantiateLesson(template, curated[0]);

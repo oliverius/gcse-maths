@@ -53,8 +53,10 @@ const originalHashes = {
 };
 
 test('every algebra template retains exactly its original curated example and complete teaching states', () => {
-  assert.equal(templates.length, 8);
-  for (const entry of templates) {
+  assert.equal(templates.length, 9);
+  for (const entry of templates.filter((entry) =>
+    Object.hasOwn(originalHashes, entry.id),
+  )) {
     assert.equal(examples.get(entry.id).length, 1);
     const lesson = instantiateAlgebraLesson(entry, examples.get(entry.id)[0]);
     assert.equal(lesson.id, entry.id);
@@ -191,7 +193,7 @@ test('additional curated examples keep one lesson entry and preserve its first e
         : JSON.parse(await readFile(url, 'utf8')),
   })).load();
   const algebra = areas.find((area) => area.id === 'algebra');
-  assert.equal(algebra.lessons.length, 8);
+  assert.equal(algebra.lessons.length, 9);
   assert.deepEqual(algebra.errors, []);
   assert.equal(algebra.lessons[0].exampleId, 'add-both-1');
   assert.equal(algebra.lessons[0].solution, 5);
