@@ -14,7 +14,7 @@ const lesson = (id) => lessons.find((l) => l.id === id);
 test('remaining sections contain implemented diagrams, not interactive placeholders', () => {
   assert.deepEqual(
     areas.map((a) => a.lessons.filter((l) => l.available).length),
-    [25, 11, 6, 8, 4, 6, 1],
+    [25, 15, 6, 8, 4, 6, 1],
   );
   for (const area of areas.slice(2))
     for (const l of area.lessons) {

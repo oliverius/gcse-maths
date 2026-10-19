@@ -68,6 +68,7 @@ function render() {
   renderContent(byId('detail'), state.detailContent, state.detail || '');
   visual.setAttribute('aria-label', describe(current, state));
   visual.classList.toggle('has-groups', Boolean(state.groups));
+  visual.classList.toggle('has-table-graph', current.kind === 'line-table');
   const svg = draw(current, state);
   diagramMath?.dispose();
   visual.replaceChildren(svg);
@@ -84,16 +85,27 @@ function reference(ref) {
 }
 function notes() {
   const combined = current.subjectArea === 'combined';
-  byId('skill-practice').hidden = !combined && !returnToProblem;
+  const practice =
+    combined ||
+    (current.practiceLinks && current.prerequisiteLessonIds?.length);
+  byId('skill-practice').hidden = !practice && !returnToProblem;
   byId('skill-practice-title').textContent = combined
     ? 'Skills used'
-    : 'Continue your problem';
+    : practice
+      ? 'Practise first'
+      : returnToProblem?.subjectArea === 'combined'
+        ? 'Continue your problem'
+        : 'Continue your lesson';
   byId('skill-practice-description').textContent = combined
     ? current.skills.join('; ')
-    : 'Return to the combined problem when you are ready.';
+    : practice
+      ? current.prerequisites.join('; ')
+      : returnToProblem?.subjectArea === 'combined'
+        ? 'Return to the combined problem when you are ready.'
+        : 'Return to your lesson when you are ready.';
   const links = byId('skill-practice-links');
   links.replaceChildren();
-  if (combined) {
+  if (practice) {
     for (const id of current.prerequisiteLessonIds) {
       const introductory = lessonButtons.find(
         ({ lesson }) => lesson.id === id,

@@ -105,7 +105,7 @@ test('actual app handles progression, Back, Replay, lesson switching and reduced
   assert.equal(get('counter').textContent, 'Step 1 of 5');
   assert.equal(get('back').disabled, true);
   const buttons = get('lessons').querySelectorAll('button');
-  assert.equal(buttons.length, 61);
+  assert.equal(buttons.length, 65);
   const { createLoader } = await import('../src/js/lesson-loader.js');
   const available = (await createLoader().load()).flatMap((a) =>
     a.lessons.filter((l) => l.available),
@@ -200,4 +200,34 @@ test('combined problems link to introductory lessons and provide a route back', 
   }
   select('gradient-two-points');
   assert.equal(get('skill-practice').hidden, true);
+});
+
+test('graph and sequence lessons link to their foundations with a return route', async () => {
+  const app = await import('../src/js/app.js');
+  await app.ready;
+  const get = (id) => document.getElementById(id);
+  for (const [id, length, foundation] of [
+    ['line-from-table', 12, 'coordinates-four-quadrants'],
+    ['sequence-nth-term', 6, 'sequence-next-term'],
+  ]) {
+    get('lessons')
+      .querySelectorAll('button')
+      .find((b) => b.getAttribute('data-lesson') === id)
+      .click();
+    assert.equal(get('skill-practice-title').textContent, 'Practise first');
+    get('skill-practice-links').children[0].click();
+    assert.equal(
+      get('lessons')
+        .querySelectorAll('button')
+        .find((b) => b.getAttribute('data-lesson') === foundation)
+        .getAttribute('aria-pressed'),
+      'true',
+    );
+    assert.equal(
+      get('skill-practice-title').textContent,
+      'Continue your lesson',
+    );
+    get('skill-practice-links').children[0].click();
+    assert.equal(get('counter').textContent, `Step 1 of ${length}`);
+  }
 });

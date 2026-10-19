@@ -4049,6 +4049,1581 @@
           "$value": "gradient"
         }
       }
+    },
+    {
+      "id": "coordinates-four-quadrants",
+      "title": "Read and plot coordinates",
+      "label": "Read and plot coordinates",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "coordinate-plane",
+      "initialExpression": "Read and plot coordinates",
+      "notation": {
+        "latex": "P=({{negativeX}},{{yMagnitude}})",
+        "spoken": "Plot P at ({{negativeX}}, {{yMagnitude}}) and compare all four quadrants"
+      },
+      "objective": "Read ordered pairs and plot signed coordinates in all four quadrants.",
+      "prerequisites": [
+        "Read signed numbers and simple arithmetic."
+      ],
+      "prerequisiteLessonIds": [],
+      "practiceLinks": false,
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A8",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the table or graph.",
+        "misconception": "Swapping x and y, or moving upwards for a negative y-coordinate.",
+        "checkQuestion": "Which coordinate tells us the horizontal movement, and which tells us the vertical movement?"
+      },
+      "parameters": {
+        "xMagnitude": {
+          "min": 2,
+          "max": 3
+        },
+        "yMagnitude": {
+          "min": 2,
+          "max": 3
+        }
+      },
+      "derived": {
+        "negativeX": {
+          "subtract": [
+            0,
+            "xMagnitude"
+          ]
+        },
+        "negativeY": {
+          "subtract": [
+            0,
+            "yMagnitude"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the ordered pair",
+          "left": [
+            {
+              "id": "expression",
+              "text": "P is ({{negativeX}}, {{yMagnitude}}).",
+              "latex": "P=({{negativeX}},{{yMagnitude}})",
+              "spoken": "P is ({{negativeX}}, {{yMagnitude}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Start at the origin (0, 0). The first coordinate is x, the horizontal position; the second is y, the vertical position.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "revealed": 0,
+            "horizontal": false,
+            "vertical": false,
+            "description": "Signed axes, one unit per grid interval. No points are plotted yet.",
+            "caption": "Read x first, then y."
+          }
+        },
+        {
+          "title": "Move horizontally first",
+          "left": [
+            {
+              "id": "expression",
+              "text": "x is {{negativeX}}.",
+              "latex": "x={{negativeX}}",
+              "spoken": "x is {{negativeX}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "From the origin, move {{xMagnitude}} units left because x is negative. Stay on the horizontal axis for this first move.",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "revealed": 0,
+            "horizontal": true,
+            "vertical": false,
+            "description": "Signed axes, one unit per grid interval. Move horizontally to x = {{negativeX}}. No points are plotted yet.",
+            "caption": "Read x first, then y."
+          }
+        },
+        {
+          "title": "Then move vertically",
+          "left": [
+            {
+              "id": "expression",
+              "text": "y is {{yMagnitude}}.",
+              "latex": "y={{yMagnitude}}",
+              "spoken": "y is {{yMagnitude}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Move {{yMagnitude}} units up because y is positive. Mark the point P at ({{negativeX}}, {{yMagnitude}}).",
+          "detail": "",
+          "operation": {
+            "type": "move"
+          },
+          "scene": {
+            "revealed": 1,
+            "horizontal": true,
+            "vertical": true,
+            "description": "Signed axes, one unit per grid interval. Move horizontally to x = {{negativeX}}. Then move vertically to y = {{yMagnitude}}. Plotted points: P({{negativeX}}, {{yMagnitude}}).",
+            "caption": "Read x first, then y."
+          }
+        },
+        {
+          "title": "Read back the coordinates",
+          "left": [
+            {
+              "id": "expression",
+              "text": "P is ({{negativeX}}, {{yMagnitude}}).",
+              "latex": "P=({{negativeX}},{{yMagnitude}})",
+              "spoken": "P is ({{negativeX}}, {{yMagnitude}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read x first, then y: left {{xMagnitude}}, up {{yMagnitude}}. P lies in quadrant II, the upper-left region.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "revealed": 1,
+            "horizontal": false,
+            "vertical": false,
+            "description": "Signed axes, one unit per grid interval. Plotted points: P({{negativeX}}, {{yMagnitude}}).",
+            "caption": "Read x first, then y."
+          }
+        },
+        {
+          "title": "Compare positive x and y",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Q is ({{xMagnitude}}, {{yMagnitude}}).",
+              "latex": "Q=({{xMagnitude}},{{yMagnitude}})",
+              "spoken": "Q is ({{xMagnitude}}, {{yMagnitude}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Q is right {{xMagnitude}} and up {{yMagnitude}} from the origin. Both coordinates are positive, placing Q in quadrant I.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "revealed": 2,
+            "horizontal": false,
+            "vertical": false,
+            "description": "Signed axes, one unit per grid interval. Plotted points: P({{negativeX}}, {{yMagnitude}}); Q({{xMagnitude}}, {{yMagnitude}}).",
+            "caption": "Read x first, then y."
+          }
+        },
+        {
+          "title": "Compare negative x and y",
+          "left": [
+            {
+              "id": "expression",
+              "text": "R is ({{negativeX}}, {{negativeY}}).",
+              "latex": "R=({{negativeX}},{{negativeY}})",
+              "spoken": "R is ({{negativeX}}, {{negativeY}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "R is left {{xMagnitude}} and down {{yMagnitude}} from the origin. Both coordinates are negative, placing R in quadrant III.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "revealed": 3,
+            "horizontal": false,
+            "vertical": false,
+            "description": "Signed axes, one unit per grid interval. Plotted points: P({{negativeX}}, {{yMagnitude}}); Q({{xMagnitude}}, {{yMagnitude}}); R({{negativeX}}, {{negativeY}}).",
+            "caption": "Read x first, then y."
+          }
+        },
+        {
+          "title": "Read the fourth quadrant",
+          "left": [
+            {
+              "id": "expression",
+              "text": "S is ({{xMagnitude}}, {{negativeY}}).",
+              "latex": "S=({{xMagnitude}},{{negativeY}})",
+              "spoken": "S is ({{xMagnitude}}, {{negativeY}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "S is right {{xMagnitude}} and down {{yMagnitude}}. Positive x and negative y place S in quadrant IV. The coordinate order is always x, then y.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "revealed": 4,
+            "horizontal": false,
+            "vertical": false,
+            "description": "Signed axes, one unit per grid interval. Plotted points: P({{negativeX}}, {{yMagnitude}}); Q({{xMagnitude}}, {{yMagnitude}}); R({{negativeX}}, {{negativeY}}); S({{xMagnitude}}, {{negativeY}}).",
+            "caption": "Read x first, then y."
+          }
+        }
+      ],
+      "model": {
+        "xMagnitude": {
+          "$value": "xMagnitude"
+        },
+        "yMagnitude": {
+          "$value": "yMagnitude"
+        },
+        "points": [
+          {
+            "id": "P",
+            "x": {
+              "$value": "negativeX"
+            },
+            "y": {
+              "$value": "yMagnitude"
+            }
+          },
+          {
+            "id": "Q",
+            "x": {
+              "$value": "xMagnitude"
+            },
+            "y": {
+              "$value": "yMagnitude"
+            }
+          },
+          {
+            "id": "R",
+            "x": {
+              "$value": "negativeX"
+            },
+            "y": {
+              "$value": "negativeY"
+            }
+          },
+          {
+            "id": "S",
+            "x": {
+              "$value": "xMagnitude"
+            },
+            "y": {
+              "$value": "negativeY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "line-from-table",
+      "title": "Draw a line from a value table",
+      "label": "Draw a line from a value table",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "line-table",
+      "initialExpression": "Draw a line from a value table",
+      "notation": {
+        "latex": "y={{slope}}x+{{intercept}}",
+        "spoken": "Draw y equals {{slope}} x plus {{intercept}}"
+      },
+      "objective": "Calculate a table of y-values, plot its ordered pairs and draw the corresponding straight line.",
+      "prerequisites": [
+        "Read and plot coordinates; substitute numbers into an expression."
+      ],
+      "prerequisiteLessonIds": [
+        "coordinates-four-quadrants",
+        "substitution"
+      ],
+      "practiceLinks": true,
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A8, A9",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the table or graph.",
+        "misconception": "Swapping coordinates, losing the sign of a negative x, or joining the points as a zigzag.",
+        "checkQuestion": "How does each column of the table give one point on the graph?"
+      },
+      "parameters": {
+        "slope": {
+          "min": 1,
+          "max": 2
+        },
+        "intercept": {
+          "min": 1,
+          "max": 2
+        }
+      },
+      "derived": {
+        "y0": {
+          "add": [
+            {
+              "multiply": [
+                "slope",
+                -2
+              ]
+            },
+            "intercept"
+          ]
+        },
+        "y1": {
+          "add": [
+            {
+              "multiply": [
+                "slope",
+                -1
+              ]
+            },
+            "intercept"
+          ]
+        },
+        "y2": {
+          "add": [
+            {
+              "multiply": [
+                "slope",
+                0
+              ]
+            },
+            "intercept"
+          ]
+        },
+        "y3": {
+          "add": [
+            {
+              "multiply": [
+                "slope",
+                1
+              ]
+            },
+            "intercept"
+          ]
+        },
+        "y4": {
+          "add": [
+            {
+              "multiply": [
+                "slope",
+                2
+              ]
+            },
+            "intercept"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Start with the equation",
+          "left": [
+            {
+              "id": "expression",
+              "text": "y equals {{slope}} x plus {{intercept}}.",
+              "latex": "y={{slope}}x+{{intercept}}",
+              "spoken": "y equals {{slope}} x plus {{intercept}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The table supplies five x-values. Substitute each one into the equation to calculate its matching y-value.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "computed": 0,
+            "plotted": 0,
+            "active": null,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. The y-values are not yet calculated. No points are plotted yet. ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Calculate y when x = -2",
+          "left": [
+            {
+              "id": "expression",
+              "text": "When x is -2, y is {{y0}}.",
+              "latex": "y={{slope}}\\times(-2)+{{intercept}}={{y0}}",
+              "spoken": "When x is -2, y is {{y0}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiply -2 by {{slope}}, then add {{intercept}}. This gives y = {{y0}} in the first table column.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "computed": 1,
+            "plotted": 0,
+            "active": 0,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}. No points are plotted yet. ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Calculate y when x = -1",
+          "left": [
+            {
+              "id": "expression",
+              "text": "When x is -1, y is {{y1}}.",
+              "latex": "y={{slope}}\\times(-1)+{{intercept}}={{y1}}",
+              "spoken": "When x is -1, y is {{y1}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiply -1 by {{slope}}, then add {{intercept}}. This gives y = {{y1}} in the second table column.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "computed": 2,
+            "plotted": 0,
+            "active": 1,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}. No points are plotted yet. ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Calculate y when x = 0",
+          "left": [
+            {
+              "id": "expression",
+              "text": "When x is 0, y is {{y2}}.",
+              "latex": "y={{slope}}\\times(0)+{{intercept}}={{y2}}",
+              "spoken": "When x is 0, y is {{y2}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiply 0 by {{slope}}, then add {{intercept}}. This gives y = {{y2}} in the third table column.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "computed": 3,
+            "plotted": 0,
+            "active": 2,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}. No points are plotted yet. ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Calculate y when x = 1",
+          "left": [
+            {
+              "id": "expression",
+              "text": "When x is 1, y is {{y3}}.",
+              "latex": "y={{slope}}\\times(1)+{{intercept}}={{y3}}",
+              "spoken": "When x is 1, y is {{y3}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiply 1 by {{slope}}, then add {{intercept}}. This gives y = {{y3}} in the fourth table column.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "computed": 4,
+            "plotted": 0,
+            "active": 3,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}. No points are plotted yet. ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Calculate y when x = 2",
+          "left": [
+            {
+              "id": "expression",
+              "text": "When x is 2, y is {{y4}}.",
+              "latex": "y={{slope}}\\times(2)+{{intercept}}={{y4}}",
+              "spoken": "When x is 2, y is {{y4}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Multiply 2 by {{slope}}, then add {{intercept}}. This gives y = {{y4}} in the fifth table column.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 0,
+            "active": 4,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. No points are plotted yet. ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Plot the first point",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Plot (-2, {{y0}}).",
+              "latex": "(-2,{{y0}})",
+              "spoken": "Plot (-2, {{y0}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read x = -2 first, then y = {{y0}}. Plot that ordered pair. Each table column supplies one point.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 1,
+            "active": 0,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. Plotted pairs: (-2, {{y0}}). ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Plot the second point",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Plot (-1, {{y1}}).",
+              "latex": "(-1,{{y1}})",
+              "spoken": "Plot (-1, {{y1}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read x = -1 first, then y = {{y1}}. Plot that ordered pair. Each table column supplies one point.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 2,
+            "active": 1,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. Plotted pairs: (-2, {{y0}}); (-1, {{y1}}). ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Plot the third point",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Plot (0, {{y2}}).",
+              "latex": "(0,{{y2}})",
+              "spoken": "Plot (0, {{y2}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read x = 0 first, then y = {{y2}}. Plot that ordered pair. Each table column supplies one point.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 3,
+            "active": 2,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. Plotted pairs: (-2, {{y0}}); (-1, {{y1}}); (0, {{y2}}). ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Plot the fourth point",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Plot (1, {{y3}}).",
+              "latex": "(1,{{y3}})",
+              "spoken": "Plot (1, {{y3}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read x = 1 first, then y = {{y3}}. Plot that ordered pair. Each table column supplies one point.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 4,
+            "active": 3,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. Plotted pairs: (-2, {{y0}}); (-1, {{y1}}); (0, {{y2}}); (1, {{y3}}). ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Plot the fifth point",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Plot (2, {{y4}}).",
+              "latex": "(2,{{y4}})",
+              "spoken": "Plot (2, {{y4}}).",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Read x = 2 first, then y = {{y4}}. Plot that ordered pair. Each table column supplies one point.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 5,
+            "active": 4,
+            "line": false,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. Plotted pairs: (-2, {{y0}}); (-1, {{y1}}); (0, {{y2}}); (1, {{y3}}); (2, {{y4}}). ",
+            "caption": "Each grid interval is one unit."
+          }
+        },
+        {
+          "title": "Draw the straight line",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Draw a straight line through the five points.",
+              "latex": "y={{slope}}x+{{intercept}}",
+              "spoken": "Draw a straight line through the five points.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Use a ruler to draw one straight line through all five points and extend it in both directions. These points satisfy the same equation.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "computed": 5,
+            "plotted": 5,
+            "active": null,
+            "line": true,
+            "description": "Table for y = {{slope}}x + {{intercept}}. x-values: -2, -1, 0, 1, 2. Calculated columns: x = -2, y = {{y0}}; x = -1, y = {{y1}}; x = 0, y = {{y2}}; x = 1, y = {{y3}}; x = 2, y = {{y4}}. Plotted pairs: (-2, {{y0}}); (-1, {{y1}}); (0, {{y2}}); (1, {{y3}}); (2, {{y4}}). A straight line passes through the five points.",
+            "caption": "Each grid interval is one unit."
+          }
+        }
+      ],
+      "model": {
+        "slope": {
+          "$value": "slope"
+        },
+        "intercept": {
+          "$value": "intercept"
+        },
+        "xs": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "ys": [
+          {
+            "$value": "y0"
+          },
+          {
+            "$value": "y1"
+          },
+          {
+            "$value": "y2"
+          },
+          {
+            "$value": "y3"
+          },
+          {
+            "$value": "y4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sequence-next-term",
+      "title": "Continue a sequence using its rule",
+      "label": "Continue a sequence using its rule",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "sequence-table",
+      "initialExpression": "Continue a sequence using its rule",
+      "notation": {
+        "latex": "{{term1}},{{term2}},{{term3}},{{term4}},?",
+        "spoken": "Continue {{term1}}, {{term2}}, {{term3}}, {{term4}}"
+      },
+      "objective": "Find the constant difference in an arithmetic sequence and use it to generate the next term.",
+      "prerequisites": [
+        "Read signed numbers and simple arithmetic."
+      ],
+      "prerequisiteLessonIds": [],
+      "practiceLinks": false,
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A23, A24",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the table or graph.",
+        "misconception": "Adding the first term repeatedly, or assuming all sequences increase.",
+        "checkQuestion": "How can you check that the same change works between every pair of shown terms?"
+      },
+      "parameters": {
+        "first": {
+          "min": 1,
+          "max": 20
+        },
+        "gap": {
+          "min": 1,
+          "max": 5
+        },
+        "direction": {
+          "min": 1,
+          "max": 2,
+          "choices": [
+            1,
+            2
+          ]
+        }
+      },
+      "derived": {
+        "difference": {
+          "multiply": [
+            "gap",
+            {
+              "subtract": [
+                3,
+                {
+                  "multiply": [
+                    2,
+                    "direction"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "offset": {
+          "subtract": [
+            "first",
+            "difference"
+          ]
+        },
+        "term1": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                0
+              ]
+            }
+          ]
+        },
+        "term2": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                1
+              ]
+            }
+          ]
+        },
+        "term3": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                2
+              ]
+            }
+          ]
+        },
+        "term4": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                3
+              ]
+            }
+          ]
+        },
+        "term5": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                4
+              ]
+            }
+          ]
+        },
+        "negativeOffset": {
+          "subtract": [
+            0,
+            "offset"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Read the given terms",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Read the first four terms.",
+              "latex": "{{term1}},{{term2}},{{term3}},{{term4}},\\ldots",
+              "spoken": "Read the first four terms.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "This arithmetic sequence continues with a constant difference. The position row counts terms; the term row shows their values.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "visible": 4,
+            "differences": 0,
+            "selected": [],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Check the first change",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The change is {{difference}}.",
+              "latex": "{{term2}}-({{term1}})={{difference}}",
+              "spoken": "The change is {{difference}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtract the earlier term from the next: {{term2}} minus {{term1}} is {{difference}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "visible": 4,
+            "differences": 1,
+            "selected": [
+              1,
+              2
+            ],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}. Each shown change is {{difference}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Check the second change",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The change is {{difference}}.",
+              "latex": "{{term3}}-({{term2}})={{difference}}",
+              "spoken": "The change is {{difference}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtract the earlier term from the next: {{term3}} minus {{term2}} is {{difference}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "visible": 4,
+            "differences": 2,
+            "selected": [
+              2,
+              3
+            ],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}. Each shown change is {{difference}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Check the third change",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The change is {{difference}}.",
+              "latex": "{{term4}}-({{term3}})={{difference}}",
+              "spoken": "The change is {{difference}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Subtract the earlier term from the next: {{term4}} minus {{term3}} is {{difference}}.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "visible": 4,
+            "differences": 3,
+            "selected": [
+              3,
+              4
+            ],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}. Each shown change is {{difference}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Apply the same change",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The next term is {{term5}}.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "difference",
+                      0
+                    ]
+                  },
+                  "then": "{{term4}}-{{gap}}={{term5}}",
+                  "else": "{{term4}}+{{gap}}={{term5}}"
+                }
+              },
+              "spoken": "The next term is {{term5}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "less": [
+                  "difference",
+                  0
+                ]
+              },
+              "then": "Subtract {{gap}} from {{term4}} to get {{term5}}. The same change continues.",
+              "else": "Add {{gap}} to {{term4}} to get {{term5}}. The same change continues."
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 4,
+            "selected": [
+              5
+            ],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. Each shown change is {{difference}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "State the term-to-term rule",
+          "left": [
+            {
+              "id": "expression",
+              "text": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "difference",
+                      0
+                    ]
+                  },
+                  "then": "Subtract {{gap}} each time.",
+                  "else": "Add {{gap}} each time."
+                }
+              },
+              "latex": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "difference",
+                      0
+                    ]
+                  },
+                  "then": "\\text{Subtract }{{gap}}",
+                  "else": "\\text{Add }{{gap}}"
+                }
+              },
+              "spoken": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "difference",
+                      0
+                    ]
+                  },
+                  "then": "Subtract {{gap}} each time.",
+                  "else": "Add {{gap}} each time."
+                }
+              },
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "less": [
+                  "difference",
+                  0
+                ]
+              },
+              "then": "Subtract {{gap}} each time.",
+              "else": "Add {{gap}} each time."
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 4,
+            "selected": [],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. Each shown change is {{difference}}. ",
+            "caption": "Position counts from 1."
+          }
+        }
+      ],
+      "model": {
+        "first": {
+          "$value": "first"
+        },
+        "difference": {
+          "$value": "difference"
+        },
+        "offset": {
+          "$value": "offset"
+        },
+        "values": [
+          {
+            "$value": "term1"
+          },
+          {
+            "$value": "term2"
+          },
+          {
+            "$value": "term3"
+          },
+          {
+            "$value": "term4"
+          },
+          {
+            "$value": "term5"
+          }
+        ],
+        "result": {
+          "$value": "term5"
+        }
+      }
+    },
+    {
+      "id": "sequence-nth-term",
+      "title": "Find the nth term of a linear sequence",
+      "label": "Find the nth term of a linear sequence",
+      "tier": "Foundation",
+      "subjectArea": "algebra",
+      "available": true,
+      "kind": "sequence-table",
+      "initialExpression": "Find the nth term of a linear sequence",
+      "notation": {
+        "latex": "T_n=?",
+        "spoken": "Find the nth term of {{term1}}, {{term2}}, {{term3}}, {{term4}}"
+      },
+      "objective": "Use the common difference and first term to build a linear position-to-term rule.",
+      "prerequisites": [
+        "Continue an arithmetic sequence using its constant difference."
+      ],
+      "prerequisiteLessonIds": [
+        "sequence-next-term"
+      ],
+      "practiceLinks": true,
+      "curriculum": [
+        {
+          "provider": "Pearson Edexcel",
+          "reference": "A23, A25",
+          "title": "GCSE Mathematics 1MA1 — Algebra",
+          "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf#page=18"
+        }
+      ],
+      "tutorNotes": {
+        "observe": "Pause after each change. Ask the student to explain the table or graph.",
+        "misconception": "Using the common difference as the whole nth-term rule, or treating n as the previous term.",
+        "checkQuestion": "Why does multiplying the position by the common difference sometimes need an extra adjustment?"
+      },
+      "parameters": {
+        "first": {
+          "min": 1,
+          "max": 20
+        },
+        "gap": {
+          "min": 1,
+          "max": 5
+        },
+        "direction": {
+          "min": 1,
+          "max": 2,
+          "choices": [
+            1,
+            2
+          ]
+        },
+        "position": {
+          "min": 6,
+          "max": 20
+        }
+      },
+      "derived": {
+        "difference": {
+          "multiply": [
+            "gap",
+            {
+              "subtract": [
+                3,
+                {
+                  "multiply": [
+                    2,
+                    "direction"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "offset": {
+          "subtract": [
+            "first",
+            "difference"
+          ]
+        },
+        "term1": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                0
+              ]
+            }
+          ]
+        },
+        "term2": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                1
+              ]
+            }
+          ]
+        },
+        "term3": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                2
+              ]
+            }
+          ]
+        },
+        "term4": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                3
+              ]
+            }
+          ]
+        },
+        "term5": {
+          "add": [
+            "first",
+            {
+              "multiply": [
+                "difference",
+                4
+              ]
+            }
+          ]
+        },
+        "negativeOffset": {
+          "subtract": [
+            0,
+            "offset"
+          ]
+        },
+        "answer": {
+          "add": [
+            {
+              "multiply": [
+                "difference",
+                "position"
+              ]
+            },
+            "offset"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "title": "Read positions and terms",
+          "left": [
+            {
+              "id": "expression",
+              "text": "n is the term position.",
+              "latex": "n=1,2,3,4,5",
+              "spoken": "n is the term position.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Here n means the position, starting at 1. We want a rule that gives the term value directly from its position.",
+          "detail": "",
+          "operation": {
+            "type": "show"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 0,
+            "selected": [],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Find the common difference",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The common difference is {{difference}}.",
+              "latex": "{{term2}}-({{term1}})={{difference}}",
+              "spoken": "The common difference is {{difference}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Each term changes by {{difference}}. This is the coefficient of n in a linear position-to-term rule.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 4,
+            "selected": [],
+            "compare": false,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. Each shown change is {{difference}}. ",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Compare with multiples of n",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Compare {{difference}} times each position.",
+              "latex": "{{difference}}n",
+              "spoken": "Compare {{difference}} times each position.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "The blue row shows {{difference}} times each position. Compare it with the term row above.",
+          "detail": "",
+          "operation": {
+            "type": "replace"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 0,
+            "selected": [],
+            "compare": true,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. The comparison row shows {{difference}} times each position.",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Adjust to match the terms",
+          "left": [
+            {
+              "id": "expression",
+              "text": "Use the common difference and the same adjustment.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "offset",
+                      0
+                    ]
+                  },
+                  "then": "T_n={{difference}}n-{{negativeOffset}}",
+                  "else": {
+                    "$if": {
+                      "test": {
+                        "equal": [
+                          "offset",
+                          0
+                        ]
+                      },
+                      "then": "T_n={{difference}}n",
+                      "else": "T_n={{difference}}n+{{offset}}"
+                    }
+                  }
+                }
+              },
+              "spoken": "Use the common difference and the same adjustment.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": {
+            "$if": {
+              "test": {
+                "less": [
+                  "offset",
+                  0
+                ]
+              },
+              "then": "Each term is {{negativeOffset}} less than {{difference}} times its position. Subtract {{negativeOffset}} to get the rule.",
+              "else": {
+                "$if": {
+                  "test": {
+                    "equal": [
+                      "offset",
+                      0
+                    ]
+                  },
+                  "then": "Each term equals {{difference}} times its position. No adjustment is needed.",
+                  "else": "Each term is {{offset}} more than {{difference}} times its position. Add {{offset}} to get the rule."
+                }
+              }
+            }
+          },
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 0,
+            "selected": [],
+            "compare": true,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. The comparison row shows {{difference}} times each position.",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Check the first position",
+          "left": [
+            {
+              "id": "expression",
+              "text": "The rule gives {{first}} at position one.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "offset",
+                      0
+                    ]
+                  },
+                  "then": "{{difference}}\\times1-{{negativeOffset}}={{first}}",
+                  "else": "{{difference}}\\times1+{{offset}}={{first}}"
+                }
+              },
+              "spoken": "The rule gives {{first}} at position one.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put n = 1 into the rule. It gives {{first}}, matching the first term. The same adjustment matches all five shown terms.",
+          "detail": "",
+          "operation": {
+            "type": "highlight"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 0,
+            "selected": [
+              1
+            ],
+            "compare": true,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. The comparison row shows {{difference}} times each position.",
+            "caption": "Position counts from 1."
+          }
+        },
+        {
+          "title": "Find a later term",
+          "left": [
+            {
+              "id": "expression",
+              "text": "At position {{position}}, the term is {{answer}}.",
+              "latex": {
+                "$if": {
+                  "test": {
+                    "less": [
+                      "offset",
+                      0
+                    ]
+                  },
+                  "then": "T_{{{position}}}={{difference}}\\times{{position}}-{{negativeOffset}}={{answer}}",
+                  "else": "T_{{{position}}}={{difference}}\\times{{position}}+{{offset}}={{answer}}"
+                }
+              },
+              "spoken": "At position {{position}}, the term is {{answer}}.",
+              "tone": "original"
+            }
+          ],
+          "right": [],
+          "balance": null,
+          "explanation": "Put n = {{position}} into the rule to get {{answer}}. We can find this term directly without listing all earlier terms.",
+          "detail": "",
+          "operation": {
+            "type": "simplify"
+          },
+          "scene": {
+            "visible": 5,
+            "differences": 0,
+            "selected": [],
+            "compare": true,
+            "description": "Positions start at 1. Visible terms: position 1: {{term1}}; position 2: {{term2}}; position 3: {{term3}}; position 4: {{term4}}; position 5: {{term5}}. The comparison row shows {{difference}} times each position.",
+            "caption": "Position counts from 1."
+          }
+        }
+      ],
+      "model": {
+        "first": {
+          "$value": "first"
+        },
+        "difference": {
+          "$value": "difference"
+        },
+        "offset": {
+          "$value": "offset"
+        },
+        "values": [
+          {
+            "$value": "term1"
+          },
+          {
+            "$value": "term2"
+          },
+          {
+            "$value": "term3"
+          },
+          {
+            "$value": "term4"
+          },
+          {
+            "$value": "term5"
+          }
+        ],
+        "targetPosition": {
+          "$value": "position"
+        },
+        "result": {
+          "$value": "answer"
+        }
+      }
     }
   ]
 }

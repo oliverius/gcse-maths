@@ -226,6 +226,25 @@
       "y1": 1,
       "x2": 4,
       "y2": 3
+    },
+    "coordinates-four-quadrants": {
+      "xMagnitude": 2,
+      "yMagnitude": 3
+    },
+    "line-from-table": {
+      "slope": 1,
+      "intercept": 2
+    },
+    "sequence-next-term": {
+      "first": 12,
+      "gap": 3,
+      "direction": 2
+    },
+    "sequence-nth-term": {
+      "first": 2,
+      "gap": 3,
+      "direction": 1,
+      "position": 20
     }
   },
   "combined": {

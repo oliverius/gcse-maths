@@ -15,7 +15,7 @@ const fetchJSON = async (url) => ({
 });
 const areas = await createLoader(fetchJSON).load();
 const lessons = areas.flatMap((a) => a.lessons.filter((l) => l.available));
-test('seven sections load with globally unique IDs and sixty-one implemented lessons', () => {
+test('seven sections load with globally unique IDs and sixty-five implemented lessons', () => {
   assert.equal(areas.length, 7);
   assert.deepEqual(
     areas.flatMap((a) => a.errors),
@@ -23,7 +23,7 @@ test('seven sections load with globally unique IDs and sixty-one implemented les
   );
   const ids = areas.flatMap((a) => a.lessons.map((l) => l.id));
   assert.equal(ids.length, new Set(ids).size);
-  assert.equal(lessons.length, 61);
+  assert.equal(lessons.length, 65);
   for (const lesson of lessons) {
     assert.ok(
       lesson.curriculum.every((r) =>
@@ -70,7 +70,7 @@ test('invalid JSON file, invalid lesson, and duplicate ID are isolated', async (
   );
   assert.equal(loaded.find((a) => a.id === 'geometry').errors.length, 1);
   assert.equal(loaded.find((a) => a.id === 'algebra').errors.length, 2);
-  assert.equal(loaded.find((a) => a.id === 'algebra').lessons.length, 11);
+  assert.equal(loaded.find((a) => a.id === 'algebra').lessons.length, 15);
   assert.equal(
     loaded.find((a) => a.id === 'number').lessons.filter((l) => l.available)
       .length,

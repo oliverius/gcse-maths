@@ -62,6 +62,11 @@ export function validateLesson(lesson, area) {
     fail('Invalid lesson metadata.');
   if (!lesson.available) return lesson;
   if (
+    lesson.practiceLinks !== undefined &&
+    typeof lesson.practiceLinks !== 'boolean'
+  )
+    fail('Invalid practice links setting.');
+  if (
     area === 'combined' &&
     (!Array.isArray(lesson.skills) ||
       lesson.skills.length < 2 ||

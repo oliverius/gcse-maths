@@ -140,6 +140,57 @@
           }
         }
       ]
+    },
+    {
+      "template": "coordinates-four-quadrants",
+      "examples": [
+        {
+          "id": "coordinates-four-quadrants-1",
+          "values": {
+            "xMagnitude": 3,
+            "yMagnitude": 2
+          }
+        }
+      ]
+    },
+    {
+      "template": "line-from-table",
+      "examples": [
+        {
+          "id": "line-from-table-1",
+          "values": {
+            "slope": 2,
+            "intercept": 1
+          }
+        }
+      ]
+    },
+    {
+      "template": "sequence-next-term",
+      "examples": [
+        {
+          "id": "sequence-next-term-1",
+          "values": {
+            "first": 3,
+            "gap": 4,
+            "direction": 1
+          }
+        }
+      ]
+    },
+    {
+      "template": "sequence-nth-term",
+      "examples": [
+        {
+          "id": "sequence-nth-term-1",
+          "values": {
+            "first": 3,
+            "gap": 4,
+            "direction": 1,
+            "position": 10
+          }
+        }
+      ]
     }
   ]
 }

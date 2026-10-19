@@ -54,7 +54,7 @@ await cdp('Page.navigate', {
 for (let i = 0; i < 100; i++) {
   if (
     await evaluate(
-      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 61",
+      "document.querySelector('#next') && document.querySelectorAll('#lessons button').length === 65",
     )
   )
     break;
@@ -63,7 +63,7 @@ for (let i = 0; i < 100; i++) {
 await evaluate("import('./js/app.js').then(m=>m.ready)");
 assert.equal(
   await evaluate("document.querySelectorAll('#lessons button').length"),
-  61,
+  65,
 );
 // Combined skills navigation and practice shortcuts must work at every size.
 for (const width of [390, 768, 1024]) {
@@ -302,6 +302,10 @@ for (const id of [
   'add-unlike-fractions',
   'decimal-to-fraction',
   'percentage-one-percent',
+  'coordinates-four-quadrants',
+  'line-from-table',
+  'sequence-next-term',
+  'sequence-nth-term',
 ]) {
   await evaluate(`document.querySelector('[data-lesson="${id}"]').click()`);
   await evaluate(
@@ -422,6 +426,10 @@ for (const id of [
   'add-unlike-fractions',
   'decimal-to-fraction',
   'percentage-one-percent',
+  'coordinates-four-quadrants',
+  'line-from-table',
+  'sequence-next-term',
+  'sequence-nth-term',
 ]) {
   await evaluate(
     `(async()=>{document.querySelector('[data-lesson="${id}"]').click();for(let i=0;i<12&&!document.querySelector('#next').disabled;i++){document.querySelector('#next').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}})()`,
@@ -543,6 +551,7 @@ for (const [width, height] of [
         for (const state of lesson.steps) {
           const visual = document.querySelector('#visual');
           visual.classList.toggle('has-groups', Boolean(state.groups));
+          visual.classList.toggle('has-table-graph', lesson.kind === 'line-table');
           diagramMath?.dispose();
           const svg = draw(lesson, state);
           visual.replaceChildren(svg);

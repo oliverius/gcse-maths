@@ -235,6 +235,9 @@ h3 {
     overflow: visible;
   }
 }
+#visual.has-table-graph {
+  height: 460px;
+}
 svg {
   text {
     font-family: inherit;
@@ -443,6 +446,9 @@ a {
 .presentation #visual {
   height: clamp(300px, 42vh, 510px);
 }
+.presentation #visual.has-table-graph {
+  height: clamp(420px, 55vh, 540px);
+}
 @media (max-width: 999px) {
   body:has(#sidebar:not([hidden])) main {
     margin-left: auto;
@@ -472,6 +478,9 @@ a {
   }
 }
 @media (max-width: 600px) {
+  #visual.has-table-graph {
+    height: 420px;
+  }
   #lesson-title {
     flex-basis: 100%;
     justify-content: center;

@@ -1,6 +1,7 @@
 import { element, label, math, entity } from './svg.js';
 import { mathRow, mathSVG } from './notation.js';
 import { pythagorasGeometry, isPrime } from './learning-geometry.js';
+import { foundationsRenderers } from './foundations-diagrams.js';
 
 function tileArray(svg, s) {
   const cell = Math.min(42, 185 / s.rows),
@@ -630,6 +631,7 @@ function moneyBars(svg, s, lesson) {
 }
 
 const renderers = {
+  ...foundationsRenderers,
   'percentage-grid': percentageGrid,
   'coordinate-gradient': coordinateGradient,
   'money-bars': moneyBars,
@@ -642,19 +644,28 @@ const renderers = {
 };
 export const learningKinds = Object.keys(renderers);
 export function drawLearningDiagram(lesson, state) {
-  const graph = ['coordinate-gradient', 'percentage-grid'].includes(
-    lesson.kind,
-  );
+  const graph = [
+    'coordinate-gradient',
+    'percentage-grid',
+    'coordinate-plane',
+    'line-table',
+  ].includes(lesson.kind);
+  const height = lesson.kind === 'line-table' ? 540 : 400;
+  const sequence = lesson.kind === 'sequence-table';
   const svg = element('svg', {
-    viewBox: graph ? '160 0 480 400' : '0 0 800 400',
+    viewBox: graph
+      ? `160 0 480 ${height}`
+      : sequence
+        ? '60 0 680 400'
+        : '0 0 800 400',
     'aria-hidden': 'true',
   });
   mathRow(svg, state.left, 400, 53, state.highlight, {
-    maxWidth: graph ? 440 : 740,
+    maxWidth: graph ? 440 : sequence ? 640 : 740,
     size: 38,
     height: 94,
   });
   renderers[lesson.kind](svg, state.scene, lesson);
-  if (state.scene.caption) label(svg, state.scene.caption, 400, 386);
+  if (state.scene.caption) label(svg, state.scene.caption, 400, height - 14);
   return svg;
 }

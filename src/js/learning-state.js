@@ -1,5 +1,10 @@
 import { isPrime } from './learning-geometry.js';
+import {
+  foundationsOperations,
+  validateFoundationsScene,
+} from './foundations-state.js';
 export const learningOperations = {
+  ...foundationsOperations,
   'percentage-grid': ['show', 'partition', 'highlight', 'simplify'],
   'coordinate-gradient': ['show', 'highlight', 'simplify'],
   'money-bars': ['show', 'partition', 'highlight', 'simplify'],
@@ -27,6 +32,8 @@ const subset = (values, allowed) =>
   values.every((v) => allowed.includes(v));
 export function validateLearningScene(lesson, state) {
   const s = state.scene;
+  if (foundationsOperations[lesson.kind])
+    validateFoundationsScene(lesson, state);
   if (lesson.kind === 'percentage-grid') {
     const m = lesson.model;
     ensure(
